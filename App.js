@@ -14,7 +14,7 @@ import Welcome from './comps/Welcome'
 function App(){
   return (
     <View>
-      <Login />
+      {/* <Login /> */}
       <Welcome />
     </View>
   )
