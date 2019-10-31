@@ -5,6 +5,7 @@ import styles from '../styles/LoginStyles';
 function Login(){
     return (
         <View style={styles.LoginPage}> 
+        <Text style={styles.AppTitle}> emUrgency </Text>
             <TextInput
             style={styles.LoginText}
             placeholder="Email Address"> </TextInput>
