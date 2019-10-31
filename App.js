@@ -8,12 +8,15 @@ import {
   StatusBar,
 } from 'react-native';
 import Login from './comps/Login'
+import Welcome from './comps/Welcome'
+
 
 function App(){
   return (
     <View>
-      <Login/>
-      </View>
+      <Login />
+      <Welcome />
+    </View>
   )
 }
 
