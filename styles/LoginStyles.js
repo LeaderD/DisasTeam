@@ -9,16 +9,18 @@ var styles = StyleSheet.create ({
     },
     AppTitle:{
         color: "#F04B53",
-        fontSize: 20
+        fontSize: 30
     },
     LoginButton:{
         width: "50%",
         backgroundColor: "#F04B53",
         borderRadius: 5,
         bottom: "2%",
-        shadowColor: 'rgba(0,0,0,0.1)',
-        shadowOpacity: 0.5,
-
+        shadowColor: 'rgba(0,0,0,1)',
+        shadowOpacity: 1.0,
+        elevation: 5,
+        shadowRadius: 1,
+        shadowOffset: {width:5, height:15}
     },
     LoginButtonText: {
         fontSize: 20,
