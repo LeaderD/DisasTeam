@@ -10,7 +10,6 @@ var styles = StyleSheet.create ({
     LoginButton:{
         width: "50%",
         backgroundColor: "#F04B53",
-        padding: "3%",
         borderRadius: 5,
         bottom: "2%"
     },
@@ -29,7 +28,6 @@ var styles = StyleSheet.create ({
     },
     RegisterButton: {
         backgroundColor: "white",
-        padding: "3%",
         borderRadius:5,
         width:"50%"
     },
