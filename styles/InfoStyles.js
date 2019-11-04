@@ -47,9 +47,7 @@ var styles = StyleSheet.create ({
         borderRadius: 100/2,
         borderWidth: 3,
         borderColor: "grey",
-        backgroundColor: "grey",
-        
-        
+        backgroundColor: "grey"
     },
     Circle2:{
         width: 30,
