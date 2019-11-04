@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, Button, TouchableOpacity} from 'react-native';
+import {View, Text, Button, TouchableOpacity, Image} from 'react-native';
 import styles from '../styles/WelcomeStyles';
 
 function Welcome(){
@@ -16,9 +16,20 @@ function Welcome(){
                 disaster.
              </Text>
 
-             <TouchableOpacity style={styles.LoginButton}>
-                <Text style={styles.LoginButtonText}> 
+             <TouchableOpacity style={styles.LearnMoreButton}>
+                <Text style={styles.LearnMoreButtonText}> 
                 Learn More
+                </Text>
+                    <Image
+                     style={{width: 10, height: 19, position:"absolute", left: 150}}
+                    
+                     source={require('../imgsPng/next1.png')}
+                     />
+            </TouchableOpacity>
+
+            <TouchableOpacity style={styles.GetStartedButton}>
+                <Text style={styles.GetStartedButtonText}> 
+                Get Started
                 </Text>
             </TouchableOpacity>
 

@@ -22,21 +22,45 @@ var styles = StyleSheet.create ({
         top: 145,
         width: "85%"
     },
-    LoginButton:{
+    LearnMoreButton:{
         width: 175,
         height: 40,
         backgroundColor: "#F04B53",
         borderRadius: 5,
         justifyContent: "center",
-        top: 175
-
+        top: 200,
+        left: 100,
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 1 },
+        shadowOpacity: 0.8,
+        shadowRadius: 2, 
         
     },
-    LoginButtonText:{
+    LearnMoreButtonText:{
         color: "white",
         fontSize: 18,
         textAlign: "center",
-    }
+    },
+    GetStartedButton:{
+        width: 175,
+        height: 40,
+        backgroundColor: "white",
+        borderRadius: 5,
+        justifyContent: "center",
+        top: 220,
+        left: 100,
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 1 },
+        shadowOpacity: 0.8,
+        shadowRadius: 2, 
+    },
+    GetStartedButtonText:{
+        color: "#F04B53",
+        fontSize: 18,
+        textAlign: "center",
+    },
+
+
 
 
 
