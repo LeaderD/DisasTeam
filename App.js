@@ -9,13 +9,15 @@ import {
 } from 'react-native';
 import Login from './comps/Login'
 import Welcome from './comps/Welcome'
+import Info from './comps/Info'
 
 
 function App(){
   return (
     <View>
       {/* <Login /> */}
-      <Welcome />
+      {/* <Welcome /> */}
+          <Info />
     </View>
   )
 }

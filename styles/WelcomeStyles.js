@@ -5,9 +5,6 @@ var styles = StyleSheet.create ({
         backgroundColor: "#FFFEF3",
         height: "100%"
     },
-    Butt:{
-
-    },
     WelcomeTitle:{
         color:"#F04B53",
         fontSize: 25,
@@ -34,7 +31,6 @@ var styles = StyleSheet.create ({
         shadowOffset: { width: 0, height: 1 },
         shadowOpacity: 0.8,
         shadowRadius: 2, 
-        
     },
     LearnMoreButtonText:{
         color: "white",
