@@ -18,27 +18,26 @@ var styles = StyleSheet.create ({
         fontSize: 30,
     },
     LoginButton:{
-        width: "50%",
         backgroundColor: "#F04B53",
-        borderRadius: 5,
+        borderRadius:5,
+        width:"50%",
+        padding: 10,
         shadowColor: "#000",
         shadowOffset: {
-            width: 0,
-            height: 5,
-        },
+        width: 0,
+        height: 5,
+            },
         shadowOpacity: 0.36,
         shadowRadius: 6.68,
         elevation: 3,
-        padding: 10,
-        marginBottom: "2%",
-        top: "5%"
+        top: "4%"
     },
     LoginButtonText: {
         fontSize: 20,
         color: "white",
         textAlign: "center",
         paddingBottom: 0,
-        bottom: 0
+        bottom: 0,
     },
     LoginText: {
         width:"75%",
