@@ -7,7 +7,7 @@ function Register(){
         <View style={styles.LoginPage}>
             <Image
             style={styles.RegisterLogo}
-            source={require('../imgsPng/logo.png')}
+            source={require('../imgs/imgsPng/logo.png')}
             />
             <TextInput
             style={styles.NewRegistrationText}

@@ -7,7 +7,7 @@ function Login(){
         <View style={styles.LoginPage}> 
         <Image
         style={styles.LoginLogo}
-        source={require('../imgsPng/logo.png')}
+        source={require('../imgs/imgsPng/logo.png')}
         />
         <Text style={styles.AppTitle}> emUrgency </Text>
             <TextInput

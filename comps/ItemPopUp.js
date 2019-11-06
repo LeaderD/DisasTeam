@@ -8,7 +8,7 @@ function ItemPopUp(){
     <View style={PUStyles.container}>
         <Image
         style={PUStyles.ItemImg}
-        source={require('../imgsPng/baby.png')}/>
+        source={require('../imgs/imgsPng/baby.png')}/>
     <View style={PUStyles.inputView}>
         <TextInput 
         style={PUStyles.inputs}
