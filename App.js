@@ -14,7 +14,9 @@ import Login from './comps/Login'
 // import SingleLineInput from './comps/SingleLineInput'
 // import Register from './comps/Register';
 //  import NavBar from './comps/NavBar';
- import ItemPopUp from './comps/ItemPopUp'
+ import ItemPopUp from './comps/ItemPopUp';
+ import LoginPage from './pages/LoginPage';
+ import RegistrationPage from './pages/RegistrationPage';
 
 
 function App(){
@@ -23,7 +25,9 @@ function App(){
       {/* <Login/> */}
       {/* <Register /> */}
       {/* <NavBar /> */}
-      <ItemPopUp/>
+      {/* <ItemPopUp/> */}
+      {/* <LoginPage/> */}
+      <RegistrationPage />
     </View>
   )
 }
