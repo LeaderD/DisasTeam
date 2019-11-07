@@ -7,17 +7,20 @@ import {
   Text,
   StatusBar,
 } from 'react-native';
+
 import Login from './comps/Login'
 import Welcome from './comps/Welcome'
 import Info from './comps/Info'
+import HomeKit from './comps/HomeKit'
 
 
 function App(){
   return (
     <View>
-          <Login />
+          {/* <Login />
           <Welcome />
-          <Info />
+          <Info /> */}
+          <HomeKit />
     </View>
   )
 }
