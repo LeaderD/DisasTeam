@@ -15,8 +15,8 @@ import Info from './comps/Info'
 function App(){
   return (
     <View>
-      {/* <Login /> */}
-      {/* <Welcome /> */}
+          <Login />
+          <Welcome />
           <Info />
     </View>
   )
