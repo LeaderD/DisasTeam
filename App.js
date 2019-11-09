@@ -9,8 +9,8 @@ import {
 } from 'react-native';
 
 import Login from './comps/Login'
-import Welcome from './comps/Welcome'
-import Info from './comps/Info'
+//import Welcome from './comps/Welcome'
+//import Info from './comps/Info'
 import HomeKit from './comps/HomeKit'
 import WhiteButton from './comps/WhiteButton'
 import RedButton from './comps/RedButton'

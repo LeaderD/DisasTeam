@@ -1,6 +1,7 @@
 import React from 'react';
 import {View, Text, Button, TouchableOpacity, Image} from 'react-native';
 import styles from '../styles/HomeKitStyles';
+import NavBar from './NavBar';
 
 function HomeKit(){
     return (
@@ -9,22 +10,36 @@ function HomeKit(){
                 <TouchableOpacity style={styles.backBtn}>
                     <Image
                     style={styles.backBtn}
-                    source={require('../imgsPng/backbutton.png')}
+                    source={require('../imgs/imgsPng/backbutton.png')}
                     />
                 </TouchableOpacity>
                 <Text style={styles.Title}>Home</Text>
             </View>
 
-            <View>
+            <View style={{flex: 1, flexDirection:"row", justifyContent:"center", top: 20}}>
                 <TouchableOpacity>
-                <Image
-                    source={require('../imgsPng/cannedfood.png')}
-                    />
+                    <Image
+                    style={styles.Items}
+                     source={require('../imgs/imgsPng/cannedfood.png')}
+                     />
+                </TouchableOpacity>
+                <TouchableOpacity>
+                    <Image
+                    style={styles.Items}
+                     source={require('../imgs/imgsPng/crackers.png')}
+                     />
+                </TouchableOpacity>
+                <TouchableOpacity>
+                    <Image
+                    style={styles.Items}
+                     source={require('../imgs/imgsPng/granola.png')}
+                     />
+                    
                 </TouchableOpacity>
 
 
             </View>
-        
+
         </View>
     )
 }

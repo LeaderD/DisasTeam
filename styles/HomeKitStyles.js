@@ -23,6 +23,16 @@ var styles = StyleSheet.create ({
         alignItems: "center",
         color: "#F04B53",
         fontSize: 30,
+    },
+    Items:{
+        height: 90,
+        width: 90,
+        position: "relative",
+        borderRadius: 100/1,
+        borderWidth: 8,
+        borderColor: "grey",
+        marginLeft: 10,
+        marginRight: 10
     }
 
 
