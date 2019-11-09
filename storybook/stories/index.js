@@ -9,5 +9,5 @@ import Help from '../../comps/Help';
 
 storiesOf('Users', module)
 .add('Login', () => <Login />)
-.add('Register', ()=>{<Register />})
-.add('Help', ()=>{<Help/>})
+.add('Register', ()=><Register />)
+.add('Help', ()=><Help/>)
