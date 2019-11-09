@@ -33,6 +33,12 @@ var styles = StyleSheet.create ({
         borderColor: "grey",
         marginLeft: 10,
         marginRight: 10
+    },
+    ItemTxt:{
+        position: "absolute",
+        justifyContent:"center",
+        fontSize: 12,
+        top: 100
     }
 
 
