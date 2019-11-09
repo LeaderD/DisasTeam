@@ -17,6 +17,7 @@ import Register from './comps/Register';
  import ItemPopUp from './comps/ItemPopUp';
  import LoginPage from './pages/LoginPage';
  import RegistrationPage from './pages/RegistrationPage';
+ import Help from './comps/Help';
 
 
 function App(){
@@ -28,6 +29,7 @@ function App(){
       {/* <ItemPopUp/> */}
       {/* <LoginPage/> */}
       {/* <RegistrationPage /> */}
+      {/* <Help /> */}
     </View>
   )
 }
