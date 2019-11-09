@@ -29,7 +29,7 @@ function App(){
           {/* <Login />
           <Welcome />
           <Info /> */}
-{/* <HomeKit /> */}
+<HomeKit />
       {/* <Login/> */}
       {/* <Register /> */}
       {/* <NavBar /> */}
@@ -41,5 +41,5 @@ function App(){
   )
 }
 
-//export default App;
-export default from './storybook';
+export default App;
+//export default from './storybook';
