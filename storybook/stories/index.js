@@ -8,4 +8,5 @@ import Register from '../../comps/Register';
 
 storiesOf('Users', module)
 .add('Login', () => <Login />)
-.add('Register', ()=>{<Register />})
+.add('Register', ()=><Register />)
+
