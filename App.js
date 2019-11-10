@@ -23,7 +23,7 @@ import Route from './route'
 
 function App(){
   return (
-    <View>
+    <View style={{flex:1}}>
       {/* <Login/> */}
       {/* <Register /> */}
       {/*<NavBar />*/}
@@ -31,11 +31,11 @@ function App(){
       {/* <LoginPage/> */}
       {/* <RegistrationPage /> */}
       {/* <Help /> */}
-    <View style={{flex:1}}>
       <Route/>
     </View>
   )
 }
 
 export default App;
+
 // export default from './storybook';
