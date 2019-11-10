@@ -1,6 +1,7 @@
 import React from 'react';
 import {View, Text, TextInput, Button, Image, TouchableOpacity} from 'react-native';
 import styles from '../styles/LoginStyles';
+import {Actions} from 'react-native-router-flux';
 
 function Register(){
     return (
@@ -23,7 +24,9 @@ function Register(){
             <TouchableOpacity style={styles.NewRegistrationButton}>
                 <Text style={styles.RegisterButtonText}> Create Account </Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.RegisterSignIn}>
+            <TouchableOpacity 
+            onPress={()=>Actions.Login()}
+            style={styles.RegisterSignIn}>
                 <Text style={styles.RegisterSignInText}> Sign In </Text>
             </TouchableOpacity>
 
