@@ -25,9 +25,6 @@ import Route from './route'
 function App(){
   return (
     <View style={{flex:1}}>
-          {/* <Login />
-          <Welcome />
-          <Info /> */}
       {/* <Login/> */}
       {/* <Register /> */}
       {/*<NavBar />*/}
