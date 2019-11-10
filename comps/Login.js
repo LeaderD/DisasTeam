@@ -1,6 +1,7 @@
 import React from 'react';
 import {View, Text, TextInput, Button, Image, TouchableOpacity} from 'react-native';
 import styles from '../styles/LoginStyles';
+import {Actions} from 'react-native-router-flux';
 
 function Login(){
     return (
@@ -28,6 +29,7 @@ function Login(){
                     </TouchableOpacity>
 
             <TouchableOpacity
+            onPress={()=> Actions.Register()}
             style={styles.RegisterButton}>
                 <Text
                 style={styles.RegisterButtonText}>Register </Text> 
