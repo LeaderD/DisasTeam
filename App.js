@@ -29,7 +29,6 @@ function App(){
           {/* <Login />
           <Welcome />
           <Info /> */}
-<HomeKit />
       {/* <Login/> */}
       {/* <Register /> */}
       {/* <NavBar /> */}
