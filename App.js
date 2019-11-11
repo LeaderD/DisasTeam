@@ -6,7 +6,7 @@ import {
 } from 'react-native';
 
 import Login from './comps/Login'
-
+import HomeKit from './comps/HomeKit'
 // import Welcome from './comps/Welcome'
 // import WhiteButton from './comps/WhiteButton'
 // import RedButton from './comps/RedButton'
@@ -19,6 +19,7 @@ import RegistrationPage from './pages/RegistrationPage';
 import Help from './comps/Help';
 import Welcome from './comps/Welcome'
 import Route from './route'
+
 
 
 function App(){
@@ -37,5 +38,4 @@ function App(){
 }
 
 export default App;
-
 // export default from './storybook';
