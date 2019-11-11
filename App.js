@@ -28,11 +28,12 @@ function App(){
       {/* <Login/> */}
       {/* <Register /> */}
       {/*<NavBar />*/}
+      <HomeKit />
       {/* <ItemPopUp/> */}
       {/* <LoginPage/> */}
       {/* <RegistrationPage /> */}
       {/* <Help /> */}
-      <Route/>
+      {/* <Route/> */}
     </View>
   )
 }
