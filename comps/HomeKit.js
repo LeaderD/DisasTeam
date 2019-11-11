@@ -176,30 +176,30 @@ function HomeKit(){
                     </View>
 
                     <View style={{flexDirection:"row", justifyContent:"center", top: 260}}>
-                <TouchableOpacity style={{alignItems:"center"}}> 
-                    <Image
-                     style={ItemStyles.ID}
-                     source={require('../imgs/imgsBWpng/BWid_1.png')}
-                     />
-                    <Text style={styles.ItemTxt}>ID</Text>
-                </TouchableOpacity>
+                        <TouchableOpacity style={{alignItems:"center"}}> 
+                            <Image
+                            style={ItemStyles.ID}
+                            source={require('../imgs/imgsBWpng/BWid_1.png')}
+                            />
+                            <Text style={styles.ItemTxt}>ID</Text>
+                        </TouchableOpacity>
 
-                <TouchableOpacity style={{alignItems:"center"}}>
-                    <Image
-                     style={ItemStyles.Shovel}
-                     source={require('../imgs/imgsBWpng/BWshovel_1.png')}
-                     />
-                    <Text style={styles.ItemTxt}>Shovel</Text>
-                </TouchableOpacity>
-                
-                <TouchableOpacity style={{alignItems:"center"}}>
-                    <Image
-                     style={ItemStyles.Matches}
-                     source={require('../imgs/imgsBWpng/BWmatches_1.png')}
-                     />
-                     <Text style={styles.ItemTxt}>Matches</Text>
-                </TouchableOpacity>
-            </View>
+                        <TouchableOpacity style={{alignItems:"center"}}>
+                            <Image
+                            style={ItemStyles.Shovel}
+                            source={require('../imgs/imgsBWpng/BWshovel_1.png')}
+                            />
+                            <Text style={styles.ItemTxt}>Shovel</Text>
+                        </TouchableOpacity>
+                        
+                        <TouchableOpacity style={{alignItems:"center"}}>
+                            <Image
+                            style={ItemStyles.Matches}
+                            source={require('../imgs/imgsBWpng/BWmatches_1.png')}
+                            />
+                            <Text style={styles.ItemTxt}>Matches</Text>
+                        </TouchableOpacity>
+                    </View>
                 </View>
             </ScrollView>
 
