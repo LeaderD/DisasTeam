@@ -1,7 +1,17 @@
 import React from 'react';
-import {View, Text, TextInput, Button, Image, TouchableOpacity} from 'react-native';
+import {View, Text, TextInput, Alert, Button, Image, TouchableOpacity} from 'react-native';
 import styles from '../styles/LoginStyles';
 import {Actions} from 'react-native-router-flux';
+
+constructor(props){
+    this.state = {
+        UserName: '',
+        UserEmail: '',
+        UserPassword: ''
+    }
+}
+
+
 
 function Register(){
     return (
