@@ -1,10 +1,22 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {View, Text, Button, TouchableOpacity, Image, ScrollView} from 'react-native';
 import styles from '../styles/HomeKitStyles';
 import ItemStyles from '../styles/ItemStyles';
 import NavBar from './NavBar';
+import ItemPopUp from './ItemPopUp';
 
 function GrabNGoKit(){
+
+    const [showItem, setShowItem] = useState(false);
+    var ItemPU = null;
+
+    if (showItem === true){
+    ItemPU = (
+      <View style={{justifyContent:"center", alignItems:"center", height:"100%", width:"100%", position:"absolute"}}>
+        <ItemPopUp />
+      </View>
+    )}
+
     return (
         <View>
              <View style={styles.Top}>
@@ -18,7 +30,11 @@ function GrabNGoKit(){
             </View>
 
                 <View style={{flexDirection:"row", justifyContent:"center", top: 20}}>
-                        <TouchableOpacity style={{alignItems:"center"}}>
+                        <TouchableOpacity style={{alignItems:"center"}}
+                        onPress = {() => {
+                          setShowItem(!showItem);
+                          }}
+                        >
                                 <Image
                                 style={ItemStyles.Clothes}
                                 source={require('../imgs/imgsBWpng/BWclothes_1.png')}
@@ -79,7 +95,7 @@ function GrabNGoKit(){
                                 <Text style={styles.ItemTxt}>Flashlight</Text>
                         </TouchableOpacity>
 
-                        <TouchableOpacity style={{alignItems:"center"}}> 
+                        <TouchableOpacity style={{alignItems:"center"}}>
                                 <Image
                                 style={ItemStyles.ID}
                                 source={require('../imgs/imgsBWpng/BWid_1.png')}
@@ -87,7 +103,7 @@ function GrabNGoKit(){
                                 <Text style={styles.ItemTxt}>Copy of ID</Text>
                         </TouchableOpacity>
 
-                        <TouchableOpacity style={{alignItems:"center"}}> 
+                        <TouchableOpacity style={{alignItems:"center"}}>
                                 <Image
                                 style={ItemStyles.Shoes}
                                 source={require('../imgs/imgsBWpng/BWshoes_1.png')}
@@ -106,6 +122,8 @@ function GrabNGoKit(){
                         </TouchableOpacity>
 
                 </View>
+
+{ItemPU}
         </View>
 
     )

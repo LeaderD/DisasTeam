@@ -54,17 +54,19 @@ var PUStyles = StyleSheet.create ({
     },
     CancelBut:{
         backgroundColor:"rgba(255,255,255,0.2)",
+        borderRadius: 3,
         height: "70%",
         width: "20%",
-        justifyContent: "center",
+        justifyContent:"center",
         alignItems:"center",
-        borderRadius: 3,
         margin: "1%"
     },
     CancelButText:{
         color: "white",
         fontSize: 16,
-        fontWeight: "600"
+        fontWeight: "600",
+        justifyContent: "center",
+        alignItems:"center"
     }
 
 });

@@ -4,13 +4,13 @@ import PUStyles from '../styles/ItemPopUpStyles'
 
 function ItemPopUp(){
     return(
-    <View style={{height:"100%", justifyContent:"flex-end"}}>
+    <View style={{height:"100%", width: "80%", justifyContent:"flex-end"}}>
     <View style={PUStyles.container}>
         <Image
         style={PUStyles.ItemImg}
         source={require('../imgs/imgsPng/baby.png')}/>
     <View style={PUStyles.inputView}>
-        <TextInput 
+        <TextInput
         style={PUStyles.inputs}
         placeholder="Item Name"></TextInput>
         <TextInput
