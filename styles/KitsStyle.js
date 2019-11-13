@@ -29,6 +29,7 @@ var styles = StyleSheet.create ({
     },
 
     grabngo:{
+        height: 200,
         width: 200,
         position: "relative",
         left: 0,
