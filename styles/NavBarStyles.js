@@ -3,16 +3,18 @@ import {StyleSheet} from 'react-native';
 var NBStyles = {
     container:{
         backgroundColor:"#F04B53",
-        height: "12%",
+        height: 90,
         width: "100%",
         justifyContent: "space-around",
         flexDirection:"row"
     },
     navImg:{
-        width: "100%",
-        height: "100%",
+        width: "95%",
+        height: "95%",
         resizeMode: "center",
-        top: "-12%"
+        top: "-12%",
+        alignItems:"center",
+        justifyContent: "center"
     },
     touchOp:{
         width: "30%",

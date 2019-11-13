@@ -28,7 +28,7 @@ var ItemStyles = StyleSheet.create ({
         position: "relative",
         borderRadius: 100/1,
         borderWidth: 8,
-        borderColor: "#FDF050",
+        borderColor: "lightgrey",
         marginLeft: 10,
         marginRight: 10
     },
@@ -203,6 +203,26 @@ var ItemStyles = StyleSheet.create ({
         marginRight: 10
     },
     Matches:{
+        height: 90,
+        width: 90,
+        position: "relative",
+        borderRadius: 100/1,
+        borderWidth: 8,
+        borderColor: "lightgrey",
+        marginLeft: 10,
+        marginRight: 10
+    },
+    Blankets:{
+        height: 90,
+        width: 90,
+        position: "relative",
+        borderRadius: 100/1,
+        borderWidth: 8,
+        borderColor: "lightgrey",
+        marginLeft: 10,
+        marginRight: 10
+    },
+    Shoes:{
         height: 90,
         width: 90,
         position: "relative",

@@ -20,8 +20,6 @@ function Welcome(){
                 <Text style={styles.LearnMoreButtonText}> 
                 Learn More
                 </Text>
-                    <Image
-                     style={{width: 10, height: 19, position:"absolute", left: 150}}
                     
                      source={require('../imgs/imgsPng/next1.png')}
                      />

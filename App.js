@@ -24,11 +24,15 @@ function App(){
       {/* <Login/> */}
       {/* <Register /> */}
       {/*<NavBar />*/}
+      {/* <HomeKit /> */}
+      {/* <WorkKit /> */}
+      <GrabNGoKit />
+      {/* <VehicleKit /> */}
       {/* <ItemPopUp/> */}
       {/* <LoginPage/> */}
       {/* <RegistrationPage /> */}
       {/* <Help /> */}
-      <Route/>
+      {/* <Route/> */}
     </View>
   )
 }
