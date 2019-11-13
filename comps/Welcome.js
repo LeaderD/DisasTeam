@@ -6,7 +6,7 @@ function Welcome(){
     return (
         <View style={styles.Display}>
             <Text style={styles.WelcomeTitle}>
-                Welcome Rebecca,
+                Welcome {name},
             </Text>
 
             <Text style={styles.WelcomePara}>
@@ -23,7 +23,7 @@ function Welcome(){
                     <Image
                      style={{width: 10, height: 19, position:"absolute", left: 150}}
                     
-                     source={require('../imgsPng/next1.png')}
+                     source={require('../imgs/imgsPng/next1.png')}
                      />
             </TouchableOpacity>
 

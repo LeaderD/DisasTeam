@@ -7,10 +7,6 @@ import {
 
 import Login from './comps/Login'
 import HomeKit from './comps/HomeKit'
-// import Welcome from './comps/Welcome'
-// import WhiteButton from './comps/WhiteButton'
-// import RedButton from './comps/RedButton'
-// import SingleLineInput from './comps/SingleLineInput'
 import Register from './comps/Register';
 import NavBar from './comps/NavBar';
 import ItemPopUp from './comps/ItemPopUp';
