@@ -9,11 +9,12 @@ function GrabNGoKit(){
 
     const [showItem, setShowItem] = useState(false);
     var ItemPU = null;
+    //var ItemPic = null;
 
     if (showItem === true){
     ItemPU = (
       <View style={{justifyContent:"center", alignItems:"center", height:"100%", width:"100%", position:"absolute"}}>
-        <ItemPopUp />
+        <ItemPopUp/>
       </View>
     )}
 
@@ -33,6 +34,7 @@ function GrabNGoKit(){
                         <TouchableOpacity style={{alignItems:"center"}}
                         onPress = {() => {
                           setShowItem(!showItem);
+                          //ItemPic = '../imgs/imgsBWpng/BWclothes_1.png';
                           }}
                         >
                                 <Image
@@ -123,7 +125,14 @@ function GrabNGoKit(){
 
                 </View>
 
-{ItemPU}
+
+                {ItemPU}
+
+                <View style={{alignItems:"center", height:"100%", width:"100%", position:"absolute", top:255}}>
+
+                    <NavBar />
+
+                </View>
         </View>
 
     )

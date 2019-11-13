@@ -2,10 +2,11 @@ import {StyleSheet} from 'react-native';
 
 var PUStyles = StyleSheet.create ({
     container:{
-        height: "30%",
+        height: 150,
         backgroundColor: "#F04B53",
         width: "100%",
-        flexDirection:"row"
+        flexDirection:"row",
+        borderRadius: 6
     },
     ItemImg:{
         resizeMode: "contain",
@@ -42,10 +43,11 @@ var PUStyles = StyleSheet.create ({
         backgroundColor: "white",
         borderRadius: 3,
         height: "70%",
-        width: "20%",
+        width: 77,
         justifyContent:"center",
         alignItems:"center",
-        margin: "1%"
+        margin: "1%",
+        right: 42
     },
     UpdateButText:{
         color:"#F04B53",
@@ -56,10 +58,12 @@ var PUStyles = StyleSheet.create ({
         backgroundColor:"rgba(255,255,255,0.2)",
         borderRadius: 3,
         height: "70%",
-        width: "20%",
+        width: 77,
         justifyContent:"center",
         alignItems:"center",
-        margin: "1%"
+        margin: "1%",
+        right: 54
+
     },
     CancelButText:{
         color: "white",
