@@ -1,19 +1,17 @@
 import React from 'react';
 import {View} from 'react-native';
 
-import Profile from '../comps/Profile';
-import NavBar from '../comps/NavBar';
+import HomeKit from '../comps/HomeKit';
 
-function ProfilePage(){
+function HomeKitPage(){
     return (
      <View style={{flex:1, justifyContent:'center'}}>
          <View style={{flex:1}}>
-         <Profile/>
+         <HomeKit/>
      </View>
          <NavBar/>
      </View>
     )
  };
  
-
-export default ProfilePage;
+ export default HomeKitPage;

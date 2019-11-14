@@ -1,19 +1,18 @@
 import React from 'react';
 import {View} from 'react-native';
 
-import Profile from '../comps/Profile';
+import GrabNGoKit from '../comps/GrabNGoKit';
 import NavBar from '../comps/NavBar';
 
-function ProfilePage(){
+function GrabNGoKitPage(){
     return (
      <View style={{flex:1, justifyContent:'center'}}>
          <View style={{flex:1}}>
-         <Profile/>
+         <GrabNGoKit/>
      </View>
          <NavBar/>
      </View>
     )
  };
  
-
-export default ProfilePage;
+ export default GrabNGoKitPage;

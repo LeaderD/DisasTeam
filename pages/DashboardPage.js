@@ -5,12 +5,14 @@ import Dashboard from '../comps/Dashboard';
 import NavBar from '../comps/NavBar';
 
 function DashboardPage(){
-   return (
-    <View>
-        <Dashboard/>
-        <NavBar/>
-    </View>
-   )
-};
+    return (
+     <View style={{flex:1, justifyContent:'center'}}>
+         <View style={{flex:1}}>
+         <Dashboard/>
+     </View>
+         <NavBar/>
+     </View>
+    )
+ };
 
 export default DashboardPage;

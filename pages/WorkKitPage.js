@@ -1,19 +1,17 @@
 import React from 'react';
 import {View} from 'react-native';
 
-import Profile from '../comps/Profile';
-import NavBar from '../comps/NavBar';
+import WorkKit from '../comps/WorkKit'
 
-function ProfilePage(){
+function WorkKitPage(){
     return (
      <View style={{flex:1, justifyContent:'center'}}>
          <View style={{flex:1}}>
-         <Profile/>
+         <WorkKit/>
      </View>
          <NavBar/>
      </View>
     )
  };
  
-
-export default ProfilePage;
+ export default WorkKitPage;

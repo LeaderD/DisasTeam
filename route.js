@@ -15,9 +15,9 @@ function Route() {
         <Scene key="Login" component={LoginPage}  />
         <Scene key="Register" component={RegistrationPage} />
         <Scene key="Welcome" component={WelcomePage}/>
-        <Scene key="Kits" component={KitsPage} initial={true}/>
+        <Scene key="Kits" component={KitsPage} />
         {/* <Scene key="Dashboard" component={DashboardPage} /> */}
-        <Scene key="Profile" component={ProfilePage} />
+        <Scene key="Profile" component={ProfilePage} initial={true} />
       </Stack>
     </Router>
   );
