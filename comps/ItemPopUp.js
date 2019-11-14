@@ -2,22 +2,24 @@ import React from 'react';
 import {View, TextInput, Image, TouchableOpacity, Text} from 'react-native';
 import PUStyles from '../styles/ItemPopUpStyles'
 
-function ItemPopUp(){
+function ItemPopUp(ItemPic){
     return(
-    <View style={{height:"100%", justifyContent:"flex-end"}}>
-    <View style={PUStyles.container}>
-        <Image
-        style={PUStyles.ItemImg}
-        source={require('../imgs/imgsPng/baby.png')}/>
-    <View style={PUStyles.inputView}>
-        <TextInput 
-        style={PUStyles.inputs}
-        placeholder="Item Name"></TextInput>
-        <TextInput
-         style={PUStyles.inputs}
-         placeholder="Expiry Date"
-         keyboardType="numeric"></TextInput>
-    <View style={PUStyles.ButView}>
+    <View style={{height:"100%", width: "80%", justifyContent:"flex-end"}}>
+        <View style={PUStyles.container}>
+            <Image
+             style={PUStyles.ItemImg}
+             source={require('../imgs/imgsPng/baby.png')}/>
+        <View style={PUStyles.inputView}>
+            <TextInput
+              style={PUStyles.inputs}
+              placeholder="Item Name">
+            </TextInput>
+            <TextInput
+              style={PUStyles.inputs}
+              placeholder="Expiry Date"
+              keyboardType="numeric">
+            </TextInput>
+        <View style={PUStyles.ButView}>
         <TouchableOpacity style={PUStyles.CancelBut}>
             <Text style={PUStyles.CancelButText}> CANCEL </Text>
         </TouchableOpacity>
