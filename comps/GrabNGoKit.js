@@ -18,7 +18,6 @@ var money = require('../imgs/imgsBWpng/BWmoney_1.png');
 function GrabNGoKit(){
 
     const [showItem, setShowItem] = useState(false);
-    //const [HideItem, setHideItem] = useState(false);
     const [ItemPic, SetItemPic] = useState('');
     //const [item1, setItem1] = useState({});
 
@@ -32,21 +31,9 @@ function GrabNGoKit(){
         ItemPic={ItemPic}/>
       </View>
     )}
-    
-//     if (HideItem === true){
-//     ItemPU = (
-//       <View>
-//         <ItemPopUp style={{display:"none"}}/>
-//       </View>
-//      )} 
-
 
     return (
-        <View
-        // onPress = {() => {
-        //         setHideItem(!HideItem);
-        // }}
-        >
+        <View>
              <View style={styles.Top}>
                 <TouchableOpacity style={styles.backBtn}>
                     <Image
