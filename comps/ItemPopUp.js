@@ -7,7 +7,10 @@ function ItemPopUp(props){
     var PickedSrc = null;
 
     return(
-    <View>
+    <TouchableOpacity
+        style={PUStyles.wrapper}
+        onPress={()=>{props.setShowItem(false)}}
+    >
         <View style={PUStyles.container}>
             <Image
              style={PUStyles.ItemImg}
@@ -38,7 +41,7 @@ function ItemPopUp(props){
     </View>
     </View>
     </View>
-    </View>
+    </TouchableOpacity>
     )
 };
 

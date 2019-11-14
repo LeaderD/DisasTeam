@@ -1,8 +1,12 @@
-import React from 'react';
-import {View, Text, Button, TouchableOpacity, Image, ScrollView} from 'react-native';
+import React, {useState} from 'react';
+import {View, Text, Button, TouchableOpacity, Image, ScrollView, Dimensions} from 'react-native';
 import styles from '../styles/HomeKitStyles';
 import ItemStyles from '../styles/ItemStyles';
 import NavBar from './NavBar';
+import ItemPopUp from './ItemPopUp';
+
+
+
 
 function Vehicle(){
     return (

@@ -16,10 +16,13 @@ var whistle = require('../imgs/imgsBWpng/BWwhistle_1.png');
 var radio = require('../imgs/imgsBWpng/BWradio_1.png');
 var flare = require('../imgs/imgsBWpng/BWflare_1.png');
 var documents = require('../imgs/imgsBWpng/BWdocument_1.png');
+var drinkwater = require('../imgs/imgsBWpng/BWwater_1.png');
 var sparekeys = require('../imgs/imgsBWpng/BWkey_1.png');
+var candles = require('../imgs/imgsBWpng/BWcandles_1.png');
+var clothes = require('../imgs/imgsBWpng/BWclothes_1.png');
+var snowbrush = require('../imgs/imgsBWpng/BWsnowbrush_1.png');
 var medication = require('../imgs/imgsBWpng/BWmeds_1.png');
 var money = require('../imgs/imgsBWpng/BWmoney_1.png');
-var drinkwater = require('../imgs/imgsBWpng/BWwater_1.png');
 var idcopy = require('../imgs/imgsBWpng/BWid_1.png');
 var shovel = require('../imgs/imgsBWpng/BWshovel_1.png');
 var matches = require('../imgs/imgsBWpng/BWmatches_1.png');
@@ -35,11 +38,11 @@ function HomeKit(){
 
     if (showItem === true){
     ItemPU = (
-      <View style={{width: "100%", height:Dimensions.get('window').height, justifyContent:"center", alignItems:"center", position:"absolute", top: 0}}>
+    //   <View style={{width: "100%", height:Dimensions.get('window').height, justifyContent:"center", alignItems:"center", position:"absolute", top: 0}}>
         <ItemPopUp
         setShowItem={setShowItem}
         ItemPic={ItemPic}/>
-      </View>
+    //   </View>
     )}
 
     return (
@@ -157,7 +160,11 @@ function HomeKit(){
                             <Text style={styles.ItemTxt}>Whistle</Text>
                         </TouchableOpacity>
                         
-                        <TouchableOpacity style={{alignItems:"center"}}>
+                        <TouchableOpacity style={{alignItems:"center"}}
+                        onPress = {() => {
+                            setShowItem(true);
+                            SetItemPic(radio);
+                        }}>
                             <Image
                             style={ItemStyles.Flashlight}
                             source={require('../imgs/imgsBWpng/BWradio_1.png')}
@@ -167,7 +174,11 @@ function HomeKit(){
                     </View>
 
                     <View style={{flexDirection:"row", justifyContent:"center", top: 140}}>
-                        <TouchableOpacity style={{alignItems:"center"}}> 
+                        <TouchableOpacity style={{alignItems:"center"}}
+                        onPress = {() => {
+                            setShowItem(true);
+                            SetItemPic(flare);
+                        }}> 
                             <Image
                             style={ItemStyles.Flare}
                             source={require('../imgs/imgsBWpng/BWflare_1.png')}
@@ -175,7 +186,11 @@ function HomeKit(){
                             <Text style={styles.ItemTxt}>Flare</Text>
                         </TouchableOpacity>
 
-                        <TouchableOpacity style={{alignItems:"center"}}>
+                        <TouchableOpacity style={{alignItems:"center"}}
+                        onPress = {() => {
+                            setShowItem(true);
+                            SetItemPic(documents);
+                        }}>
                             <Image
                             style={ItemStyles.Documents}
                             source={require('../imgs/imgsBWpng/BWdocument_1.png')}
@@ -183,7 +198,11 @@ function HomeKit(){
                             <Text style={styles.ItemTxt}>Documents</Text>
                         </TouchableOpacity>
                         
-                        <TouchableOpacity style={{alignItems:"center"}}>
+                        <TouchableOpacity style={{alignItems:"center"}}
+                        onPress = {() => {
+                            setShowItem(true);
+                            SetItemPic(drinkwater);
+                        }}>
                             <Image
                             style={ItemStyles.Water}
                             source={require('../imgs/imgsBWpng/BWwater_1.png')}
@@ -193,7 +212,11 @@ function HomeKit(){
                     </View>
 
                     <View style={{flexDirection:"row", justifyContent:"center", top: 180}}>
-                        <TouchableOpacity style={{alignItems:"center"}}> 
+                        <TouchableOpacity style={{alignItems:"center"}}
+                        onPress = {() => {
+                            setShowItem(true);
+                            SetItemPic(sparekeys);
+                        }}> 
                             <Image
                             style={ItemStyles.SpareKeys}
                             source={require('../imgs/imgsBWpng/BWkey_1.png')}
@@ -201,7 +224,11 @@ function HomeKit(){
                             <Text style={styles.ItemTxt}>Spare Keys</Text>
                         </TouchableOpacity>
 
-                        <TouchableOpacity style={{alignItems:"center"}}>
+                        <TouchableOpacity style={{alignItems:"center"}}
+                        onPress = {() => {
+                            setShowItem(true);
+                            SetItemPic(candles);
+                        }}>
                             <Image
                             style={ItemStyles.Candles}
                             source={require('../imgs/imgsBWpng/BWcandles_1.png')}
@@ -209,7 +236,11 @@ function HomeKit(){
                             <Text style={styles.ItemTxt}>Candles</Text>
                         </TouchableOpacity>
                         
-                        <TouchableOpacity style={{alignItems:"center"}}>
+                        <TouchableOpacity style={{alignItems:"center"}}
+                        onPress = {() => {
+                            setShowItem(true);
+                            SetItemPic(clothes);
+                        }}>
                             <Image
                             style={ItemStyles.Clothes}
                             source={require('../imgs/imgsBWpng/BWclothes_1.png')}
@@ -219,7 +250,11 @@ function HomeKit(){
                     </View>
 
                     <View style={{flexDirection:"row", justifyContent:"center", top: 220}}>
-                        <TouchableOpacity style={{alignItems:"center"}}> 
+                        <TouchableOpacity style={{alignItems:"center"}}
+                        onPress = {() => {
+                            setShowItem(true);
+                            SetItemPic(snowbrush);
+                        }}> 
                             <Image
                             style={ItemStyles.SnowBrush}
                             source={require('../imgs/imgsBWpng/BWsnowbrush_1.png')}
@@ -227,7 +262,11 @@ function HomeKit(){
                             <Text style={styles.ItemTxt}>Snow Brush</Text>
                         </TouchableOpacity>
 
-                        <TouchableOpacity style={{alignItems:"center"}}>
+                        <TouchableOpacity style={{alignItems:"center"}}
+                        onPress = {() => {
+                            setShowItem(true);
+                            SetItemPic(medication);
+                        }}>
                             <Image
                             style={ItemStyles.Medication}
                             source={require('../imgs/imgsBWpng/BWmeds_1.png')}
@@ -235,7 +274,11 @@ function HomeKit(){
                             <Text style={styles.ItemTxt}>Medication</Text>
                         </TouchableOpacity>
                         
-                        <TouchableOpacity style={{alignItems:"center"}}>
+                        <TouchableOpacity style={{alignItems:"center"}}
+                        onPress = {() => {
+                            setShowItem(true);
+                            SetItemPic(money);
+                        }}>
                             <Image
                             style={ItemStyles.Money}
                             source={require('../imgs/imgsBWpng/BWmoney_1.png')}
@@ -245,7 +288,11 @@ function HomeKit(){
                     </View>
 
                     <View style={{flexDirection:"row", justifyContent:"center", top: 260}}>
-                        <TouchableOpacity style={{alignItems:"center"}}> 
+                        <TouchableOpacity style={{alignItems:"center"}}
+                        onPress = {() => {
+                            setShowItem(true);
+                            SetItemPic(idcopy);
+                        }}> 
                             <Image
                             style={ItemStyles.ID}
                             source={require('../imgs/imgsBWpng/BWid_1.png')}
@@ -253,7 +300,11 @@ function HomeKit(){
                             <Text style={styles.ItemTxt}>ID</Text>
                         </TouchableOpacity>
 
-                        <TouchableOpacity style={{alignItems:"center"}}>
+                        <TouchableOpacity style={{alignItems:"center"}}
+                        onPress = {() => {
+                            setShowItem(true);
+                            SetItemPic(shovel);
+                        }}>
                             <Image
                             style={ItemStyles.Shovel}
                             source={require('../imgs/imgsBWpng/BWshovel_1.png')}
@@ -261,7 +312,11 @@ function HomeKit(){
                             <Text style={styles.ItemTxt}>Shovel</Text>
                         </TouchableOpacity>
                         
-                        <TouchableOpacity style={{alignItems:"center"}}>
+                        <TouchableOpacity style={{alignItems:"center"}}
+                        onPress = {() => {
+                            setShowItem(true);
+                            SetItemPic(matches);
+                        }}>
                             <Image
                             style={ItemStyles.Matches}
                             source={require('../imgs/imgsBWpng/BWmatches_1.png')}
@@ -271,9 +326,9 @@ function HomeKit(){
                     </View>
                 </View>
 
-                {ItemPU}
-
             </ScrollView>
+
+            {ItemPU}
 
         </View>
         
