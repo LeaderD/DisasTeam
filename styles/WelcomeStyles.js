@@ -54,12 +54,7 @@ var styles = StyleSheet.create ({
         color: "#F04B53",
         fontSize: 18,
         textAlign: "center",
-    },
-
-
-
-
-
+    }
 })
 
 export default styles;

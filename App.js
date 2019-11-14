@@ -26,13 +26,13 @@ function App(){
       {/*<NavBar />*/}
       {/* <HomeKit /> */}
       {/* <WorkKit /> */}
-      <GrabNGoKit />
+      {/* <GrabNGoKit /> */}
       {/* <VehicleKit /> */}
       {/* <ItemPopUp/> */}
       {/* <LoginPage/> */}
       {/* <RegistrationPage /> */}
       {/* <Help /> */}
-      {/* <Route/> */}
+      <Route/>
     </View>
   )
 }

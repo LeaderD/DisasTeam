@@ -50,6 +50,7 @@ function Register(){
             <TouchableOpacity style={styles.NewRegistrationButton}
             onPress={()=>{
                 UserRegister();
+                Actions.Welcome()
             }}>
                 <Text style={styles.RegisterButtonText}> Create Account </Text>
             </TouchableOpacity>
