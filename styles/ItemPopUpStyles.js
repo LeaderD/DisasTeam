@@ -3,10 +3,10 @@ import {StyleSheet} from 'react-native';
 var PUStyles = StyleSheet.create ({
     container:{
         height: 150,
+        width: 350,
         backgroundColor: "#F04B53",
-        width: "100%",
         flexDirection:"row",
-        borderRadius: 6
+        borderRadius: 6,
     },
     ItemImg:{
         resizeMode: "contain",

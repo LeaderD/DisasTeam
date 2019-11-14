@@ -7,9 +7,9 @@ import {
 
 import Login from './comps/Login'
 import HomeKit from './comps/HomeKit'
-import WorkKit from './comps/WorkKit'
-import GrabNGoKit from './comps/GrabNGoKit'
-import VehicleKit from './comps/VehicleKit'
+//import WorkKit from './comps/WorkKit'
+import GrabNGoKit from './comps/GrabNGoKit';
+//import VehicleKit from './comps/VehicleKit'
 // import Welcome from './comps/Welcome'
 // import WhiteButton from './comps/WhiteButton'
 // import RedButton from './comps/RedButton'
@@ -30,10 +30,11 @@ function App(){
     <View style={{flex:1}}>
       {/* <Login/> */}
       {/* <Register /> */}
-      {/*<NavBar />*/}
-      {/* <HomeKit /> */}
+      {/* <Welcome /> */}
+      {/* <NavBar />*/}
+      <HomeKit />
       {/* <WorkKit /> */}
-      <GrabNGoKit />
+      {/* <GrabNGoKit /> */}
       {/* <VehicleKit /> */}
       {/* <ItemPopUp/> */}
       {/* <LoginPage/> */}

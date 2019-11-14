@@ -1,8 +1,19 @@
-import React from 'react';
-import {View, Text, Button, TouchableOpacity, Image, ScrollView} from 'react-native';
+import React, {useState} from 'react';
+import {View, Text, Button, TouchableOpacity, Image, ScrollView, Dimensions} from 'react-native';
 import styles from '../styles/HomeKitStyles';
 import ItemStyles from '../styles/ItemStyles';
 import NavBar from './NavBar';
+import ItemPopUp from './ItemPopUp';
+
+var tomatoes = require('../imgs/imgsBWpng/BWcannedfood_1.png');
+var crackers = require('../imgs/imgsBWpng/BWcrackers_1.png');
+var granola = require('../imgs/imgsBWpng/BWgranola_1.png');
+var firstaid = require('../imgs/imgsBWpng/BWmedicalkit_1.png');
+var drinkwater = require('../imgs/imgsBWpng/BWwater_1.png');
+var whistle = require('../imgs/imgsBWpng/BWwhistle_1.png');
+var flashlight = require('../imgs/imgsBWpng/BWflashlight_1.png');
+var idcopy = require('../imgs/imgsBWpng/BWid_1.png');
+var money = require('../imgs/imgsBWpng/BWmoney_1.png');
 
 function HomeKit(){
     return (
@@ -23,7 +34,7 @@ function HomeKit(){
                         <TouchableOpacity style={{alignItems:"center"}}> 
                             <Image
                             style={ItemStyles.CannedTomatoes}
-                            source={require('../imgs/imgsPng/cannedfood.png')}
+                            source={require('../imgs/imgsBWpng/BWcannedfood_1.png')}
                             />
                             <Text style={styles.ItemTxt}>Canned Tomatoes</Text>
                         </TouchableOpacity>
@@ -31,7 +42,7 @@ function HomeKit(){
                         <TouchableOpacity style={{alignItems:"center"}}>
                             <Image
                             style={ItemStyles.Crackers}
-                            source={require('../imgs/imgsPng/crackers.png')}
+                            source={require('../imgs/imgsBWpng/BWcrackers_1.png')}
                             />
                             <Text style={styles.ItemTxt}>Crackers</Text>
                         </TouchableOpacity>
@@ -39,7 +50,7 @@ function HomeKit(){
                         <TouchableOpacity style={{alignItems:"center"}}>
                             <Image
                             style={ItemStyles.Granola}
-                            source={require('../imgs/imgsPng/granola.png')}
+                            source={require('../imgs/imgsBWpng/BWgranola_1.png')}
                             />
                             <Text style={styles.ItemTxt}>Granola Bar</Text>
                         </TouchableOpacity>
@@ -49,7 +60,7 @@ function HomeKit(){
                         <TouchableOpacity style={{alignItems:"center"}}> 
                             <Image
                             style={ItemStyles.CookingWater}
-                            source={require('../imgs/imgsPng/cookingwater.png')}
+                            source={require('../imgs/imgsBWpng/BWcookingwater_1.png')}
                             />
                             <Text style={styles.ItemTxt}>Cooking Water</Text>
                         </TouchableOpacity>
