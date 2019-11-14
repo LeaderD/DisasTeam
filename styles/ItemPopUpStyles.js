@@ -1,12 +1,20 @@
 import {StyleSheet} from 'react-native';
 
 var PUStyles = StyleSheet.create ({
+    wrapper:{
+        position:'absolute',
+        width:"100%",
+        height:"100%",
+        justifyContent:'center',
+        alignItems:'center'
+    },
     container:{
         height: 150,
+        width: 350,
         backgroundColor: "#F04B53",
-        width: "100%",
         flexDirection:"row",
-        borderRadius: 6
+        borderRadius: 6,
+        zIndex:10
     },
     ItemImg:{
         resizeMode: "contain",

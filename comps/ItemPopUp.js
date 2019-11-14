@@ -1,14 +1,20 @@
 import React from 'react';
 import {View, TextInput, Image, TouchableOpacity, Text} from 'react-native';
-import PUStyles from '../styles/ItemPopUpStyles'
+import PUStyles from '../styles/ItemPopUpStyles';
 
-function ItemPopUp(ItemPic){
+function ItemPopUp(props){
+
+    var PickedSrc = null;
+
     return(
-    <View style={{height:"100%", width: "80%", justifyContent:"flex-end"}}>
+    <TouchableOpacity
+        style={PUStyles.wrapper}
+        onPress={()=>{props.setShowItem(false)}}
+    >
         <View style={PUStyles.container}>
             <Image
              style={PUStyles.ItemImg}
-             source={require('../imgs/imgsPng/baby.png')}/>
+             source={props.ItemPic}/>
         <View style={PUStyles.inputView}>
             <TextInput
               style={PUStyles.inputs}
@@ -20,7 +26,11 @@ function ItemPopUp(ItemPic){
               keyboardType="numeric">
             </TextInput>
         <View style={PUStyles.ButView}>
-        <TouchableOpacity style={PUStyles.CancelBut}>
+        <TouchableOpacity style={PUStyles.CancelBut}
+        onPress={()=>{
+            props.setShowItem(false)}
+        }
+        >
             <Text style={PUStyles.CancelButText}> CANCEL </Text>
         </TouchableOpacity>
         <TouchableOpacity
@@ -31,7 +41,7 @@ function ItemPopUp(ItemPic){
     </View>
     </View>
     </View>
-    </View>
+    </TouchableOpacity>
     )
 };
 
