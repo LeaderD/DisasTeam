@@ -5,12 +5,10 @@ import NavBar from './NavBar';
 
 function Kits(){
     return (
-        <View style={{backgroundColor: "#FFFEF3", height:"100%"}}>
-            <View style= {{alignItems:"center", height:"100%", width:"100%", position:"absolute"}}>
-                    <NavBar />
-                    </View>
+        <View style={{flex:1, justifyContent:'center', backgroundColor: "#FFFEF3"}}>
                 <Text style={styles.Title}>Kits</Text>
-                <View style={{flexDirection:"row", justifyContent:"center", marginTop:"40%"}}>
+
+                <View style={{flexWrap:'wrap', flex:1, width:'100%', flexDirection:"row", justifyContent:"center"}}>
                     <TouchableOpacity style={{alignItems:"center"}}>
                         <Image
                         style={styles.home}
@@ -24,17 +22,15 @@ function Kits(){
                         style={styles.work}
                         source={require('../imgs/imgsPng/work.png')}
                         />
-                        <Text style={styles.KitsTxt2}>Work</Text>
+                        <Text style={styles.KitsTxt1}>Work</Text>
                     </TouchableOpacity>
-                </View>
-
-                <View style={{flexDirection:"row", justifyContent:"center"}}>
+    
                     <TouchableOpacity style={{alignItems:"center"}}>
                         <Image
                         style={styles.grabngo}
                         source={require('../imgs/imgsPng/grabngo.png')}
                         />
-                        <Text style={styles.KitsTxt3}>Grab N' Go</Text>
+                        <Text style={styles.KitsTxt1}>Grab N' Go</Text>
                     </TouchableOpacity>
 
                     <TouchableOpacity style={{alignItems:"center"}}>
@@ -42,7 +38,7 @@ function Kits(){
                         style={styles.car}
                         source={require('../imgs/imgsPng/car.png')}
                         />
-                        <Text style={styles.KitsTxt4}>Vehicle</Text>
+                        <Text style={styles.KitsTxt1}>Vehicle</Text>
                     </TouchableOpacity>
                     </View>
             

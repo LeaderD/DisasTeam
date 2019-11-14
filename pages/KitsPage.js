@@ -9,8 +9,8 @@ function KitsPage(){
     <View style={{flex:1, justifyContent:'center'}}>
         <View style={{flex:1}}>
         <Kits/>
-        
     </View>
+    
         <NavBar/>
     </View>
    )
