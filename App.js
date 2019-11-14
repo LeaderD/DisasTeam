@@ -40,7 +40,7 @@ function App(){
       {/* <LoginPage/> */}
       {/* <RegistrationPage /> */}
       {/* <Help /> */}
-      {/* <Route/> */}
+      <Route/>
     </View>
   )
 }

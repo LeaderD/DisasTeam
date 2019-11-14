@@ -6,7 +6,7 @@ function Welcome(){
     return (
         <View style={styles.Display}>
             <Text style={styles.WelcomeTitle}>
-                Welcome Rebecca,
+                Welcome,
             </Text>
 
             <Text style={styles.WelcomePara}>
@@ -18,9 +18,12 @@ function Welcome(){
 
              <TouchableOpacity style={styles.LearnMoreButton}>
                 <Text style={styles.LearnMoreButtonText}> 
+                {/* <Image 
+                style={styles.LearnMoreArrow}
+                // source={require('../imgs/imgsPng/next1.png')} /> */}
                 Learn More
                 </Text>
-                    
+
             </TouchableOpacity>
 
             <TouchableOpacity style={styles.GetStartedButton}>

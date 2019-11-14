@@ -1,9 +1,35 @@
-import React from 'react';
-import {View, Text, TextInput, Button, Image, TouchableOpacity} from 'react-native';
+import React, {useState, useEffect} from 'react';
+import {View, Text, TextInput, Alert, Button, Image, TouchableOpacity} from 'react-native';
 import styles from '../styles/LoginStyles';
 import {Actions} from 'react-native-router-flux';
+import axios from 'axios';
+
 
 function Register(){
+    var UserRegister=async()=>{
+        let response = await fetch('http://142.232.167.31/emUrgency/user_registration.php',{
+            method:'POST',
+            header:{
+                'Accept': 'application/json',
+                'Content-Type':'application/json'
+            },
+            body:JSON.stringify({
+                email: email,
+                password: password,
+                name: name
+            })
+        })
+    
+        let data = await response.json();
+
+        if(data == "You've been registered!"){
+            Actions.Welcome()
+        }
+    }
+    
+    var email = "";
+    var password = "";
+    var name = "";
     return (
         <View style={styles.LoginPage}>
             <Image
@@ -21,7 +47,11 @@ function Register(){
             placeholder="Password"
             secureTextEntry={true}></TextInput>
 
-            <TouchableOpacity style={styles.NewRegistrationButton}>
+            <TouchableOpacity style={styles.NewRegistrationButton}
+            onPress={()=>{
+                UserRegister();
+                Actions.Welcome()
+            }}>
                 <Text style={styles.RegisterButtonText}> Create Account </Text>
             </TouchableOpacity>
             <TouchableOpacity 
