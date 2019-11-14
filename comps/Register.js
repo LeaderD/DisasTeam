@@ -6,6 +6,11 @@ import axios from 'axios';
 
 
 function Register(){
+
+    const [name, setName] = useState();
+    const [email, setEmail] = useState();
+    const [password, setPassword] = useState();
+
     var UserRegister=async()=>{
         let response = await fetch('http://142.232.167.31/emUrgency/user_registration.php',{
             method:'POST',
@@ -27,9 +32,7 @@ function Register(){
         }
     }
     
-    var email = "";
-    var password = "";
-    var name = "";
+    
     return (
         <View style={styles.LoginPage}>
             <Image
@@ -38,7 +41,7 @@ function Register(){
             />
             <TextInput
             style={styles.NewRegistrationText}
-            placeholder="Name"></TextInput>
+            placeholder="Name" onChangeText={(t)=>{setName(t)}}></TextInput>
             <TextInput
             style={styles.NewRegistrationText}
             placeholder="Email Address"></TextInput>
@@ -50,7 +53,6 @@ function Register(){
             <TouchableOpacity style={styles.NewRegistrationButton}
             onPress={()=>{
                 UserRegister();
-                Actions.Welcome()
             }}>
                 <Text style={styles.RegisterButtonText}> Create Account </Text>
             </TouchableOpacity>
