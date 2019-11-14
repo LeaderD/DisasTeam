@@ -2,7 +2,6 @@ import React, {useState, useEffect} from 'react';
 import {View, Text, TextInput, Alert, Button, Image, TouchableOpacity} from 'react-native';
 import styles from '../styles/LoginStyles';
 import {Actions} from 'react-native-router-flux';
-import axios from 'axios';
 
 
 function Register(){
@@ -44,10 +43,10 @@ function Register(){
             placeholder="Name" onChangeText={(t)=>{setName(t)}}></TextInput>
             <TextInput
             style={styles.NewRegistrationText}
-            placeholder="Email Address"></TextInput>
+            placeholder="Email Address" onChangeText={(t)=>{setEmail(t)}}></TextInput>
             <TextInput
             style={styles.NewRegistrationText}
-            placeholder="Password"
+            placeholder="Password" onChangeText={(t)=>{setPassword(t)}}
             secureTextEntry={true}></TextInput>
 
             <TouchableOpacity style={styles.NewRegistrationButton}
