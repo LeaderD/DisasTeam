@@ -38,11 +38,9 @@ function HomeKit(){
 
     if (showItem === true){
     ItemPU = (
-    //   <View style={{width: "100%", height:Dimensions.get('window').height, justifyContent:"center", alignItems:"center", position:"absolute", top: 0}}>
         <ItemPopUp
         setShowItem={setShowItem}
         ItemPic={ItemPic}/>
-    //   </View>
     )}
 
     return (
@@ -325,7 +323,6 @@ function HomeKit(){
                         </TouchableOpacity>
                     </View>
                 </View>
-
             </ScrollView>
 
             {ItemPU}
@@ -334,7 +331,5 @@ function HomeKit(){
         
     )
 }
-
-
 
 export default HomeKit; 
