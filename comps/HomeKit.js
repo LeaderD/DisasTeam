@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {View, Text, Button, TouchableOpacity, Image, ScrollView, Dimensions} from 'react-native';
 import styles from '../styles/HomeKitStyles';
 import ItemStyles from '../styles/ItemStyles';
@@ -28,10 +28,16 @@ var shovel = require('../imgs/imgsBWpng/BWshovel_1.png');
 var matches = require('../imgs/imgsBWpng/BWmatches_1.png');
 
 
+
+
 function HomeKit(){
+
+    
 
     const [showItem, setShowItem] = useState(false);
     const [ItemPic, SetItemPic] = useState('');
+    const [Tomato, setTomato] = useState(tomatoes);
+    const [Cracker, setCracker] = useState(crackers);
     //const [item1, setItem1] = useState({});
 
     var ItemPU = null;
@@ -40,7 +46,12 @@ function HomeKit(){
     ItemPU = (
         <ItemPopUp
         setShowItem={setShowItem}
-        ItemPic={ItemPic}/>
+        ItemPic={ItemPic}
+        setTomato={setTomato}
+        setCracker={setCracker}
+        SetItemPic={SetItemPic}
+        />
+        
     )}
 
     return (
@@ -62,10 +73,11 @@ function HomeKit(){
                         onPress = {() => {
                             setShowItem(true);
                             SetItemPic(tomatoes);
+                            console.log(tomatoes)
                         }}> 
                             <Image
                             style={ItemStyles.CannedTomatoes}
-                            source={require('../imgs/imgsBWpng/BWcannedfood_1.png')}
+                            source={Tomato}
                             />
                             <Text style={styles.ItemTxt}>Canned Tomatoes</Text>
                         </TouchableOpacity>
@@ -77,7 +89,7 @@ function HomeKit(){
                         }}>
                             <Image
                             style={ItemStyles.Crackers}
-                            source={require('../imgs/imgsBWpng/BWcrackers_1.png')}
+                            source={Cracker}
                             />
                             <Text style={styles.ItemTxt}>Crackers</Text>
                         </TouchableOpacity>

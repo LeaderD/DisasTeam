@@ -32,15 +32,15 @@ function App(){
       {/* <Register /> */}
       {/* <Welcome /> */}
       {/* <NavBar />*/}
-      {/* <HomeKit /> */}
-      <WorkKit />
+      <HomeKit />
+      {/* <WorkKit /> */}
       {/* <GrabNGoKit /> */}
       {/* <VehicleKit /> */}
       {/* <ItemPopUp/> */}
       {/* <LoginPage/> */}
       {/* <RegistrationPage /> */}
       {/* <Help /> */}
-      <Route/>
+      {/* <Route/> */}
     </View>
   )
 }
