@@ -45,6 +45,84 @@ function ItemPopUp(props){
                 props.setCracker(crackersCL);
                 props.SetItemPic(crackersCL);
             }
+            else if(props.ItemPic == 26){
+                props.setGranola(granolaCL);
+                props.SetItemPic(granolaCL);
+            }
+            else if(props.ItemPic == 27){
+                props.setCookWater(cookwaterCL);
+                props.SetItemPic(cookwaterCL);
+            }
+            else if(props.ItemPic == 28){
+                props.setFirstAid(firstaidCL);
+                props.SetItemPic(firstaidCL);
+            }
+            else if(props.ItemPic == 29){
+                props.setFlashlight(flashlightCL);
+                props.SetItemPic(flashlightCL);
+            }
+            else if(props.ItemPic == 30){
+                props.setCanOpener(canopenerCL);
+                props.SetItemPic(canopenerCL);
+            }
+            else if(props.ItemPic == 31){
+                props.setWhistle(whistleCL);
+                props.SetItemPic(whistleCL);
+            }
+            else if(props.ItemPic == 32){
+                props.setRadio(radioCL);
+                props.SetItemPic(radioCL);
+            }
+            else if(props.ItemPic == 33){
+                props.setFlare(flareCL);
+                props.SetItemPic(flareCL);
+            }
+            else if(props.ItemPic == 34){
+                props.setDocuments(documentsCL);
+                props.SetItemPic(documentsCL);
+            }
+            else if(props.ItemPic == 35){
+                props.setDrinkWater(drinkwaterCL);
+                props.SetItemPic(drinkwaterCL);
+            }
+            else if(props.ItemPic == 36){
+                props.setSpareKeys(sparekeysCL);
+                props.SetItemPic(sparekeysCL);
+            }
+            else if(props.ItemPic == 37){
+                props.setCandles(candlesCL);
+                props.SetItemPic(candlesCL);
+            }
+            else if(props.ItemPic == 38){
+                props.setClothes(clothesCL);
+                props.SetItemPic(clothesCL);
+            }
+            else if(props.ItemPic == 39){
+                props.setSnowBrush(snowbrushCL);
+                props.SetItemPic(snowbrushCL);
+            }
+            else if(props.ItemPic == 40){
+                props.setMedication(medicationCL);
+                props.SetItemPic(medicationCL);
+            }
+            else if(props.ItemPic == 41){
+                props.setMoney(moneyCL);
+                props.SetItemPic(moneyCL);
+            }
+            else if(props.ItemPic == 42){
+                props.setIdCopy(idcopyCL);
+                props.SetItemPic(idcopyCL);
+            }
+            else if(props.ItemPic == 43){
+                props.setShovel(shovelCL);
+                props.SetItemPic(shovelCL);
+            }
+            else if(props.ItemPic == 44){
+                props.setMatches(matchesCL);
+                props.SetItemPic(matchesCL);
+            }
+
+
             
         }}
         >

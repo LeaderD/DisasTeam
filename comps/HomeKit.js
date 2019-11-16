@@ -27,17 +27,31 @@ var idcopy = require('../imgs/imgsBWpng/BWid_1.png');
 var shovel = require('../imgs/imgsBWpng/BWshovel_1.png');
 var matches = require('../imgs/imgsBWpng/BWmatches_1.png');
 
-
-
-
 function HomeKit(){
-
-    
 
     const [showItem, setShowItem] = useState(false);
     const [ItemPic, SetItemPic] = useState('');
     const [Tomato, setTomato] = useState(tomatoes);
     const [Cracker, setCracker] = useState(crackers);
+    const [Granola, setGranola] = useState(granola);
+    const [CookWater, setCookWater] = useState(cookwater);
+    const [FirstAid, setFirstAid] = useState(firstaid);
+    const [Flashlight, setFlashlight] = useState(flashlight);
+    const [CanOpener, setCanOpener] = useState(canopener);
+    const [Whistle, setWhistle] = useState(whistle);
+    const [Radio, setRadio] = useState(radio);
+    const [Flare, setFlare] = useState(flare);
+    const [Documents, setDocuments] = useState(documents);
+    const [Drinkwater, setDrinkWater] = useState(drinkwater);
+    const [SpareKeys, setSpareKeys] = useState(sparekeys);
+    const [Candles, setCandles] = useState(candles);
+    const [Clothes, setClothes] = useState(clothes);
+    const [SnowBrush, setSnowBrush] = useState(snowbrush);
+    const [Medication, setMedication] = useState(medication);
+    const [Money, setMoney] = useState(money);
+    const [IdCopy, setIdCopy] = useState(idcopy);
+    const [Shovel, setShovel] = useState(shovel);
+    const [Matches, setMatches] = useState(matches);
     //const [item1, setItem1] = useState({});
 
     var ItemPU = null;
@@ -46,12 +60,31 @@ function HomeKit(){
     ItemPU = (
         <ItemPopUp
         setShowItem={setShowItem}
+        SetItemPic={SetItemPic}
         ItemPic={ItemPic}
+
         setTomato={setTomato}
         setCracker={setCracker}
-        SetItemPic={SetItemPic}
+        setGranola={setGranola}
+        setCookWater={setCookWater}
+        setFirstAid={setFirstAid}
+        setFlashlight={setFlashlight}
+        setCanOpener={setCanOpener}
+        setWhistle={setWhistle}
+        setRadio={setRadio}
+        setFlare={setFlare}
+        setDocuments={setDocuments}
+        setDrinkWater={setDrinkWater}
+        setSpareKeys={setSpareKeys}
+        setCandles={setCandles}
+        setClothes={setClothes}
+        setSnowBrush={setSnowBrush}
+        setMedication={setMedication}
+        setMoney={setMoney}
+        setIdCopy={setIdCopy}
+        setShovel={setShovel}
+        setMatches={setMatches}
         />
-        
     )}
 
     return (
@@ -73,7 +106,7 @@ function HomeKit(){
                         onPress = {() => {
                             setShowItem(true);
                             SetItemPic(tomatoes);
-                            console.log(tomatoes)
+                            console.log(tomatoes);
                         }}> 
                             <Image
                             style={ItemStyles.CannedTomatoes}
@@ -86,6 +119,7 @@ function HomeKit(){
                         onPress = {() => {
                             setShowItem(true);
                             SetItemPic(crackers);
+                            console.log(crackers);
                         }}>
                             <Image
                             style={ItemStyles.Crackers}
@@ -98,10 +132,11 @@ function HomeKit(){
                          onPress = {() => {
                             setShowItem(true);
                             SetItemPic(granola);
+                            console.log(granola);
                         }}>
                             <Image
                             style={ItemStyles.Granola}
-                            source={require('../imgs/imgsBWpng/BWgranola_1.png')}
+                            source={Granola}
                             />
                             <Text style={styles.ItemTxt}>Granola Bar</Text>
                         </TouchableOpacity>
@@ -115,7 +150,7 @@ function HomeKit(){
                         }}> 
                             <Image
                             style={ItemStyles.CookingWater}
-                            source={require('../imgs/imgsBWpng/BWcookingwater_1.png')}
+                            source={CookWater}
                             />
                             <Text style={styles.ItemTxt}>Cooking Water</Text>
                         </TouchableOpacity>
@@ -127,7 +162,7 @@ function HomeKit(){
                         }}>
                             <Image
                             style={ItemStyles.MedicalKit}
-                            source={require('../imgs/imgsBWpng/BWmedicalkit_1.png')}
+                            source={FirstAid}
                             />
                             <Text style={styles.ItemTxt}>Medical Kit</Text>
                         </TouchableOpacity>
@@ -139,7 +174,7 @@ function HomeKit(){
                         }}>
                             <Image
                             style={ItemStyles.Flashlight}
-                            source={require('../imgs/imgsBWpng/BWflashlight_1.png')}
+                            source={Flashlight}
                             />
                             <Text style={styles.ItemTxt}>Flashlight</Text>
                         </TouchableOpacity>
@@ -150,10 +185,12 @@ function HomeKit(){
                         onPress = {() => {
                             setShowItem(true);
                             SetItemPic(canopener);
+
                         }}> 
+                        {/* Image must be changed to correct one*/}
                             <Image
                             style={ItemStyles.CanOpener}
-                            source={require('../imgs/imgsBWpng/BWcanopener_1.png')}
+                            source={CanOpener}
                             />
                             <Text style={styles.ItemTxt}>Can Opener</Text>
                         </TouchableOpacity>
@@ -163,9 +200,10 @@ function HomeKit(){
                             setShowItem(true);
                             SetItemPic(whistle);
                         }}>
+                            {/* Image must be changed to correct one*/}
                             <Image
                             style={ItemStyles.Whistle}
-                            source={require('../imgs/imgsBWpng/BWwhistle_1.png')}
+                            source={Whistle}
                             />
                             <Text style={styles.ItemTxt}>Whistle</Text>
                         </TouchableOpacity>
@@ -177,7 +215,7 @@ function HomeKit(){
                         }}>
                             <Image
                             style={ItemStyles.Flashlight}
-                            source={require('../imgs/imgsBWpng/BWradio_1.png')}
+                            source={Radio}
                             />
                             <Text style={styles.ItemTxt}>Radio</Text>
                         </TouchableOpacity>
@@ -191,7 +229,7 @@ function HomeKit(){
                         }}> 
                             <Image
                             style={ItemStyles.Flare}
-                            source={require('../imgs/imgsBWpng/BWflare_1.png')}
+                            source={Flare}
                             />
                             <Text style={styles.ItemTxt}>Flare</Text>
                         </TouchableOpacity>
@@ -203,7 +241,7 @@ function HomeKit(){
                         }}>
                             <Image
                             style={ItemStyles.Documents}
-                            source={require('../imgs/imgsBWpng/BWdocument_1.png')}
+                            source={Documents}
                             />
                             <Text style={styles.ItemTxt}>Documents</Text>
                         </TouchableOpacity>
@@ -215,7 +253,7 @@ function HomeKit(){
                         }}>
                             <Image
                             style={ItemStyles.Water}
-                            source={require('../imgs/imgsBWpng/BWwater_1.png')}
+                            source={Drinkwater}
                             />
                             <Text style={styles.ItemTxt}>Water</Text>
                         </TouchableOpacity>
@@ -229,7 +267,7 @@ function HomeKit(){
                         }}> 
                             <Image
                             style={ItemStyles.SpareKeys}
-                            source={require('../imgs/imgsBWpng/BWkey_1.png')}
+                            source={SpareKeys}
                             />
                             <Text style={styles.ItemTxt}>Spare Keys</Text>
                         </TouchableOpacity>
@@ -241,7 +279,7 @@ function HomeKit(){
                         }}>
                             <Image
                             style={ItemStyles.Candles}
-                            source={require('../imgs/imgsBWpng/BWcandles_1.png')}
+                            source={Candles}
                             />
                             <Text style={styles.ItemTxt}>Candles</Text>
                         </TouchableOpacity>
@@ -253,7 +291,7 @@ function HomeKit(){
                         }}>
                             <Image
                             style={ItemStyles.Clothes}
-                            source={require('../imgs/imgsBWpng/BWclothes_1.png')}
+                            source={Clothes}
                             />
                             <Text style={styles.ItemTxt}>Clothes</Text>
                         </TouchableOpacity>
@@ -267,7 +305,7 @@ function HomeKit(){
                         }}> 
                             <Image
                             style={ItemStyles.SnowBrush}
-                            source={require('../imgs/imgsBWpng/BWsnowbrush_1.png')}
+                            source={SnowBrush}
                             />
                             <Text style={styles.ItemTxt}>Snow Brush</Text>
                         </TouchableOpacity>
@@ -279,7 +317,7 @@ function HomeKit(){
                         }}>
                             <Image
                             style={ItemStyles.Medication}
-                            source={require('../imgs/imgsBWpng/BWmeds_1.png')}
+                            source={Medication}
                             />
                             <Text style={styles.ItemTxt}>Medication</Text>
                         </TouchableOpacity>
@@ -291,7 +329,7 @@ function HomeKit(){
                         }}>
                             <Image
                             style={ItemStyles.Money}
-                            source={require('../imgs/imgsBWpng/BWmoney_1.png')}
+                            source={Money}
                             />
                             <Text style={styles.ItemTxt}>Money</Text>
                         </TouchableOpacity>
@@ -305,7 +343,7 @@ function HomeKit(){
                         }}> 
                             <Image
                             style={ItemStyles.ID}
-                            source={require('../imgs/imgsBWpng/BWid_1.png')}
+                            source={IdCopy}
                             />
                             <Text style={styles.ItemTxt}>ID</Text>
                         </TouchableOpacity>
@@ -317,7 +355,7 @@ function HomeKit(){
                         }}>
                             <Image
                             style={ItemStyles.Shovel}
-                            source={require('../imgs/imgsBWpng/BWshovel_1.png')}
+                            source={Shovel}
                             />
                             <Text style={styles.ItemTxt}>Shovel</Text>
                         </TouchableOpacity>
@@ -329,7 +367,7 @@ function HomeKit(){
                         }}>
                             <Image
                             style={ItemStyles.Matches}
-                            source={require('../imgs/imgsBWpng/BWmatches_1.png')}
+                            source={Matches}
                             />
                             <Text style={styles.ItemTxt}>Matches</Text>
                         </TouchableOpacity>
