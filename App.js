@@ -32,10 +32,10 @@ function App(){
       {/* <Register /> */}
       {/* <Welcome /> */}
       {/* <NavBar />*/}
-      <HomeKit />
+      {/* <HomeKit /> */}
       {/* <WorkKit /> */}
       {/* <GrabNGoKit /> */}
-      {/* <VehicleKit /> */}
+      <VehicleKit />
       {/* <ItemPopUp/> */}
       {/* <LoginPage/> */}
       {/* <RegistrationPage /> */}
