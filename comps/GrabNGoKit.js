@@ -44,7 +44,7 @@ function GrabNGoKit(){
         setClothes={setClothes}
         setMedication={setMedication}
         setFirstAid={setFirstAid}
-        setGranola={setGranol}
+        setGranola={setGranola}
         setDrinkWater={setDrinkWater}
         setWhistle={setWhistle}
         setFlashlight={setFlashlight}
