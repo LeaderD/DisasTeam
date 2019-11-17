@@ -6,12 +6,12 @@ import {Actions} from 'react-native-router-flux';
 
 function Register(){
 
-    const [name, setName] = useState();
-    const [email, setEmail] = useState();
-    const [password, setPassword] = useState();
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
 
     var UserRegister=async()=>{
-        let response = await fetch('http://142.232.167.31/emUrgency/user_registration.php',{
+        let response = await fetch('http://127.0.0.1/emUrgency/user_registration.php',{
             method:'POST',
             header:{
                 'Accept': 'application/json',
@@ -24,7 +24,9 @@ function Register(){
             })
         })
     
-        let data = await response.json();
+        // let data = await response.json();
+        let data = await response.text();
+        console.log(data);
 
         if(data == "You've been registered!"){
             Actions.Welcome()
@@ -50,8 +52,7 @@ function Register(){
             secureTextEntry={true}></TextInput>
 
             <TouchableOpacity style={styles.NewRegistrationButton}
-            onPress={()=>{
-                UserRegister();
+            onPress={()=>{UserRegister();
             }}>
                 <Text style={styles.RegisterButtonText}> Create Account </Text>
             </TouchableOpacity>

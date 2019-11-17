@@ -16,12 +16,12 @@ function Route() {
   return (
     <Router>
       <Stack key="root" hideNavBar={true}>
-        <Scene key="Login" component={LoginPage}  />
+        <Scene key="Login" component={LoginPage}  initial={true}/>
         <Scene key="Register" component={RegistrationPage} />
         <Scene key="Welcome" component={WelcomePage}/>
         <Scene key="Kits" component={KitsPage} />
         {/* <Scene key="Dashboard" component={DashboardPage} /> */}
-        <Scene key="Profile" component={ProfilePage} initial={true} />
+        <Scene key="Profile" component={ProfilePage} />
       </Stack>
     </Router>
   );
