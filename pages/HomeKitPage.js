@@ -5,8 +5,11 @@ import HomeKit from '../comps/HomeKit';
 
 function HomeKitPage(){
     return (
-     <View>
-         <HomeKit />
+     <View style={{flex:1, justifyContent:'center'}}>
+         <View style={{flex:1}}>
+         <HomeKit/>
+     </View>
+         <NavBar/>
      </View>
     )
  };

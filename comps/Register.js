@@ -2,12 +2,16 @@ import React, {useState, useEffect} from 'react';
 import {View, Text, TextInput, Alert, Button, Image, TouchableOpacity} from 'react-native';
 import styles from '../styles/LoginStyles';
 import {Actions} from 'react-native-router-flux';
-import axios from 'axios';
 
 
 function Register(){
+
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
     var UserRegister=async()=>{
-        let response = await fetch('http://142.232.167.31/emUrgency/user_registration.php',{
+        let response = await fetch('http://192.168.0.19/emUrgency/user_registration.php',{
             method:'POST',
             header:{
                 'Accept': 'application/json',
@@ -20,16 +24,16 @@ function Register(){
             })
         })
     
-        let data = await response.json();
+        // let data = await response.json();
+        let data = await response.text();
+        console.log(data);
 
         if(data == "You've been registered!"){
             Actions.Welcome()
         }
     }
     
-    var email = "";
-    var password = "";
-    var name = "";
+    
     return (
         <View style={styles.LoginPage}>
             <Image
@@ -38,19 +42,17 @@ function Register(){
             />
             <TextInput
             style={styles.NewRegistrationText}
-            placeholder="Name"></TextInput>
+            placeholder="Name" onChangeText={(t)=>{setName(t)}}></TextInput>
             <TextInput
             style={styles.NewRegistrationText}
-            placeholder="Email Address"></TextInput>
+            placeholder="Email Address" onChangeText={(t)=>{setEmail(t)}}></TextInput>
             <TextInput
             style={styles.NewRegistrationText}
-            placeholder="Password"
+            placeholder="Password" onChangeText={(t)=>{setPassword(t)}}
             secureTextEntry={true}></TextInput>
 
             <TouchableOpacity style={styles.NewRegistrationButton}
-            onPress={()=>{
-                UserRegister();
-                Actions.Welcome()
+            onPress={()=>{UserRegister();
             }}>
                 <Text style={styles.RegisterButtonText}> Create Account </Text>
             </TouchableOpacity>

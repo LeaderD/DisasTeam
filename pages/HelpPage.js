@@ -1,17 +1,17 @@
 import React from 'react';
 import {View} from 'react-native';
 
-import WorkKit from '../comps/WorkKit'
+import Help from '../comps/Help'
 
-function WorkKitPage(){
+function HelpPage(){
     return (
      <View style={{flex:1, justifyContent:'center'}}>
          <View style={{flex:1}}>
-         <WorkKit/>
+         <Help/>
      </View>
          <NavBar/>
      </View>
     )
  };
  
- export default WorkKitPage;
+ export default HelpPage;
