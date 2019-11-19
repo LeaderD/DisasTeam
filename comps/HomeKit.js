@@ -27,12 +27,16 @@ var idcopy = [require('../imgs/imgsBWpng/BWid_1.png'), require('../imgs/imgsPng/
 var shovel = [require('../imgs/imgsBWpng/BWshovel_1.png'), require('../imgs/imgsPng/shovel.png')];
 var matches = [require('../imgs/imgsBWpng/BWmatches_1.png'), require('../imgs/imgsPng/matches.png')];
 
+var arr = [tomatoes, crackers, granola, cookwater, firstaid, flashlight, canopener, whistle, radio, flare,
+  documents, drinkwater, sparekeys, candles, clothes, snowbrush, medication, money, idcopy, shovel, matches]
 
+var names = ["Canned Tomatoes", "Crackers"]
 function HomeKit(){
 
     const [showItem, setShowItem] = useState(false);
     const [ItemPic, SetItemPic] = useState('');
     const [curItem, setCurItem] = useState([]);
+    const [items, setItems] = useState(arr);
 
     var ItemPU = null;
 
@@ -60,286 +64,35 @@ function HomeKit(){
             </View>
 
             <ScrollView>
-                <View style={{height: 1050}}>
-                    <View style={{flexDirection:"row", justifyContent:"center", top: 20}}>
-                        <TouchableOpacity style={{alignItems:"center"}}
-                        onPress = {() => {
-                            setShowItem(true);
-                            SetItemPic(tomatoes[0]);
-                            setCurItem(tomatoes);
-                        }}> 
-                            <Image
-                            style={ItemStyles.CannedTomatoes}
-                            source={tomatoes[0]}
-                            />
-                            <Text style={styles.ItemTxt}>Canned Tomatoes</Text>
-                        </TouchableOpacity>
+                <View style={{flex: 1, flexWrap:"wrap", flexDirection:"row", justifyContent:"center", alignItems:"center" }}>
+                  {items.map((o,i)=>{
+                    return (
+                      <TouchableOpacity style={{alignItems:"center"}}
+                      onPress = {() => {
+                          setShowItem(true);
+                          SetItemPic(o[0]);
+                          setCurItem(o);
+                      }}>
+                          <Image
+                          style={ItemStyles.CannedTomatoes}
+                          source={o[0]}
+                          />
+                          <Text style={styles.ItemTxt}>{names[i] || ""}</Text>
+                      </TouchableOpacity>
+                    )
+                  })
+                }
 
-                        <TouchableOpacity style={{alignItems:"center"}}
-                        onPress = {() => {
-                            setShowItem(true);
-                            SetItemPic(crackers[0]);
-                            console.log(crackers);
-                        }}>
-                            <Image
-                            style={ItemStyles.Crackers}
-                            source={crackers[0]}
-                            />
-                            <Text style={styles.ItemTxt}>Crackers</Text>
-                        </TouchableOpacity>
 
-                        <TouchableOpacity style={{alignItems:"center"}}
-                         onPress = {() => {
-                            setShowItem(true);
-                            SetItemPic(granola[0]);
-                            console.log(granola);
-                        }}>
-                            <Image
-                            style={ItemStyles.Granola}
-                            source={granola[0]}
-                            />
-                            <Text style={styles.ItemTxt}>Granola Bar</Text>
-                        </TouchableOpacity>
-                    </View>
 
-                    <View style={{flexDirection:"row", justifyContent:"center", top: 60}}>
-                        <TouchableOpacity style={{alignItems:"center"}}
-                        onPress = {() => {
-                            setShowItem(true);
-                            SetItemPic(cookwater[0]);
-                        }}> 
-                            <Image
-                            style={ItemStyles.CookingWater}
-                            source={cookwater[0]}
-                            />
-                            <Text style={styles.ItemTxt}>Cooking Water</Text>
-                        </TouchableOpacity>
-
-                        <TouchableOpacity style={{alignItems:"center"}}
-                        onPress = {() => {
-                            setShowItem(true);
-                            SetItemPic(firstaid[0]);
-                        }}>
-                            <Image
-                            style={ItemStyles.MedicalKit}
-                            source={firstaid[0]}
-                            />
-                            <Text style={styles.ItemTxt}>Medical Kit</Text>
-                        </TouchableOpacity>
-
-                        <TouchableOpacity style={{alignItems:"center"}}
-                        onPress = {() => {
-                            setShowItem(true);
-                            SetItemPic(flashlight[0]);
-                        }}>
-                            <Image
-                            style={ItemStyles.Flashlight}
-                            source={flashlight[0]}
-                            />
-                            <Text style={styles.ItemTxt}>Flashlight</Text>
-                        </TouchableOpacity>
-                    </View>
-
-                    <View style={{flexDirection:"row", justifyContent:"center", top: 100}}>
-                        <TouchableOpacity style={{alignItems:"center"}}
-                        onPress = {() => {
-                            setShowItem(true);
-                            SetItemPic(canopener[0]);
-
-                        }}> 
-                        {/* Image must be changed to correct one*/}
-                            <Image
-                            style={ItemStyles.CanOpener}
-                            source={canopener[0]}
-                            />
-                            <Text style={styles.ItemTxt}>Can Opener</Text>
-                        </TouchableOpacity>
-
-                        <TouchableOpacity style={{alignItems:"center"}}
-                        onPress = {() => {
-                            setShowItem(true);
-                            SetItemPic(whistle[0]);
-                        }}>
-                            {/* Image must be changed to correct one*/}
-                            <Image
-                            style={ItemStyles.Whistle}
-                            source={whistle[0]}
-                            />
-                            <Text style={styles.ItemTxt}>Whistle</Text>
-                        </TouchableOpacity>
-                        
-                        <TouchableOpacity style={{alignItems:"center"}}
-                        onPress = {() => {
-                            setShowItem(true);
-                            SetItemPic(radio[0]);
-                        }}>
-                            <Image
-                            style={ItemStyles.Flashlight}
-                            source={radio[0]}
-                            />
-                            <Text style={styles.ItemTxt}>Radio</Text>
-                        </TouchableOpacity>
-                    </View>
-
-                    <View style={{flexDirection:"row", justifyContent:"center", top: 140}}>
-                        <TouchableOpacity style={{alignItems:"center"}}
-                        onPress = {() => {
-                            setShowItem(true);
-                            SetItemPic(flare[0]);
-                        }}> 
-                            <Image
-                            style={ItemStyles.Flare}
-                            source={flare[0]}
-                            />
-                            <Text style={styles.ItemTxt}>Flare</Text>
-                        </TouchableOpacity>
-
-                        <TouchableOpacity style={{alignItems:"center"}}
-                        onPress = {() => {
-                            setShowItem(true);
-                            SetItemPic(documents[0]);
-                        }}>
-                            <Image
-                            style={ItemStyles.Documents}
-                            source={documents[0]}
-                            />
-                            <Text style={styles.ItemTxt}>Documents</Text>
-                        </TouchableOpacity>
-                        
-                        <TouchableOpacity style={{alignItems:"center"}}
-                        onPress = {() => {
-                            setShowItem(true);
-                            SetItemPic(drinkwater[0]);
-                        }}>
-                            <Image
-                            style={ItemStyles.Water}
-                            source={drinkwater[0]}
-                            />
-                            <Text style={styles.ItemTxt}>Water</Text>
-                        </TouchableOpacity>
-                    </View>
-
-                    <View style={{flexDirection:"row", justifyContent:"center", top: 180}}>
-                        <TouchableOpacity style={{alignItems:"center"}}
-                        onPress = {() => {
-                            setShowItem(true);
-                            SetItemPic(sparekeys[0]);
-                        }}> 
-                            <Image
-                            style={ItemStyles.SpareKeys}
-                            source={sparekeys[0]}
-                            />
-                            <Text style={styles.ItemTxt}>Spare Keys</Text>
-                        </TouchableOpacity>
-
-                        <TouchableOpacity style={{alignItems:"center"}}
-                        onPress = {() => {
-                            setShowItem(true);
-                            SetItemPic(candles[0]);
-                        }}>
-                            <Image
-                            style={ItemStyles.Candles}
-                            source={candles[0]}
-                            />
-                            <Text style={styles.ItemTxt}>Candles</Text>
-                        </TouchableOpacity>
-                        
-                        <TouchableOpacity style={{alignItems:"center"}}
-                        onPress = {() => {
-                            setShowItem(true);
-                            SetItemPic(clothes[0]);
-                        }}>
-                            <Image
-                            style={ItemStyles.Clothes}
-                            source={clothes[0]}
-                            />
-                            <Text style={styles.ItemTxt}>Clothes</Text>
-                        </TouchableOpacity>
-                    </View>
-
-                    <View style={{flexDirection:"row", justifyContent:"center", top: 220}}>
-                        <TouchableOpacity style={{alignItems:"center"}}
-                        onPress = {() => {
-                            setShowItem(true);
-                            SetItemPic(snowbrush[0]);
-                        }}> 
-                            <Image
-                            style={ItemStyles.SnowBrush}
-                            source={snowbrush[0]}
-                            />
-                            <Text style={styles.ItemTxt}>Snow Brush</Text>
-                        </TouchableOpacity>
-
-                        <TouchableOpacity style={{alignItems:"center"}}
-                        onPress = {() => {
-                            setShowItem(true);
-                            SetItemPic(medication[0]);
-                        }}>
-                            <Image
-                            style={ItemStyles.Medication}
-                            source={medication[0]}
-                            />
-                            <Text style={styles.ItemTxt}>Medication</Text>
-                        </TouchableOpacity>
-                        
-                        <TouchableOpacity style={{alignItems:"center"}}
-                        onPress = {() => {
-                            setShowItem(true);
-                            SetItemPic(money[0]);
-                        }}>
-                            <Image
-                            style={ItemStyles.Money}
-                            source={money[0]}
-                            />
-                            <Text style={styles.ItemTxt}>Money</Text>
-                        </TouchableOpacity>
-                    </View>
-
-                    <View style={{flexDirection:"row", justifyContent:"center", top: 260}}>
-                        <TouchableOpacity style={{alignItems:"center"}}
-                        onPress = {() => {
-                            setShowItem(true);
-                            SetItemPic(idcopy[0]);
-                        }}> 
-                            <Image
-                            style={ItemStyles.ID}
-                            source={idcopy[0]}
-                            />
-                            <Text style={styles.ItemTxt}>ID</Text>
-                        </TouchableOpacity>
-
-                        <TouchableOpacity style={{alignItems:"center"}}
-                        onPress = {() => {
-                            setShowItem(true);
-                            SetItemPic(shovel[0]);
-                        }}>
-                            <Image
-                            style={ItemStyles.Shovel}
-                            source={shovel[0]}
-                            />
-                            <Text style={styles.ItemTxt}>Shovel</Text>
-                        </TouchableOpacity>
-                        
-                        <TouchableOpacity style={{alignItems:"center"}}
-                        onPress = {() => {
-                            setShowItem(true);
-                            SetItemPic(matches[0]);
-                        }}>
-                            <Image
-                            style={ItemStyles.Matches}
-                            source={matches[0]}
-                            />
-                            <Text style={styles.ItemTxt}>Matches</Text>
-                        </TouchableOpacity>
-                    </View>
                 </View>
             </ScrollView>
 
             {ItemPU}
 
         </View>
-        
+
     )
 }
 
-export default HomeKit; 
+export default HomeKit;

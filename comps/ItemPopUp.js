@@ -10,15 +10,14 @@ function ItemPopUp(props){
     var PickedSrc = null;
 
     var setval = null;
-    
+
 
     var Update = (
         <TouchableOpacity style={PUStyles.UpdateBut}
         onPress={()=>{
-
             console.log(props.curItem);
             props.setShowItem(false);
-            props.SetItemPic(props.curItem[1])
+            //props.SetItemPic(props.curItem[1]);
         }}
         >
              <Text
@@ -26,7 +25,7 @@ function ItemPopUp(props){
         </TouchableOpacity>
     );
 
-    
+
 
     return(
     <TouchableOpacity
