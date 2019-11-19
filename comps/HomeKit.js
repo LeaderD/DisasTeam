@@ -5,54 +5,34 @@ import ItemStyles from '../styles/ItemStyles';
 import NavBar from './NavBar';
 import ItemPopUp from './ItemPopUp';
 
-var tomatoes = require('../imgs/imgsBWpng/BWcannedfood_1.png');
-var crackers = require('../imgs/imgsBWpng/BWcrackers_1.png');
-var granola = require('../imgs/imgsBWpng/BWgranola_1.png');
-var cookwater = require('../imgs/imgsBWpng/BWcookingwater_1.png');
-var firstaid = require('../imgs/imgsBWpng/BWmedicalkit_1.png');
-var flashlight = require('../imgs/imgsBWpng/BWflashlight_1.png');
-var canopener = require('../imgs/imgsBWpng/BWcanopener_1.png');
-var whistle = require('../imgs/imgsBWpng/BWwhistle_1.png');
-var radio = require('../imgs/imgsBWpng/BWradio_1.png');
-var flare = require('../imgs/imgsBWpng/BWflare_1.png');
-var documents = require('../imgs/imgsBWpng/BWdocument_1.png');
-var drinkwater = require('../imgs/imgsBWpng/BWwater_1.png');
-var sparekeys = require('../imgs/imgsBWpng/BWkey_1.png');
-var candles = require('../imgs/imgsBWpng/BWcandles_1.png');
-var clothes = require('../imgs/imgsBWpng/BWclothes_1.png');
-var snowbrush = require('../imgs/imgsBWpng/BWsnowbrush_1.png');
-var medication = require('../imgs/imgsBWpng/BWmeds_1.png');
-var money = require('../imgs/imgsBWpng/BWmoney_1.png');
-var idcopy = require('../imgs/imgsBWpng/BWid_1.png');
-var shovel = require('../imgs/imgsBWpng/BWshovel_1.png');
-var matches = require('../imgs/imgsBWpng/BWmatches_1.png');
+var tomatoes = [require('../imgs/imgsBWpng/BWcannedfood_1.png'), require('../imgs/imgsPng/cannedfood.png')];
+var crackers = [require('../imgs/imgsBWpng/BWcrackers_1.png'), require('../imgs/imgsPng/crackers.png')];
+var granola = [require('../imgs/imgsBWpng/BWgranola_1.png'), require('../imgs/imgsPng/granola.png')];
+var cookwater = [require('../imgs/imgsBWpng/BWcookingwater_1.png'), require('../imgs/imgsPng/cookingwater.png')];
+var firstaid = [require('../imgs/imgsBWpng/BWmedicalkit_1.png'), require('../imgs/imgsPng/medicalkit.png')];
+var flashlight = [require('../imgs/imgsBWpng/BWflashlight_1.png'), require('../imgs/imgsPng/flashlight.png')];
+var canopener = [require('../imgs/imgsBWpng/BWcanopener_1.png'), require('../imgs/imgsPng/canopener.png')];
+var whistle = [require('../imgs/imgsBWpng/BWwhistle_1.png'), require('../imgs/imgsPng/whistle.png')];
+var radio = [require('../imgs/imgsBWpng/BWradio_1.png'), require('../imgs/imgsPng/radio.png')];
+var flare = [require('../imgs/imgsBWpng/BWflare_1.png'), require('../imgs/imgsPng/flare.png')];
+var documents = [require('../imgs/imgsBWpng/BWdocument_1.png'), require('../imgs/imgsPng/document.png')];
+var drinkwater = [require('../imgs/imgsBWpng/BWwater_1.png'), require('../imgs/imgsPng/water.png')];
+var sparekeys = [require('../imgs/imgsBWpng/BWkey_1.png'), require('../imgs/imgsPng/key.png')];
+var candles = [require('../imgs/imgsBWpng/BWcandles_1.png'), require('../imgs/imgsPng/candles.png')];
+var clothes = [require('../imgs/imgsBWpng/BWclothes_1.png'), require('../imgs/imgsPng/clothes.png')];
+var snowbrush = [require('../imgs/imgsBWpng/BWsnowbrush_1.png'), require('../imgs/imgsPng/snowbrush.png')];
+var medication = [require('../imgs/imgsBWpng/BWmeds_1.png'), require('../imgs/imgsPng/meds.png')];
+var money = [require('../imgs/imgsBWpng/BWmoney_1.png'), require('../imgs/imgsPng/money.png')];
+var idcopy = [require('../imgs/imgsBWpng/BWid_1.png'), require('../imgs/imgsPng/id.png')];
+var shovel = [require('../imgs/imgsBWpng/BWshovel_1.png'), require('../imgs/imgsPng/shovel.png')];
+var matches = [require('../imgs/imgsBWpng/BWmatches_1.png'), require('../imgs/imgsPng/matches.png')];
+
 
 function HomeKit(){
 
     const [showItem, setShowItem] = useState(false);
     const [ItemPic, SetItemPic] = useState('');
-    const [Tomato, setTomato] = useState(tomatoes);
-    const [Cracker, setCracker] = useState(crackers);
-    const [Granola, setGranola] = useState(granola);
-    const [CookWater, setCookWater] = useState(cookwater);
-    const [FirstAid, setFirstAid] = useState(firstaid);
-    const [Flashlight, setFlashlight] = useState(flashlight);
-    const [CanOpener, setCanOpener] = useState(canopener);
-    const [Whistle, setWhistle] = useState(whistle);
-    const [Radio, setRadio] = useState(radio);
-    const [Flare, setFlare] = useState(flare);
-    const [Documents, setDocuments] = useState(documents);
-    const [Drinkwater, setDrinkWater] = useState(drinkwater);
-    const [SpareKeys, setSpareKeys] = useState(sparekeys);
-    const [Candles, setCandles] = useState(candles);
-    const [Clothes, setClothes] = useState(clothes);
-    const [SnowBrush, setSnowBrush] = useState(snowbrush);
-    const [Medication, setMedication] = useState(medication);
-    const [Money, setMoney] = useState(money);
-    const [IdCopy, setIdCopy] = useState(idcopy);
-    const [Shovel, setShovel] = useState(shovel);
-    const [Matches, setMatches] = useState(matches);
-    //const [item1, setItem1] = useState({});
+    const [curItem, setCurItem] = useState([]);
 
     var ItemPU = null;
 
@@ -62,28 +42,8 @@ function HomeKit(){
         setShowItem={setShowItem}
         SetItemPic={SetItemPic}
         ItemPic={ItemPic}
+        curItem={curItem}
 
-        setTomato={setTomato}
-        setCracker={setCracker}
-        setGranola={setGranola}
-        setCookWater={setCookWater}
-        setFirstAid={setFirstAid}
-        setFlashlight={setFlashlight}
-        setCanOpener={setCanOpener}
-        setWhistle={setWhistle}
-        setRadio={setRadio}
-        setFlare={setFlare}
-        setDocuments={setDocuments}
-        setDrinkWater={setDrinkWater}
-        setSpareKeys={setSpareKeys}
-        setCandles={setCandles}
-        setClothes={setClothes}
-        setSnowBrush={setSnowBrush}
-        setMedication={setMedication}
-        setMoney={setMoney}
-        setIdCopy={setIdCopy}
-        setShovel={setShovel}
-        setMatches={setMatches}
         />
     )}
 
@@ -105,12 +65,12 @@ function HomeKit(){
                         <TouchableOpacity style={{alignItems:"center"}}
                         onPress = {() => {
                             setShowItem(true);
-                            SetItemPic(tomatoes);
-                            console.log(tomatoes);
+                            SetItemPic(tomatoes[0]);
+                            setCurItem(tomatoes);
                         }}> 
                             <Image
                             style={ItemStyles.CannedTomatoes}
-                            source={Tomato}
+                            source={tomatoes[0]}
                             />
                             <Text style={styles.ItemTxt}>Canned Tomatoes</Text>
                         </TouchableOpacity>
@@ -118,12 +78,12 @@ function HomeKit(){
                         <TouchableOpacity style={{alignItems:"center"}}
                         onPress = {() => {
                             setShowItem(true);
-                            SetItemPic(crackers);
+                            SetItemPic(crackers[0]);
                             console.log(crackers);
                         }}>
                             <Image
                             style={ItemStyles.Crackers}
-                            source={Cracker}
+                            source={crackers[0]}
                             />
                             <Text style={styles.ItemTxt}>Crackers</Text>
                         </TouchableOpacity>
@@ -131,12 +91,12 @@ function HomeKit(){
                         <TouchableOpacity style={{alignItems:"center"}}
                          onPress = {() => {
                             setShowItem(true);
-                            SetItemPic(granola);
+                            SetItemPic(granola[0]);
                             console.log(granola);
                         }}>
                             <Image
                             style={ItemStyles.Granola}
-                            source={Granola}
+                            source={granola[0]}
                             />
                             <Text style={styles.ItemTxt}>Granola Bar</Text>
                         </TouchableOpacity>
@@ -146,11 +106,11 @@ function HomeKit(){
                         <TouchableOpacity style={{alignItems:"center"}}
                         onPress = {() => {
                             setShowItem(true);
-                            SetItemPic(cookwater);
+                            SetItemPic(cookwater[0]);
                         }}> 
                             <Image
                             style={ItemStyles.CookingWater}
-                            source={CookWater}
+                            source={cookwater[0]}
                             />
                             <Text style={styles.ItemTxt}>Cooking Water</Text>
                         </TouchableOpacity>
@@ -158,11 +118,11 @@ function HomeKit(){
                         <TouchableOpacity style={{alignItems:"center"}}
                         onPress = {() => {
                             setShowItem(true);
-                            SetItemPic(firstaid);
+                            SetItemPic(firstaid[0]);
                         }}>
                             <Image
                             style={ItemStyles.MedicalKit}
-                            source={FirstAid}
+                            source={firstaid[0]}
                             />
                             <Text style={styles.ItemTxt}>Medical Kit</Text>
                         </TouchableOpacity>
@@ -170,11 +130,11 @@ function HomeKit(){
                         <TouchableOpacity style={{alignItems:"center"}}
                         onPress = {() => {
                             setShowItem(true);
-                            SetItemPic(flashlight);
+                            SetItemPic(flashlight[0]);
                         }}>
                             <Image
                             style={ItemStyles.Flashlight}
-                            source={Flashlight}
+                            source={flashlight[0]}
                             />
                             <Text style={styles.ItemTxt}>Flashlight</Text>
                         </TouchableOpacity>
@@ -184,13 +144,13 @@ function HomeKit(){
                         <TouchableOpacity style={{alignItems:"center"}}
                         onPress = {() => {
                             setShowItem(true);
-                            SetItemPic(canopener);
+                            SetItemPic(canopener[0]);
 
                         }}> 
                         {/* Image must be changed to correct one*/}
                             <Image
                             style={ItemStyles.CanOpener}
-                            source={CanOpener}
+                            source={canopener[0]}
                             />
                             <Text style={styles.ItemTxt}>Can Opener</Text>
                         </TouchableOpacity>
@@ -198,12 +158,12 @@ function HomeKit(){
                         <TouchableOpacity style={{alignItems:"center"}}
                         onPress = {() => {
                             setShowItem(true);
-                            SetItemPic(whistle);
+                            SetItemPic(whistle[0]);
                         }}>
                             {/* Image must be changed to correct one*/}
                             <Image
                             style={ItemStyles.Whistle}
-                            source={Whistle}
+                            source={whistle[0]}
                             />
                             <Text style={styles.ItemTxt}>Whistle</Text>
                         </TouchableOpacity>
@@ -211,11 +171,11 @@ function HomeKit(){
                         <TouchableOpacity style={{alignItems:"center"}}
                         onPress = {() => {
                             setShowItem(true);
-                            SetItemPic(radio);
+                            SetItemPic(radio[0]);
                         }}>
                             <Image
                             style={ItemStyles.Flashlight}
-                            source={Radio}
+                            source={radio[0]}
                             />
                             <Text style={styles.ItemTxt}>Radio</Text>
                         </TouchableOpacity>
@@ -225,11 +185,11 @@ function HomeKit(){
                         <TouchableOpacity style={{alignItems:"center"}}
                         onPress = {() => {
                             setShowItem(true);
-                            SetItemPic(flare);
+                            SetItemPic(flare[0]);
                         }}> 
                             <Image
                             style={ItemStyles.Flare}
-                            source={Flare}
+                            source={flare[0]}
                             />
                             <Text style={styles.ItemTxt}>Flare</Text>
                         </TouchableOpacity>
@@ -237,11 +197,11 @@ function HomeKit(){
                         <TouchableOpacity style={{alignItems:"center"}}
                         onPress = {() => {
                             setShowItem(true);
-                            SetItemPic(documents);
+                            SetItemPic(documents[0]);
                         }}>
                             <Image
                             style={ItemStyles.Documents}
-                            source={Documents}
+                            source={documents[0]}
                             />
                             <Text style={styles.ItemTxt}>Documents</Text>
                         </TouchableOpacity>
@@ -249,11 +209,11 @@ function HomeKit(){
                         <TouchableOpacity style={{alignItems:"center"}}
                         onPress = {() => {
                             setShowItem(true);
-                            SetItemPic(drinkwater);
+                            SetItemPic(drinkwater[0]);
                         }}>
                             <Image
                             style={ItemStyles.Water}
-                            source={Drinkwater}
+                            source={drinkwater[0]}
                             />
                             <Text style={styles.ItemTxt}>Water</Text>
                         </TouchableOpacity>
@@ -263,11 +223,11 @@ function HomeKit(){
                         <TouchableOpacity style={{alignItems:"center"}}
                         onPress = {() => {
                             setShowItem(true);
-                            SetItemPic(sparekeys);
+                            SetItemPic(sparekeys[0]);
                         }}> 
                             <Image
                             style={ItemStyles.SpareKeys}
-                            source={SpareKeys}
+                            source={sparekeys[0]}
                             />
                             <Text style={styles.ItemTxt}>Spare Keys</Text>
                         </TouchableOpacity>
@@ -275,11 +235,11 @@ function HomeKit(){
                         <TouchableOpacity style={{alignItems:"center"}}
                         onPress = {() => {
                             setShowItem(true);
-                            SetItemPic(candles);
+                            SetItemPic(candles[0]);
                         }}>
                             <Image
                             style={ItemStyles.Candles}
-                            source={Candles}
+                            source={candles[0]}
                             />
                             <Text style={styles.ItemTxt}>Candles</Text>
                         </TouchableOpacity>
@@ -287,11 +247,11 @@ function HomeKit(){
                         <TouchableOpacity style={{alignItems:"center"}}
                         onPress = {() => {
                             setShowItem(true);
-                            SetItemPic(clothes);
+                            SetItemPic(clothes[0]);
                         }}>
                             <Image
                             style={ItemStyles.Clothes}
-                            source={Clothes}
+                            source={clothes[0]}
                             />
                             <Text style={styles.ItemTxt}>Clothes</Text>
                         </TouchableOpacity>
@@ -301,11 +261,11 @@ function HomeKit(){
                         <TouchableOpacity style={{alignItems:"center"}}
                         onPress = {() => {
                             setShowItem(true);
-                            SetItemPic(snowbrush);
+                            SetItemPic(snowbrush[0]);
                         }}> 
                             <Image
                             style={ItemStyles.SnowBrush}
-                            source={SnowBrush}
+                            source={snowbrush[0]}
                             />
                             <Text style={styles.ItemTxt}>Snow Brush</Text>
                         </TouchableOpacity>
@@ -313,11 +273,11 @@ function HomeKit(){
                         <TouchableOpacity style={{alignItems:"center"}}
                         onPress = {() => {
                             setShowItem(true);
-                            SetItemPic(medication);
+                            SetItemPic(medication[0]);
                         }}>
                             <Image
                             style={ItemStyles.Medication}
-                            source={Medication}
+                            source={medication[0]}
                             />
                             <Text style={styles.ItemTxt}>Medication</Text>
                         </TouchableOpacity>
@@ -325,11 +285,11 @@ function HomeKit(){
                         <TouchableOpacity style={{alignItems:"center"}}
                         onPress = {() => {
                             setShowItem(true);
-                            SetItemPic(money);
+                            SetItemPic(money[0]);
                         }}>
                             <Image
                             style={ItemStyles.Money}
-                            source={Money}
+                            source={money[0]}
                             />
                             <Text style={styles.ItemTxt}>Money</Text>
                         </TouchableOpacity>
@@ -339,11 +299,11 @@ function HomeKit(){
                         <TouchableOpacity style={{alignItems:"center"}}
                         onPress = {() => {
                             setShowItem(true);
-                            SetItemPic(idcopy);
+                            SetItemPic(idcopy[0]);
                         }}> 
                             <Image
                             style={ItemStyles.ID}
-                            source={IdCopy}
+                            source={idcopy[0]}
                             />
                             <Text style={styles.ItemTxt}>ID</Text>
                         </TouchableOpacity>
@@ -351,11 +311,11 @@ function HomeKit(){
                         <TouchableOpacity style={{alignItems:"center"}}
                         onPress = {() => {
                             setShowItem(true);
-                            SetItemPic(shovel);
+                            SetItemPic(shovel[0]);
                         }}>
                             <Image
                             style={ItemStyles.Shovel}
-                            source={Shovel}
+                            source={shovel[0]}
                             />
                             <Text style={styles.ItemTxt}>Shovel</Text>
                         </TouchableOpacity>
@@ -363,11 +323,11 @@ function HomeKit(){
                         <TouchableOpacity style={{alignItems:"center"}}
                         onPress = {() => {
                             setShowItem(true);
-                            SetItemPic(matches);
+                            SetItemPic(matches[0]);
                         }}>
                             <Image
                             style={ItemStyles.Matches}
-                            source={Matches}
+                            source={matches[0]}
                             />
                             <Text style={styles.ItemTxt}>Matches</Text>
                         </TouchableOpacity>
