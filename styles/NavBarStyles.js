@@ -5,29 +5,23 @@ var NBStyles = {
         backgroundColor:"#F04B53",
         height: 90,
         width: "100%",
-        justifyContent: "space-around",
+        // justifyContent: "space-around",
         flexDirection:"row"
     },
     navImg:{
-        width: "95%",
-        height: "95%",
-        resizeMode: "center",
-        top: "-12%",
-        alignItems:"center",
-        justifyContent: "center"
-    },
+        width: 70,
+        height: 70
+       },
     touchOp:{
         width: "30%",
         height: "100%",
-        alignItems: "flex-start"
+        flex: 1,
+        justifyContent: "center",
+        alignItems:'center'
     },
     navCap:{
         color:"white",
-        height:"100%",
-        width: "100%",
         fontSize: 16,
-        textAlign: "center",
-        top: "-30%"
     }
 }
 

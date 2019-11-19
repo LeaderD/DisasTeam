@@ -23,7 +23,8 @@ function Login(){
             ></TextInput>
 
             <TouchableOpacity
-            style={styles.LoginButton}>
+            style={styles.LoginButton}
+            onPress={()=>{Actions.Kits()}}>
             <Text
                 style={styles.LoginButtonText}> Sign In </Text>
                     </TouchableOpacity>

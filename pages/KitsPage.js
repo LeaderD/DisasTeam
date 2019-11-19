@@ -2,12 +2,16 @@ import React from 'react';
 import {View} from 'react-native';
 
 import Kits from '../comps/Kits';
+import NavBar from '../comps/NavBar';
 
-//not sure how we'd icorporate the NavBar here, do we just import it into this page?
 function KitsPage(){
    return (
-    <View>
+    <View style={{flex:1, justifyContent:'center'}}>
+        <View style={{flex:1}}>
         <Kits/>
+    </View>
+    
+        <NavBar/>
     </View>
    )
 };
