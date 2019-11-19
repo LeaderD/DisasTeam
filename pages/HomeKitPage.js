@@ -2,6 +2,7 @@ import React from 'react';
 import {View} from 'react-native';
 
 import HomeKit from '../comps/HomeKit';
+import NavBar from '../comps/NavBar';
 
 function HomeKitPage(){
     return (

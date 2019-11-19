@@ -6,8 +6,7 @@ import {
 } from 'react-native';
 
 // import Login from './comps/Login';
-// import HomeKit from './comps/HomeKit';
-// import HomeKit from './comps/HomeKit'
+import HomeKitPage from './pages/HomeKitPage'
 // import WorkKit from './comps/WorkKit'
 // import GrabNGoKit from './comps/GrabNGoKit';
 // import VehicleKit from './comps/VehicleKit'
@@ -32,7 +31,7 @@ function App(){
       {/* <Login/> */}
       {/* <Register /> */}
       {/* <NavBar /> */}
-      {/* <HomeKit /> */}
+      {/* <HomeKitPage /> */}
       {/* <WorkKit /> */}
       {/* <GrabNGoKit /> */}
       {/* <VehicleKit /> */}

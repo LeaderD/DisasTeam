@@ -6,6 +6,7 @@ import {
     FlatList,
     Image
 } from 'react-native';
+import {Actions} from 'react-native-router-flux';
 import moment from 'moment';
 
 // styles
@@ -15,7 +16,6 @@ import styles from '../styles/DashboardStyles';
 import mockImage1 from '../imgs/imgsPng/crackers.png';
 import mockImage2 from '../imgs/imgsPng/cookingwater.png';
 import mockImage3 from '../imgs/imgsPng/granola.png';
-import {Actions} from 'react-native-router-flux';
 
 const expiringItems = [
     {
@@ -58,7 +58,7 @@ class Dashboard extends React.Component {
         return (
             <View style={styles.dashboardPage}>
                 <Text style={styles.AppTitle}>Dashboard</Text>
-                <TouchableOpacity style={styles.helpButton} onPress={Actions.Profile}>
+                <TouchableOpacity style={styles.helpButton} onPress={()=> Actions.Help()}>
                     <Text style={styles.helpButtonText}>?</Text>
                 </TouchableOpacity>
                 <Text style={styles.expiringItems}>Expiring items</Text>
