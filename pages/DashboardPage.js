@@ -6,10 +6,10 @@ import NavBar from '../comps/NavBar';
 
 function DashboardPage(){
     return (
-     <View style={{flex:1, justifyContent:'center'}}>
+     <View style={{flex:1}}>
          <View style={{flex:1}}>
-         <Dashboard/>
-     </View>
+            <Dashboard/>
+         </View>
          <NavBar/>
      </View>
     )

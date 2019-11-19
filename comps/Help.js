@@ -9,7 +9,8 @@ import styles from '../styles/HelpStyles';
 
 function Help() {
     return (
-        <View>
+
+        <View style= {{flexWrap:'wrap', flex:1, width:'100%',flexDirection:"column", justifyContent:"center", }}>
             <View style={styles.Help}>
                 <TouchableOpacity style={styles.backBtn}>
                     <Image
@@ -19,11 +20,11 @@ function Help() {
                 </TouchableOpacity>
                 <Text style={styles.Title}>Help</Text>
             </View>
-            <Text style={styles.Faq}>FAQ</Text>
-            <Text style={styles.bodyTxt}>Why emUrgency?</Text>
-            <Text style={styles.bodyTxt}>Who should use this app?</Text>
-            <Text style={styles.bodyTxt}>How can the emUrgency kits prepare me for a disaster?</Text>
-            <Text style={styles.bodyTxt}>Can I share access to my kit?</Text>
+            <View style={{flexDirection:"row"}}>
+            <Text style={styles.Faq}>About us</Text>
+            <Text style={styles.bodyTxt}>emUrgency allows users to create customized emergency kits based on their situation. The application will remind them to check the contents of their packs, so they will be ready in the event of a disaster.</Text>
+            </View>
+            <View style={{marginLeft:"5%"}}>
             <Text style={styles.Htu}>Colour indicator</Text>
             <Image style={styles.img2} source={require('../imgs/imgsPng/example1.png')} />
             <Image style={styles.img3} source={require('../imgs/imgsPng/example2.png')} />
@@ -32,7 +33,9 @@ function Help() {
             <Text style={styles.htuTxt2}>Expiring in a month</Text>
             <Text style={styles.htuTxt3}>Newly added;</Text>
             <Text style={styles.htuTxt4}>Won't be expiring in the next 2 months</Text>
+            </View>
         </View>
+
     )
 };
 
