@@ -4,14 +4,15 @@ var styles= StyleSheet.create({
 
     Help:{
         justifyContent:"center",
-        alignItems: "center",
-        top:0,
-        height:"12%",
+       alignItems: "center",
+        top: "-7%",
+        height:"13%",
         backgroundColor: "#FFFEF3"
 
     },
 
     backBtn:{
+
         width:"35%",
         height:"55%",
         left:-55,
@@ -27,22 +28,23 @@ var styles= StyleSheet.create({
 
     Faq:{
         color: "#F58287",
-        fontSize:45,
+        fontSize:40,
         left:25,
-        paddingTop:"3%"
+        top: '-5%'
     },
 
     Htu:{
         color: "#F58287",
         fontSize:30,
-        left:25,
-        paddingTop:"3%"
+        paddingTop:"20%"
     },
 
     bodyTxt:{
-        left:15,
         fontSize:13.5,
-        lineHeight:20
+        lineHeight:15,
+        left: "-170%",
+        top: "10%",
+        width: "80%"
     },
 
     htuTxt1:{

@@ -8,7 +8,7 @@ function Kits(){
         <View style={{flex:1, justifyContent:'center', backgroundColor: "#FFFEF3"}}>
                 <Text style={styles.Title}>Kits</Text>
 
-                <View style={{flexWrap:'wrap', flex:1, width:'100%', flexDirection:"row", justifyContent:"center"}}>
+                <View style={{flexWrap:'wrap', flex:1, width: '100%', flexDirection:"row", justifyContent:"center", alignItems: "center"}}>
                     <TouchableOpacity style={{alignItems:"center"}}>
                         <Image
                         style={styles.home}
@@ -22,9 +22,9 @@ function Kits(){
                         style={styles.work}
                         source={require('../imgs/imgsPng/work.png')}
                         />
-                        <Text style={styles.KitsTxt1}>Work</Text>
+                        <Text style={styles.txtWor}>Work</Text>
                     </TouchableOpacity>
-    
+
                     <TouchableOpacity style={{alignItems:"center"}}>
                         <Image
                         style={styles.grabngo}
@@ -38,10 +38,10 @@ function Kits(){
                         style={styles.car}
                         source={require('../imgs/imgsPng/car.png')}
                         />
-                        <Text style={styles.KitsTxt1}>Vehicle</Text>
+                        <Text style={styles.txtVeh}>Vehicle</Text>
                     </TouchableOpacity>
                     </View>
-            
+
         </View>
     )
 }

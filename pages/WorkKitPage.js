@@ -2,6 +2,7 @@ import React from 'react';
 import {View} from 'react-native';
 
 import WorkKit from '../comps/WorkKit'
+import NavBar from '../comps/NavBar';
 
 function WorkKitPage(){
     return (
@@ -13,5 +14,5 @@ function WorkKitPage(){
      </View>
     )
  };
- 
+
  export default WorkKitPage;

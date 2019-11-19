@@ -10,7 +10,7 @@ function KitsPage(){
         <View style={{flex:1}}>
         <Kits/>
     </View>
-    
+
         <NavBar/>
     </View>
    )
