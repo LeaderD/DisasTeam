@@ -22,17 +22,7 @@ import {
 // import RegistrationPage from './pages/RegistrationPage';
 // import Help from './comps/Help';
 // import Welcome from './comps/Welcome';
-//import Route from './route'
-//import HomeKitPage from './pages/HomeKitPage'
-import DashboardPage from './pages/DashboardPage'
-import WorkKitPage from './pages/WorkKitPage'
-import GrabNGoKitPage from './pages/GrabNGoKitPage'
-import VehicleKitPage from './pages/VehicleKitPage'
-import KitsPage from './pages/KitsPage'
-import ProfilePage from './pages/ProfilePage'
-import HelpPage from './pages/HelpPage'
-import HomeKitPage from './pages/HomeKitPage'
-
+import Route from './route'
 
 
 
@@ -42,18 +32,15 @@ function App(){
       {/* <Login/> */}
       {/* <Register /> */}
       {/* <NavBar /> */}
-      {/* <DashboardPage /> */}
-       {/* <HomeKitPage /> */}
-       {/* <WorkKitPage /> */}
-       {/* <GrabNGoKitPage /> */}
-      {/* <VehicleKitPage /> */}
-       {/* <KitsPage /> */}
-       {/* <ProfilePage /> */}
+      {/* <HomeKit /> */}
+      {/* <WorkKit /> */}
+      {/* <GrabNGoKit /> */}
+      {/* <VehicleKit /> */}
       {/* <ItemPopUp/> */}
       {/* <LoginPage/> */}
       {/* <RegistrationPage /> */}
-       <HelpPage /> 
-      {/* <Route/> */}
+      {/* <Help /> */}
+      <Route/>
     </View>
   )
 }
