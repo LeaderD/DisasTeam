@@ -8,8 +8,10 @@ import {
 // import Login from './comps/Login';
 import HomeKitPage from './pages/HomeKitPage'
 // import WorkKit from './comps/WorkKit'
+import HomeKit from './comps/HomeKit'
+import WorkKit from './comps/WorkKit'
 // import GrabNGoKit from './comps/GrabNGoKit';
-// import VehicleKit from './comps/VehicleKit'
+import VehicleKit from './comps/VehicleKit'
 // import Welcome from './comps/Welcome'
 // import WhiteButton from './comps/WhiteButton'
 // import RedButton from './comps/RedButton'
@@ -21,7 +23,7 @@ import HomeKitPage from './pages/HomeKitPage'
 // import RegistrationPage from './pages/RegistrationPage';
 // import Help from './comps/Help';
 // import Welcome from './comps/Welcome';
-import Route from './route'
+// import Route from './route'
 
 
 
@@ -32,6 +34,7 @@ function App(){
       {/* <Register /> */}
       {/* <NavBar /> */}
       {/* <HomeKitPage /> */}
+      <HomeKit />
       {/* <WorkKit /> */}
       {/* <GrabNGoKit /> */}
       {/* <VehicleKit /> */}
@@ -39,7 +42,7 @@ function App(){
       {/* <LoginPage/> */}
       {/* <RegistrationPage /> */}
       {/* <Help /> */}
-      <Route/>
+      {/* <Route/> */}
     </View>
   )
 }

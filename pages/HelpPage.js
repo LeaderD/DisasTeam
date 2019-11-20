@@ -2,6 +2,7 @@ import React from 'react';
 import {View} from 'react-native';
 
 import Help from '../comps/Help'
+import NavBar from '../comps/NavBar';
 
 function HelpPage(){
     return (
@@ -13,5 +14,5 @@ function HelpPage(){
      </View>
     )
  };
- 
+
  export default HelpPage;

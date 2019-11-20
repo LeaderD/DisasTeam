@@ -2,6 +2,7 @@ import React from 'react';
 import {View, Text, TouchableOpacity, Image} from 'react-native';
 import styles from '../styles/KitsStyle';
 import {Actions} from 'react-native-router-flux';
+import NavBar from './Navbar';
 
 function Kits(){
     return (
@@ -24,7 +25,7 @@ function Kits(){
                         style={styles.work}
                         source={require('../imgs/imgsPng/work.png')}
                         />
-                        <Text style={styles.KitsTxt1}>Work</Text>
+                        <Text style={styles.txtWor}>Work</Text>
                     </TouchableOpacity>
     
                     <TouchableOpacity style={{alignItems:"center"}}
@@ -42,10 +43,10 @@ function Kits(){
                         style={styles.car}
                         source={require('../imgs/imgsPng/car.png')}
                         />
-                        <Text style={styles.KitsTxt1}>Vehicle</Text>
+                        <Text style={styles.txtVeh}>Vehicle</Text>
                     </TouchableOpacity>
                     </View>
-            
+
         </View>
     )
 }

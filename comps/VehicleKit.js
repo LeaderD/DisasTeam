@@ -26,6 +26,22 @@ function Vehicle(){
 
     const [showItem, setShowItem] = useState(false);
     const [ItemPic, SetItemPic] = useState('');
+
+    const [Whistle, setWhistle] = useState(whistle);
+    const [Flare, setFlare] = useState(flare);
+    const [FirstAid, setFirstAid] = useState(firstaid);
+    const [Granola, setGranola] = useState(granola);
+    const [Drinkwater, setDrinkWater] = useState(drinkwater);
+    const [Blankets, setBlankets] = useState(blankets);
+    const [Matches, setMatches] = useState(matches);
+    const [Candles, setCandles] = useState(candles);
+    const [Shovel, setShovel] = useState(shovel);
+    const [SnowBrush, setSnowBrush] = useState(snowbrush);
+    const [Documents, setDocuments] = useState(documents);
+    const [IdCopy, setIdCopy] = useState(idcopy);
+    const [Flashlight, setFlashlight] = useState(flashlight);
+    const [Clothes, setClothes] = useState(clothes);
+    const [SpareKeys, setSpareKeys] = useState(sparekeys);
     //const [item1, setItem1] = useState({});
 
     var ItemPU = null;
@@ -34,7 +50,25 @@ function Vehicle(){
     ItemPU = (
         <ItemPopUp
         setShowItem={setShowItem}
-        ItemPic={ItemPic}/>
+        SetItemPic={SetItemPic}
+        ItemPic={ItemPic}
+        
+        setWhistle={setWhistle}
+        setFlare={setFlare}
+        setFirstAid={setFirstAid}
+        setGranola={setGranola}
+        setDrinkWater={setDrinkWater}
+        setBlankets={setBlankets}
+        setMatches={setMatches}
+        setCandles={setCandles}
+        setShovel={setShovel}
+        setSnowBrush={setSnowBrush}
+        setDocuments={setDocuments}
+        setIdCopy={setIdCopy}
+        setFlashlight={setFlashlight}
+        setClothes={setClothes}
+        setSpareKeys={setSpareKeys}
+        />
     )}
 
 
@@ -60,7 +94,7 @@ function Vehicle(){
                         }}>
                             <Image
                             style={ItemStyles.Whistle}
-                            source={require('../imgs/imgsBWpng/BWwhistle_1.png')}
+                            source={Whistle}
                             />
                             <Text style={styles.ItemTxt}>Whistle</Text>
                         </TouchableOpacity>
@@ -72,7 +106,7 @@ function Vehicle(){
                         }}> 
                             <Image
                             style={ItemStyles.Flare}
-                            source={require('../imgs/imgsBWpng/BWflare_1.png')}
+                            source={Flare}
                             />
                             <Text style={styles.ItemTxt}>Flare</Text>
                         </TouchableOpacity>
@@ -84,7 +118,7 @@ function Vehicle(){
                         }}>
                             <Image
                             style={ItemStyles.MedicalKit}
-                            source={require('../imgs/imgsBWpng/BWmedicalkit_1.png')}
+                            source={FirstAid}
                             />
                             <Text style={styles.ItemTxt}>Medical Kit</Text>
                         </TouchableOpacity>
@@ -98,7 +132,7 @@ function Vehicle(){
                         }}>
                             <Image
                             style={ItemStyles.Granola}
-                            source={require('../imgs/imgsBWpng/BWgranola_1.png')}
+                            source={Granola}
                             />
                             <Text style={styles.ItemTxt}>Granola Bar</Text>
                         </TouchableOpacity>
@@ -110,7 +144,7 @@ function Vehicle(){
                         }}>
                             <Image
                             style={ItemStyles.Water}
-                            source={require('../imgs/imgsBWpng/BWwater_1.png')}
+                            source={Drinkwater}
                             />
                             <Text style={styles.ItemTxt}>Water</Text>
                         </TouchableOpacity>
@@ -118,11 +152,12 @@ function Vehicle(){
                         <TouchableOpacity style={{alignItems:"center"}}
                         onPress = {() => {
                             setShowItem(true);
-                            SetItemPic(blankets)
+                            SetItemPic(blankets);
+                            console.log(blankets)
                         }}>
                             <Image
                             style={ItemStyles.Blankets}
-                            source={require('../imgs/imgsBWpng/BWblanket_1.png')}
+                            source={Blankets}
                             />
                             <Text style={styles.ItemTxt}>Blankets</Text>
                         </TouchableOpacity>
@@ -136,7 +171,7 @@ function Vehicle(){
                         }}>
                             <Image
                             style={ItemStyles.Matches}
-                            source={require('../imgs/imgsBWpng/BWmatches_1.png')}
+                            source={Matches}
                             />
                             <Text style={styles.ItemTxt}>Matches</Text>
                         </TouchableOpacity>
@@ -148,7 +183,7 @@ function Vehicle(){
                         }}>
                             <Image
                             style={ItemStyles.Candles}
-                            source={require('../imgs/imgsBWpng/BWcandles_1.png')}
+                            source={Candles}
                             />
                             <Text style={styles.ItemTxt}>Candles</Text>
                         </TouchableOpacity>
@@ -160,7 +195,7 @@ function Vehicle(){
                         }}>
                             <Image
                             style={ItemStyles.Shovel}
-                            source={require('../imgs/imgsBWpng/BWshovel_1.png')}
+                            source={Shovel}
                             />
                             <Text style={styles.ItemTxt}>Shovel</Text>
                         </TouchableOpacity>
@@ -174,7 +209,7 @@ function Vehicle(){
                         }}> 
                             <Image
                             style={ItemStyles.SnowBrush}
-                            source={require('../imgs/imgsBWpng/BWsnowbrush_1.png')}
+                            source={SnowBrush}
                             />
                             <Text style={styles.ItemTxt}>Snow Brush</Text>
                         </TouchableOpacity>
@@ -186,7 +221,7 @@ function Vehicle(){
                         }}>
                             <Image
                             style={ItemStyles.Documents}
-                            source={require('../imgs/imgsBWpng/BWdocument_1.png')}
+                            source={Documents}
                             />
                             <Text style={styles.ItemTxt}>Documents</Text>
                         </TouchableOpacity>
@@ -198,7 +233,7 @@ function Vehicle(){
                         }}>
                             <Image
                             style={ItemStyles.ID}
-                            source={require('../imgs/imgsBWpng/BWid_1.png')}
+                            source={IdCopy}
                             />
                             <Text style={styles.ItemTxt}>ID</Text>
                         </TouchableOpacity>
@@ -213,7 +248,7 @@ function Vehicle(){
                         }}>
                                 <Image
                                 style={ItemStyles.Flashlight}
-                                source={require('../imgs/imgsBWpng/BWflashlight_1.png')}
+                                source={Flashlight}
                                 />
                                 <Text style={styles.ItemTxt}>Flashlight</Text>
                         </TouchableOpacity>
@@ -224,8 +259,8 @@ function Vehicle(){
                             SetItemPic(clothes);
                         }}>
                                 <Image
-                                style={ItemStyles.Flashlight}
-                                source={require('../imgs/imgsBWpng/BWclothes_1.png')}
+                                style={ItemStyles.Clothes}
+                                source={Clothes}
                                 />
                                 <Text style={styles.ItemTxt}>Clothes</Text>
                         </TouchableOpacity>
@@ -236,8 +271,8 @@ function Vehicle(){
                             SetItemPic(sparekeys);
                         }}>
                                 <Image
-                                style={ItemStyles.Flashlight}
-                                source={require('../imgs/imgsBWpng/BWkey_1.png')}
+                                style={ItemStyles.SpareKeys}
+                                source={SpareKeys}
                                 />
                                 <Text style={styles.ItemTxt}>Spare Keys</Text>
                         </TouchableOpacity>

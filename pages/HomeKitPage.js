@@ -14,5 +14,5 @@ function HomeKitPage(){
      </View>
     )
  };
- 
+
  export default HomeKitPage;

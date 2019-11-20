@@ -56,6 +56,7 @@ class Dashboard extends React.Component {
 
     render() {
         return (
+          <View style ={{flexWrap:'wrap', flex:1, width:'100%', flexDirection:"row", justifyContent:"center", alignItems:"center"}}>
             <View style={styles.dashboardPage}>
                 <Text style={styles.AppTitle}>Dashboard</Text>
                 <TouchableOpacity style={styles.helpButton} onPress={()=> Actions.Help()}>
@@ -68,6 +69,7 @@ class Dashboard extends React.Component {
                     keyExtractor={item => `${item.id}`}
                     renderItem={this.renderExpiringItem}
                 />
+            </View>
             </View>
         )
     }
