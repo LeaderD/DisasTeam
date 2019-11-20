@@ -23,6 +23,16 @@ function WorkKit(){
 
         const [showItem, setShowItem] = useState(false);
         const [ItemPic, SetItemPic] = useState('');
+
+        const [Clothes, setClothes] = useState(clothes);
+        const [Medication, setMedication] = useState(medication);
+        const [FirstAid, setFirstAid] = useState(firstaid);
+        const [Granola, setGranola] = useState(granola);
+        const [Drinkwater, setDrinkWater] = useState(drinkwater);
+        const [Whistle, setWhistle] = useState(whistle);
+        const [Flashlight, setFlashlight] = useState(flashlight);
+        const [IdCopy, setIdCopy] = useState(idcopy);
+        const [Money, setMoney] = useState(money);
         //const [item1, setItem1] = useState({});
     
         var ItemPU = null;
@@ -32,7 +42,19 @@ function WorkKit(){
                 <View style={{width: "100%", height:Dimensions.get('window').height, justifyContent:"center", alignItems:"center", position:"absolute", top: 0}}>
                         <ItemPopUp
                         setShowItem={setShowItem}
-                        ItemPic={ItemPic}/>
+                        SetItemPic={SetItemPic}
+                        ItemPic={ItemPic}
+
+                        setClothes={setClothes}
+                        setMedication={setMedication}
+                        setFirstAid={setFirstAid}
+                        setGranola={setGranola}
+                        setDrinkWater={setDrinkWater}
+                        setWhistle={setWhistle}
+                        setFlashlight={setFlashlight}
+                        setIdCopy={setIdCopy}
+                        setMoney={setMoney}
+                        />
                 </View>
         )}
 
@@ -57,7 +79,7 @@ function WorkKit(){
                     }}>
                             <Image
                             style={ItemStyles.Clothes}
-                            source={require('../imgs/imgsBWpng/BWclothes_1.png')}
+                            source={Clothes}
                             />
                             <Text style={styles.ItemTxt}>Change of Clothes</Text>
                     </TouchableOpacity>
@@ -69,7 +91,7 @@ function WorkKit(){
                     }}>
                             <Image
                             style={ItemStyles.Medication}
-                            source={require('../imgs/imgsBWpng/BWmeds_1.png')}
+                            source={Medication}
                             />
                             <Text style={styles.ItemTxt}>Medication</Text>
                     </TouchableOpacity>
@@ -81,7 +103,7 @@ function WorkKit(){
                     }}>
                             <Image
                             style={ItemStyles.MedicalKit}
-                            source={require('../imgs/imgsBWpng/BWmedicalkit_1.png')}
+                            source={FirstAid}
                             />
                             <Text style={styles.ItemTxt}>First Aid Kit</Text>
                     </TouchableOpacity>
@@ -96,7 +118,7 @@ function WorkKit(){
                     }}>
                             <Image
                             style={ItemStyles.Granola}
-                            source={require('../imgs/imgsBWpng/BWgranola_1.png')}
+                            source={Granola}
                             />
                             <Text style={styles.ItemTxt}>Food Items</Text>
                     </TouchableOpacity>
@@ -108,7 +130,7 @@ function WorkKit(){
                     }}>
                             <Image
                             style={ItemStyles.Water}
-                            source={require('../imgs/imgsBWpng/BWwater_1.png')}
+                            source={Drinkwater}
                             />
                             <Text style={styles.ItemTxt}>Drinking Water</Text>
                     </TouchableOpacity>
@@ -120,7 +142,7 @@ function WorkKit(){
                     }}>
                             <Image
                             style={ItemStyles.Whistle}
-                            source={require('../imgs/imgsBWpng/BWwhistle_1.png')}
+                            source={Whistle}
                             />
                             <Text style={styles.ItemTxt}>Whistle</Text>
                     </TouchableOpacity>
@@ -134,7 +156,7 @@ function WorkKit(){
                     }}>
                             <Image
                             style={ItemStyles.Flashlight}
-                            source={require('../imgs/imgsBWpng/BWflashlight_1.png')}
+                            source={Flashlight}
                             />
                             <Text style={styles.ItemTxt}>Flashlight</Text>
                     </TouchableOpacity>
@@ -146,7 +168,7 @@ function WorkKit(){
                     }}>
                             <Image
                             style={ItemStyles.ID}
-                            source={require('../imgs/imgsBWpng/BWid_1.png')}
+                            source={IdCopy}
                             />
                             <Text style={styles.ItemTxt}>Copy of ID</Text>
                     </TouchableOpacity>
@@ -158,7 +180,7 @@ function WorkKit(){
                     }}> 
                             <Image
                             style={ItemStyles.Shoes}
-                            source={require('../imgs/imgsBWpng/BWmoney_1.png')}
+                            source={Money}
                             />
                             <Text style={styles.ItemTxt}>Money</Text>
                     </TouchableOpacity>

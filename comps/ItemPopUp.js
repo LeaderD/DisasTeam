@@ -1,15 +1,37 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {View, TextInput, Image, TouchableOpacity, Text} from 'react-native';
 import PUStyles from '../styles/ItemPopUpStyles';
 
+
 function ItemPopUp(props){
 
+    const [ColorItem, setColorItem] = useState(false);
+
     var PickedSrc = null;
+
+    var setval = null;
+
+
+    var Update = (
+        <TouchableOpacity style={PUStyles.UpdateBut}
+        onPress={()=>{
+            console.log(props.curItem);
+            props.setShowItem(false);
+            //props.SetItemPic(props.curItem[1]);
+        }}
+        >
+             <Text
+             style={PUStyles.UpdateButText}>UPDATE</Text>
+        </TouchableOpacity>
+    );
+
+
 
     return(
     <TouchableOpacity
         style={PUStyles.wrapper}
-        onPress={()=>{props.setShowItem(false)}}
+        onPress={()=>{
+            props.setShowItem(false)}}
     >
         <View style={PUStyles.container}>
             <Image
@@ -33,11 +55,8 @@ function ItemPopUp(props){
         >
             <Text style={PUStyles.CancelButText}> CANCEL </Text>
         </TouchableOpacity>
-        <TouchableOpacity
-         style={PUStyles.UpdateBut}>
-             <Text
-             style={PUStyles.UpdateButText}>UPDATE</Text>
-        </TouchableOpacity>
+            {Update}
+
     </View>
     </View>
     </View>
