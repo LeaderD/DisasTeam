@@ -2,19 +2,14 @@ import {StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
     dashboardPage: {
-        justifyContent: 'flex-start',
-        alignItems: 'center',
-        top: 0,
-        paddingTop: 50,
-        paddingLeft: 20,
-        paddingRight: 20,
-        height: '100%',
+        flex: 1,
         backgroundColor: '#FFFEF3'
     },
     AppTitle:{
         color: '#F04B53',
         fontSize: 30,
-        marginBottom: 20
+        paddingLeft: '34%',
+        paddingTop: '11%'
     },
     helpButton: {
         position: 'absolute',
@@ -34,11 +29,15 @@ const styles = StyleSheet.create({
     },
     expiringItems: {
         alignSelf: 'flex-start',
-        marginBottom: 20,
-        fontSize: 17
+        marginBottom: '10%',
+        marginLeft: '7%',
+        paddingTop: '9%',
+        fontSize: 17,
+        //paddingTop: '100%',
     },
     expiringList: {
-        width: '100%'
+        width: '100%',
+
     },
     expiringItem: {
         flexDirection: 'row',
@@ -51,6 +50,7 @@ const styles = StyleSheet.create({
         marginRight: 20,
         borderWidth: 7,
         borderRadius: 60,
+        marginLeft: '5%',
         borderColor: '#85E6A2'
     },
     expiringItemExpired: {

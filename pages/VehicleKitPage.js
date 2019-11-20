@@ -2,6 +2,7 @@ import React from 'react';
 import {View} from 'react-native';
 
 import VehicleKit from '../comps/VehicleKit'
+import NavBar from '../comps/NavBar';
 
 function VehicleKitPage(){
     return (
