@@ -35,10 +35,9 @@ var styles = StyleSheet.create ({
         marginRight: 10
     },
     ItemTxt:{
-        position: "absolute",
-        justifyContent:"center",
         fontSize: 12,
-        top: 100
+        top: 10,
+        textAlign:"center"
     }
 
 
