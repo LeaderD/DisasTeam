@@ -27,15 +27,162 @@ var idcopy = [require('../imgs/imgsBWpng/BWid_1.png'), require('../imgs/imgsPng/
 var shovel = [require('../imgs/imgsBWpng/BWshovel_1.png'), require('../imgs/imgsPng/shovel.png')];
 var matches = [require('../imgs/imgsBWpng/BWmatches_1.png'), require('../imgs/imgsPng/matches.png')];
 
-var arr = [tomatoes, crackers, granola, cookwater, firstaid, flashlight, canopener, whistle, radio, flare,
-  documents, drinkwater, sparekeys, candles, clothes, snowbrush, medication, money, idcopy, shovel, matches]
+var arr = [
+{
+    state:0,
+    key: 1,
+    arr: tomatoes,
+    name: "Canned Tomatoes",
+    start_date: "2019-11-03",
+    days_expired: 60
+},
+{
+    state:0,
+    arr: crackers,
+    name: "Crackers",
+    start_date: "2019-11-03",
+    days_expired: 60
+},
+{
+    state:0,
+    arr: granola,
+    name: "Granola Bar",
+    start_date: "2019-11-03",
+    days_expired: 60
+},
+{
+    state:0,
+    arr: cookwater,
+    name: "Cooking Water",
+    start_date: "2019-11-03",
+    days_expired: 60
+},
+{
+    state:0,
+    arr: firstaid,
+    name: "Medical Kit",
+    start_date: "2019-11-03",
+    days_expired: 60
+},
+{
+    state:0,
+    arr: flashlight,
+    name: "Flashlight",
+    start_date: "2019-11-03",
+    days_expired: 60
+},
+{
+    state:0,
+    arr: canopener,
+    name: "Can Opener",
+    start_date: "2019-11-03",
+    days_expired: 60
+},
+{
+    state:0,
+    arr: whistle,
+    name: "Whistle",
+    start_date: "2019-11-03",
+    days_expired: 60
+},
+{
+    state:0,
+    arr: radio,
+    name: "Radio",
+    start_date: "2019-11-03",
+    days_expired: 60
+},
+{
+    state:0,
+    arr: flare,
+    name: "Flare",
+    start_date: "2019-11-03",
+    days_expired: 60
+},
+{
+    state:0,
+    arr: documents,
+    name: "Documents",
+    start_date: "2019-11-03",
+    days_expired: 60
+},
+{
+    state:0,
+    arr: drinkwater,
+    name: "Drinking Water",
+    start_date: "2019-11-03",
+    days_expired: 60
+},
+{
+    state:0,
+    arr: sparekeys,
+    name: "Spare Keys",
+    start_date: "2019-11-03",
+    days_expired: 60
+},
+{
+    state:0,
+    arr: candles,
+    name: "Candles",
+    start_date: "2019-11-03",
+    days_expired: 60
+},
+{
+    state:0,
+    arr: clothes,
+    name: "Clothes",
+    start_date: "2019-11-03",
+    days_expired: 60
+},
+{
+    state:0,
+    arr: snowbrush,
+    name: "Snow Brush",
+    start_date: "2019-11-03",
+    days_expired: 60
+},
+{
+    state:0,
+    arr: medication,
+    name: "Medication",
+    start_date: "2019-11-03",
+    days_expired: 60
+},
+{
+    state:0,
+    arr: money,
+    name: "Money",
+    start_date: "2019-11-03",
+    days_expired: 60
+},
+{
+    state:0,
+    arr: idcopy,
+    name: "ID",
+    start_date: "2019-11-03",
+    days_expired: 60
+},
+{
+    state:0,
+    arr: shovel,
+    name: "Shovel",
+    start_date: "2019-11-03",
+    days_expired: 60
+},
+{
+    state:0,
+    arr: matches,
+    name: "Matches",
+    start_date: "2019-11-03",
+    days_expired: 60
+},
+] 
 
-var names = ["Canned Tomatoes", "Crackers"]
 function HomeKit(){
 
     const [showItem, setShowItem] = useState(false);
-    const [ItemPic, SetItemPic] = useState('');
-    const [curItem, setCurItem] = useState([]);
+    const [ItemPic, setItemPic] = useState('');
+    const [curIndex, setCurIndex] = useState(0);
     const [items, setItems] = useState(arr);
 
     var ItemPU = null;
@@ -44,10 +191,11 @@ function HomeKit(){
     ItemPU = (
         <ItemPopUp
         setShowItem={setShowItem}
-        SetItemPic={SetItemPic}
+        setItemPic={setItemPic}
         ItemPic={ItemPic}
-        curItem={curItem}
-
+        setItems={setItems}
+        curIndex={curIndex}
+        items={items}
         />
     )}
 
@@ -64,20 +212,30 @@ function HomeKit(){
             </View>
 
             <ScrollView>
-                <View style={{flex: 1, flexWrap:"wrap", flexDirection:"row", justifyContent:"center", alignItems:"center" }}>
+                <View style={{flex: 1, flexWrap:"wrap", flexDirection:"row", justifyContent:"center", alignItems:"center", height: 1300}}>
                   {items.map((o,i)=>{
+
+                    var timenow = new Date();
+                    var timestart = new Date(o.start_date);
+
+                    var secondsnow = Date.parse(timenow);
+                    var secondsstart = Date.parse(timestart);
+
+                    var passedtime = secondsnow - secondsstart; //miliseconds /1000/60/60/24
+
+                    var style = ItemStyles.FirstState;
                     return (
-                      <TouchableOpacity style={{alignItems:"center"}}
+                      <TouchableOpacity style={ItemStyles.ItemPopUp}
                       onPress = {() => {
                           setShowItem(true);
-                          SetItemPic(o[0]);
-                          setCurItem(o);
+                          setItemPic(o.arr[o.state]);
+                          setCurIndex(i);
                       }}>
                           <Image
                           style={ItemStyles.CannedTomatoes}
-                          source={o[0]}
+                          source={o.arr[o.state]}
                           />
-                          <Text style={styles.ItemTxt}>{names[i] || ""}</Text>
+                          <Text style={styles.ItemTxt}>{o.name || ""}</Text>
                       </TouchableOpacity>
                     )
                   })

@@ -5,11 +5,6 @@ import PUStyles from '../styles/ItemPopUpStyles';
 
 function ItemPopUp(props){
 
-    const [ColorItem, setColorItem] = useState(false);
-
-    var PickedSrc = null;
-
-    var setval = null;
 
 
     var Update = (
@@ -17,6 +12,10 @@ function ItemPopUp(props){
         onPress={()=>{
             console.log(props.curItem);
             props.setShowItem(false);
+            props.items[props.curIndex].state = 1;
+            props.setItems(props.items.map((o)=>{
+                return o;
+            }))
             //props.SetItemPic(props.curItem[1]);
         }}
         >
@@ -31,7 +30,9 @@ function ItemPopUp(props){
     <TouchableOpacity
         style={PUStyles.wrapper}
         onPress={()=>{
-            props.setShowItem(false)}}
+            props.setShowItem(false)
+        }}
+            
     >
         <View style={PUStyles.container}>
             <Image
