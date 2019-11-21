@@ -21,8 +21,8 @@ function Route() {
   return (
     <Router>
       <Stack key="root" hideNavBar={true}>
-        <Scene key="Login" component={LoginPage}  />
-        <Scene key="Register" component={RegistrationPage} initial={true}/>
+        <Scene key="Login" component={LoginPage}  initial={true}/>
+        <Scene key="Register" component={RegistrationPage} />
         <Scene key="Welcome" component={WelcomePage}/>
         <Scene key="Kits" component={KitsPage} />
         <Scene key="Dashboard" component={DashboardPage} />

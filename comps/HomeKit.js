@@ -3,6 +3,7 @@ import {View, Text, Button, TouchableOpacity, Image, ScrollView, Dimensions, Asy
 import styles from '../styles/HomeKitStyles';
 import ItemStyles from '../styles/ItemStyles';
 import ItemPopUp from './ItemPopUp';
+import {Actions} from 'react-native-router-flux';
 
 var tomatoes = [require('../imgs/imgsBWpng/BWcannedfood_1.png'), require('../imgs/imgsPng/cannedfood.png')];
 var crackers = [require('../imgs/imgsBWpng/BWcrackers_1.png'), require('../imgs/imgsPng/crackers.png')];
@@ -81,7 +82,8 @@ function HomeKit(){
     return (
         <View>
             <View style={styles.Top}>
-                <TouchableOpacity style={styles.backBtn}>
+                <TouchableOpacity style={styles.backBtn}
+                    onPress={()=> Actions.popTo(Kits)}>
                     <Image
                     style={styles.backBtn}
                     source={require('../imgs/imgsPng/backbutton.png')}
@@ -109,9 +111,6 @@ function HomeKit(){
                     )
                   })
                 }
-
-
-
                 </View>
             </ScrollView>
 
