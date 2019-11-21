@@ -38,6 +38,7 @@ var arr = [
 },
 {
     state:0,
+    key: 2,
     arr: crackers,
     name: "Crackers",
     start_date: "2019-11-03",
@@ -45,6 +46,7 @@ var arr = [
 },
 {
     state:0,
+    key: 3,
     arr: granola,
     name: "Granola Bar",
     start_date: "2019-11-03",
@@ -52,6 +54,7 @@ var arr = [
 },
 {
     state:0,
+    key: 4,
     arr: cookwater,
     name: "Cooking Water",
     start_date: "2019-11-03",
@@ -59,6 +62,7 @@ var arr = [
 },
 {
     state:0,
+    key: 5,
     arr: firstaid,
     name: "Medical Kit",
     start_date: "2019-11-03",
@@ -66,6 +70,7 @@ var arr = [
 },
 {
     state:0,
+    key: 6,
     arr: flashlight,
     name: "Flashlight",
     start_date: "2019-11-03",
@@ -73,6 +78,7 @@ var arr = [
 },
 {
     state:0,
+    key: 7,
     arr: canopener,
     name: "Can Opener",
     start_date: "2019-11-03",
@@ -80,6 +86,7 @@ var arr = [
 },
 {
     state:0,
+    key: 8,
     arr: whistle,
     name: "Whistle",
     start_date: "2019-11-03",
@@ -87,6 +94,7 @@ var arr = [
 },
 {
     state:0,
+    key: 9,
     arr: radio,
     name: "Radio",
     start_date: "2019-11-03",
@@ -94,6 +102,7 @@ var arr = [
 },
 {
     state:0,
+    key: 10,
     arr: flare,
     name: "Flare",
     start_date: "2019-11-03",
@@ -101,6 +110,7 @@ var arr = [
 },
 {
     state:0,
+    key: 1,
     arr: documents,
     name: "Documents",
     start_date: "2019-11-03",
@@ -122,6 +132,7 @@ var arr = [
 },
 {
     state:0,
+    key: 1,
     arr: candles,
     name: "Candles",
     start_date: "2019-11-03",
@@ -129,6 +140,7 @@ var arr = [
 },
 {
     state:0,
+    key: 1,
     arr: clothes,
     name: "Clothes",
     start_date: "2019-11-03",
@@ -136,6 +148,7 @@ var arr = [
 },
 {
     state:0,
+    key: 1,
     arr: snowbrush,
     name: "Snow Brush",
     start_date: "2019-11-03",
@@ -143,6 +156,7 @@ var arr = [
 },
 {
     state:0,
+    key: 1,
     arr: medication,
     name: "Medication",
     start_date: "2019-11-03",
@@ -150,6 +164,7 @@ var arr = [
 },
 {
     state:0,
+    key: 1,
     arr: money,
     name: "Money",
     start_date: "2019-11-03",
@@ -157,6 +172,7 @@ var arr = [
 },
 {
     state:0,
+    key: 1,
     arr: idcopy,
     name: "ID",
     start_date: "2019-11-03",
@@ -171,6 +187,7 @@ var arr = [
 },
 {
     state:0,
+    key: 1,
     arr: matches,
     name: "Matches",
     start_date: "2019-11-03",
