@@ -1,33 +1,47 @@
-import React, {useState} from 'react';
-import {View, Text, TextInput, Image, TouchableOpacity} from 'react-native';
+import React, {useState, useEffect} from 'react';
+import {View, Text, TextInput, Image, TouchableOpacity, AsyncStorage} from 'react-native';
 import styles from '../styles/LoginStyles';
 import {Actions} from 'react-native-router-flux';
+import { object } from 'prop-types';
 
 function Login(){
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [userID, setuserID] = useState('');
+    const [data, setData] = useState();
 
     var UserLogin=async()=>{
-        let response = await fetch('http://142.232.164.160/emUrgency/user_login.php',{
+        console.log("clicked");
+        let response = await fetch('http://142.232.168.247/emUrgency/user_login.php',{
             method:'POST',
             header:{
                 'Accept': 'application/json',
                 'Content-Type':'application/json'
             },
             body:JSON.stringify({
-                email: email,
-                password: password
+                "email": email,
+                "password": password,
+                "userID": userID
             })
         })
     
-        let data = await response.json();
-        console.log(data);
+        let tempData = await response.json();
+        console.log(tempData);
 
-        if(data == "You're logged in."){
+        if(typeof(tempData)=="object"){
+            try {
+            //AsyncStorage to store user id here
+                await AsyncStorage.setItem("userID", JSON.stringify(tempData.userID))
+        
+                } catch (error) {
+                        console.log(error.message)
+                }
+                
+            }
             Actions.Dashboard();
         }
-    }
+    
 
     return (
         <View style={styles.LoginPage}> 

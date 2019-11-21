@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import {View, TextInput, Image, TouchableOpacity, Text} from 'react-native';
 import PUStyles from '../styles/ItemPopUpStyles';
 
-
 function ItemPopUp(props){
 
     const [ColorItem, setColorItem] = useState(false);
@@ -10,6 +9,11 @@ function ItemPopUp(props){
     var PickedSrc = null;
 
     var setval = null;
+
+
+    const [name, setName] = useState('');
+    const [dateAdded, setAddDate] = useState('');
+    const [expDate, setExpDate] = useState('');
 
 
     var Update = (

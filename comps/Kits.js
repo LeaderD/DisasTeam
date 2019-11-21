@@ -2,7 +2,6 @@ import React from 'react';
 import {View, Text, TouchableOpacity, Image} from 'react-native';
 import styles from '../styles/KitsStyle';
 import {Actions} from 'react-native-router-flux';
-import NavBar from './Navbar';
 
 function Kits(){
     return (

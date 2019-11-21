@@ -23,7 +23,7 @@ import VehicleKit from './comps/VehicleKit'
 // import RegistrationPage from './pages/RegistrationPage';
 // import Help from './comps/Help';
 // import Welcome from './comps/Welcome';
-// import Route from './route'
+import Route from './route'
 
 
 
@@ -34,7 +34,7 @@ function App(){
       {/* <Register /> */}
       {/* <NavBar /> */}
       {/* <HomeKitPage /> */}
-      <HomeKit />
+      {/* <HomeKit /> */}
       {/* <WorkKit /> */}
       {/* <GrabNGoKit /> */}
       {/* <VehicleKit /> */}
@@ -42,7 +42,7 @@ function App(){
       {/* <LoginPage/> */}
       {/* <RegistrationPage /> */}
       {/* <Help /> */}
-      {/* <Route/> */}
+      <Route/>
     </View>
   )
 }

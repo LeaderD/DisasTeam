@@ -1,8 +1,7 @@
 import React, {useState, useEffect} from 'react';
-import {View, Text, Button, TouchableOpacity, Image, ScrollView, Dimensions} from 'react-native';
+import {View, Text, Button, TouchableOpacity, Image, ScrollView, Dimensions, AsyncStorage} from 'react-native';
 import styles from '../styles/HomeKitStyles';
 import ItemStyles from '../styles/ItemStyles';
-import NavBar from './NavBar';
 import ItemPopUp from './ItemPopUp';
 
 var tomatoes = [require('../imgs/imgsBWpng/BWcannedfood_1.png'), require('../imgs/imgsPng/cannedfood.png')];
@@ -39,6 +38,34 @@ function HomeKit(){
     const [items, setItems] = useState(arr);
 
     var ItemPU = null;
+
+    async function getItems(){
+        //async storage to get user id
+        const useritemsID = '';
+        try {
+            useritemsID = await AsyncStorage.getItem('userID');
+        } catch (error) {
+            console.log(error.message);
+        };
+        return useritemsID;
+        //call to select all items where userID=this user id you passed over
+        var itemData=async()=>{
+            let response = await fetch('http://142.232.168.247/emUrgency/item_update.php',{
+                method:'POST',
+                header:{
+                    'Accept': 'application/json',
+                    'Content-Type':'application/json'
+                },
+                body:JSON.encode({
+                    userID: useritemsID
+                })
+            }) 
+        let data = await response.json();
+        if (data == "Got Data"){
+            json.encode(useritemsID);
+        }
+    }
+}
 
     if (showItem === true){
     ItemPU = (

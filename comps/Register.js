@@ -11,7 +11,7 @@ function Register(){
     const [password, setPassword] = useState('');
 
     var UserRegister=async()=>{
-        let response = await fetch('http://142.232.165.39/emUrgency/user_registration.php',{
+        let response = await fetch('http://142.232.168.247/emUrgency/user_registration.php',{
             method:'POST',
             header:{
                 'Accept': 'application/json',
@@ -23,10 +23,10 @@ function Register(){
                 name: name
             })
         })
+
     
         let data = await response.json();
         console.log(data);
-
         if(data == "You've been registered!"){
             Actions.Welcome();
         }
