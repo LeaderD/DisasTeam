@@ -4,6 +4,7 @@ import styles from '../styles/HomeKitStyles';
 import ItemStyles from '../styles/ItemStyles';
 import ItemPopUp from './ItemPopUp';
 import {Actions} from 'react-native-router-flux';
+import Kits from './Kits';
 
 var tomatoes = [require('../imgs/imgsBWpng/BWcannedfood_1.png'), require('../imgs/imgsPng/cannedfood.png')];
 var crackers = [require('../imgs/imgsBWpng/BWcrackers_1.png'), require('../imgs/imgsPng/crackers.png')];
@@ -245,18 +246,24 @@ function HomeKit(){
     )}
 
     return (
+    <View>
         <View>
             <View style={styles.Top}>
+                <View>
                 <TouchableOpacity style={styles.backBtn}
-                    onPress={()=> Actions.popTo(Kits)}>
+                onPress={()=>Actions.pop("Kits")}>                   
                     <Image
                     style={styles.backBtn}
                     source={require('../imgs/imgsPng/backbutton.png')}
                     />
                 </TouchableOpacity>
+                </View>
+                <View>
                 <Text style={styles.Title}>Home</Text>
+                </View>
             </View>
-
+        </View>
+        <View>
             <ScrollView>
                 <View style={{flex: 1, flexWrap:"wrap", flexDirection:"row", justifyContent:"center", alignItems:"center", height: 1300}}>
                   {items.map((o,i)=>{
@@ -292,6 +299,7 @@ function HomeKit(){
             {ItemPU}
 
         </View>
+    </View>
 
     )
 }

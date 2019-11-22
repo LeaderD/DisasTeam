@@ -3,7 +3,8 @@ import {StyleSheet} from 'react-native';
 var styles = StyleSheet.create ({
 
     Top:{
-        justifyContent:"center",
+        justifyContent:"flex-start",
+        width: "100%",
         alignItems: "center",
         top:0,
         height: 100,
@@ -12,17 +13,19 @@ var styles = StyleSheet.create ({
 
     backBtn:{
         justifyContent:"center",
-        width: "35%",
-        height: "85%",
-        left: -55,
-        top: 0
+        alignItems: "center",
+        resizeMode: "contain",
+        backgroundColor: "pink",
+        flex:2,
+        width: "50%"
     },
 
     Title:{
-        position: "absolute",
         alignItems: "center",
         color: "#F04B53",
+        backgroundColor: "lightyellow",
         fontSize: 30,
+        justifyContent: "center"
     },
     Items:{
         height: 90,
