@@ -21,32 +21,135 @@ var flashlight = [require('../imgs/imgsBWpng/BWflashlight_1.png'), require('../i
 var clothes = [require('../imgs/imgsBWpng/BWclothes_1.png'), require('../imgs/imgsPng/clothes.png')];
 var sparekeys = [require('../imgs/imgsBWpng/BWkey_1.png'), require('../imgs/imgsPng/key.png')];
 
-var arr = [whistle, flare, firstaid, granola, drinkwater, blankets, matches, candles, shovel]
-
-var names = ["Canned Tomatoes", "Crackers", "Granola Bar", "Cooking Water", "Medical Kit", "Flashlight", "Can Opener", "Whistle", "Radio", 
-             "Flare", "Documents", "Drinking Water", "Spare Keys", "Candles", "Clothes", "Snow Brush", "Medication", "Money", "ID", "Shovel", "Matches"]
-
+var arr = [
+    {
+        state:0,
+        key: 1,
+        arr: whistle,
+        name: "Whistle",
+        start_date: "2019-11-03",
+        days_expired: 60
+    },
+    {
+        state:0,
+        key: 2,
+        arr: flare,
+        name: "Flare",
+        start_date: "2019-11-03",
+        days_expired: 60
+    },
+    {
+        state:0,
+        key: 3,
+        arr: firstaid,
+        name: "Medical Kit",
+        start_date: "2019-11-03",
+        days_expired: 60
+    },
+    {
+        state:0,
+        key: 4,
+        arr: granola,
+        name: "Granola Bar",
+        start_date: "2019-11-03",
+        days_expired: 60
+    },
+    {
+        state:0,
+        key: 5,
+        arr: drinkwater,
+        name: "Drinking Water",
+        start_date: "2019-11-03",
+        days_expired: 60
+    },
+    {
+        state:0,
+        key: 6,
+        arr: blankets,
+        name: "Blankets",
+        start_date: "2019-11-03",
+        days_expired: 60
+    },
+    {
+        state:0,
+        key: 7,
+        arr: matches,
+        name: "Matches",
+        start_date: "2019-11-03",
+        days_expired: 60
+    },
+    {
+        state:0,
+        key: 8,
+        arr: candles,
+        name: "Candles",
+        start_date: "2019-11-03",
+        days_expired: 60
+    },
+    {
+        state:0,
+        key: 9,
+        arr: shovel,
+        name: "Shovel",
+        start_date: "2019-11-03",
+        days_expired: 60
+    },
+    {
+        state:0,
+        key: 10,
+        arr: snowbrush,
+        name: "Snow Brush",
+        start_date: "2019-11-03",
+        days_expired: 60
+    },
+    {
+        state:0,
+        key: 11,
+        arr: documents,
+        name: "Documents",
+        start_date: "2019-11-03",
+        days_expired: 60
+    },
+    {
+        state:0,
+        key: 12,
+        arr: idcopy,
+        name: "ID",
+        start_date: "2019-11-03",
+        days_expired: 60
+    },
+    {
+        state:0,
+        key: 13,
+        arr: flashlight,
+        name: "Flashlight",
+        start_date: "2019-11-03",
+        days_expired: 60
+    },
+    {
+        state:0,
+        key: 14,
+        arr: clothes,
+        name: "Clothes",
+        start_date: "2019-11-03",
+        days_expired: 60
+    },
+    {
+        state:0,
+        key: 15,
+        arr: sparekeys,
+        name: "Spare Keys",
+        start_date: "2019-11-03",
+        days_expired: 60
+    },
+   
+    ]
 function Vehicle(){
 
     const [showItem, setShowItem] = useState(false);
-    const [ItemPic, SetItemPic] = useState('');
-
-    const [Whistle, setWhistle] = useState(whistle);
-    const [Flare, setFlare] = useState(flare);
-    const [FirstAid, setFirstAid] = useState(firstaid);
-    const [Granola, setGranola] = useState(granola);
-    const [Drinkwater, setDrinkWater] = useState(drinkwater);
-    const [Blankets, setBlankets] = useState(blankets);
-    const [Matches, setMatches] = useState(matches);
-    const [Candles, setCandles] = useState(candles);
-    const [Shovel, setShovel] = useState(shovel);
-    const [SnowBrush, setSnowBrush] = useState(snowbrush);
-    const [Documents, setDocuments] = useState(documents);
-    const [IdCopy, setIdCopy] = useState(idcopy);
-    const [Flashlight, setFlashlight] = useState(flashlight);
-    const [Clothes, setClothes] = useState(clothes);
-    const [SpareKeys, setSpareKeys] = useState(sparekeys);
-    //const [item1, setItem1] = useState({});
+    const [ItemPic, setItemPic] = useState('');
+    const [curIndex, setCurIndex] = useState(0);
+    const [items, setItems] = useState(arr);
 
     var ItemPU = null;
 
@@ -54,31 +157,17 @@ function Vehicle(){
     ItemPU = (
         <ItemPopUp
         setShowItem={setShowItem}
-        SetItemPic={SetItemPic}
+        setItemPic={setItemPic}
         ItemPic={ItemPic}
-        
-        setWhistle={setWhistle}
-        setFlare={setFlare}
-        setFirstAid={setFirstAid}
-        setGranola={setGranola}
-        setDrinkWater={setDrinkWater}
-        setBlankets={setBlankets}
-        setMatches={setMatches}
-        setCandles={setCandles}
-        setShovel={setShovel}
-        setSnowBrush={setSnowBrush}
-        setDocuments={setDocuments}
-        setIdCopy={setIdCopy}
-        setFlashlight={setFlashlight}
-        setClothes={setClothes}
-        setSpareKeys={setSpareKeys}
+        setItems={setItems}
+        curIndex={curIndex}
+        items={items}
         />
     )}
 
-
     return (
         <View>
-             <View style={styles.Top}>
+            <View style={styles.Top}>
                 <TouchableOpacity style={styles.backBtn}>
                     <Image
                     style={styles.backBtn}
@@ -89,198 +178,35 @@ function Vehicle(){
             </View>
 
             <ScrollView>
-                <View style={{height: 800}}>
-                    <View style={{flexDirection:"row", justifyContent:"center", top: 20}}>
-                        <TouchableOpacity style={{alignItems:"center"}}
-                        onPress = {() => {
-                            setShowItem(true);
-                            SetItemPic(whistle);
-                        }}>
-                            <Image
-                            style={ItemStyles.Whistle}
-                            source={Whistle}
-                            />
-                            <Text style={styles.ItemTxt}>Whistle</Text>
-                        </TouchableOpacity>
+                <View style={{flex: 1, flexWrap:"wrap", flexDirection:"row", justifyContent:"center", alignItems:"center", height: 900}}>
+                  {items.map((o,i)=>{
 
-                        <TouchableOpacity style={{alignItems:"center"}}
-                        onPress = {() => {
-                            setShowItem(true);
-                            SetItemPic(flare);
-                        }}> 
-                            <Image
-                            style={ItemStyles.Flare}
-                            source={Flare}
-                            />
-                            <Text style={styles.ItemTxt}>Flare</Text>
-                        </TouchableOpacity>
+                    var timenow = new Date();
+                    var timestart = new Date(o.start_date);
 
-                        <TouchableOpacity style={{alignItems:"center"}}
-                        onPress = {() => {
-                            setShowItem(true);
-                            SetItemPic(firstaid);
-                        }}>
-                            <Image
-                            style={ItemStyles.MedicalKit}
-                            source={FirstAid}
-                            />
-                            <Text style={styles.ItemTxt}>Medical Kit</Text>
-                        </TouchableOpacity>
-                    </View>
+                    var secondsnow = Date.parse(timenow);
+                    var secondsstart = Date.parse(timestart);
 
-                    <View style={{flexDirection:"row", justifyContent:"center", top: 60}}>
-                        <TouchableOpacity style={{alignItems:"center"}}
-                        onPress = {() => {
-                            setShowItem(true);
-                            SetItemPic(granola);
-                        }}>
-                            <Image
-                            style={ItemStyles.Granola}
-                            source={Granola}
-                            />
-                            <Text style={styles.ItemTxt}>Granola Bar</Text>
-                        </TouchableOpacity>
+                    var passedtime = secondsnow - secondsstart; //miliseconds /1000/60/60/24
 
-                        <TouchableOpacity style={{alignItems:"center"}}
-                        onPress = {() => {
-                            setShowItem(true);
-                            SetItemPic(drinkwater);
-                        }}>
-                            <Image
-                            style={ItemStyles.Water}
-                            source={Drinkwater}
-                            />
-                            <Text style={styles.ItemTxt}>Water</Text>
-                        </TouchableOpacity>
+                    var style = ItemStyles.FirstState;
+                    return (
+                      <TouchableOpacity style={ItemStyles.ItemPopUp}
+                      onPress = {() => {
+                          setShowItem(true);
+                          setItemPic(o.arr[o.state]);
+                          setCurIndex(i);
+                      }}>
+                          <Image
+                          style={ItemStyles.FirstSate}
+                          source={o.arr[o.state]}
+                          />
+                          <Text style={styles.ItemTxt}>{o.name || ""}</Text>
+                      </TouchableOpacity>
+                    )
+                  })
+                }
 
-                        <TouchableOpacity style={{alignItems:"center"}}
-                        onPress = {() => {
-                            setShowItem(true);
-                            SetItemPic(blankets);
-                            console.log(blankets)
-                        }}>
-                            <Image
-                            style={ItemStyles.Blankets}
-                            source={Blankets}
-                            />
-                            <Text style={styles.ItemTxt}>Blankets</Text>
-                        </TouchableOpacity>
-                    </View>
-
-                    <View style={{flexDirection:"row", justifyContent:"center", top: 100}}>
-                        <TouchableOpacity style={{alignItems:"center"}}
-                        onPress = {() => {
-                            setShowItem(true);
-                            SetItemPic(matches);
-                        }}>
-                            <Image
-                            style={ItemStyles.Matches}
-                            source={Matches}
-                            />
-                            <Text style={styles.ItemTxt}>Matches</Text>
-                        </TouchableOpacity>
-
-                        <TouchableOpacity style={{alignItems:"center"}}
-                        onPress = {() => {
-                            setShowItem(true);
-                            SetItemPic(candles);
-                        }}>
-                            <Image
-                            style={ItemStyles.Candles}
-                            source={Candles}
-                            />
-                            <Text style={styles.ItemTxt}>Candles</Text>
-                        </TouchableOpacity>
-
-                        <TouchableOpacity style={{alignItems:"center"}}
-                        onPress = {() => {
-                            setShowItem(true);
-                            SetItemPic(shovel);
-                        }}>
-                            <Image
-                            style={ItemStyles.Shovel}
-                            source={Shovel}
-                            />
-                            <Text style={styles.ItemTxt}>Shovel</Text>
-                        </TouchableOpacity>
-                    </View>
-
-                    <View style={{flexDirection:"row", justifyContent:"center", top: 140}}>
-                        <TouchableOpacity style={{alignItems:"center"}}
-                        onPress = {() => {
-                            setShowItem(true);
-                            SetItemPic(snowbrush);
-                        }}> 
-                            <Image
-                            style={ItemStyles.SnowBrush}
-                            source={SnowBrush}
-                            />
-                            <Text style={styles.ItemTxt}>Snow Brush</Text>
-                        </TouchableOpacity>
-
-                        <TouchableOpacity style={{alignItems:"center"}}
-                        onPress = {() => {
-                            setShowItem(true);
-                            SetItemPic(documents);
-                        }}>
-                            <Image
-                            style={ItemStyles.Documents}
-                            source={Documents}
-                            />
-                            <Text style={styles.ItemTxt}>Documents</Text>
-                        </TouchableOpacity>
-
-                        <TouchableOpacity style={{alignItems:"center"}}
-                        onPress = {() => {
-                            setShowItem(true);
-                            SetItemPic(idcopy);
-                        }}>
-                            <Image
-                            style={ItemStyles.ID}
-                            source={IdCopy}
-                            />
-                            <Text style={styles.ItemTxt}>ID</Text>
-                        </TouchableOpacity>
-                    </View>
-
-                    <View style={{flexDirection:"row", justifyContent:"center", top: 180}}>
-
-                        <TouchableOpacity style={{alignItems:"center"}}
-                        onPress = {() => {
-                            setShowItem(true);
-                            SetItemPic(flashlight);
-                        }}>
-                                <Image
-                                style={ItemStyles.Flashlight}
-                                source={Flashlight}
-                                />
-                                <Text style={styles.ItemTxt}>Flashlight</Text>
-                        </TouchableOpacity>
-
-                        <TouchableOpacity style={{alignItems:"center"}}
-                        onPress = {() => {
-                            setShowItem(true);
-                            SetItemPic(clothes);
-                        }}>
-                                <Image
-                                style={ItemStyles.Clothes}
-                                source={Clothes}
-                                />
-                                <Text style={styles.ItemTxt}>Clothes</Text>
-                        </TouchableOpacity>
-
-                        <TouchableOpacity style={{alignItems:"center"}}
-                        onPress = {() => {
-                            setShowItem(true);
-                            SetItemPic(sparekeys);
-                        }}>
-                                <Image
-                                style={ItemStyles.SpareKeys}
-                                source={SpareKeys}
-                                />
-                                <Text style={styles.ItemTxt}>Spare Keys</Text>
-                        </TouchableOpacity>
-                    </View>
                 </View>
             </ScrollView>
 
@@ -290,5 +216,6 @@ function Vehicle(){
 
     )
 }
+    
 
 export default Vehicle;

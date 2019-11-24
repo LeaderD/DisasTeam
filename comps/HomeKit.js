@@ -110,7 +110,7 @@ var arr = [
 },
 {
     state:0,
-    key: 1,
+    key: 11,
     arr: documents,
     name: "Documents",
     start_date: "2019-11-03",
@@ -118,6 +118,7 @@ var arr = [
 },
 {
     state:0,
+    key: 12,
     arr: drinkwater,
     name: "Drinking Water",
     start_date: "2019-11-03",
@@ -125,6 +126,7 @@ var arr = [
 },
 {
     state:0,
+    key: 13,
     arr: sparekeys,
     name: "Spare Keys",
     start_date: "2019-11-03",
@@ -132,7 +134,7 @@ var arr = [
 },
 {
     state:0,
-    key: 1,
+    key: 14,
     arr: candles,
     name: "Candles",
     start_date: "2019-11-03",
@@ -140,7 +142,7 @@ var arr = [
 },
 {
     state:0,
-    key: 1,
+    key: 15,
     arr: clothes,
     name: "Clothes",
     start_date: "2019-11-03",
@@ -148,7 +150,7 @@ var arr = [
 },
 {
     state:0,
-    key: 1,
+    key: 16,
     arr: snowbrush,
     name: "Snow Brush",
     start_date: "2019-11-03",
@@ -156,7 +158,7 @@ var arr = [
 },
 {
     state:0,
-    key: 1,
+    key: 17,
     arr: medication,
     name: "Medication",
     start_date: "2019-11-03",
@@ -164,7 +166,7 @@ var arr = [
 },
 {
     state:0,
-    key: 1,
+    key: 18,
     arr: money,
     name: "Money",
     start_date: "2019-11-03",
@@ -172,7 +174,7 @@ var arr = [
 },
 {
     state:0,
-    key: 1,
+    key: 19,
     arr: idcopy,
     name: "ID",
     start_date: "2019-11-03",
@@ -180,6 +182,7 @@ var arr = [
 },
 {
     state:0,
+    key: 20,
     arr: shovel,
     name: "Shovel",
     start_date: "2019-11-03",
@@ -187,7 +190,7 @@ var arr = [
 },
 {
     state:0,
-    key: 1,
+    key: 21,
     arr: matches,
     name: "Matches",
     start_date: "2019-11-03",
@@ -249,7 +252,7 @@ function HomeKit(){
                           setCurIndex(i);
                       }}>
                           <Image
-                          style={ItemStyles.CannedTomatoes}
+                          style={ItemStyles.FirstSate}
                           source={o.arr[o.state]}
                           />
                           <Text style={styles.ItemTxt}>{o.name || ""}</Text>
