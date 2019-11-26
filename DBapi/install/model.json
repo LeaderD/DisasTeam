@@ -1,0 +1,15 @@
+[
+  {
+    "model":"users",
+    "cols":["id", "email", "password", "hash"],
+    "colstype":["SERIAL PRIMARY KEY", "TEXT", "TEXT", "TEXT"],
+    "encrypt":["password"],
+    "hash":["hash"]
+  },
+  {
+    "model":"items",
+    "cols":["id", "users_id", "item_name", "exp_date", "type"],
+    "colstype":["SERIAL PRIMARY KEY", "INTEGER REFERENCES users(id) ON DELETE CASCADE", "TEXT", "TEXT", "TEXT"],
+    "order":["id"]
+  }
+]
