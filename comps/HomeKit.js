@@ -4,6 +4,7 @@ import styles from '../styles/HomeKitStyles';
 import ItemStyles from '../styles/ItemStyles';
 import NavBar from './NavBar';
 import ItemPopUp from './ItemPopUp';
+import ax from '../ax';
 
 var tomatoes = [require('../imgs/imgsBWpng/BWcannedfood_1.png'), require('../imgs/imgsPng/cannedfood.png')];
 var crackers = [require('../imgs/imgsBWpng/BWcrackers_1.png'), require('../imgs/imgsPng/crackers.png')];
@@ -199,7 +200,7 @@ function HomeKit(){
 
     const [showItem, setShowItem] = useState(false);
     const [ItemPic, setItemPic] = useState('');
-    const [curIndex, setCurIndex] = useState(0);
+    const [curItem, setCurItem] = useState({});
     const [items, setItems] = useState(arr);
 
     var ItemPU = null;
@@ -211,10 +212,23 @@ function HomeKit(){
         setItemPic={setItemPic}
         ItemPic={ItemPic}
         setItems={setItems}
-        curIndex={curIndex}
+        curItem={curItem}
         items={items}
         />
     )}
+    
+    const getItems = async()=>{
+        
+        var data = await ax("items_read", {users_id:1, type:'h'});
+        console.log(data);
+        setItems(data);
+    }
+    
+    useEffect(()=>{
+        getItems();
+        
+        
+    },[]);
 
     return (
         <View>
@@ -233,7 +247,7 @@ function HomeKit(){
                   {items.map((o,i)=>{
 
                     var timenow = new Date();
-                    var timestart = new Date(o.start_date);
+                    var timestart = new Date(o.exp_date);
 
                     var secondsnow = Date.parse(timenow);
                     var secondsstart = Date.parse(timestart);
@@ -245,14 +259,14 @@ function HomeKit(){
                       <TouchableOpacity style={ItemStyles.ItemPopUp}
                       onPress = {() => {
                           setShowItem(true);
-                          setItemPic(o.arr[o.state]);
-                          setCurIndex(i);
+                          setItemPic(arr[0]);
+                          setCurItem(o);
                       }}>
                           <Image
                           style={ItemStyles.CannedTomatoes}
-                          source={o.arr[o.state]}
+                          source={arr[0]}
                           />
-                          <Text style={styles.ItemTxt}>{o.name || ""}</Text>
+                          <Text style={styles.ItemTxt}>{o.item_name || ""}</Text>
                       </TouchableOpacity>
                     )
                   })

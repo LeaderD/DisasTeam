@@ -13,10 +13,10 @@ function ItemPopUp(props){
             console.log(props.curItem);
             props.setShowItem(false);
             props.items[props.curIndex].state = 1;
-            props.setItems(props.items.map((o)=>{
-                return o;
-            }))
-            //props.SetItemPic(props.curItem[1]);
+//            props.setItems(props.items.map((o)=>{
+//                return o;
+//            }))
+//            props.SetItemPic(props.curItem[1]);
         }}
         >
              <Text
@@ -41,10 +41,12 @@ function ItemPopUp(props){
         <View style={PUStyles.inputView}>
             <TextInput
               style={PUStyles.inputs}
+              defaultValue={props.curItem.item_name}
               placeholder="Item Name">
             </TextInput>
             <TextInput
               style={PUStyles.inputs}
+              value={props.curItem.exp_date}
               placeholder="Expiry Date"
               keyboardType="numeric">
             </TextInput>
