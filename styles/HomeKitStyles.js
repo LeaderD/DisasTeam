@@ -1,32 +1,61 @@
+/* eslint-disable prettier/prettier */
 import {StyleSheet} from 'react-native';
 
-var styles = StyleSheet.create ({
-
-    Top:{
-        justifyContent:"flex-start",
-        width: "100%",
-        alignItems: "center",
-        top:0,
-        height: 100,
-        backgroundColor: "#FFFEF3"
+var HomeKitStyles = StyleSheet.create ({
+    Cont: {
+    flex: 1,
     },
 
+    ContentCont: {
+        flexWrap:"wrap", 
+        flexDirection:"row", 
+        justifyContent:"center", 
+        alignItems:"center"
+    },
+
+    // Nav Bar
+    Top:{
+        alignItems: "center",
+        height: 70,
+        flexDirection: 'row',
+        backgroundColor:"#FFFEF3",
+    },
+
+
+    // Back Arrow Container
+    BackNav: {
+        flex: 1,
+        // backgroundColor: "pink",
+        marginLeft: 20,
+        marginTop: 3
+    },
     backBtn:{
         justifyContent:"center",
         alignItems: "center",
         resizeMode: "contain",
-        backgroundColor: "pink",
-        flex:2,
-        width: "50%"
+        width: 50,
+        height: 50
+    },
+
+    // Home Title Container
+    TitleNav: {
+        flex: 6,
+        alignItems: "center",
+        // backgroundColor: "purple",
     },
 
     Title:{
         alignItems: "center",
         color: "#F04B53",
-        backgroundColor: "lightyellow",
+        // backgroundColor: "lightyellow",
         fontSize: 30,
-        justifyContent: "center"
+        justifyContent: "center",
+        marginLeft: -75
     },
+
+
+
+
     Items:{
         height: 90,
         width: 90,
@@ -46,4 +75,4 @@ var styles = StyleSheet.create ({
 
 })
 
-export default styles;
+export default HomeKitStyles;

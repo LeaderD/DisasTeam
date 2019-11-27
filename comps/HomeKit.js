@@ -1,6 +1,7 @@
+/* eslint-disable prettier/prettier */
 import React, {useState, useEffect} from 'react';
-import {View, Text, Button, TouchableOpacity, Image, ScrollView, Dimensions, AsyncStorage} from 'react-native';
-import styles from '../styles/HomeKitStyles';
+import {View, Text, Button, TouchableOpacity, Image, ScrollView, Dimensions, AsyncStorage, SafeAreaView} from 'react-native';
+import HomeKitStyles from '../styles/HomeKitStyles';
 import ItemStyles from '../styles/ItemStyles';
 import ItemPopUp from './ItemPopUp';
 import {Actions} from 'react-native-router-flux';
@@ -246,26 +247,32 @@ function HomeKit(){
     )}
 
     return (
-    <View>
-        <View>
-            <View style={styles.Top}>
-                <View>
-                <TouchableOpacity style={styles.backBtn}
+        <SafeAreaView style={HomeKitStyles.Cont}>
+
+            {/* Nav Bar */}
+            <View style={HomeKitStyles.Top}>
+
+                <View style={HomeKitStyles.BackNav}>
+                    
+                <TouchableOpacity style={HomeKitStyles.backBtn}
                 onPress={()=>Actions.pop("Kits")}>                   
                     <Image
-                    style={styles.backBtn}
+                    style={HomeKitStyles.backBtn}
                     source={require('../imgs/imgsPng/backbutton.png')}
                     />
+                    {/* <Text> Home </Text> */}
                 </TouchableOpacity>
                 </View>
-                <View>
-                <Text style={styles.Title}>Home</Text>
+
+                <View style={HomeKitStyles.TitleNav}>
+                <Text style={HomeKitStyles.Title}>Home</Text>
                 </View>
             </View>
-        </View>
-        <View>
+
+            {/* Content */}
             <ScrollView>
-                <View style={{flex: 1, flexWrap:"wrap", flexDirection:"row", justifyContent:"center", alignItems:"center", height: 1300}}>
+                <View style={HomeKitStyles.ContentCont}>
+                    
                   {items.map((o,i)=>{
 
                     var timenow = new Date();
@@ -288,7 +295,7 @@ function HomeKit(){
                           style={ItemStyles.CannedTomatoes}
                           source={o.arr[o.state]}
                           />
-                          <Text style={styles.ItemTxt}>{o.name || ""}</Text>
+                          <Text style={HomeKitStyles.ItemTxt}>{o.name || ""}</Text>
                       </TouchableOpacity>
                     )
                   })
@@ -296,11 +303,10 @@ function HomeKit(){
                 </View>
             </ScrollView>
 
+            {/* Henry added this */}
             {ItemPU}
 
-        </View>
-    </View>
-
+    </SafeAreaView>
     )
 }
 

@@ -21,15 +21,15 @@ function Route() {
   return (
     <Router>
       <Stack key="root" hideNavBar={true}>
-        <Scene key="Login" component={LoginPage}  initial={true}/>
+        <Scene key="Login" component={LoginPage}  />
         <Scene key="Register" component={RegistrationPage} />
         <Scene key="Welcome" component={WelcomePage}/>
-        <Scene key="Kits" component={KitsPage} />
+        <Scene key="Kits" component={KitsPage} initial={true} />
         <Scene key="Dashboard" component={DashboardPage} />
         <Scene key="Profile" component={ProfilePage} />
         <Scene key="Help" component={HelpPage} />
         <Scene key="HomeKit" component={HomeKitPage}/>
-        <Scene key="VehicleKit" component={VehicleKitPage} />
+        <Scene key="VehicleKit" component={VehicleKitPage}/>
         <Scene key="WorkKit" component={WorkKitPage} />
         <Scene key="GrabNGoKit" component={GrabNGoKitPage} />
       </Stack>
