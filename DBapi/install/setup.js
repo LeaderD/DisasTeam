@@ -114,7 +114,7 @@ async function setupdb(){
       //console.log(q);
       await db.query(q, []);
       return true;
-  } catch (err){
+  } catch (e){
       console.log("\x1b[31m", err);
       return false;
   }

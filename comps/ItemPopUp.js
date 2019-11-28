@@ -7,6 +7,7 @@ function ItemPopUp(props){
 
 
 
+    console.log(props.curItem);
     var Update = (
         <TouchableOpacity style={PUStyles.UpdateBut}
         onPress={()=>{

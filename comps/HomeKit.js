@@ -28,180 +28,37 @@ var idcopy = [require('../imgs/imgsBWpng/BWid_1.png'), require('../imgs/imgsPng/
 var shovel = [require('../imgs/imgsBWpng/BWshovel_1.png'), require('../imgs/imgsPng/shovel.png')];
 var matches = [require('../imgs/imgsBWpng/BWmatches_1.png'), require('../imgs/imgsPng/matches.png')];
 
-var arr = [
-{
-    state:0,
-    key: 1,
-    arr: tomatoes,
-    name: "Canned Tomatoes",
-    start_date: "2019-11-03",
-    days_expired: 60
-},
-{
-    state:0,
-    key: 2,
-    arr: crackers,
-    name: "Crackers",
-    start_date: "2019-11-03",
-    days_expired: 60
-},
-{
-    state:0,
-    key: 3,
-    arr: granola,
-    name: "Granola Bar",
-    start_date: "2019-11-03",
-    days_expired: 60
-},
-{
-    state:0,
-    key: 4,
-    arr: cookwater,
-    name: "Cooking Water",
-    start_date: "2019-11-03",
-    days_expired: 60
-},
-{
-    state:0,
-    key: 5,
-    arr: firstaid,
-    name: "Medical Kit",
-    start_date: "2019-11-03",
-    days_expired: 60
-},
-{
-    state:0,
-    key: 6,
-    arr: flashlight,
-    name: "Flashlight",
-    start_date: "2019-11-03",
-    days_expired: 60
-},
-{
-    state:0,
-    key: 7,
-    arr: canopener,
-    name: "Can Opener",
-    start_date: "2019-11-03",
-    days_expired: 60
-},
-{
-    state:0,
-    key: 8,
-    arr: whistle,
-    name: "Whistle",
-    start_date: "2019-11-03",
-    days_expired: 60
-},
-{
-    state:0,
-    key: 9,
-    arr: radio,
-    name: "Radio",
-    start_date: "2019-11-03",
-    days_expired: 60
-},
-{
-    state:0,
-    key: 10,
-    arr: flare,
-    name: "Flare",
-    start_date: "2019-11-03",
-    days_expired: 60
-},
-{
-    state:0,
-    key: 1,
-    arr: documents,
-    name: "Documents",
-    start_date: "2019-11-03",
-    days_expired: 60
-},
-{
-    state:0,
-    arr: drinkwater,
-    name: "Drinking Water",
-    start_date: "2019-11-03",
-    days_expired: 60
-},
-{
-    state:0,
-    arr: sparekeys,
-    name: "Spare Keys",
-    start_date: "2019-11-03",
-    days_expired: 60
-},
-{
-    state:0,
-    key: 1,
-    arr: candles,
-    name: "Candles",
-    start_date: "2019-11-03",
-    days_expired: 60
-},
-{
-    state:0,
-    key: 1,
-    arr: clothes,
-    name: "Clothes",
-    start_date: "2019-11-03",
-    days_expired: 60
-},
-{
-    state:0,
-    key: 1,
-    arr: snowbrush,
-    name: "Snow Brush",
-    start_date: "2019-11-03",
-    days_expired: 60
-},
-{
-    state:0,
-    key: 1,
-    arr: medication,
-    name: "Medication",
-    start_date: "2019-11-03",
-    days_expired: 60
-},
-{
-    state:0,
-    key: 1,
-    arr: money,
-    name: "Money",
-    start_date: "2019-11-03",
-    days_expired: 60
-},
-{
-    state:0,
-    key: 1,
-    arr: idcopy,
-    name: "ID",
-    start_date: "2019-11-03",
-    days_expired: 60
-},
-{
-    state:0,
-    arr: shovel,
-    name: "Shovel",
-    start_date: "2019-11-03",
-    days_expired: 60
-},
-{
-    state:0,
-    key: 1,
-    arr: matches,
-    name: "Matches",
-    start_date: "2019-11-03",
-    days_expired: 60
-},
-] 
+var imgs = {
+    tomatoes,
+    crackers,
+    granola,
+    cookwater,
+    firstaid,
+    flashlight,
+    canopener,
+    whistle,
+    radio,
+    flare,
+    documents,
+    drinkwater,
+    sparekeys,
+    candles,
+    clothes,
+    snowbrush,
+    medication,
+    money,
+    idcopy,
+    shovel,
+    matches
+    
+}
 
 function HomeKit(){
 
     const [showItem, setShowItem] = useState(false);
     const [ItemPic, setItemPic] = useState('');
     const [curItem, setCurItem] = useState({});
-    const [items, setItems] = useState(arr);
+    const [items, setItems] = useState([]);
 
     var ItemPU = null;
 
@@ -220,7 +77,9 @@ function HomeKit(){
     const getItems = async()=>{
         
         var data = await ax("items_read", {users_id:1, type:'h'});
-        console.log(data);
+        //console.log(data);
+        
+        console.log(imgs);
         setItems(data);
     }
     
@@ -255,16 +114,16 @@ function HomeKit(){
                     var passedtime = secondsnow - secondsstart; //miliseconds /1000/60/60/24
 
                     var style = ItemStyles.FirstState;
+                    //var img = {uri:o.active_img};
                     return (
                       <TouchableOpacity style={ItemStyles.ItemPopUp}
                       onPress = {() => {
                           setShowItem(true);
-                          setItemPic(arr[0]);
                           setCurItem(o);
                       }}>
                           <Image
                           style={ItemStyles.CannedTomatoes}
-                          source={arr[0]}
+                          source={imgs[o.img][0] || null}
                           />
                           <Text style={styles.ItemTxt}>{o.item_name || ""}</Text>
                       </TouchableOpacity>
