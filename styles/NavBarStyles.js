@@ -10,7 +10,7 @@ var NBStyles = {
     },
     navImg:{
         width: 70,
-        height: 70
+        height: 50
        },
     touchOp:{
         width: "30%",
@@ -21,7 +21,7 @@ var NBStyles = {
     },
     navCap:{
         color:"white",
-        fontSize: 16,
+        fontSize: 18,
     }
 }
 

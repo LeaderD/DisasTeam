@@ -1,22 +1,58 @@
+/* eslint-disable prettier/prettier */
 import {StyleSheet} from 'react-native';
 
 var styles = StyleSheet.create ({
 
+  Cont: {
+    flex: 1,
+    justifyContent: 'center',
+  },
+  TopBar: {
+    backgroundColor: "#FFFEF3",
+    alignItems: "center",
+    justifyContent:"center",
+    height: 70
+  },
+  TitleTop: {
+    fontSize: 40
+  },
     Title:{
-        alignItems: "center",
-        justifyContent:"center",
         color: "#F04B53",
         fontSize: 40,
-        textAlign: "center",
-        marginTop: 30
+
     },
 
-    home:{
-        marginRight: '12%',
-        marginTop: '40%',
+    KitCont: {
+      // backgroundColor: "lightyellow",
+      height: 150,
+      alignItems: "center",
+      marginBottom: 40,
+      top: "5%",
+      // backgroundColor: "pink"
+    },
+
+    WrapCont: {
+      flexWrap:'wrap', 
+      flexDirection:"row", 
+      // backgroundColor: "white",
+      width: "75%",
+      top: "10%",
+      justifyContent: "space-around",
+      alignItems: "center"
+    },
+    
+    ContentCont: {
+      // height: "100%",
+      marginTop: 20,
+      width:'100%', 
+      flexDirection:"row", 
+      // backgroundColor: "pink",
+      justifyContent:"center"
+    },
+
+    Icon:{
         height: 120,
         width: 120
-
     },
 
     work:{
@@ -45,7 +81,7 @@ var styles = StyleSheet.create ({
 
         fontSize: 22,
         color:"#8B8B8A",
-        paddingTop: '5%'
+        // paddingTop: '5%'
 
     },
 

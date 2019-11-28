@@ -1,9 +1,11 @@
 import React from 'react';
-import {View, Text, Image, TouchableOpacity} from 'react-native';
+import {View, Text, Image, TouchableOpacity, SafeAreaView} from 'react-native';
 import NBStyles from '../styles/NavBarStyles';
+import {Actions} from 'react-native-router-flux';
 
 function NavBar(){
     return (
+        <SafeAreaView>
         <View style={{justifyContent:"flex-end"}}>
             <View style={NBStyles.container}>
             <TouchableOpacity style={NBStyles.touchOp}
@@ -31,6 +33,7 @@ function NavBar(){
             </TouchableOpacity>
             </View>
         </View>
+        </SafeAreaView>
     )
 };
 

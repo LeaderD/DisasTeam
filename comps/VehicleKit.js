@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import {View, Text, Button, TouchableOpacity, Image, ScrollView, Dimensions} from 'react-native';
 import styles from '../styles/HomeKitStyles';
 import ItemStyles from '../styles/ItemStyles';
-import NavBar from './NavBar';
 import ItemPopUp from './ItemPopUp';
 
 var whistle = [require('../imgs/imgsBWpng/BWwhistle_1.png'), require('../imgs/imgsPng/whistle.png')];
@@ -98,7 +97,7 @@ function Vehicle(){
                         }}>
                             <Image
                             style={ItemStyles.Whistle}
-                            source={Whistle}
+                            source={whistle}
                             />
                             <Text style={styles.ItemTxt}>Whistle</Text>
                         </TouchableOpacity>

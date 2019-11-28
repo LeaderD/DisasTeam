@@ -11,7 +11,7 @@ function Register(){
     const [password, setPassword] = useState('');
 
     var UserRegister=async()=>{
-        let response = await fetch('http://192.168.0.19/emUrgency/user_registration.php',{
+        let response = await fetch('http://142.232.168.247/emUrgency/user_registration.php',{
             method:'POST',
             header:{
                 'Accept': 'application/json',
@@ -23,13 +23,12 @@ function Register(){
                 name: name
             })
         })
-    
-        // let data = await response.json();
-        let data = await response.text();
-        console.log(data);
 
+    
+        let data = await response.json();
+        console.log(data);
         if(data == "You've been registered!"){
-            Actions.Welcome()
+            Actions.Welcome();
         }
     }
     
@@ -52,7 +51,8 @@ function Register(){
             secureTextEntry={true}></TextInput>
 
             <TouchableOpacity style={styles.NewRegistrationButton}
-            onPress={()=>{UserRegister();
+            onPress={()=>{
+                UserRegister();
             }}>
                 <Text style={styles.RegisterButtonText}> Create Account </Text>
             </TouchableOpacity>

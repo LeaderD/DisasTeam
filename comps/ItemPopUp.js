@@ -2,9 +2,13 @@ import React, {useState} from 'react';
 import {View, TextInput, Image, TouchableOpacity, Text} from 'react-native';
 import PUStyles from '../styles/ItemPopUpStyles';
 
-
 function ItemPopUp(props){
 
+
+
+    const [name, setName] = useState('');
+    const [dateAdded, setAddDate] = useState('');
+    const [expDate, setExpDate] = useState('');
 
 
     var Update = (

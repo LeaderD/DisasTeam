@@ -1,6 +1,7 @@
 import React from 'react';
 import {View, Text, Button, TouchableOpacity, Image} from 'react-native';
 import styles from '../styles/WelcomeStyles';
+import {Actions} from 'react-native-router-flux';
 
 function Welcome(){
     return (
@@ -26,7 +27,8 @@ function Welcome(){
 
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.GetStartedButton}>
+            <TouchableOpacity style={styles.GetStartedButton}
+            onPress={()=>Actions.Dashboard()}>
                 <Text style={styles.GetStartedButtonText}> 
                 Get Started
                 </Text>
