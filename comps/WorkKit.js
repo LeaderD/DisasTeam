@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
-import {View, Text, Button, TouchableOpacity, Image, ScrollView, Dimensions} from 'react-native';
-import styles from '../styles/HomeKitStyles';
+import {View, Text, Button, TouchableOpacity, Image, ScrollView, Dimensions, SafeAreaView} from 'react-native';
+import HomeKitStyles from '../styles/HomeKitStyles';
 import ItemStyles from '../styles/ItemStyles';
-import NavBar from './NavBar';
 import ItemPopUp from './ItemPopUp';
+import {Actions} from 'react-native-router-flux';
 
 var clothes = require('../imgs/imgsBWpng/BWclothes_1.png');
 var medication = require('../imgs/imgsBWpng/BWmeds_1.png');
@@ -14,10 +14,6 @@ var whistle = require('../imgs/imgsBWpng/BWwhistle_1.png');
 var flashlight = require('../imgs/imgsBWpng/BWflashlight_1.png');
 var idcopy = require('../imgs/imgsBWpng/BWid_1.png');
 var money = require('../imgs/imgsBWpng/BWmoney_1.png');
-
-
-
-
 
 function WorkKit(){
 
@@ -60,18 +56,24 @@ function WorkKit(){
 
 
     return (
+        <SafeAreaView>
         <View>
-            <View style={styles.Top}>
-                <TouchableOpacity style={styles.backBtn}>
+            <View style={HomeKitStyles.Top}>
+                <View style={HomeKitStyles.BackNav}>
+                <TouchableOpacity style={HomeKitStyles.backBtn}
+                onPress={()=>Actions.pop("Kits")}>
                     <Image
-                    style={styles.backBtn}
+                    style={HomeKitStyles.backBtn}
                     source={require('../imgs/imgsPng/backbutton.png')}
                     />
                 </TouchableOpacity>
-                <Text style={styles.Title}>Work</Text>
+                </View>
+                <View style={HomeKitStyles.TitleNav}>
+                <Text style={HomeKitStyles.Title}>Work</Text>
+                </View>
             </View>
 
-            <View style={{flexDirection:"row", justifyContent:"center", top: 20}}>
+            <View>
                     <TouchableOpacity style={{alignItems:"center"}}
                     onPress = {() => {
                         setShowItem(true);
@@ -81,7 +83,7 @@ function WorkKit(){
                             style={ItemStyles.Clothes}
                             source={Clothes}
                             />
-                            <Text style={styles.ItemTxt}>Change of Clothes</Text>
+                            <Text style={HomeKitStyles.ItemTxt}>Change of Clothes</Text>
                     </TouchableOpacity>
 
                     <TouchableOpacity style={{alignItems:"center"}}
@@ -93,7 +95,7 @@ function WorkKit(){
                             style={ItemStyles.Medication}
                             source={Medication}
                             />
-                            <Text style={styles.ItemTxt}>Medication</Text>
+                            <Text style={HomeKitStyles.ItemTxt}>Medication</Text>
                     </TouchableOpacity>
 
                     <TouchableOpacity style={{alignItems:"center"}}
@@ -105,7 +107,7 @@ function WorkKit(){
                             style={ItemStyles.MedicalKit}
                             source={FirstAid}
                             />
-                            <Text style={styles.ItemTxt}>First Aid Kit</Text>
+                            <Text style={HomeKitStyles.ItemTxt}>First Aid Kit</Text>
                     </TouchableOpacity>
 
             </View>
@@ -120,7 +122,7 @@ function WorkKit(){
                             style={ItemStyles.Granola}
                             source={Granola}
                             />
-                            <Text style={styles.ItemTxt}>Food Items</Text>
+                            <Text style={HomeKitStyles.ItemTxt}>Food Items</Text>
                     </TouchableOpacity>
 
                     <TouchableOpacity style={{alignItems:"center"}}
@@ -132,7 +134,7 @@ function WorkKit(){
                             style={ItemStyles.Water}
                             source={Drinkwater}
                             />
-                            <Text style={styles.ItemTxt}>Drinking Water</Text>
+                            <Text style={HomeKitStyles.ItemTxt}>Drinking Water</Text>
                     </TouchableOpacity>
 
                     <TouchableOpacity style={{alignItems:"center"}}
@@ -144,7 +146,7 @@ function WorkKit(){
                             style={ItemStyles.Whistle}
                             source={Whistle}
                             />
-                            <Text style={styles.ItemTxt}>Whistle</Text>
+                            <Text style={HomeKitStyles.ItemTxt}>Whistle</Text>
                     </TouchableOpacity>
             </View>
 
@@ -158,7 +160,7 @@ function WorkKit(){
                             style={ItemStyles.Flashlight}
                             source={Flashlight}
                             />
-                            <Text style={styles.ItemTxt}>Flashlight</Text>
+                            <Text style={HomeKitStyles.ItemTxt}>Flashlight</Text>
                     </TouchableOpacity>
 
                     <TouchableOpacity style={{alignItems:"center"}}
@@ -170,7 +172,7 @@ function WorkKit(){
                             style={ItemStyles.ID}
                             source={IdCopy}
                             />
-                            <Text style={styles.ItemTxt}>Copy of ID</Text>
+                            <Text style={HomeKitStyles.ItemTxt}>Copy of ID</Text>
                     </TouchableOpacity>
 
                     <TouchableOpacity style={{alignItems:"center"}}
@@ -182,11 +184,12 @@ function WorkKit(){
                             style={ItemStyles.Shoes}
                             source={Money}
                             />
-                            <Text style={styles.ItemTxt}>Money</Text>
+                            <Text style={HomeKitStyles.ItemTxt}>Money</Text>
                     </TouchableOpacity>
             </View>
             {ItemPU}
         </View>
+        </SafeAreaView>
     )}
 
     export default WorkKit;

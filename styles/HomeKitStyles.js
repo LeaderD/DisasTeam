@@ -53,9 +53,6 @@ var HomeKitStyles = StyleSheet.create ({
         marginLeft: -75
     },
 
-
-
-
     Items:{
         height: 90,
         width: 90,

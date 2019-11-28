@@ -58,7 +58,7 @@ function Kits(){
                         style={styles.Icon}
                         source={require('../imgs/imgsPng/car.png')}
                         />
-                        <Text style={styles.KitsTxt1}>Home</Text>
+                        <Text style={styles.KitsTxt1}>Vehicle</Text>
                         </View>
                     </TouchableOpacity>
 

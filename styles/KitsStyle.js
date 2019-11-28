@@ -26,19 +26,18 @@ var styles = StyleSheet.create ({
       // backgroundColor: "lightyellow",
       height: 150,
       alignItems: "center",
-      justifyContent: "center",
       marginBottom: 40,
-      marginRight: 30,
-      backgroundColor: "pink"
+      top: "5%",
+      // backgroundColor: "pink"
     },
 
     WrapCont: {
       flexWrap:'wrap', 
       flexDirection:"row", 
-      justifyContent: "center", 
-      backgroundColor: "white",
+      // backgroundColor: "white",
       width: "75%",
       top: "10%",
+      justifyContent: "space-around",
       alignItems: "center"
     },
     
@@ -53,7 +52,7 @@ var styles = StyleSheet.create ({
 
     Icon:{
         height: 120,
-        width: 120,
+        width: 120
     },
 
     work:{

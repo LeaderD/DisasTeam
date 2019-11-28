@@ -1,9 +1,10 @@
 import React, {useState} from 'react';
-import {View, Text, Button, TouchableOpacity, Image, ScrollView, Dimensions} from 'react-native';
+import {View, Text, Button, TouchableOpacity, Image, ScrollView, Dimensions, SafeAreaView} from 'react-native';
 import styles from '../styles/HomeKitStyles';
 import ItemStyles from '../styles/ItemStyles';
-import NavBar from './NavBar';
 import ItemPopUp from './ItemPopUp';
+import {Actions} from 'react-native-router-flux';
+import HomeKitStyles from '../styles/HomeKitStyles';
 
 var clothes = require('../imgs/imgsBWpng/BWclothes_1.png');
 var medication = require('../imgs/imgsBWpng/BWmeds_1.png');
@@ -55,15 +56,20 @@ function GrabNGoKit(){
     )}
 
     return (
-        <View>
-             <View style={styles.Top}>
-                <TouchableOpacity style={styles.backBtn}>
+        <SafeAreaView style={HomeKitStyles.Cont}>
+             <View style={HomeKitStyles.Top}>
+                <View style={HomeKitStyles.BackNav}>
+                <TouchableOpacity style={HomeKitStyles.backBtn}
+                onPress={()=>Actions.pop("Kits")}>
                     <Image
-                    style={styles.backBtn}
+                    style={HomeKitStyles.backBtn}
                     source={require('../imgs/imgsPng/backbutton.png')}
                     />
                 </TouchableOpacity>
-                <Text style={styles.Title}>Grab N' Go</Text>
+                </View>
+                <View style={HomeKitStyles.TitleNav}>
+                <Text style={HomeKitStyles.Title}>Grab N' Go</Text>
+            </View>
             </View>
 
                 <View style={{flexDirection:"row", justifyContent:"center", top: 20}}>
@@ -76,7 +82,7 @@ function GrabNGoKit(){
                                 style={ItemStyles.Clothes}
                                 source={Clothes}
                                 />
-                                <Text style={styles.ItemTxt}>Change of Clothes</Text>
+                                <Text style={HomeKitStyles.ItemTxt}>Change of Clothes</Text>
                         </TouchableOpacity>
 
                         <TouchableOpacity style={{alignItems:"center"}}
@@ -100,7 +106,7 @@ function GrabNGoKit(){
                                 style={ItemStyles.MedicalKit}
                                 source={FirstAid}
                                 />
-                                <Text style={styles.ItemTxt}>First Aid Kit</Text>
+                                <Text style={HomeKitStyles.ItemTxt}>First Aid Kit</Text>
                         </TouchableOpacity>
 
                 </View>
@@ -190,7 +196,7 @@ function GrabNGoKit(){
                     <NavBar />
 
                 </View> */}
-        </View>
+        </SafeAreaView>
 
     )
 }

@@ -5,7 +5,6 @@ import HomeKitStyles from '../styles/HomeKitStyles';
 import ItemStyles from '../styles/ItemStyles';
 import ItemPopUp from './ItemPopUp';
 import {Actions} from 'react-native-router-flux';
-import Kits from './Kits';
 
 var tomatoes = [require('../imgs/imgsBWpng/BWcannedfood_1.png'), require('../imgs/imgsPng/cannedfood.png')];
 var crackers = [require('../imgs/imgsBWpng/BWcrackers_1.png'), require('../imgs/imgsPng/crackers.png')];
