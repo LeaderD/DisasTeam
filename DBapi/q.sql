@@ -3,7 +3,7 @@ INSERT INTO users(email, password) VALUES('test', 'test');
 
 (/*Home Kit*/)
 
-INSERT INTO items(item_name, users_id, type, img) VALUES('Canned Tomoes', 1, 'h', 'tomatoes');
+INSERT INTO items(item_name, users_id, type, img) VALUES('Canned Tomatoes', 1, 'h', 'tomatoes');
 INSERT INTO items(item_name, users_id, type, img) VALUES('Crackers', 1, 'h', 'crackers');
 INSERT INTO items(item_name, users_id, type, img) VALUES('Granola', 1, 'h', 'granola');
 INSERT INTO items(item_name, users_id, type, img) VALUES('Cooking Water', 1, 'h', 'cookwater');
@@ -58,7 +58,7 @@ INSERT INTO items(item_name, users_id, type, img) VALUES('Granola Bar', 1, 'v', 
 INSERT INTO items(item_name, users_id, type, img) VALUES('Drinking Water', 1, 'v', 'drinkwater');
 INSERT INTO items(item_name, users_id, type, img) VALUES('Blankets', 1, 'v', 'blankets');
 INSERT INTO items(item_name, users_id, type, img) VALUES('Matches', 1, 'v', 'matches');
-INSERT INTO items(item_name, users_id, type, img) VALUES('Candles', 1, 'v', 'canldes');
+INSERT INTO items(item_name, users_id, type, img) VALUES('Candles', 1, 'v', 'candles');
 INSERT INTO items(item_name, users_id, type, img) VALUES('Shovel', 1, 'v', 'shovel');
 INSERT INTO items(item_name, users_id, type, img) VALUES('Snow Brush', 1, 'v', 'snowbrush');
 INSERT INTO items(item_name, users_id, type, img) VALUES('Documents', 1, 'v', 'documents');

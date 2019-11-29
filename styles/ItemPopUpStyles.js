@@ -39,6 +39,18 @@ var PUStyles = StyleSheet.create ({
         padding: "2%",
         top: 10
     },
+    itemName:{
+        backgroundColor: "transparent",
+        width: "55%",
+        fontSize: 18,
+        borderColor: "transparent",
+        borderWidth: 1,
+        borderBottomColor: "white",
+        color: "#FFF",
+        alignItems:"flex-end",
+        padding: "2%",
+        top: 10
+    },
     ButView:{
         width: "100%",
         height: "100%",

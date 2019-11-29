@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {View, Text, Button, TouchableOpacity, Image, ScrollView, Dimensions} from 'react-native';
 import styles from '../styles/HomeKitStyles';
 import ItemStyles from '../styles/ItemStyles';
@@ -65,7 +65,7 @@ function Vehicle(){
 
     const getItems = async()=>{
         
-        var data = await ax("items_read", {users_id:1, type:'v'});
+        var data = await ax("items_read", {users_id:1, type:'w'});
         //console.log(data);
         
         console.log(data);
@@ -93,7 +93,8 @@ function Vehicle(){
             <ScrollView>
                 <View style={{flex: 1, flexWrap:"wrap", flexDirection:"row", justifyContent:"center", alignItems:"center", height: 1300}}>
                   {items.map((o,i)=>{
-
+                        console.log(o);
+                        console.log(i);
 //                    var timenow = new Date();
 //                    var timestart = new Date(o.exp_date);
 //

@@ -116,7 +116,7 @@ function HomeKit(){
 //
 //                    var style = ItemStyles.FirstState;
 //                    //var img = {uri:o.active_img};
-                        
+                    
                     return (
                       <TouchableOpacity style={ItemStyles.ItemPopUp}
                       onPress = {() => {

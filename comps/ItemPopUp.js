@@ -58,9 +58,10 @@ function ItemPopUp(props){
              source={props.ItemPic}/>
         <View style={PUStyles.inputView}>
             <Text
-              style={PUStyles.inputs}>
-        {props.curItem.item_name}
+              style={PUStyles.itemName}>
+            {props.curItem.item_name}
             </Text>
+            
             <TextInput
               style={PUStyles.inputs}
               value={exptext}
