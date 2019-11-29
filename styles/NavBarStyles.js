@@ -2,7 +2,7 @@ import {StyleSheet} from 'react-native';
 
 var NBStyles = {
     container:{
-        backgroundColor:"#F04B53",
+        backgroundColor:"#F27C7B",
         height: 90,
         width: "100%",
         // justifyContent: "space-around",
