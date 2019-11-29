@@ -1,10 +1,24 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {View, TextInput, Image, TouchableOpacity, Text} from 'react-native';
 import PUStyles from '../styles/ItemPopUpStyles';
-
+import ax from '../ax';
 
 function ItemPopUp(props){
-
+    
+    const [exptext, setExpText] = useState(props.curItem.exp_date);
+    const updateItems = async()=>{
+        
+        var data = await ax("items_update", {id:props.curItem.id, exp_date:exptext});
+        console.log(data);
+        
+        //console.log(img);
+    }
+    
+    useEffect(()=>{
+        //getItems();
+        
+        
+    },[]);
 
 
     console.log(props.curItem);
@@ -12,9 +26,11 @@ function ItemPopUp(props){
     var Update = (
         <TouchableOpacity style={PUStyles.UpdateBut}
         onPress={()=>{
-            console.log(props.curItem);
+            //console.log(props.curItem);
             props.setShowItem(false);
-            props.items[props.curIndex].state = 1;
+                updateItems();
+            
+            //props.items[props.curIndex].state = 1;
 //            props.setItems(props.items.map((o)=>{
 //                return o;
 //            }))
@@ -41,16 +57,18 @@ function ItemPopUp(props){
              style={PUStyles.ItemImg}
              source={props.ItemPic}/>
         <View style={PUStyles.inputView}>
+            <Text
+              style={PUStyles.inputs}>
+        {props.curItem.item_name}
+            </Text>
             <TextInput
               style={PUStyles.inputs}
-              defaultValue={props.curItem.item_name}
-              placeholder="Item Name">
-            </TextInput>
-            <TextInput
-              style={PUStyles.inputs}
-              value={props.curItem.exp_date}
+              value={exptext}
               placeholder="Expiry Date"
-              keyboardType="numeric">
+              keyboardType="numeric"
+              onChangeText={(t)=>{
+                    setExpText(t)
+                }}>
             </TextInput>
         <View style={PUStyles.ButView}>
         <TouchableOpacity style={PUStyles.CancelBut}

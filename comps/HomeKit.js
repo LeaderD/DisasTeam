@@ -79,7 +79,7 @@ function HomeKit(){
         var data = await ax("items_read", {users_id:1, type:'h'});
         //console.log(data);
         
-        console.log(imgs);
+        console.log(data);
         setItems(data);
     }
     
@@ -105,16 +105,18 @@ function HomeKit(){
                 <View style={{flex: 1, flexWrap:"wrap", flexDirection:"row", justifyContent:"center", alignItems:"center", height: 1300}}>
                   {items.map((o,i)=>{
 
-                    var timenow = new Date();
-                    var timestart = new Date(o.exp_date);
-
-                    var secondsnow = Date.parse(timenow);
-                    var secondsstart = Date.parse(timestart);
-
-                    var passedtime = secondsnow - secondsstart; //miliseconds /1000/60/60/24
-
-                    var style = ItemStyles.FirstState;
-                    //var img = {uri:o.active_img};
+//                    var timenow = new Date();
+//                    var timestart = new Date(o.exp_date);
+//
+//                    var secondsnow = Date.parse(timenow);
+//                    var secondsstart = Date.parse(timestart);
+//
+//                    var passedtime = secondsnow - secondsstart; 
+//                    //miliseconds /1000/60/60/24
+//
+//                    var style = ItemStyles.FirstState;
+//                    //var img = {uri:o.active_img};
+                        
                     return (
                       <TouchableOpacity style={ItemStyles.ItemPopUp}
                       onPress = {() => {
