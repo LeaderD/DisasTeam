@@ -28,7 +28,8 @@ function ItemPopUp(props){
         onPress={()=>{
             //console.log(props.curItem);
             props.setShowItem(false);
-                updateItems();
+            updateItems();
+            
             
             //props.items[props.curIndex].state = 1;
 //            props.setItems(props.items.map((o)=>{

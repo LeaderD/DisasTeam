@@ -34,7 +34,7 @@ function App(){
         {/*<HomeKit /> */}
       {/* <WorkKit /> */}
       {/* <GrabNGoKit /> */}
-      <GrabNGoKit />
+      <HomeKit/>
       {/* <ItemPopUp/> */}
       {/* <LoginPage/> */}
       {/* <RegistrationPage /> */}

@@ -13,7 +13,7 @@ var granola = [require('../imgs/imgsBWpng/BWgranola_1.png'), require('../imgs/im
 var drinkwater = [require('../imgs/imgsBWpng/BWwater_1.png'), require('../imgs/imgsPng/water.png')];
 var blankets = [require('../imgs/imgsBWpng/BWblanket_1.png'),  require('../imgs/imgsPng/blanket.png')];
 var matches = [require('../imgs/imgsBWpng/BWmatches_1.png'), require('../imgs/imgsPng/matches.png')];
-var candles = [require('../imgs/imgsBWpng/BWcandles_1.png'), require('../imgs/imgsPng/candles.png')];
+var canldes = [require('../imgs/imgsBWpng/BWcandles_1.png'), require('../imgs/imgsPng/candles.png')];
 var shovel = [require('../imgs/imgsBWpng/BWshovel_1.png'), require('../imgs/imgsPng/shovel.png')];
 var snowbrush = [require('../imgs/imgsBWpng/BWsnowbrush_1.png'), require('../imgs/imgsPng/snowbrush.png')];
 var documents = [require('../imgs/imgsBWpng/BWdocument_1.png'), require('../imgs/imgsPng/document.png')];
@@ -30,7 +30,7 @@ var imgs = {
     drinkwater,
     blankets,
     matches,
-    candles,
+    canldes,
     shovel,
     snowbrush,
     documents,
@@ -65,7 +65,7 @@ function Vehicle(){
 
     const getItems = async()=>{
         
-        var data = await ax("items_read", {users_id:1, type:'w'});
+        var data = await ax("items_read", {users_id:1, type:'v'});
         //console.log(data);
         
         console.log(data);
@@ -93,8 +93,7 @@ function Vehicle(){
             <ScrollView>
                 <View style={{flex: 1, flexWrap:"wrap", flexDirection:"row", justifyContent:"center", alignItems:"center", height: 1300}}>
                   {items.map((o,i)=>{
-                        console.log(o);
-                        console.log(i);
+            
 //                    var timenow = new Date();
 //                    var timestart = new Date(o.exp_date);
 //
@@ -102,10 +101,13 @@ function Vehicle(){
 //                    var secondsstart = Date.parse(timestart);
 //
 //                    var passedtime = secondsnow - secondsstart; 
-//                    //miliseconds /1000/60/60/24
+//                    miliseconds /1000/60/60/24
 //
 //                    var style = ItemStyles.FirstState;
-//                    //var img = {uri:o.active_img};
+//                    var img = {uri:o.active_img};
+                        
+                    var newImage = o.exp_date ? imgs[o.img][1]: imgs[o.img][0];
+                    var BorderPatrol = o.exp_date ? ItemStyles.SecondState: ItemStyles.FirstState;
                         
                     return (
                       <TouchableOpacity style={ItemStyles.ItemPopUp}
@@ -114,17 +116,14 @@ function Vehicle(){
                           setCurItem(o);
                       }}>
                           <Image
-                          style={ItemStyles.CannedTomatoes}
-                          source={imgs[o.img][0] || null}
+                          style={BorderPatrol}
+                          source={newImage || null}
                           />
                           <Text style={styles.ItemTxt}>{o.item_name || ""}</Text>
                       </TouchableOpacity>
                     )
                   })
                 }
-
-
-
                 </View>
             </ScrollView>
 

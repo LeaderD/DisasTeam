@@ -95,6 +95,9 @@ function WorkKit(){
 //
 //                    var style = ItemStyles.FirstState;
 //                    //var img = {uri:o.active_img};
+                        
+                    var newImage = o.exp_date ? imgs[o.img][1]: imgs[o.img][0];
+                    var BorderPatrol = o.exp_date ? ItemStyles.SecondState: ItemStyles.FirstState;
                     
                     return (
                       <TouchableOpacity style={ItemStyles.ItemPopUp}
@@ -103,17 +106,14 @@ function WorkKit(){
                           setCurItem(o);
                       }}>
                           <Image
-                          style={ItemStyles.CannedTomatoes}
-                          source={imgs[o.img][0] || null}
+                          style={BorderPatrol}
+                          source={newImage || null}
                           />
                           <Text style={styles.ItemTxt}>{o.item_name || ""}</Text>
                       </TouchableOpacity>
                     )
                   })
                 }
-
-
-
                 </View>
             </ScrollView>
 
@@ -124,6 +124,4 @@ function WorkKit(){
     )
 }
 
-            
-
-    export default WorkKit;
+export default WorkKit;

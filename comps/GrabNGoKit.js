@@ -28,9 +28,6 @@ var imgs = {
     money,
 }
 
-
-
-
 function GrabNGoKit(){
 
     const [showItem, setShowItem] = useState(false);
@@ -91,11 +88,14 @@ function GrabNGoKit(){
 //                    var secondsstart = Date.parse(timestart);
 //
 //                    var passedtime = secondsnow - secondsstart; 
-//                    //miliseconds /1000/60/60/24
+//                    miliseconds /1000/60/60/24
 //
 //                    var style = ItemStyles.FirstState;
-//                    //var img = {uri:o.active_img};
-                    
+//                    var img = {uri:o.active_img};
+                        
+                    var newImage = o.exp_date ? imgs[o.img][1]: imgs[o.img][0];
+                    var BorderPatrol = o.exp_date ? ItemStyles.SecondState: ItemStyles.FirstState;
+                        
                     return (
                       <TouchableOpacity style={ItemStyles.ItemPopUp}
                       onPress = {() => {
@@ -103,17 +103,14 @@ function GrabNGoKit(){
                           setCurItem(o);
                       }}>
                           <Image
-                          style={ItemStyles.CannedTomatoes}
-                          source={imgs[o.img][0] || null}
+                          style={BorderPatrol}
+                          source={newImage || null}
                           />
                           <Text style={styles.ItemTxt}>{o.item_name || ""}</Text>
                       </TouchableOpacity>
                     )
                   })
                 }
-
-
-
                 </View>
             </ScrollView>
 
