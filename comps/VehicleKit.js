@@ -114,6 +114,7 @@ function Vehicle(){
                       onPress = {() => {
                           setShowItem(true);
                           setCurItem(o);
+                          setItemPic(newImage);
                       }}>
                           <Image
                           style={BorderPatrol}

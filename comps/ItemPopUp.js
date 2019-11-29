@@ -43,9 +43,6 @@ function ItemPopUp(props){
         </TouchableOpacity>
     );
 
-console.log('--------------------HERE-----------------');
-console.log(props.curItem.img);
-    console.log(typeof props.curItem.img);
     return(
     <TouchableOpacity
         style={PUStyles.wrapper}
@@ -57,7 +54,7 @@ console.log(props.curItem.img);
         <View style={PUStyles.container}>
             <Image
              style={PUStyles.ItemImg}
-             source={props.curItem.img[0]}/>
+             source={props.ItemPic}/>
             
         <View style={PUStyles.inputView}>
             <Text
