@@ -78,8 +78,7 @@ function HomeKit(){
         
         var data = await ax("items_read", {users_id:1, type:'h'});
         //console.log(data);
-        
-        console.log(data);
+
         setItems(data);
     }
     
@@ -116,9 +115,25 @@ function HomeKit(){
 //
 //                    var style = ItemStyles.FirstState;
 //                    var img = {uri:o.active_img};
+                    
+                    var now = new Date()
+                    
+                    var exp = new Date(o.exp_date)
                         
-                    var newImage = o.exp_date ? imgs[o.img][1]: imgs[o.img][0];
-                    var BorderPatrol = o.exp_date ? ItemStyles.SecondState: ItemStyles.FirstState;
+                    var newImage = null; 
+                    if(o.exp_date){
+                        newImage = imgs[o.img][1]
+                    }else{
+                        newImage = imgs[o.img][0]
+                    }
+                         
+                    var BorderPatrol = null;  
+                    if(now < exp){
+                        BorderPatrol = ItemStyles.SecondState
+                    } else {
+                        BorderPatrol = ItemStyles.FirstState;
+                    }
+                        console.log(now)
                     
                     return (
                       <TouchableOpacity style={ItemStyles.ItemPopUp}
