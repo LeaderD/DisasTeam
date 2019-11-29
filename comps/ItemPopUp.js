@@ -9,7 +9,7 @@ function ItemPopUp(props){
     const updateItems = async()=>{
         
         var data = await ax("items_update", {id:props.curItem.id, exp_date:exptext});
-        console.log(data);
+        //console.log(data);
         
         //console.log(img);
     }
@@ -43,8 +43,9 @@ function ItemPopUp(props){
         </TouchableOpacity>
     );
 
-
-
+console.log('--------------------HERE-----------------');
+console.log(props.curItem.img);
+    console.log(typeof props.curItem.img);
     return(
     <TouchableOpacity
         style={PUStyles.wrapper}
@@ -56,7 +57,8 @@ function ItemPopUp(props){
         <View style={PUStyles.container}>
             <Image
              style={PUStyles.ItemImg}
-             source={props.ItemPic}/>
+             source={props.curItem.img[0]}/>
+            
         <View style={PUStyles.inputView}>
             <Text
               style={PUStyles.itemName}>
