@@ -116,9 +116,9 @@ function HomeKit(){
 //                    var style = ItemStyles.FirstState;
 //                    var img = {uri:o.active_img};
                     
-                    var now = new Date()
+                    var now = new Date().getMonth() +1
                     
-                    var exp = new Date(o.exp_date)
+                    var exp = o.exp_date
                         
                     var newImage = null; 
                     if(o.exp_date){
@@ -133,7 +133,7 @@ function HomeKit(){
                     } else {
                         BorderPatrol = ItemStyles.FirstState;
                     }
-                        console.log(now)
+                        console.log(exp)
                     
                     return (
                       <TouchableOpacity style={ItemStyles.ItemPopUp}
