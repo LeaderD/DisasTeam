@@ -1,14 +1,39 @@
 /* eslint-disable prettier/prettier */
-import React from 'react';
-import {SafeAreaView, View, Text, TouchableOpacity, Image} from 'react-native';
+import React, {useState, useEffect} from 'react';
+import {SafeAreaView, View, Text, TouchableOpacity, Image, Animated} from 'react-native';
 import styles from '../styles/KitsStyle';
 import HomeKitStyles from '../styles/HomeKitStyles';
 import {Actions} from 'react-native-router-flux';
 
+const FadeInView = (props) => {
+  const [fadeAnim] = useState(new Animated.Value(0))  // Initial value for opacity: 0
+
+  React.useEffect(() => {
+    Animated.timing(
+      fadeAnim,
+      {
+        toValue: 1,
+        duration: 1000,
+      }
+    ).start();
+  }, [])
+
+  return (
+    <Animated.View                 // Special animatable View
+      style={{
+        ...props.style,
+        opacity: fadeAnim,         // Bind opacity to animated value
+      }}
+    >
+      {props.children}
+    </Animated.View>
+  );
+}
+
 function Kits(){
     return (
         <SafeAreaView HomeKitStyles={styles.Cont}>
-            
+        <FadeInView>
         {/* Top Bar */}
         <View style={styles.TopBar}>
                 <Text style={styles.Title}>Kits</Text>
@@ -71,7 +96,7 @@ function Kits(){
                         />
                         <Text style={styles.txtWor}>Work</Text>
                     </TouchableOpacity>
-    
+
                     <TouchableOpacity style={{alignItems:"center"}}
                     onPress={()=>Actions.GrabNGoKit()}>
                         <Image
@@ -90,8 +115,8 @@ function Kits(){
                         <Text style={styles.txtVeh}>Vehicle</Text>
                     </TouchableOpacity> */}
                     </View>
-
                     </View>
+                    </FadeInView>
         </SafeAreaView>
     )
 }

@@ -28,7 +28,7 @@ var styles= StyleSheet.create({
     titleCont:{
         flex: 6,
         alignItems: "center"
-    }, 
+    },
 
     Title:{
         color: "#F04B53",
@@ -40,7 +40,7 @@ var styles= StyleSheet.create({
     },
     Faq:{
         color: "#F58287",
-        fontSize:40,
+        fontSize:28,
     },
     ContentContainer:{
         maxWidth: "80%",
@@ -50,7 +50,7 @@ var styles= StyleSheet.create({
 
     Htu:{
         color: "#F58287",
-        fontSize:30,
+        fontSize:28,
         textAlign: "left"
     },
 

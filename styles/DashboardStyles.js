@@ -3,7 +3,8 @@ import {StyleSheet} from 'react-native';
 const styles = StyleSheet.create({
     dashboardPage: {
         flex: 1,
-        backgroundColor: '#FFFEF3'
+        backgroundColor: '#FFFEF3',
+        height: "100%"
     },
     AppTitle:{
         color: '#F04B53',

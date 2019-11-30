@@ -1,8 +1,33 @@
 import React, {useState, useEffect} from 'react';
-import {View, Text, TextInput, Image, TouchableOpacity, AsyncStorage} from 'react-native';
+import {View, Text, TextInput, Image, TouchableOpacity, AsyncStorage, Animated} from 'react-native';
 import styles from '../styles/LoginStyles';
 import {Actions} from 'react-native-router-flux';
 import { object } from 'prop-types';
+
+const FadeInView = (props) => {
+  const [fadeAnim] = useState(new Animated.Value(0))  // Initial value for opacity: 0
+
+  React.useEffect(() => {
+    Animated.timing(
+      fadeAnim,
+      {
+        toValue: 1,
+        duration: 1000,
+      }
+    ).start();
+  }, [])
+
+  return (
+    <Animated.View                 // Special animatable View
+      style={{
+        ...props.style,
+        opacity: fadeAnim,         // Bind opacity to animated value
+      }}
+    >
+      {props.children}
+    </Animated.View>
+  );
+}
 
 function Login(){
 
@@ -25,7 +50,7 @@ function Login(){
                 "userID": userID
             })
         })
-    
+
         let tempData = await response.json();
         console.log(tempData);
 
@@ -33,18 +58,19 @@ function Login(){
             try {
             //AsyncStorage to store user id here
                 await AsyncStorage.setItem("userID", JSON.stringify(tempData.userID))
-        
+
                 } catch (error) {
                         console.log(error.message)
                 }
-                
+
             }
             Actions.Dashboard();
         }
-    
+
 
     return (
-        <View style={styles.LoginPage}> 
+      <FadeInView>
+        <View style={styles.LoginPage}>
         <Image
         style={styles.LoginLogo}
         source={require('../imgs/imgsPng/logo.png')}
@@ -76,9 +102,10 @@ function Login(){
             onPress={()=> Actions.Register()}
             style={styles.RegisterButton}>
                 <Text
-                style={styles.RegisterButtonText}>Register </Text> 
+                style={styles.RegisterButtonText}>Register </Text>
                     </TouchableOpacity>
         </View>
+        </FadeInView>
     )
 };
 
