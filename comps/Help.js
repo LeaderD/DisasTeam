@@ -34,7 +34,7 @@ function Help() {
         <View style={{alignItems:"center"}}>
             <View style={styles.ContentContainer}>
         <View style={styles.aboutCont}>
-            <Text style={styles.Faq}>About Us</Text>
+            <Text style={styles.Faq}>About emUrgency</Text>
             <Text style={styles.bodyTxt}>emUrgency is an app that helps you and your family prepare for a disaster situation. Our main goal is to help you start and maintain the contents of your emergency kit, so you'll always be ready in the event of a disaster.</Text>
         </View>
             <Text style={styles.Htu}>Colour Guide</Text>

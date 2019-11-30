@@ -17,14 +17,15 @@ import VehicleKit from './comps/VehicleKit'
 // import RedButton from './comps/RedButton'
 // import SingleLineInput from './comps/SingleLineInput'
 // import Register from './comps/Register';
-// import NavBar from './comps/NavBar';
+import NavBar from './comps/NavBar';
 import ItemPopUp from './comps/ItemPopUp';
 // import LoginPage from './pages/LoginPage';
 // import RegistrationPage from './pages/RegistrationPage';
-// import Help from './comps/Help';
+import Help from './comps/Help';
 // import Welcome from './comps/Welcome';
 import Route from './route'
 import Tutorial from './comps/Tutorial';
+import Dashboard from './comps/Dashboard';
 
 
 
@@ -39,12 +40,13 @@ function App(){
       {/* <WorkKit /> */}
       {/* <GrabNGoKit /> */}
       {/* <VehicleKit /> */}
-      <ItemPopUp/>
+      {/* <ItemPopUp/> */}
       {/* <LoginPage/> */}
       {/* <RegistrationPage /> */}
       {/* <Help /> */}
       {/* <Route/> */}
       {/* <Tutorial /> */}
+      <Dashboard/>
     </View>
   )
 }

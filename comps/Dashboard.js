@@ -4,7 +4,8 @@ import {
     Text,
     TouchableOpacity,
     FlatList,
-    Image
+    Image,
+    SafeAreaView
 } from 'react-native';
 import {Actions} from 'react-native-router-flux';
 import moment from 'moment';
@@ -56,12 +57,20 @@ class Dashboard extends React.Component {
 
     render() {
         return (
-          <View style ={{flexWrap:'wrap', flex:1, width:'100%', flexDirection:"row", justifyContent:"center", alignItems:"center"}}>
-            <View style={styles.dashboardPage}>
+        <SafeAreaView style={styles.dashboardPage}>
+            <View style={styles.titleBar}>
+                <View style={styles.TitleCont}>
                 <Text style={styles.AppTitle}>Dashboard</Text>
-                <TouchableOpacity style={styles.helpButton} onPress={()=> Actions.Help()}>
-                    <Text style={styles.helpButtonText}>?</Text>
+                </View> 
+                <View style={styles.infoCont}>
+                <TouchableOpacity 
+                onPress={()=> Actions.Help()}>
+                    <Image
+                    style={styles.helpButton}
+                    source={require ('../imgs/imgsPng/info.png')}/>
                 </TouchableOpacity>
+                </View>
+                </View>
                 <Text style={styles.expiringItems}>Expiring items</Text>
                 <FlatList
                     style={styles.expiringList}
@@ -69,8 +78,7 @@ class Dashboard extends React.Component {
                     keyExtractor={item => `${item.id}`}
                     renderItem={this.renderExpiringItem}
                 />
-            </View>
-            </View>
+        </SafeAreaView>
         )
     }
 }

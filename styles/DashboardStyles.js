@@ -5,27 +5,30 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#FFFEF3'
     },
+    titleBar:{
+        height: 70,
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "space-around",
+        backgroundColor: "#FFFEF3"
+    },
+    TitleCont:{
+        justifyContent: "center",
+    },
     AppTitle:{
         color: '#F04B53',
         fontSize: 30,
-        paddingLeft: '34%',
-        paddingTop: '11%'
+        left: 70
+    },
+    infoCont:{
+        justifyContent: "center",
+        // backgroundColor: "lightyellow",
+        // flex: 1
     },
     helpButton: {
-        position: 'absolute',
         height: 30,
         width: 30,
-        borderWidth: 2,
-        borderColor: '#F04B53',
-        borderRadius: 15,
-        top: 50,
-        right: 20,
-        alignItems: 'center',
-        justifyContent: 'center'
-    },
-    helpButtonText: {
-        color: '#F04B53',
-        fontSize: 24
+        resizeMode: "contain"
     },
     expiringItems: {
         alignSelf: 'flex-start',
