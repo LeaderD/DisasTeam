@@ -130,6 +130,8 @@ function HomeKit(){
                     var BorderPatrol = null;  
                     if(now < exp){
                         BorderPatrol = ItemStyles.SecondState
+                    } else if(now > exp && exp !== '' && exp !==null){
+                        BorderPatrol = ItemStyles.ThirdState
                     } else {
                         BorderPatrol = ItemStyles.FirstState;
                     }
