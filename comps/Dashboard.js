@@ -8,6 +8,7 @@ import {
     Animated
 } from 'react-native';
 import {Actions} from 'react-native-router-flux';
+//import LinearGradient from 'react-native-linear-gradient';
 import moment from 'moment';
 
 // styles

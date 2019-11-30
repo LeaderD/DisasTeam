@@ -6,6 +6,10 @@ const styles = StyleSheet.create({
         backgroundColor: '#FFFEF3',
         height: "100%"
     },
+    /*Gradient: {
+      flex: 1,
+      height: "100%"
+    },*/
     AppTitle:{
         color: '#F04B53',
         fontSize: 30,
