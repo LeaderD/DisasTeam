@@ -93,21 +93,28 @@ function Vehicle(){
             <ScrollView>
                 <View style={{flex: 1, flexWrap:"wrap", flexDirection:"row", justifyContent:"center", alignItems:"center", height: 1300}}>
                   {items.map((o,i)=>{
-            
-//                    var timenow = new Date();
-//                    var timestart = new Date(o.exp_date);
-//
-//                    var secondsnow = Date.parse(timenow);
-//                    var secondsstart = Date.parse(timestart);
-//
-//                    var passedtime = secondsnow - secondsstart; 
-//                    miliseconds /1000/60/60/24
-//
-//                    var style = ItemStyles.FirstState;
-//                    var img = {uri:o.active_img};
+                    
+                    var now = new Date().getMonth() +1
+                    var exp = o.exp_date    
+                    var newImage = null; 
                         
-                    var newImage = o.exp_date ? imgs[o.img][1]: imgs[o.img][0];
-                    var BorderPatrol = o.exp_date ? ItemStyles.SecondState: ItemStyles.FirstState;
+                    if(o.exp_date){
+                        newImage = imgs[o.img][1]
+                    }else{
+                        newImage = imgs[o.img][0]
+                    }
+                         
+                        
+                    var BorderPatrol = null;
+                        
+                    if(now < exp){
+                        BorderPatrol = ItemStyles.SecondState
+                    } else if(now > exp && exp !== '' && exp !==null){
+                        BorderPatrol = ItemStyles.ThirdState
+                    } else {
+                        BorderPatrol = ItemStyles.FirstState;
+                    }
+
                         
                     return (
                       <TouchableOpacity style={ItemStyles.ItemPopUp}
