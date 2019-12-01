@@ -62,7 +62,7 @@ function ItemPopUp(props){
             {props.curItem.item_name}
             </Text>
             
-            <TextInput
+            {/* <TextInput
               style={PUStyles.inputs}
               value={exptext}
               placeholder="Expiry Date"
@@ -70,7 +70,7 @@ function ItemPopUp(props){
               onChangeText={(t)=>{
                     setExpText(t)
                 }}>
-            </TextInput>
+            </TextInput>*/}
         <View style={PUStyles.ButView}>
         <TouchableOpacity style={PUStyles.CancelBut}
         onPress={()=>{
