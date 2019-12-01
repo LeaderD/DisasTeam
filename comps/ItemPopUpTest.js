@@ -1,41 +1,26 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import {View, TextInput, Image, TouchableOpacity, Text, Picker} from 'react-native';
 import PUStyles from '../styles/ItemPopUpStyles';
-import ax from '../ax';
 
 function ItemPopUp(props){
-    
-    const [exptext, setExpText] = useState(props.curItem.exp_date);
-    const updateItems = async()=>{
-        
-        var data = await ax("items_update", {id:props.curItem.id, exp_date:exptext});
-        //console.log(data);
-        
-        //console.log(img);
-    }
-    
-    useEffect(()=>{
-        //getItems();
-        
-        
-    },[]);
 
 
-    console.log(props.curItem);
-    //items_update, {id:props.curItem.id, exp_date:variable}
+
+    const [name, setName] = useState('');
+    const [dateAdded, setAddDate] = useState('');
+    const [expDate, setExpDate] = useState('');
+
+
     var Update = (
         <TouchableOpacity style={PUStyles.UpdateBut}
         onPress={()=>{
-            //console.log(props.curItem);
+            console.log(props.curItem);
             props.setShowItem(false);
-            updateItems();
-            
-            
-            //props.items[props.curIndex].state = 1;
-//            props.setItems(props.items.map((o)=>{
-//                return o;
-//            }))
-//            props.SetItemPic(props.curItem[1]);
+            props.items[props.curIndex].state = 1;
+            props.setItems(props.items.map((o)=>{
+                return o;
+            }))
+            //props.SetItemPic(props.curItem[1]);
         }}
         >
              <Text
@@ -44,34 +29,25 @@ function ItemPopUp(props){
     );
 
     return(
-    <TouchableOpacity
+    <View
         style={PUStyles.wrapper}
-        onPress={()=>{
-            props.setShowItem(false)
-        }}
-            
-    >
+        // onPress={()=>{
+        //     props.setShowItem(false)
+        // }}
+        >
         <View style={PUStyles.container}>
             <Image
              style={PUStyles.ItemImg}
              source={props.ItemPic}/>
-            
         <View style={PUStyles.inputView}>
-            <Text
-              style={PUStyles.itemName}>
-            {props.curItem.item_name}
-            </Text>
-            
-            {/*<TextInput
+            <Text style={PUStyles.ExpText}>Name</Text> 
+            <TextInput
               style={PUStyles.inputs}
-              value={exptext}
-              placeholder="Expiry Date"
-              keyboardType="numeric"
-              onChangeText={(t)=>{
-                    setExpText(t)
-                }}>
-            </TextInput>*/}
-            
+              placeholder="Enter Name">
+            </TextInput>
+        <View style={PUStyles.ExpCont}>
+            <Text style={PUStyles.ExpText}>Exp Date</Text>
+        <View style={PUStyles.PickerView}>
             <Picker 
             // selectedValue={this.state.language}
             // onValueChange={(itemValue, itemIndex) => this.setState({language:itemValue})}
@@ -98,11 +74,18 @@ function ItemPopUp(props){
                 <Picker.Item label="2024" value="2024"/>
                 <Picker.Item label="2025" value="2025"/>
             </Picker>
+        </View>
+        </View>
+            {/* <TextInput
+              style={PUStyles.inputs}
+              placeholder="Expiry Date"
+              keyboardType="numeric">
+            </TextInput> */}
         <View style={PUStyles.ButView}>
         <TouchableOpacity style={PUStyles.CancelBut}
-        onPress={()=>{
-            props.setShowItem(false)}
-        }
+        // onPress={()=>{
+        //     props.setShowItem(false)}
+        // }
         >
             <Text style={PUStyles.CancelButText}> CANCEL </Text>
         </TouchableOpacity>
@@ -111,7 +94,7 @@ function ItemPopUp(props){
     </View>
     </View>
     </View>
-    </TouchableOpacity>
+    </View>
     )
 };
 
