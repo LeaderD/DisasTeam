@@ -39,7 +39,16 @@ var styles = StyleSheet.create ({
       width: "75%",
       top: "10%",
       justifyContent: "space-around",
-      alignItems: "center"
+      alignItems: "center",
+      shadowColor: "#000",
+      shadowOffset: {
+         width: -10,
+          height: 5,
+        },
+        shadowOpacity: 0.15,
+        shadowRadius: 3.84,
+
+        elevation: 3,
     },
 
     ContentCont: {
@@ -54,7 +63,8 @@ var styles = StyleSheet.create ({
 
     Icon:{
         height: 120,
-        width: 120
+        width: 120,
+
     },
 
     work:{

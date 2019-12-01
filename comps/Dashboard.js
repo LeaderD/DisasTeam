@@ -75,7 +75,7 @@ class Dashboard extends React.Component {
                 <Image source={item.icon} style={[styles.expiringItemImage, expirationStyle]} />
                 <View>
                     <Text style={styles.expiringItemText}>Expiry date: {moment(new Date(item.expired_at)).format('MMM. DD')}</Text>
-                    <Text>Last updated by: {item.last_updated_by}</Text>
+                    <Text style={styles.updatedText}>Last updated by: {item.last_updated_by}</Text>
                 </View>
             </TouchableOpacity>
         )

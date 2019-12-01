@@ -9,7 +9,9 @@ var styles= StyleSheet.create({
         backgroundColor: "#FFFEF3",
         flexDirection: "row",
         alignItems: "center",
-        justifyContent: "center"
+        justifyContent: "center",
+        borderBottomLeftRadius:8,
+        borderBottomRightRadius:8,
     },
 
     backBtn:{
