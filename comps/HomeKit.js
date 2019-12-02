@@ -104,11 +104,14 @@ function HomeKit(){
                 <View style={{flex: 1, flexWrap:"wrap", flexDirection:"row", justifyContent:"center", alignItems:"center", height: 1300}}>
                   {items.map((o,i)=>{
                     
-                    var now = new Date().getMonth() +1
-                    var exp = o.exp_date
+                    var currentMonth = new Date().getMonth() +1
+                    var currentYear = new Date().getFullYear()
+                    
+                    var expMonth = o.exp_month;
+                    var expYear = o.exp_year;
                     var newImage = null; 
                         
-                    if(o.exp_date){
+                    if(o.exp_month && o.exp_year){
                         newImage = imgs[o.img][1]
                     }else{
                         newImage = imgs[o.img][0]
@@ -117,14 +120,17 @@ function HomeKit(){
                         
                     var BorderPatrol = null;  
                         
-                    if(now < exp){
-                        BorderPatrol = ItemStyles.SecondState
-                    } else if(now > exp && exp !== '' && exp !==null){
-                        BorderPatrol = ItemStyles.ThirdState
+                    if(currentYear < expYear){
+                        BorderPatrol = ItemStyles.GreenBorder
+                    } else if(currentYear > expYear && expYear !== '' && expYear !== null){
+                        BorderPatrol = ItemStyles.RedBorder
                     } else {
-                        BorderPatrol = ItemStyles.FirstState;
+                        BorderPatrol = ItemStyles.GreyBorder;
                     }
                     
+                        //console.log(currentYear);
+                       
+                        
                     return (
                       <TouchableOpacity style={ItemStyles.ItemPopUp}
                       onPress = {() => {

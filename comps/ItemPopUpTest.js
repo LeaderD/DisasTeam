@@ -63,7 +63,7 @@ function ItemPopUp(props){
                 <Picker.Item label="09" value="09"/>
                 <Picker.Item label="10" value="10"/>
                 <Picker.Item label="11" value="11"/>
-                <Picker.Item label="12" value="12"/>
+                <Picker.Item label="12" value="12"/>  
             </Picker>
             <Picker style={PUStyles.yearPicker}>
                 <Picker.Item label="2019" value="2019"/>

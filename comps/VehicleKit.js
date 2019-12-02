@@ -108,11 +108,11 @@ function Vehicle(){
                     var BorderPatrol = null;
                         
                     if(now < exp){
-                        BorderPatrol = ItemStyles.SecondState
+                        BorderPatrol = ItemStyles.GreenBorder
                     } else if(now > exp && exp !== '' && exp !==null){
-                        BorderPatrol = ItemStyles.ThirdState
+                        BorderPatrol = ItemStyles.RedBorder
                     } else {
-                        BorderPatrol = ItemStyles.FirstState;
+                        BorderPatrol = ItemStyles.GreyBorder;
                     }
 
                         

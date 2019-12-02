@@ -5,10 +5,11 @@ import ax from '../ax';
 
 function ItemPopUp(props){
     
-    const [exptext, setExpText] = useState(props.curItem.exp_date);
+    const [exptextmonth, setExpTextMonth] = useState(props.curItem.exp_month);
+    const [exptextyear, setExpTextYear] = useState(props.curItem.exp_year);
     const updateItems = async()=>{
         
-        var data = await ax("items_update", {id:props.curItem.id, exp_date:exptext});
+        var data = await ax("items_update", {id:props.curItem.id, exp_month:exptextmonth, exp_year:exptextyear});
         //console.log(data);
         
         //console.log(img);
@@ -44,7 +45,7 @@ function ItemPopUp(props){
     );
 
     return(
-    <TouchableOpacity
+    <View
         style={PUStyles.wrapper}
         onPress={()=>{
             props.setShowItem(false)
@@ -55,14 +56,16 @@ function ItemPopUp(props){
             <Image
              style={PUStyles.ItemImg}
              source={props.ItemPic}/>
+        <View style={PUStyles.inputView}>
+            <Text style={PUStyles.ExpText}>Name</Text>
             
         <View style={PUStyles.inputView}>
             <Text
-              style={PUStyles.itemName}>
+              style={PUStyles.ExpText}>
             {props.curItem.item_name}
             </Text>
             
-            {/*<TextInput
+           {/* <TextInput
               style={PUStyles.inputs}
               value={exptext}
               placeholder="Expiry Date"
@@ -70,12 +73,19 @@ function ItemPopUp(props){
               onChangeText={(t)=>{
                     setExpText(t)
                 }}>
-            </TextInput>*/}
-            
+            </TextInput> */}
+            <View style={PUStyles.ExpCont}>
+                
+            <Text style={PUStyles.ExpText}>Exp Date</Text>
+                
+            <View style={PUStyles.PickerView}>
             <Picker 
-            // selectedValue={this.state.language}
+            //selectedValue={this.state.language}
             // onValueChange={(itemValue, itemIndex) => this.setState({language:itemValue})}
-            style={PUStyles.monthPicker}>
+            style={PUStyles.monthPicker}
+            onValueChange={(t)=>{
+                    setExpTextMonth(t)}}
+                >
                 <Picker.Item label="01" value="01"/>
                 <Picker.Item label="02" value="02"/>
                 <Picker.Item label="03" value="03"/>
@@ -89,7 +99,9 @@ function ItemPopUp(props){
                 <Picker.Item label="11" value="11"/>
                 <Picker.Item label="12" value="12"/>
             </Picker>
-            <Picker style={PUStyles.yearPicker}>
+            <Picker style={PUStyles.yearPicker}
+                onValueChange={(t)=>{
+                    setExpTextYear(t)}}>
                 <Picker.Item label="2019" value="2019"/>
                 <Picker.Item label="2020" value="2020"/>
                 <Picker.Item label="2021" value="2021"/>
@@ -98,7 +110,10 @@ function ItemPopUp(props){
                 <Picker.Item label="2024" value="2024"/>
                 <Picker.Item label="2025" value="2025"/>
             </Picker>
+            </View>
+            </View>
         <View style={PUStyles.ButView}>
+            
         <TouchableOpacity style={PUStyles.CancelBut}
         onPress={()=>{
             props.setShowItem(false)}
@@ -111,7 +126,8 @@ function ItemPopUp(props){
     </View>
     </View>
     </View>
-    </TouchableOpacity>
+    </View>
+    </View>
     )
 };
 

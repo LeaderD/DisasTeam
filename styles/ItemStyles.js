@@ -5,7 +5,7 @@ var ItemStyles = StyleSheet.create ({
     ItemPopUp:{
         marginTop: 30
     },
-    FirstState:{
+    GreyBorder:{
         height: 90,
         width: 90,
         position: "relative",
@@ -15,7 +15,7 @@ var ItemStyles = StyleSheet.create ({
         marginLeft: 10,
         marginRight: 10
     },
-    SecondState:{
+    GreenBorder:{
         height: 90,
         width: 90,
         position: "relative",
@@ -25,7 +25,7 @@ var ItemStyles = StyleSheet.create ({
         marginLeft: 10,
         marginRight: 10
     },
-    ThirdState:{
+    RedBorder:{
         height: 90,
         width: 90,
         position: "relative",
