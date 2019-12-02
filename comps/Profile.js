@@ -47,7 +47,10 @@ class Profile extends React.Component {
         return (
             <View style={styles.profilePage}>
                 <Text style={styles.AppTitle}>Profile</Text>
-                <Image source={profileIcon} style={styles.profileAvatar} />
+                <TouchableOpacity style={styles.logout}>
+                <Image source={{uri: '/Users/a01055581/Desktop/logout.png'}} style={styles.logout} />
+                </TouchableOpacity>
+                  <Image source={profileIcon} style={styles.profileAvatar} />
                 <Text style={styles.userName}>Rebecca</Text>
                 <View style={styles.editButtonWrapper}>
                     <TouchableOpacity style={styles.editButton}>

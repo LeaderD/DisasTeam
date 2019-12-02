@@ -15,14 +15,23 @@ const styles = StyleSheet.create({
         color: '#F04B53',
         fontSize: 30
     },
+    logout:{
+      height: 30,
+      width: 30,
+      marginRight: "-85%",
+      marginTop: "-8%",
+    },
+
     profileAvatar: {
-        height: 300,
-        width: 300,
-        marginTop: -50,
-        marginBottom: -30
+        height: 270,
+        width: 270,
+        marginTop: 0,
+        marginBottom: -40
     },
     userName: {
-        fontSize: 24
+        fontSize: 22,
+        marginBottom: 30,
+
     },
     editButtonWrapper: {
         alignItems: 'flex-end',
@@ -43,7 +52,7 @@ const styles = StyleSheet.create({
     familyMember: {
         flexDirection: 'row',
         alignItems: 'center',
-        marginBottom: 10
+        marginBottom: 20
     },
     familyMemberAvatar: {
         height: 120,
@@ -52,15 +61,16 @@ const styles = StyleSheet.create({
         marginLeft: -20
     },
     familyMemberName: {
-        fontSize: 18
+        fontSize: 17
     },
     addFamilyMemberButton: {
         backgroundColor: "#F6BFBF",
-        padding: 5,
-        marginBottom: 40,
+        padding: 10,
+        marginTop: -15,
+        marginBottom: 30,
         flexDirection: 'row',
         alignItems: 'center',
-        borderRadius: 5,
+        borderRadius: 10,
         paddingHorizontal: 10
     },
     addFamilyMemberButtonIcon: {
