@@ -3,8 +3,13 @@ import {StyleSheet} from 'react-native';
 const styles = StyleSheet.create({
     dashboardPage: {
         flex: 1,
-        backgroundColor: '#FFFEF3'
+        backgroundColor: '#FFFEF3',
+        height: "100%"
     },
+    /*Gradient: {
+      flex: 1,
+      height: "100%"
+    },*/
     AppTitle:{
         color: '#F04B53',
         fontSize: 30,
@@ -21,7 +26,16 @@ const styles = StyleSheet.create({
         top: 50,
         right: 20,
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        shadowColor: "#6e090e",
+        shadowOffset: {
+           width: 0,
+            height: 2,
+          },
+          shadowOpacity: 0.15,
+          shadowRadius: 3,
+
+          elevation: 2,
     },
     helpButtonText: {
         color: '#F04B53',
@@ -32,7 +46,8 @@ const styles = StyleSheet.create({
         marginBottom: '10%',
         marginLeft: '7%',
         paddingTop: '9%',
-        fontSize: 17,
+        fontSize: 22,
+        color:"#7B7B7B"
         //paddingTop: '100%',
     },
     expiringList: {
@@ -60,7 +75,11 @@ const styles = StyleSheet.create({
         borderColor: '#FDF050'
     },
     expiringItemText: {
-        marginBottom: 8
+        marginBottom: 8,
+
+    },
+    updatedText: {
+      color:"#8B8B8A",
     }
 });
 

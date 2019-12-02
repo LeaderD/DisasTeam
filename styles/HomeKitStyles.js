@@ -7,10 +7,11 @@ var HomeKitStyles = StyleSheet.create ({
     },
 
     ContentCont: {
-        flexWrap:"wrap", 
-        flexDirection:"row", 
-        justifyContent:"center", 
-        alignItems:"center"
+        flexWrap:"wrap",
+        flexDirection:"row",
+        justifyContent:"center",
+        alignItems:"center",
+
     },
 
     // Nav Bar
@@ -19,6 +20,8 @@ var HomeKitStyles = StyleSheet.create ({
         height: 70,
         flexDirection: 'row',
         backgroundColor:"#FFFEF3",
+        borderBottomLeftRadius:8,
+        borderBottomRightRadius:8,
     },
 
 
@@ -61,7 +64,7 @@ var HomeKitStyles = StyleSheet.create ({
         borderWidth: 8,
         borderColor: "grey",
         marginLeft: 10,
-        marginRight: 10
+        marginRight: 10,
     },
     ItemTxt:{
         fontSize: 12,
