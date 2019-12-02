@@ -34,6 +34,13 @@ function GrabNGoKit(){
     const [ItemPic, setItemPic] = useState('');
     const [curItem, setCurItem] = useState({});
     const [items, setItems] = useState([]);
+    
+    const getItems = async()=>{
+        
+        var data = await ax("items_read", {users_id:1, type:'g'});
+        
+        setItems(data);
+    }
         
     
         var ItemPU = null;
@@ -47,17 +54,10 @@ function GrabNGoKit(){
             setItems={setItems}
             curItem={curItem}
             items={items}
+            getItems={getItems}
             />
         )}
-        
-    const getItems = async()=>{
-        
-        var data = await ax("items_read", {users_id:1, type:'g'});
-        //console.log(data);
-        
-        console.log(data);
-        setItems(data);
-    }
+
     
     useEffect(()=>{
         getItems();
@@ -81,25 +81,32 @@ function GrabNGoKit(){
                 <View style={{flex: 1, flexWrap:"wrap", flexDirection:"row", justifyContent:"center", alignItems:"center", height: 1300}}>
                   {items.map((o,i)=>{
                    
-                    var now = new Date().getMonth() +1
-                    var exp = o.exp_date
+                    var currentMonth = new Date().getMonth() +1
+                    var currentYear = new Date().getFullYear()
+                    
+                    var expMonth = parseInt(o.exp_month);
+                    var expYear = parseInt(o.exp_year);
                     var newImage = null; 
-                   
-                    if(o.exp_date){
+                        
+                    if(o.exp_month && o.exp_year){
                         newImage = imgs[o.img][1]
                     }else{
                         newImage = imgs[o.img][0]
                     }
                          
-                    var BorderPatrol = null; 
                         
-                    if(now < exp){
+                    var BorderPatrol = null;  
+                        
+                    if(currentYear < expYear){
                         BorderPatrol = ItemStyles.GreenBorder
-                    } else if(now > exp && exp !== '' && exp !==null){
+                    } else if(currentYear >= expYear && currentMonth >= expMonth){
                         BorderPatrol = ItemStyles.RedBorder
-                    } else {
-                        BorderPatrol = ItemStyles.GreyBorder;
                     }
+                        
+                    if(!expMonth || !expYear){
+                        BorderPatrol = ItemStyles.GreyBorder
+                    }
+                   
                     return (
                       <TouchableOpacity style={ItemStyles.ItemPopUp}
                       onPress = {() => {

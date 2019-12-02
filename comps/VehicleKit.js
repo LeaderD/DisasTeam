@@ -13,7 +13,7 @@ var granola = [require('../imgs/imgsBWpng/BWgranola_1.png'), require('../imgs/im
 var drinkwater = [require('../imgs/imgsBWpng/BWwater_1.png'), require('../imgs/imgsPng/water.png')];
 var blankets = [require('../imgs/imgsBWpng/BWblanket_1.png'),  require('../imgs/imgsPng/blanket.png')];
 var matches = [require('../imgs/imgsBWpng/BWmatches_1.png'), require('../imgs/imgsPng/matches.png')];
-var canldes = [require('../imgs/imgsBWpng/BWcandles_1.png'), require('../imgs/imgsPng/candles.png')];
+var candles = [require('../imgs/imgsBWpng/BWcandles_1.png'), require('../imgs/imgsPng/candles.png')];
 var shovel = [require('../imgs/imgsBWpng/BWshovel_1.png'), require('../imgs/imgsPng/shovel.png')];
 var snowbrush = [require('../imgs/imgsBWpng/BWsnowbrush_1.png'), require('../imgs/imgsPng/snowbrush.png')];
 var documents = [require('../imgs/imgsBWpng/BWdocument_1.png'), require('../imgs/imgsPng/document.png')];
@@ -30,7 +30,7 @@ var imgs = {
     drinkwater,
     blankets,
     matches,
-    canldes,
+    candles,
     shovel,
     snowbrush,
     documents,
@@ -48,6 +48,13 @@ function Vehicle(){
     const [curItem, setCurItem] = useState({});
     const [items, setItems] = useState([]);
     
+    const getItems = async()=>{
+        
+        var data = await ax("items_read", {users_id:1, type:'v'});
+
+        setItems(data);
+    }
+    
     var ItemPU = null;
 
     if (showItem === true){
@@ -60,17 +67,10 @@ function Vehicle(){
         setItems={setItems}
         curItem={curItem}
         items={items}
+        getItems={getItems}
         />
     )}
 
-    const getItems = async()=>{
-        
-        var data = await ax("items_read", {users_id:1, type:'v'});
-        //console.log(data);
-        
-        console.log(data);
-        setItems(data);
-    }
     
     useEffect(()=>{
         getItems();
@@ -94,25 +94,30 @@ function Vehicle(){
                 <View style={{flex: 1, flexWrap:"wrap", flexDirection:"row", justifyContent:"center", alignItems:"center", height: 1300}}>
                   {items.map((o,i)=>{
                     
-                    var now = new Date().getMonth() +1
-                    var exp = o.exp_date    
+                    var currentMonth = new Date().getMonth() +1
+                    var currentYear = new Date().getFullYear()
+                    
+                    var expMonth = parseInt(o.exp_month);
+                    var expYear = parseInt(o.exp_year);
                     var newImage = null; 
                         
-                    if(o.exp_date){
+                    if(o.exp_month && o.exp_year){
                         newImage = imgs[o.img][1]
                     }else{
                         newImage = imgs[o.img][0]
                     }
                          
                         
-                    var BorderPatrol = null;
+                    var BorderPatrol = null;  
                         
-                    if(now < exp){
+                    if(currentYear < expYear){
                         BorderPatrol = ItemStyles.GreenBorder
-                    } else if(now > exp && exp !== '' && exp !==null){
+                    } else if(currentYear >= expYear && currentMonth >= expMonth){
                         BorderPatrol = ItemStyles.RedBorder
-                    } else {
-                        BorderPatrol = ItemStyles.GreyBorder;
+                    }
+                        
+                    if(!expMonth || !expYear){
+                        BorderPatrol = ItemStyles.GreyBorder
                     }
 
                         

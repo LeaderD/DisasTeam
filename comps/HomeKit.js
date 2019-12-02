@@ -63,7 +63,6 @@ function HomeKit(){
      const getItems = async()=>{
         
         var data = await ax("items_read", {users_id:1, type:'h'});
-        //console.log(data);
 
         setItems(data);
     }
