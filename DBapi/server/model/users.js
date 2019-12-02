@@ -29,8 +29,6 @@ module.exports = class usersDB extends DB {
 
   async insert(){
     super.set_config = {
-      encrypt:["password"],
-      hash:["hash"],
       ...this.config
     };
 
@@ -51,8 +49,6 @@ module.exports = class usersDB extends DB {
   
   async update(){
     super.set_config = {
-      encrypt:["password"],
-      hash:["hash"],
       query_where:["id"],
       ...this.config
     };

@@ -59,6 +59,14 @@ function HomeKit(){
     const [ItemPic, setItemPic] = useState('');
     const [curItem, setCurItem] = useState({});
     const [items, setItems] = useState([]);
+    
+     const getItems = async()=>{
+        
+        var data = await ax("items_read", {users_id:1, type:'h'});
+        //console.log(data);
+
+        setItems(data);
+    }
 
     var ItemPU = null;
 
@@ -71,16 +79,11 @@ function HomeKit(){
         setItems={setItems}
         curItem={curItem}
         items={items}
+        getItems={getItems}
         />
     )}
     
-    const getItems = async()=>{
-        
-        var data = await ax("items_read", {users_id:1, type:'h'});
-        //console.log(data);
-
-        setItems(data);
-    }
+   
     
     useEffect(()=>{
         getItems();
@@ -107,8 +110,8 @@ function HomeKit(){
                     var currentMonth = new Date().getMonth() +1
                     var currentYear = new Date().getFullYear()
                     
-                    var expMonth = o.exp_month;
-                    var expYear = o.exp_year;
+                    var expMonth = parseInt(o.exp_month);
+                    var expYear = parseInt(o.exp_year);
                     var newImage = null; 
                         
                     if(o.exp_month && o.exp_year){
@@ -122,17 +125,20 @@ function HomeKit(){
                         
                     if(currentYear < expYear){
                         BorderPatrol = ItemStyles.GreenBorder
-                    } else if(currentYear > expYear && expYear !== '' && expYear !== null){
+                    } else if(currentYear >= expYear && currentMonth >= expMonth){
                         BorderPatrol = ItemStyles.RedBorder
-                    } else {
-                        BorderPatrol = ItemStyles.GreyBorder;
+                    }
+                        
+                    if(!expMonth || !expYear){
+                        BorderPatrol = ItemStyles.GreyBorder
                     }
                     
                         //console.log(currentYear);
                        
                         
                     return (
-                      <TouchableOpacity style={ItemStyles.ItemPopUp}
+                      <TouchableOpacity key={i} 
+                          style={ItemStyles.ItemPopUp}
                       onPress = {() => {
                           setShowItem(true);
                           setCurItem(o);

@@ -9,9 +9,9 @@ function ItemPopUp(props){
     const [exptextyear, setExpTextYear] = useState(props.curItem.exp_year);
     const updateItems = async()=>{
         
-        var data = await ax("items_update", {id:props.curItem.id, exp_month:exptextmonth, exp_year:exptextyear});
+        var data = await ax("items_update", {id:props.curItem.id, exp_month:exptextmonth || '01', exp_year:exptextyear || '2019'});
         //console.log(data);
-        
+        props.getItems();
         //console.log(img);
     }
     
@@ -83,6 +83,7 @@ function ItemPopUp(props){
             //selectedValue={this.state.language}
             // onValueChange={(itemValue, itemIndex) => this.setState({language:itemValue})}
             style={PUStyles.monthPicker}
+                selectedValue={exptextmonth}
             onValueChange={(t)=>{
                     setExpTextMonth(t)}}
                 >
@@ -100,6 +101,7 @@ function ItemPopUp(props){
                 <Picker.Item label="12" value="12"/>
             </Picker>
             <Picker style={PUStyles.yearPicker}
+                selectedValue={exptextyear}
                 onValueChange={(t)=>{
                     setExpTextYear(t)}}>
                 <Picker.Item label="2019" value="2019"/>
