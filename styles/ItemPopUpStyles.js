@@ -11,10 +11,20 @@ var PUStyles = StyleSheet.create ({
     container:{
         height: 150,
         width: 350,
-        backgroundColor: "#F04B53",
+        paddingTop: "2%",
+        backgroundColor: "#F27C7B",
         flexDirection:"row",
         borderRadius: 6,
-        zIndex:10
+        zIndex:10,
+        shadowColor: "#000",
+        shadowOffset: {
+	         width: 0,
+	          height: 0,
+          },
+          shadowOpacity: 0.35,
+          shadowRadius: 8,
+
+          elevation: 5,
     },
     ItemImg:{
         resizeMode: "contain",
@@ -30,7 +40,7 @@ var PUStyles = StyleSheet.create ({
     inputs:{
         backgroundColor: "transparent",
         width: "55%",
-        fontSize: 18,
+        fontSize: 17,
         borderColor: "transparent",
         borderWidth: 1,
         borderBottomColor: "white",
@@ -49,13 +59,15 @@ var PUStyles = StyleSheet.create ({
     },
     UpdateBut:{
         backgroundColor: "white",
-        borderRadius: 3,
+        borderRadius: 8,
         height: "70%",
-        width: 77,
+        width: 82,
         justifyContent:"center",
         alignItems:"center",
         margin: "1%",
-        right: 42
+        right: 42,
+        borderColor:"#f7b1b1",
+        borderWidth:2
     },
     UpdateButText:{
         color:"#F04B53",
@@ -64,13 +76,15 @@ var PUStyles = StyleSheet.create ({
     },
     CancelBut:{
         backgroundColor:"rgba(255,255,255,0.2)",
-        borderRadius: 3,
+        borderRadius: 8,
         height: "70%",
-        width: 77,
+        width: 82,
         justifyContent:"center",
         alignItems:"center",
         margin: "1%",
-        right: 54
+        right: 54,
+        borderColor:"#f7b1b1",
+        borderWidth:2
 
     },
     CancelButText:{

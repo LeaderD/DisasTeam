@@ -6,8 +6,19 @@ var NBStyles = {
         height: 90,
         width: "100%",
         // justifyContent: "space-around",
-        flexDirection:"row"
-    },
+        flexDirection:"row",
+        borderTopLeftRadius: 8,
+        borderTopRightRadius: 8,
+        shadowColor: "#000",
+        shadowOffset: {
+	         width: 0,
+	          height: -2,
+          },
+          shadowOpacity: 0.30,
+          shadowRadius: 3.84,
+
+          elevation: 5,
+        },
     navImg:{
         width: 70,
         height: 50
@@ -21,7 +32,7 @@ var NBStyles = {
     },
     navCap:{
         color:"white",
-        fontSize: 18,
+        fontSize: 16,
     }
 }
 

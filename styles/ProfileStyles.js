@@ -72,6 +72,16 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         borderRadius: 10,
         paddingHorizontal: 10
+        paddingHorizontal: 10,
+        shadowColor: "#000",
+        shadowOffset: {
+	         width: 0,
+	          height: 2,
+          },
+          shadowOpacity: 0.30,
+          shadowRadius: 3.84,
+
+          elevation: 4,
     },
     addFamilyMemberButtonIcon: {
         height: 40,
