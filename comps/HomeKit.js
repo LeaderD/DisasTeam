@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {View, Text, Button, TouchableOpacity, Image, ScrollView, Dimensions} from 'react-native';
+import {View, Text, Button, TouchableOpacity, Image, ScrollView, Dimensions, AsyncStorage} from 'react-native';
 import styles from '../styles/HomeKitStyles';
 import ItemStyles from '../styles/ItemStyles';
 import NavBar from './NavBar';
@@ -61,8 +61,8 @@ function HomeKit(){
     const [items, setItems] = useState([]);
     
      const getItems = async()=>{
-        
-        var data = await ax("items_read", {users_id:1, type:'h'});
+        var users_id = await AsyncStorage.getItem('users_id');
+        var data = await ax("items_read", {users_id:users_id, type:'h'});
 
         setItems(data);
     }

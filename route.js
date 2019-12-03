@@ -9,7 +9,7 @@ import LoginPage from './pages/LoginPage';
 import RegistrationPage from './pages/RegistrationPage';
 import WelcomePage from './pages/WelcomePage';
 import KitsPage from './pages/KitsPage';
-// import DashboardPage from './pages/DashboardPage';
+import DashboardPage from './pages/DashboardPage';
 import ProfilePage from './pages/ProfilePage';
 
 function Route() {
@@ -20,7 +20,7 @@ function Route() {
         <Scene key="Register" component={RegistrationPage} />
         <Scene key="Welcome" component={WelcomePage}/>
         <Scene key="Kits" component={KitsPage} />
-        {/* <Scene key="Dashboard" component={DashboardPage} /> */}
+        <Scene key="Dashboard" component={DashboardPage} />
         <Scene key="Profile" component={ProfilePage} />
       </Stack>
     </Router>

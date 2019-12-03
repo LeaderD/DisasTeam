@@ -5,7 +5,7 @@ const DB = require(types.DB_PATH);
 
 module.exports = class usersDB extends DB {
   constructor(data){
-    super("users", ["id","email","password","hash"]);
+    super("users", ["id","name","email","password","hash"]);
     this.data = data;
     this.returns = ["*"];
     this.config = {};
@@ -29,8 +29,6 @@ module.exports = class usersDB extends DB {
 
   async insert(){
     super.set_config = {
-      encrypt:["password"],
-      hash:["hash"],
       ...this.config
     };
 
@@ -51,8 +49,6 @@ module.exports = class usersDB extends DB {
   
   async update(){
     super.set_config = {
-      encrypt:["password"],
-      hash:["hash"],
       query_where:["id"],
       ...this.config
     };

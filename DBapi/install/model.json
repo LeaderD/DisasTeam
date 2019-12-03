@@ -1,10 +1,8 @@
 [
   {
     "model":"users",
-    "cols":["id", "email", "password", "hash"],
-    "colstype":["SERIAL PRIMARY KEY", "TEXT", "TEXT", "TEXT"],
-    "encrypt":["password"],
-    "hash":["hash"]
+    "cols":["id", "name", "email", "password", "hash"],
+    "colstype":["SERIAL PRIMARY KEY", "TEXT", "TEXT", "TEXT", "TEXT"]
   },
   {
     "model":"items",

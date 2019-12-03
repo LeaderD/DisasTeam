@@ -9,7 +9,13 @@ module.exports = {
 	users_create:async (posts)=>{
 		//write your logic here for your crud
 		//you can do var result = await crud(...); and return it if needed
-		return await crud.create({model:'users', data:posts, returns:['*'], config:null});
+        var r = await crud.create({model:'users', data:posts, returns:['*'], config:null});
+        var users_id = r.data[0].id;
+        
+        var i = await crud.custom({model:'items', data:[users_id], returns:['*'], config:null});
+        console.log(i);
+        
+		return r;
 	},
 	users_read:async (posts)=>{
 		//write your logic here for your crud

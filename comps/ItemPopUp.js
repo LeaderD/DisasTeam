@@ -7,6 +7,7 @@ function ItemPopUp(props){
     
     const [exptextmonth, setExpTextMonth] = useState(props.curItem.exp_month);
     const [exptextyear, setExpTextYear] = useState(props.curItem.exp_year);
+    
     const updateItems = async()=>{
         
         var data = await ax("items_update", {id:props.curItem.id, exp_month:exptextmonth || '01', exp_year:exptextyear || '2019'});

@@ -1,4 +1,4 @@
-INSERT INTO users(email, password) VALUES('test', 'test');
+INSERT INTO users(name, email, password) VALUES('test', 'test', 'test');
 
 
 (/*Home Kit*/)
