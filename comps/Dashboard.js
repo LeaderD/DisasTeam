@@ -1,13 +1,18 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import {
     View,
     Text,
     TouchableOpacity,
     FlatList,
     Image,
-    SafeAreaView
+
+    SafeAreaView,
+
+    Animated
+
 } from 'react-native';
 import {Actions} from 'react-native-router-flux';
+//import LinearGradient from 'react-native-linear-gradient';
 import moment from 'moment';
 
 // styles
@@ -17,6 +22,31 @@ import styles from '../styles/DashboardStyles';
 import mockImage1 from '../imgs/imgsPng/crackers.png';
 import mockImage2 from '../imgs/imgsPng/cookingwater.png';
 import mockImage3 from '../imgs/imgsPng/granola.png';
+
+const FadeInView = (props) => {
+  const [fadeAnim] = useState(new Animated.Value(0))  // Initial value for opacity: 0
+
+  React.useEffect(() => {
+    Animated.timing(
+      fadeAnim,
+      {
+        toValue: 1,
+        duration: 1000,
+      }
+    ).start();
+  }, [])
+
+  return (
+    <Animated.View                 // Special animatable View
+      style={{
+        ...props.style,
+        opacity: fadeAnim,         // Bind opacity to animated value
+      }}
+    >
+      {props.children}
+    </Animated.View>
+  );
+}
 
 const expiringItems = [
     {
@@ -49,7 +79,7 @@ class Dashboard extends React.Component {
                 <Image source={item.icon} style={[styles.expiringItemImage, expirationStyle]} />
                 <View>
                     <Text style={styles.expiringItemText}>Expiry date: {moment(new Date(item.expired_at)).format('MMM. DD')}</Text>
-                    <Text>Last updated by: {item.last_updated_by}</Text>
+                    <Text style={styles.updatedText}>Last updated by: {item.last_updated_by}</Text>
                 </View>
             </TouchableOpacity>
         )
@@ -72,13 +102,20 @@ class Dashboard extends React.Component {
                 </View>
                 </View>
                 <Text style={styles.expiringItems}>Expiring items</Text>
+                <FadeInView>
                 <FlatList
                     style={styles.expiringList}
                     data={expiringItems}
                     keyExtractor={item => `${item.id}`}
                     renderItem={this.renderExpiringItem}
                 />
+
         </SafeAreaView>
+
+                </FadeInView>
+            </View>
+            </View>
+
         )
     }
 }
