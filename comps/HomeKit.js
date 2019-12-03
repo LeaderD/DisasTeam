@@ -93,7 +93,8 @@ function HomeKit(){
     return (
         <View>
             <View style={styles.Top}>
-                <TouchableOpacity style={styles.backBtn}>
+                <TouchableOpacity style={styles.backBtn}
+                    onPress={()=> Actions.Kits()}>
                     <Image
                     style={styles.backBtn}
                     source={require('../imgs/imgsPng/backbutton.png')}

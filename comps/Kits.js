@@ -11,7 +11,7 @@ function Kits(){
 
                 <View style={{flexWrap:'wrap', flex:1, width: '100%', flexDirection:"row", justifyContent:"center", alignItems: "center"}}>
                     <TouchableOpacity style={{alignItems:"center"}}
-                        onPress={()=> Actions.HomeKitPage()}>
+                        onPress={()=> Actions.HomeKit()}>
                         <Image
                         style={styles.home}
                         source={require('../imgs/imgsPng/home.png')}
@@ -19,7 +19,8 @@ function Kits(){
                         <Text style={styles.KitsTxt1}>Home</Text>
                     </TouchableOpacity>
 
-                    <TouchableOpacity style={{alignItems:"center"}}>
+                    <TouchableOpacity style={{alignItems:"center"}}
+                         onPress={()=> Actions.WorkKit()}>
                         <Image
                         style={styles.work}
                         source={require('../imgs/imgsPng/work.png')}
@@ -27,7 +28,8 @@ function Kits(){
                         <Text style={styles.txtWor}>Work</Text>
                     </TouchableOpacity>
 
-                    <TouchableOpacity style={{alignItems:"center"}}>
+                    <TouchableOpacity style={{alignItems:"center"}}
+                        onPress={()=> Actions.GrabNGoKit()}>
                         <Image
                         style={styles.grabngo}
                         source={require('../imgs/imgsPng/grabngo.png')}
@@ -35,7 +37,8 @@ function Kits(){
                         <Text style={styles.KitsTxt1}>Grab N' Go</Text>
                     </TouchableOpacity>
 
-                    <TouchableOpacity style={{alignItems:"center"}}>
+                    <TouchableOpacity style={{alignItems:"center"}}
+                         onPress={()=> Actions.VehicleKit()}>
                         <Image
                         style={styles.car}
                         source={require('../imgs/imgsPng/car.png')}

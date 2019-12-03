@@ -8,7 +8,7 @@ function HomeKitPage(){
     return (
      <View style={{flex:1, justifyContent:'center'}}>
          <View style={{flex:1}}>
-         <HomeKit/>
+         <HomeKit />
      </View>
          <NavBar/>
      </View>
