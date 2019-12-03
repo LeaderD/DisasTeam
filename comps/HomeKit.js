@@ -5,6 +5,7 @@ import ItemStyles from '../styles/ItemStyles';
 import NavBar from './NavBar';
 import ItemPopUp from './ItemPopUp';
 import ax from '../ax';
+import {Actions} from 'react-native-router-flux';
 
 var tomatoes = [require('../imgs/imgsBWpng/BWcannedfood_1.png'), require('../imgs/imgsPng/cannedfood.png')];
 var crackers = [require('../imgs/imgsBWpng/BWcrackers_1.png'), require('../imgs/imgsPng/crackers.png')];
@@ -94,7 +95,7 @@ function HomeKit(){
         <View>
             <View style={styles.Top}>
                 <TouchableOpacity style={styles.backBtn}
-                    onPress={()=> Actions.Kits()}>
+                    onPress={()=> Actions.pop(Kits)}>
                     <Image
                     style={styles.backBtn}
                     source={require('../imgs/imgsPng/backbutton.png')}

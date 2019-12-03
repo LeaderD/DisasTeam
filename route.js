@@ -19,7 +19,7 @@ import GrabNGoKitPage from './pages/GrabNGoKitPage';
 
 function Route() {
   return (
-    <Router>
+    <Router {...sceneConfig}>
       <Stack key="root" hideNavBar={true}>
         <Scene key="Login" component={LoginPage} initial={true}/>
         <Scene key="Register" component={RegistrationPage} />
@@ -35,6 +35,12 @@ function Route() {
       </Stack>
     </Router>
   );
+};
+
+var sceneConfig = {
+    cardStyle: {
+        backgroundColor: "#FFFEF3"
+    }
 }
 
 export default Route;
