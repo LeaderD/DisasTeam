@@ -2,20 +2,22 @@ import {StyleSheet} from 'react-native';
 
 var PUStyles = StyleSheet.create ({
     wrapper:{
-        position:'absolute',
         width:"100%",
         height:"100%",
         justifyContent:'center',
-        alignItems:'center'
+        alignItems:'center',
+        // backgroundColor: "purple"
     },
     container:{
-        height: 150,
+        height: 200,
         width: 350,
         paddingTop: "2%",
         backgroundColor: "#F27C7B",
         flexDirection:"row",
         borderRadius: 6,
         zIndex:10,
+
+        padding: '2%'
         shadowColor: "#000",
         shadowOffset: {
 	         width: 0,
@@ -30,12 +32,15 @@ var PUStyles = StyleSheet.create ({
         resizeMode: "contain",
         height: "100%",
         alignItems:"flex-start",
-        width: "40%"
+        width: "40%",
+        // backgroundColor: "red"
     },
     inputView:{
-        width: "100%",
-        height: "40%",
-        alignItems: "flex-start"
+        flexDirection: "column",
+        // backgroundColor: "brown",
+        width: "60%",
+        alignContent: "space-between",
+        marginLeft: 10,
     },
     inputs:{
         backgroundColor: "transparent",
@@ -45,29 +50,23 @@ var PUStyles = StyleSheet.create ({
         borderWidth: 1,
         borderBottomColor: "white",
         color: "#FFF",
-        alignItems:"flex-end",
-        padding: "2%",
-        top: 10
+        padding: 1,
+        width: "90%"
     },
     ButView:{
-        width: "100%",
-        height: "100%",
         flexDirection: "row",
-        alignItems:"flex-end",
-        top: 10,
-        left: 50
+        justifyContent:"space-evenly",
+        alignItems: "center",
+        // backgroundColor: "aliceblue"
     },
     UpdateBut:{
         backgroundColor: "white",
-        borderRadius: 8,
-        height: "70%",
-        width: 82,
+        borderRadius: 3,
+        width: 77,
+        height: "60%",
         justifyContent:"center",
         alignItems:"center",
         margin: "1%",
-        right: 42,
-        borderColor:"#f7b1b1",
-        borderWidth:2
     },
     UpdateButText:{
         color:"#F04B53",
@@ -76,16 +75,12 @@ var PUStyles = StyleSheet.create ({
     },
     CancelBut:{
         backgroundColor:"rgba(255,255,255,0.2)",
-        borderRadius: 8,
-        height: "70%",
-        width: 82,
+        borderRadius: 3,
+        width: 77,
+        height: "60%",
         justifyContent:"center",
         alignItems:"center",
         margin: "1%",
-        right: 54,
-        borderColor:"#f7b1b1",
-        borderWidth:2
-
     },
     CancelButText:{
         color: "white",
@@ -93,6 +88,32 @@ var PUStyles = StyleSheet.create ({
         fontWeight: "600",
         justifyContent: "center",
         alignItems:"center"
+    },
+    PickerView:{
+        flexDirection: "row",
+        // backgroundColor: "pink",
+        height: 45,
+    },
+    monthPicker:{
+        color: "rgba(0,0,0,0.5)",
+        // backgroundColor: "maroon",
+        width: "45%",
+        height: "100%"
+    },
+    yearPicker:{
+        color: "rgba(0,0,0,0.5)",
+        // backgroundColor: "thistle",
+        width: "55%",
+        height: "100%"
+    },
+    ExpText:{
+        color: 'white',
+        fontSize: 18,
+        top: 5
+    },
+    ExpCont:{
+        // backgroundColor: "slateblue",
+        top: 5
     }
 
 });

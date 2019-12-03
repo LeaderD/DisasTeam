@@ -42,7 +42,8 @@ var styles= StyleSheet.create({
     },
     Faq:{
         color: "#F58287",
-        fontSize:28,
+        fontSize:30,
+      
     },
     ContentContainer:{
         maxWidth: "80%",

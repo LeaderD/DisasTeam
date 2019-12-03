@@ -6,20 +6,37 @@ const styles = StyleSheet.create({
         backgroundColor: '#FFFEF3',
         height: "100%"
     },
+
+    titleBar:{
+        height: 70,
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "space-around",
+        backgroundColor: "#FFFEF3"
+    },
+    TitleCont:{
+        justifyContent: "center",
+    },
+
     /*Gradient: {
       flex: 1,
       height: "100%"
     },*/
+
     AppTitle:{
         color: '#F04B53',
         fontSize: 30,
-        paddingLeft: '34%',
-        paddingTop: '11%'
+        left: 70
+    },
+    infoCont:{
+        justifyContent: "center",
+        // backgroundColor: "lightyellow",
+        // flex: 1
     },
     helpButton: {
-        position: 'absolute',
         height: 30,
         width: 30,
+        resizeMode: "contain"
         borderWidth: 2,
         borderColor: '#F04B53',
         borderRadius: 15,
@@ -31,7 +48,7 @@ const styles = StyleSheet.create({
         shadowOffset: {
            width: 0,
             height: 2,
-          },
+         },
           shadowOpacity: 0.15,
           shadowRadius: 3,
 
