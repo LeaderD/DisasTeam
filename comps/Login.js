@@ -30,7 +30,7 @@ function Login(){
                     </TouchableOpacity>
 
             <TouchableOpacity
-            onPress={()=> Actions.Register()}
+            onPress={()=> Actions.Register()} 
             style={styles.RegisterButton}>
                 <Text
                 style={styles.RegisterButtonText}>Register </Text> 

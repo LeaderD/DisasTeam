@@ -2,6 +2,7 @@ import React from 'react';
 import {View, Text, Button, TouchableOpacity, Image} from 'react-native';
 import styles from '../styles/KitsStyle';
 import NavBar from './NavBar';
+import {Actions} from 'react-native-router-flux';
 
 function Kits(){
     return (
@@ -9,7 +10,8 @@ function Kits(){
                 <Text style={styles.Title}>Kits</Text>
 
                 <View style={{flexWrap:'wrap', flex:1, width: '100%', flexDirection:"row", justifyContent:"center", alignItems: "center"}}>
-                    <TouchableOpacity style={{alignItems:"center"}}>
+                    <TouchableOpacity style={{alignItems:"center"}}
+                        onPress={()=> Actions.HomeKitPage()}>
                         <Image
                         style={styles.home}
                         source={require('../imgs/imgsPng/home.png')}

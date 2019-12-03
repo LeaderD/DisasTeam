@@ -9,7 +9,8 @@ import Login from './comps/Login';
 import HomeKit from './comps/HomeKit'
 import WorkKit from './comps/WorkKit'
 import GrabNGoKit from './comps/GrabNGoKit';
-import VehicleKit from './comps/VehicleKit'
+import VehicleKit from './comps/VehicleKit';
+import Kits from './comps/VehicleKit';
 // import Welcome from './comps/Welcome'
 // import WhiteButton from './comps/WhiteButton'
 // import RedButton from './comps/RedButton'
@@ -36,9 +37,9 @@ function App(){
       {/* <GrabNGoKit /> */}
       {/* <ItemPopUp/> */}
       {/* <LoginPage/> */}
-        {/*<Register />*/}
+      {/*<Register />*/}
       {/* <Help /> */}
-      <Route/>
+      <Route />
     </View>
   )
 }
