@@ -1,10 +1,10 @@
 import React, {useState, useEffect} from 'react';
-import {View, Text, TouchableOpacity, FlatList, Image, AsyncStorage
+import {View, Text, TouchableOpacity, FlatList, Image, AsyncStorage, ScrollView
 } from 'react-native';
 import ax from '../ax';
 import moment from 'moment';
-import styles from '../styles/DashboardStyles';
 import ItemStyles from '../styles/ItemStyles';
+import styles from '../styles/DashboardStyles';
 import {Actions} from 'react-native-router-flux';
 
 var tomatoes = [require('../imgs/imgsBWpng/BWcannedfood_1.png'), require('../imgs/imgsPng/cannedfood.png')];
@@ -54,11 +54,8 @@ var imgs = {
     
 }
 
-
-
 function Dashboard() {
     
-    const [showItem, setShowItem] = useState(false);
     const [items, setItems] = useState([]);
     
     const getItems = async()=>{
@@ -69,16 +66,9 @@ function Dashboard() {
         setItems(data);
     }
     
-    var ItemPU = null;
+     var ItemPU = null;
 
-    if (showItem === true){
-    ItemPU = (
-        <ItemPopUp
-        setShowItem={setShowItem}
-        items={items}
-        getItems={getItems}
-        />
-    )}
+   
     
      useEffect(()=>{
         getItems();
@@ -106,62 +96,116 @@ function Dashboard() {
          if(!expMonth || !expYear){
              return false
          }
-        //return o.type === 'h'
     })
     
-    var exp_items = exp_items.filter((o,i)=>{
+        var home_items = exp_items.filter((o,i)=>{
+            return o.type === 'h'
         
+        })
+        var work_items = exp_items.filter((o,i)=>{
+            return o.type === 'w'
         
-    })
-    console.log(exp_items)
+        })
+        var vehicle_items = exp_items.filter((o,i)=>{
+            return o.type === 'v'
+        
+        })
+        var grabngo_items = exp_items.filter((o,i)=>{
+            return o.type === 'g'
+        
+        })
     
+        console.log(exp_items)
     
-    /*
-    renderExpiringItem = ({item}) => {
-        const expiredInDays = moment(new Date(item.expired_at)).diff(moment(), 'days');
-        const expirationStyle = expiredInDays === 0 ? styles.expiringItemExpireToday : expiredInDays < 0 && styles.expiringItemExpired;
-        return (
-            <TouchableOpacity style={styles.expiringItem}>
-                <Image source={item.icon} style={[styles.expiringItemImage, expirationStyle]} />
-                <View>
-                    <Text style={styles.expiringItemText}>Expiry date: {moment(new Date(item.expired_at)).format('MMM. DD')}</Text>
-                    <Text>Last updated by: {item.last_updated_by}</Text>
-                </View>
-            </TouchableOpacity>
-        )
-    };*/
     
     return (
       <View style ={{flexWrap:'wrap', flex:1, width:'100%', flexDirection:"row", justifyContent:"center", alignItems:"center"}}>
         <View style={styles.dashboardPage}>
-            <Text style={styles.AppTitle}>Dashboard</Text>
+            <View style={styles.Top}>
+                <Text style={styles.AppTitle}>Dashboard</Text>
+                
             <TouchableOpacity style={styles.helpButton} onPress={Actions.Profile}>
                 <Text style={styles.helpButtonText}>?</Text>
             </TouchableOpacity>
-            <Text style={styles.expiringItems}>Expiring items</Text>
+            </View>
             
-            <TouchableOpacity 
-                          style={ItemStyles.ItemPopUp}
-                      onPress = {() => {
-                          setShowItem(true);
-                          setCurItem(o);
-                        
-                      }}>
+
+           
+           
+           <ScrollView>
+                <View style={{flex: 1, flexWrap:"wrap", flexDirection:"column"}}>
+            <Text style={styles.ExpItemsTitle}>Expired Home Kit Items</Text>
+                  {home_items.map((o,i)=>{
+                    return (
+                      <View style={{flexDirection:"row"}}>
                           <Image
-                      
-                          source={newImage || null}
+                          style={styles.Items}
+                          source={imgs[o.img][1] || null}
                           />
                           <Text style={styles.ItemTxt}>{o.item_name || ""}</Text>
-                      </TouchableOpacity>
+                          <Text style={styles.ItemTxt}>{o.exp_month || ""}
+                          </Text>
+                      </View>
+                    )
+                  })
+                }
+                </View>
+               
+                <View style={{flex: 1, flexWrap:"wrap", flexDirection:"column"}}>
+                
+                <Text style={styles.ExpItemsTitle}>Expired Work Kit Items</Text>
+                  {work_items.map((o,i)=>{
+                    return (
+                      <View style={{flexDirection:"row"}}>
+                          <Image
+                          style={styles.Items}
+                          source={imgs[o.img][1] || null}
+                          />
+                          <Text style={styles.ItemTxt}>{o.item_name || ""}</Text>
+                      </View>
+                    )
+                  })
+                }
+                </View>
+               
+               <View style={{flex: 1, flexWrap:"wrap", flexDirection:"column"}}>
+                
+                <Text style={styles.ExpItemsTitle}>Expired Grab N' Go Kit Items</Text>
+                  {grabngo_items.map((o,i)=>{
+                    return (
+                      <View style={{flexDirection:"row"}}>
+                          <Image
+                          style={styles.Items}
+                          source={imgs[o.img][1] || null}
+                          />
+                          <Text style={styles.ItemTxt}>{o.item_name || ""}</Text>
+                      </View>
+                    )
+                  })
+                }
+                </View>
+               
+               <View style={{flex: 1, flexWrap:"wrap", flexDirection:"column"}}>
+                
+                <Text style={styles.ExpItemsTitle}>Expired Vehicle Kit Items</Text>
+                  {vehicle_items.map((o,i)=>{
+                    return (
+                      <View style={{flexDirection:"row"}}>
+                          <Image
+                          style={styles.Items}
+                          source={imgs[o.img][1] || null}
+                          />
+                          <Text style={styles.ItemTxt}>{o.item_name || ""}</Text>
+                        
+                            
+                      </View>
+                    )
+                  })
+                }
+                </View>
+               
+            </ScrollView>
             
-            
-            
-            {/*<FlatList
-                style={styles.expiringList}
-                data={expiringItems}
-                keyExtractor={item => `${item.id}`}
-                renderItem={this.renderExpiringItem}
-            />*/} 
         </View>
         </View>
     )

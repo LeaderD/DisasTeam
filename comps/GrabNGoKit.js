@@ -2,7 +2,6 @@ import React, {useState, useEffect} from 'react';
 import {View, Text, Button, TouchableOpacity, Image, ScrollView, Dimensions, AsyncStorage} from 'react-native';
 import styles from '../styles/HomeKitStyles';
 import ItemStyles from '../styles/ItemStyles';
-import NavBar from './NavBar';
 import ItemPopUp from './ItemPopUp';
 import ax from '../ax';
 import {Actions} from 'react-native-router-flux';

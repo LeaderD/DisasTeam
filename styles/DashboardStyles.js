@@ -5,62 +5,61 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#FFFEF3'
     },
+    Top:{
+        justifyContent:"center",
+        alignItems: "center",
+        top:0,
+        height: 100,
+        backgroundColor: "#FFFEF3"
+    },
     AppTitle:{
-        color: '#F04B53',
+        position: "absolute",
+        alignItems: "center",
+        color: "#F04B53",
         fontSize: 30,
-        paddingLeft: '34%',
-        paddingTop: '11%'
     },
     helpButton: {
-        position: 'absolute',
-        height: 30,
-        width: 30,
-        borderWidth: 2,
+        position: 'absolute', 
+        height: 40,
+        width: 40,
+        borderWidth: 3,
         borderColor: '#F04B53',
-        borderRadius: 15,
-        top: 50,
+        borderRadius: 30,
         right: 20,
         alignItems: 'center',
         justifyContent: 'center'
     },
     helpButtonText: {
         color: '#F04B53',
-        fontSize: 24
+        fontSize: 30
     },
-    expiringItems: {
-        alignSelf: 'flex-start',
-        marginBottom: '10%',
-        marginLeft: '7%',
-        paddingTop: '9%',
-        fontSize: 17,
-        //paddingTop: '100%',
+    ExpItemsTitle: {
+        position: "relative",
+        alignItems: "center",
+        color: "#F04B53",
+        fontSize: 18,
+        paddingTop: 30,
+        paddingBottom: 10,
+        paddingLeft: 20
     },
-    expiringList: {
-        width: '100%',
-
+    Items:{
+        height: 90,
+        width: 90,
+        position: "relative",
+        borderRadius: 100/1,
+        borderWidth: 8,
+        borderColor: "red",
+        marginLeft: 20,
+        marginTop: 10
     },
-    expiringItem: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        marginBottom: 10
-    },
-    expiringItemImage: {
-        height: 80,
-        width: 80,
-        marginRight: 20,
-        borderWidth: 7,
-        borderRadius: 60,
-        marginLeft: '5%',
-        borderColor: '#85E6A2'
-    },
-    expiringItemExpired: {
-        borderColor: '#F04B53'
-    },
-    expiringItemExpireToday: {
-        borderColor: '#FDF050'
-    },
-    expiringItemText: {
-        marginBottom: 8
+    ItemTxt:{
+        position:"relative",
+        fontSize: 18,
+        textAlign:"center",
+        justifyContent:"center",
+        alignItems: "center",
+        top: 30,
+        marginLeft: 20
     }
 });
 
