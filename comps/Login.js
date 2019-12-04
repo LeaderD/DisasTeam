@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {View, Text, TextInput, Button, Image, TouchableOpacity} from 'react-native';
+import {View, Text, TextInput, Button, Image, TouchableOpacity, AsyncStorage} from 'react-native';
 import styles from '../styles/LoginStyles';
 import {Actions} from 'react-native-router-flux';
 import ax from '../ax';
@@ -9,7 +9,7 @@ function Login(){
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     
-    var UserRegister=async()=>{
+    var UserLogin=async()=>{
         
         var data = await ax("users_read", {email:email, password:password});
         console.log(data);
@@ -18,6 +18,7 @@ function Login(){
         //store it in AsyncStorage
         await AsyncStorage.setItem("users_id", users_id);
         
+        Actions.Kits();
     
     }
     
@@ -41,7 +42,7 @@ function Login(){
 
             <TouchableOpacity
             style={styles.LoginButton}
-            onPress={()=>{Actions.Kits()}}>
+            onPress={()=>{UserLogin()}}>
             <Text
                 style={styles.LoginButtonText}> Sign In </Text>
                     </TouchableOpacity>

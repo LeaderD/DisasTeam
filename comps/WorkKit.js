@@ -1,10 +1,11 @@
 import React, {useState, useEffect} from 'react';
-import {View, Text, Button, TouchableOpacity, Image, ScrollView, Dimensions} from 'react-native';
+import {View, Text, Button, TouchableOpacity, Image, ScrollView, Dimensions, AsyncStorage} from 'react-native';
 import styles from '../styles/HomeKitStyles';
 import ItemStyles from '../styles/ItemStyles';
 import NavBar from './NavBar';
 import ItemPopUp from './ItemPopUp';
 import ax from '../ax';
+import {Actions} from 'react-native-router-flux';
 
 var clothes = [require('../imgs/imgsBWpng/BWclothes_1.png'), require('../imgs/imgsPng/clothes.png')];
 var medication = [require('../imgs/imgsBWpng/BWmeds_1.png'), require('../imgs/imgsPng/meds.png')];
@@ -39,8 +40,8 @@ function WorkKit(){
     const [items, setItems] = useState([]);
     
     const getItems = async()=>{
-        
-        var data = await ax("items_read", {users_id:1, type:'w'});
+        var users_id = await AsyncStorage.getItem('users_id');
+        var data = await ax("items_read", {users_id:users_id, type:'w'});
         
         setItems(data);
     }

@@ -1,16 +1,17 @@
 import React, {useState, useEffect} from 'react';
-import {View, Text, Button, TouchableOpacity, Image, ScrollView, Dimensions} from 'react-native';
+import {View, Text, Button, TouchableOpacity, Image, ScrollView, Dimensions,  AsyncStorage} from 'react-native';
 import styles from '../styles/HomeKitStyles';
 import ItemStyles from '../styles/ItemStyles';
 import NavBar from './NavBar';
 import ItemPopUp from './ItemPopUp';
 import ax from '../ax';
+import {Actions} from 'react-native-router-flux';
 
 var whistle = [require('../imgs/imgsBWpng/BWwhistle_1.png'), require('../imgs/imgsPng/whistle.png')];
 var flare = [require('../imgs/imgsBWpng/BWflare_1.png'), require('../imgs/imgsPng/flare.png')];
 var firstaid = [require('../imgs/imgsBWpng/BWmedicalkit_1.png'), require('../imgs/imgsPng/medicalkit.png')];
 var granola = [require('../imgs/imgsBWpng/BWgranola_1.png'), require('../imgs/imgsPng/granola.png')];
-var drinkwater = [require('../imgs/imgsBWpng/BWwater_1.png'), require('../imgs/imgsPng/water.png')];
+var drinkwater = [require('../imgs/imgsBWpng/BWwater_1.png'), require('../imgs/imgsPng/water.png')]; 
 var blankets = [require('../imgs/imgsBWpng/BWblanket_1.png'),  require('../imgs/imgsPng/blanket.png')];
 var matches = [require('../imgs/imgsBWpng/BWmatches_1.png'), require('../imgs/imgsPng/matches.png')];
 var candles = [require('../imgs/imgsBWpng/BWcandles_1.png'), require('../imgs/imgsPng/candles.png')];
@@ -49,8 +50,8 @@ function Vehicle(){
     const [items, setItems] = useState([]);
     
     const getItems = async()=>{
-        
-        var data = await ax("items_read", {users_id:1, type:'v'});
+        var users_id = await AsyncStorage.getItem('users_id');
+        var data = await ax("items_read", {users_id:users_id, type:'v'});
 
         setItems(data);
     }

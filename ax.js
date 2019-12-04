@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 
-const url = "http://142.232.129.43:3001/post";
+const url = "http://142.232.136.143:3001/post";
 
 export default async function(key, d){
     var obj = {

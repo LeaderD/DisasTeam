@@ -1,6 +1,7 @@
 import React from 'react';
 import {View, Text, Image, TouchableOpacity} from 'react-native';
 import NBStyles from '../styles/NavBarStyles';
+import {Actions} from 'react-native-router-flux';
 
 function NavBar(){
     return (
