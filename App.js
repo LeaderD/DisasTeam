@@ -26,8 +26,8 @@ import Help from './comps/Help';
 import Route from './route'
 import Tutorial from './comps/Tutorial';
 import Dashboard from './comps/Dashboard';
-
-
+import ColorGuide from './comps/ColorGuide';
+import ToolTip from './comps/ToolTip';
 
 function App(){
   return (
@@ -46,7 +46,9 @@ function App(){
       {/* <Help /> */}
       {/* <Route/> */}
       {/* <Tutorial /> */}
-      <Dashboard/>
+      {/* <Dashboard/> */}
+      {/* <ColorGuide/> */}
+      <ToolTip/>
     </View>
   )
 }

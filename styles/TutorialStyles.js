@@ -17,7 +17,7 @@ var TutStyles = StyleSheet.create({
     },
     text:{
         color: '#666666',
-        fontSize: 19,
+        fontSize: 20,
         top: '-5%'
     },
     nextBut:{
