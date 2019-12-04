@@ -55,10 +55,10 @@ const styles = StyleSheet.create({
     ItemTxt:{
         position:"relative",
         fontSize: 18,
-        textAlign:"center",
+        textAlign:"left",
         justifyContent:"center",
         alignItems: "center",
-        top: 30,
+        top: 20,
         marginLeft: 20
     }
 });

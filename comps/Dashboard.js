@@ -142,9 +142,18 @@ function Dashboard() {
                           style={styles.Items}
                           source={imgs[o.img][1] || null}
                           />
+                          
+                        <View style={{flexDirection:"column"}}>
                           <Text style={styles.ItemTxt}>{o.item_name || ""}</Text>
+                            
+                        <View style={{flexDirection:"row"}}>
+                          <Text style={styles.ItemTxt}>Exp Date:</Text>
                           <Text style={styles.ItemTxt}>{o.exp_month || ""}
                           </Text>
+                          <Text style={styles.ItemTxt}>{o.exp_year || ""}
+                          </Text>
+                        </View>
+                        </View>
                       </View>
                     )
                   })
@@ -153,7 +162,7 @@ function Dashboard() {
                
                 <View style={{flex: 1, flexWrap:"wrap", flexDirection:"column"}}>
                 
-                <Text style={styles.ExpItemsTitle}>Expired Work Kit Items</Text>
+                <Text style={styles.ExpItemsTitle}>Exp Work Kit Items</Text>
                   {work_items.map((o,i)=>{
                     return (
                       <View style={{flexDirection:"row"}}>
@@ -161,7 +170,17 @@ function Dashboard() {
                           style={styles.Items}
                           source={imgs[o.img][1] || null}
                           />
+                        <View style={{flexDirection:"column"}}>
                           <Text style={styles.ItemTxt}>{o.item_name || ""}</Text>
+                            
+                        <View style={{flexDirection:"row"}}>
+                          <Text style={styles.ItemTxt}>Exp Date:</Text>
+                          <Text style={styles.ItemTxt}>{o.exp_month || ""}
+                          </Text>
+                          <Text style={styles.ItemTxt}>{o.exp_year || ""}
+                          </Text>
+                        </View>
+                        </View>
                       </View>
                     )
                   })
@@ -170,7 +189,7 @@ function Dashboard() {
                
                <View style={{flex: 1, flexWrap:"wrap", flexDirection:"column"}}>
                 
-                <Text style={styles.ExpItemsTitle}>Expired Grab N' Go Kit Items</Text>
+                <Text style={styles.ExpItemsTitle}>Exp Grab N' Go Kit Items</Text>
                   {grabngo_items.map((o,i)=>{
                     return (
                       <View style={{flexDirection:"row"}}>
@@ -178,7 +197,17 @@ function Dashboard() {
                           style={styles.Items}
                           source={imgs[o.img][1] || null}
                           />
+                          <View style={{flexDirection:"column"}}>
                           <Text style={styles.ItemTxt}>{o.item_name || ""}</Text>
+                            
+                        <View style={{flexDirection:"row"}}>
+                          <Text style={styles.ItemTxt}>Exp Date:</Text>
+                          <Text style={styles.ItemTxt}>{o.exp_month || ""}
+                          </Text>
+                          <Text style={styles.ItemTxt}>{o.exp_year || ""}
+                          </Text>
+                        </View>
+                        </View>
                       </View>
                     )
                   })
@@ -187,7 +216,7 @@ function Dashboard() {
                
                <View style={{flex: 1, flexWrap:"wrap", flexDirection:"column"}}>
                 
-                <Text style={styles.ExpItemsTitle}>Expired Vehicle Kit Items</Text>
+                <Text style={styles.ExpItemsTitle}>Exp Vehicle Kit Items</Text>
                   {vehicle_items.map((o,i)=>{
                     return (
                       <View style={{flexDirection:"row"}}>
@@ -195,7 +224,17 @@ function Dashboard() {
                           style={styles.Items}
                           source={imgs[o.img][1] || null}
                           />
+                          <View style={{flexDirection:"column"}}>
                           <Text style={styles.ItemTxt}>{o.item_name || ""}</Text>
+                            
+                        <View style={{flexDirection:"row"}}>
+                          <Text style={styles.ItemTxt}>Expiery Date:</Text>
+                          <Text style={styles.ItemTxt}>{o.exp_month || ""}
+                          </Text>
+                          <Text style={styles.ItemTxt}>{o.exp_year || ""}
+                          </Text>
+                        </View>
+                        </View>
                         
                             
                       </View>
