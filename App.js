@@ -5,6 +5,7 @@ import {
   Text,
 } from 'react-native';
 
+
 import Login from './comps/Login';
 import HomeKit from './comps/HomeKit'
 import WorkKit from './comps/WorkKit'
@@ -24,8 +25,6 @@ import RegistrationPage from './pages/RegistrationPage';
 // import Welcome from './comps/Welcome';
 import Route from './route'
 
-
-
 function App(){
   return (
     <View style={{flex:1}}>
@@ -34,12 +33,19 @@ function App(){
       {/* <NavBar /> */}
       {/* <HomeKit /> */}
       {/* <WorkKit /> */}
-      {/* <GrabNGoKit /> */}
+      {/*<GrabNGoKit />*/}
       {/* <ItemPopUp/> */}
       {/* <LoginPage/> */}
       {/*<Register />*/}
       {/* <Help /> */}
-      <Route />
+      {/* <Tutorial /> */}
+      {/* <Dashboard/> */}
+      {/* <ColorGuide/> */}
+      {/* <ToolTip/> */}
+      {/* <Kits/> */}
+      {/* <Profile /> */}
+      {/* <VehicleKit /> */}
+          <Route/>
     </View>
   )
 }

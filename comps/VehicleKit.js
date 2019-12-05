@@ -1,8 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {View, Text, Button, TouchableOpacity, Image, ScrollView, Dimensions,  AsyncStorage} from 'react-native';
-import styles from '../styles/HomeKitStyles';
+import HomeKitStyles from '../styles/HomeKitStyles';
 import ItemStyles from '../styles/ItemStyles';
-import NavBar from './NavBar';
 import ItemPopUp from './ItemPopUp';
 import ax from '../ax';
 import {Actions} from 'react-native-router-flux';
@@ -81,14 +80,17 @@ function Vehicle(){
     
     return (
        <View>
-            <View style={styles.Top}>
-                <TouchableOpacity style={styles.backBtn}>
+            <View style={HomeKitStyles.Top}>
+                <TouchableOpacity style={HomeKitStyles.backBtn}>
                     <Image
-                    style={styles.backBtn}
+                    style={HomeKitStyles.backBtn}
                     source={require('../imgs/imgsPng/backbutton.png')}
                     />
                 </TouchableOpacity>
                 <Text style={styles.Title}>Vehicle</Text>
+                <TouchableOpacity>
+                    <Image style={HomeKitStyles.helpBut} source={require('../imgs/imgsPng/helpwhite.png')} />
+                </TouchableOpacity>
             </View>
 
             <ScrollView>

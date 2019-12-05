@@ -1,8 +1,8 @@
+
 import React, {useState, useEffect} from 'react';
-import {View, Text, Button, TouchableOpacity, Image, ScrollView, Dimensions, AsyncStorage} from 'react-native';
-import styles from '../styles/HomeKitStyles';
+import {View, Text, Button, TouchableOpacity, Image, ScrollView, Dimensions, AsyncStorage, SafeAreaView} from 'react-native';
+import HomeKitStyles from '../styles/HomeKitStyles';
 import ItemStyles from '../styles/ItemStyles';
-import NavBar from './NavBar';
 import ItemPopUp from './ItemPopUp';
 import ax from '../ax';
 import {Actions} from 'react-native-router-flux';
@@ -28,9 +28,6 @@ var imgs = {
     idcopy,
     money,
 }
-
-
-
 
 function WorkKit(){
 
@@ -70,15 +67,24 @@ function WorkKit(){
     },[]);
 
     return (
+        <SafeAreaView>
         <View>
-            <View style={styles.Top}>
-                <TouchableOpacity style={styles.backBtn}>
+            <View style={HomeKitStyles.Top}>
+                <View style={HomeKitStyles.BackNav}>
+                <TouchableOpacity style={HomeKitStyles.backBtn}
+                onPress={()=>Actions.pop("Kits")}>
                     <Image
-                    style={styles.backBtn}
-                    source={require('../imgs/imgsPng/backbutton.png')}
+                    style={HomeKitStyles.backBtn}
+                    source={require('../imgs/imgsPng/backbuttonwhite.png')}
                     />
                 </TouchableOpacity>
-                <Text style={styles.Title}>Work</Text>
+                </View>
+                <View style={HomeKitStyles.TitleNav}>
+                <Text style={HomeKitStyles.Title}>Work</Text>
+                </View>
+                <TouchableOpacity>
+                    <Image style={HomeKitStyles.helpBut} source={require('../imgs/imgsPng/helpwhite.png')} />
+                </TouchableOpacity>
             </View>
 
             <ScrollView>
@@ -135,8 +141,7 @@ function WorkKit(){
             {ItemPU}
 
         </View>
-
-    )
-}
+        </SafeAreaView>
+    )}
 
 export default WorkKit;

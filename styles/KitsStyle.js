@@ -1,21 +1,69 @@
+/* eslint-disable prettier/prettier */
 import {StyleSheet} from 'react-native';
 
 var styles = StyleSheet.create ({
 
+  Cont: {
+    flex: 1,
+    justifyContent: 'center',
+  },
+  TopBar: {
+    backgroundColor: "#F27C7B",
+    alignItems: "center",
+    justifyContent:"center",
+    height: 90,
+    marginTop: "-10%"
+  },
+  TitleTop: {
+    fontSize: 30
+  },
     Title:{
-        alignItems: "center",
-        justifyContent:"center",
-        color: "#F04B53",
+        color: "#FFF",
         fontSize: 40,
-        textAlign: "center",
-        marginTop: 30
+
     },
 
-    home:{
-        marginRight: '12%',
-        marginTop: '40%',
+    KitCont: {
+      // backgroundColor: "lightyellow",
+      height: 150,
+      alignItems: "center",
+      marginBottom: 40,
+      top: "5%",
+      // backgroundColor: "pink"
+    },
+
+    WrapCont: {
+      flexWrap:'wrap',
+      flexDirection:"row",
+      // backgroundColor: "white",
+      width: "75%",
+      top: "10%",
+      justifyContent: "space-around",
+      alignItems: "center",
+      shadowColor: "#000",
+      shadowOffset: {
+         width: -10,
+          height: 5,
+        },
+        shadowOpacity: 0.15,
+        shadowRadius: 3.84,
+
+        elevation: 3,
+    },
+
+    ContentCont: {
+      // height: "100%",
+      width:'100%',
+      flexDirection:"row",
+      // backgroundColor: "pink",
+      justifyContent:"center",
+      backgroundColor: "#FFFEF3",
+      height: "100%"
+    },
+
+    Icon:{
         height: 120,
-        width: 120
+        width: 120,
 
     },
 
@@ -45,7 +93,7 @@ var styles = StyleSheet.create ({
 
         fontSize: 22,
         color:"#8B8B8A",
-        paddingTop: '5%'
+        // paddingTop: '5%'
 
     },
 
@@ -62,8 +110,13 @@ var styles = StyleSheet.create ({
        color:"#8B8B8A",
          marginRight: '10%',
          paddingTop: '2%'
-     }
-
+     },
+     helpBut:{
+      resizeMode: "contain",
+      height: 35,
+      width: 35,
+      right: 20
+  }
 })
 
 export default styles;

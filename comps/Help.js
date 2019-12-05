@@ -1,41 +1,90 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import {
     View,
     Text,
     TouchableOpacity,
-    Image
+    Image,
+    SafeAreaView,
+    ScrollView,
+    Animated
 } from 'react-native';
 import styles from '../styles/HelpStyles';
+import {Actions} from 'react-native-router-flux';
+
+const FadeInView = (props) => {
+  const [fadeAnim] = useState(new Animated.Value(0))  // Initial value for opacity: 0
+
+  React.useEffect(() => {
+    Animated.timing(
+      fadeAnim,
+      {
+        toValue: 1,
+        duration: 1000,
+      }
+    ).start();
+  }, [])
+
+  return (
+    <Animated.View                 // Special animatable View
+      style={{
+        ...props.style,
+        opacity: fadeAnim,         // Bind opacity to animated value
+      }}
+    >
+      {props.children}
+    </Animated.View>
+  );
+}
 
 function Help() {
     return (
 
-        <View style= {{flexWrap:'wrap', flex:1, width:'100%',flexDirection:"column", justifyContent:"center", }}>
+        <SafeAreaView style={styles.Cont}>
+        <FadeInView>
+        <View>
             <View style={styles.Help}>
-                <TouchableOpacity style={styles.backBtn}>
+                <View style={styles.backCont}>
+                <TouchableOpacity
+                onPress={()=>Actions.pop("Dashboard")}>
                     <Image
                         style={styles.backBtn}
-                        source={require('../imgs/imgsPng/backbutton.png')}
+                        source={require('../imgs/imgsPng/backbuttonwhite.png')}
                     />
                 </TouchableOpacity>
+                </View>
+                <View style={styles.titleCont}>
                 <Text style={styles.Title}>Help</Text>
-            </View>
-            <View style={{flexDirection:"row"}}>
-            <Text style={styles.Faq}>About us</Text>
-            <Text style={styles.bodyTxt}>emUrgency allows users to create customized emergency kits based on their situation. The application will remind them to check the contents of their packs, so they will be ready in the event of a disaster.</Text>
-            </View>
-            <View style={{marginLeft:"5%"}}>
-            <Text style={styles.Htu}>Colour indicator</Text>
-            <Image style={styles.img2} source={require('../imgs/imgsPng/example1.png')} />
-            <Image style={styles.img3} source={require('../imgs/imgsPng/example2.png')} />
-            <Image style={styles.img4} source={require('../imgs/imgsPng/example3.png')} />
-            <Text style={styles.htuTxt1}>Expiring in a week or less</Text>
-            <Text style={styles.htuTxt2}>Expiring in a month</Text>
-            <Text style={styles.htuTxt3}>Newly added;</Text>
-            <Text style={styles.htuTxt4}>Won't be expiring in the next 2 months</Text>
+                </View>
             </View>
         </View>
-
+        <ScrollView>
+        <View style={{alignItems:"center"}}>
+            <View style={styles.ContentContainer}>
+        <View style={styles.aboutCont}>
+            <Text style={styles.Faq}>About emUrgency</Text>
+            <Text style={styles.bodyTxt}>emUrgency is an app that helps you and your family prepare for a disaster situation. Our main goal is to help you start and maintain the contents of your emergency kit, so you'll always be ready in the event of a disaster.</Text>
+        </View>
+        <Text style={styles.Faq}>Background</Text>
+            <Text style={styles.bodyTxt}>British Columbia is overdue for a massive earthquake, often dubbed as the Big One. Upon doing research about 54% of British Columbians are unprepared for the event of a disaster, including fires, floods, and earthquakes.
+            </Text>
+            {/* <Text style={styles.Htu}>Colour Guide</Text>
+        <View style={styles.ColourGuideCont}> 
+            <Image style={styles.icon} source={require('../imgs/imgsPng/example1.png')} />
+            <Text style={styles.htuTxt}>Expired, replace this item immediately.</Text>
+        </View>
+        <View style={styles.ColourGuideCont}>
+            <Image style={styles.icon} source={require('../imgs/imgsPng/example2.png')} />
+            <Text style={styles.htuTxt}>Expiring in 1-2 month. Replace soon. </Text>
+        </View>
+        <View style={styles.ColourGuideCont}>
+            <Image style={styles.icon} source={require('../imgs/imgsPng/example3.png')} />
+            <Text style={styles.htuTxt}>Won't be expiring in the next 2 months.</Text>
+        </View>            */}
+            </View>
+            </View>
+            </ScrollView>
+            </FadeInView>
+        </SafeAreaView>
     )
 };
 

@@ -1,29 +1,59 @@
+/* eslint-disable prettier/prettier */
 import {StyleSheet} from 'react-native';
 
-var styles = StyleSheet.create ({
-
-    Top:{
-        justifyContent:"center",
-        alignItems: "center",
-        top:0,
-        height: 100,
-        backgroundColor: "#FFFEF3"
+var HomeKitStyles = StyleSheet.create ({
+    Cont: {
+    flex: 1,
     },
 
+    ContentCont: {
+        flexWrap:"wrap",
+        flexDirection:"row",
+        justifyContent:"center",
+        alignItems:"center",
+
+    },
+
+    // Nav Bar
+    Top:{
+        alignItems: "center",
+        height: 70,
+        flexDirection: 'row',
+        backgroundColor:"#F27C7B",
+    },
+
+
+    // Back Arrow Container
+    BackNav: {
+        flex: 1,
+        // backgroundColor: "pink",
+        marginLeft: 20,
+        marginTop: 3
+    },
     backBtn:{
         justifyContent:"center",
-        width: "35%",
-        height: "85%",
-        left: -55,
-        top: 0
+        alignItems: "center",
+        resizeMode: "contain",
+        width: 30,
+        height: 30
+    },
+
+    // Home Title Container
+    TitleNav: {
+        flex: 6,
+        alignItems: "center",
+        // backgroundColor: "purple",
     },
 
     Title:{
-        position: "absolute",
         alignItems: "center",
-        color: "#F04B53",
+        color: "white",
+        // backgroundColor: "lightyellow",
         fontSize: 30,
+        justifyContent: "center",
+        marginLeft: -30
     },
+
     Items:{
         height: 90,
         width: 90,
@@ -32,15 +62,22 @@ var styles = StyleSheet.create ({
         borderWidth: 8,
         borderColor: "grey",
         marginLeft: 10,
-        marginRight: 10
+        marginRight: 10,
     },
     ItemTxt:{
         fontSize: 12,
         top: 10,
         textAlign:"center"
+    },
+    helpBut:{
+        resizeMode: "contain",
+        height: 35,
+        width: 35,
+        // backgroundColor: "red",
+        right: 25
     }
 
 
 })
 
-export default styles;
+export default HomeKitStyles;

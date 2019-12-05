@@ -3,31 +3,50 @@ import {StyleSheet} from 'react-native';
 const styles = StyleSheet.create({
     dashboardPage: {
         flex: 1,
-        backgroundColor: '#FFFEF3'
+        backgroundColor: '#FFFEF3',
+        height: "100%"
     },
+
     Top:{
         justifyContent:"center",
         alignItems: "center",
         top:0,
-        height: 100,
-        backgroundColor: "#FFFEF3"
+        height: 70,
+        backgroundColor: "#F27C7B"
     },
     AppTitle:{
         position: "absolute",
         alignItems: "center",
-        color: "#F04B53",
+        color: "#FFF",
         fontSize: 30,
+    }, 
+    titleBar:{
+        height: 70,
+        top: 0,
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "space-around",
+        backgroundColor: "#F27C7B"
+    },
+    TitleCont:{
+        justifyContent: "center",
+    },
+    infoCont:{
+        justifyContent: "center",
+        // backgroundColor: "lightyellow",
+        // flex: 1
     },
     helpButton: {
-        position: 'absolute', 
+        position: 'absolute',                         
         height: 40,
         width: 40,
+        resizeMode: "contain",
         borderWidth: 3,
-        borderColor: '#F04B53',
+        borderColor: '#FFF',
         borderRadius: 30,
-        right: 20,
-        alignItems: 'center',
-        justifyContent: 'center'
+      justifyContent: "center",
+      alignItems: "center",
+      right: 20
     },
     helpButtonText: {
         color: '#F04B53',

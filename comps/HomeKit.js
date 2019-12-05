@@ -1,8 +1,8 @@
+/* eslint-disable prettier/prettier */
 import React, {useState, useEffect} from 'react';
-import {View, Text, Button, TouchableOpacity, Image, ScrollView, Dimensions, AsyncStorage} from 'react-native';
-import styles from '../styles/HomeKitStyles';
+import {View, Text, Button, TouchableOpacity, Image, ScrollView, Dimensions, AsyncStorage, SafeAreaView} from 'react-native';
+import HomeKitStyles from '../styles/HomeKitStyles';
 import ItemStyles from '../styles/ItemStyles';
-import NavBar from './NavBar';
 import ItemPopUp from './ItemPopUp';
 import ax from '../ax';
 import {Actions} from 'react-native-router-flux';
@@ -69,6 +69,34 @@ function HomeKit(){
 
     var ItemPU = null;
 
+    async function getItems(){
+        //async storage to get user id
+        const useritemsID = '';
+        try {
+            useritemsID = await AsyncStorage.getItem('userID');
+        } catch (error) {
+            console.log(error.message);
+        };
+        return useritemsID;
+        //call to select all items where userID=this user id you passed over
+        var itemData=async()=>{
+            let response = await fetch('http://142.232.168.247/emUrgency/item_update.php',{
+                method:'POST',
+                header:{
+                    'Accept': 'application/json',
+                    'Content-Type':'application/json'
+                },
+                body:JSON.encode({
+                    userID: useritemsID
+                })
+            }) 
+        let data = await response.json();
+        if (data == "Got Data"){
+            json.encode(useritemsID);
+        }
+    }
+}
+
     if (showItem === true){
     ItemPU = (
         <ItemPopUp
@@ -91,20 +119,35 @@ function HomeKit(){
     },[]);
 
     return (
-        <View>
-            <View style={styles.Top}>
-                <TouchableOpacity style={styles.backBtn}
-                    onPress={()=> Actions.pop(Kits)}>
+        <SafeAreaView style={HomeKitStyles.Cont}>
+
+            {/* Nav Bar */}
+            <View style={HomeKitStyles.Top}>
+
+                <View style={HomeKitStyles.BackNav}>
+                    
+                <TouchableOpacity style={HomeKitStyles.backBtn}
+                onPress={()=>Actions.pop("Kits")}>                   
                     <Image
-                    style={styles.backBtn}
-                    source={require('../imgs/imgsPng/backbutton.png')}
+                    style={HomeKitStyles.backBtn}
+                    source={require('../imgs/imgsPng/backbuttonwhite.png')}
                     />
+                    {/* <Text> Home </Text> */}
                 </TouchableOpacity>
-                <Text style={styles.Title}>Home</Text>
+                </View>
+
+                <View style={HomeKitStyles.TitleNav}>
+                <Text style={HomeKitStyles.Title}>Home</Text>
+                </View>
+                <TouchableOpacity>
+                    <Image style={HomeKitStyles.helpBut} source={require('../imgs/imgsPng/helpwhite.png')} />
+                </TouchableOpacity>
             </View>
 
+            {/* Content */}
             <ScrollView>
-                <View style={{flex: 1, flexWrap:"wrap", flexDirection:"row", justifyContent:"center", alignItems:"center", height: 1300}}>
+                <View style={HomeKitStyles.ContentCont}>
+                    
                   {items.map((o,i)=>{
                     
                     var currentMonth = new Date().getMonth() +1
@@ -148,21 +191,16 @@ function HomeKit(){
                           style={BorderPatrol}
                           source={newImage || null}
                           />
-                          <Text style={styles.ItemTxt}>{o.item_name || ""}</Text>
+                          <Text style={HomeKitStyles.ItemTxt}>{o.item_name || ""}</Text>
                       </TouchableOpacity>
                     )
                   })
                 }
-
-
-
                 </View>
             </ScrollView>
-
             {ItemPU}
 
-        </View>
-
+    </SafeAreaView>
     )
 }
 

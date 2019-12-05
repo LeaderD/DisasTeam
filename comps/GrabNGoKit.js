@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {View, Text, Button, TouchableOpacity, Image, ScrollView, Dimensions, AsyncStorage} from 'react-native';
+import {View, Text, Button, TouchableOpacity, Image, ScrollView, Dimensions, AsyncStorage, SafeAreaView} from 'react-native';
 import styles from '../styles/HomeKitStyles';
 import ItemStyles from '../styles/ItemStyles';
 import ItemPopUp from './ItemPopUp';
@@ -27,6 +27,7 @@ var imgs = {
     idcopy,
     money,
 }
+
 
 function GrabNGoKit(){
 
@@ -66,15 +67,24 @@ function GrabNGoKit(){
     },[]);
 
     return (
-        <View>
-            <View style={styles.Top}>
-                <TouchableOpacity style={styles.backBtn}>
+
+        <SafeAreaView style={HomeKitStyles.Cont}>
+             <View style={HomeKitStyles.Top}>
+                <View style={HomeKitStyles.BackNav}>
+                <TouchableOpacity style={HomeKitStyles.backBtn}
+                onPress={()=>Actions.pop("Kits")}>
                     <Image
-                    style={styles.backBtn}
-                    source={require('../imgs/imgsPng/backbutton.png')}
+                    style={HomeKitStyles.backBtn}
+                    source={require('../imgs/imgsPng/backbuttonwhite.png')}
                     />
                 </TouchableOpacity>
-                <Text style={styles.Title}>Grab N' Go</Text>
+                </View>
+                <View style={HomeKitStyles.TitleNav}>
+                <Text style={HomeKitStyles.Title}>Grab N' Go</Text>
+            </View>
+            <TouchableOpacity>
+                    <Image style={HomeKitStyles.helpBut} source={require('../imgs/imgsPng/helpwhite.png')} />
+                </TouchableOpacity>
             </View>
 
             <ScrollView>
@@ -120,7 +130,7 @@ function GrabNGoKit(){
                           style={BorderPatrol}
                           source={newImage || null}
                           />
-                          <Text style={styles.ItemTxt}>{o.item_name || ""}</Text>
+                          <Text style={styles.ItemTxt}> {o.item_name || ""} </Text>
                       </TouchableOpacity>
                     ) 
                   })
@@ -131,6 +141,7 @@ function GrabNGoKit(){
             {ItemPU}
 
         </View>
+        </SafeAreaView>
 
     )
 }

@@ -1,16 +1,28 @@
 import React, {useState, useEffect} from 'react';
-import {View, Text, TextInput, Alert, Button, Image, TouchableOpacity, AsyncStorage} from 'react-native';
+import {View, Text, TextInput, Alert, Button, Image, TouchableOpacity, AsyncStorage, Animated} from 'react-native';
 import styles from '../styles/LoginStyles';
 import {Actions} from 'react-native-router-flux';
 import ax from '../ax';
 
+const FadeInView = (props) => {
+  const [fadeAnim] = useState(new Animated.Value(0))  // Initial value for opacity: 0
+
+  React.useEffect(() => {
+    Animated.timing(
+      fadeAnim,
+      {
+        toValue: 1,
+        duration: 1000,
+      }
+    ).start();
+  }, [])
+}
 
 function Register(){
 
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-
     
     var UserRegister=async()=>{
         
@@ -20,11 +32,20 @@ function Register(){
         //store it in AsyncStorage
         await AsyncStorage.setItem("users_id", users_id);
         Actions.Kits();
-        
     }
-    
-    
+
+
     return (
+      {/* <Animated.View                 // Special animatable View
+      style={{
+        ...props.style,
+        opacity: fadeAnim,         // Bind opacity to animated value
+      }}
+    >
+      {props.children}
+    </Animated.View>
+    */}
+      <FadeInView>
         <View style={styles.LoginPage}>
             <Image
             style={styles.RegisterLogo}
@@ -42,17 +63,19 @@ function Register(){
             secureTextEntry={true}></TextInput>
 
             <TouchableOpacity style={styles.NewRegistrationButton}
-            onPress={()=>{UserRegister();
+            onPress={()=>{
+                UserRegister();
             }}>
                 <Text style={styles.RegisterButtonText}> Create Account </Text>
             </TouchableOpacity>
-            <TouchableOpacity 
+            <TouchableOpacity
             onPress={()=>Actions.Login()}
             style={styles.RegisterSignIn}>
                 <Text style={styles.RegisterSignInText}> Sign In </Text>
             </TouchableOpacity>
 
         </View>
+        </FadeInView>
     )
 }
 

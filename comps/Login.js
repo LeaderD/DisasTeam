@@ -3,6 +3,7 @@ import {View, Text, TextInput, Button, Image, TouchableOpacity, AsyncStorage} fr
 import styles from '../styles/LoginStyles';
 import {Actions} from 'react-native-router-flux';
 import ax from '../ax';
+import { object } from 'prop-types';
 
 function Login(){
     
@@ -22,8 +23,33 @@ function Login(){
     
     }
     
+
+const FadeInView = (props) => {
+  const [fadeAnim] = useState(new Animated.Value(0))  // Initial value for opacity: 0
+
+  React.useEffect(() => {
+    Animated.timing(
+      fadeAnim,
+      {
+        toValue: 1,
+        duration: 1000,
+      }
+    ).start();
+  }, [])
+}
+
     return (
-        <View style={styles.LoginPage}> 
+      {/* <Animated.View                 // Special animatable View
+      style={{
+        ...props.style,
+        opacity: fadeAnim,         // Bind opacity to animated value
+      }}
+    >
+      {props.children}
+    </Animated.View>
+      */}
+      <FadeInView>
+        <View style={styles.LoginPage}>
         <Image
         style={styles.LoginLogo}
         source={require('../imgs/imgsPng/logo.png')}
@@ -32,12 +58,14 @@ function Login(){
             <TextInput
             style={styles.LoginText}
             placeholder="Email Address"
+            onChangeText={(t)=>{setEmail(t)}}
             ></TextInput>
 
             <TextInput
             style={styles.LoginText}
             placeholder="Password"
             secureTextEntry={true}
+            onChangeText={(t)=>{setPassword(t)}}
             ></TextInput>
 
             <TouchableOpacity
@@ -45,15 +73,16 @@ function Login(){
             onPress={()=>{UserLogin()}}>
             <Text
                 style={styles.LoginButtonText}> Sign In </Text>
-                    </TouchableOpacity>
+            </TouchableOpacity>
 
             <TouchableOpacity
             onPress={()=> Actions.Register()} 
             style={styles.RegisterButton}>
                 <Text
-                style={styles.RegisterButtonText}>Register </Text> 
+                style={styles.RegisterButtonText}>Register </Text>
                     </TouchableOpacity>
         </View>
+        </FadeInView>
     )
 };
 

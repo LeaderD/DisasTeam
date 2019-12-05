@@ -1,53 +1,96 @@
-import React from 'react';
-import {View, Text, Button, TouchableOpacity, Image} from 'react-native';
+/* eslint-disable prettier/prettier */
+import React, {useState, useEffect} from 'react';
+import {SafeAreaView, View, Text, TouchableOpacity, Image, Animated} from 'react-native';
 import styles from '../styles/KitsStyle';
 import NavBar from './NavBar';
 import {Actions} from 'react-native-router-flux';
+import HomeKitStyles from '../styles/HomeKitStyles';
+
+const FadeInView = (props) => {
+  const [fadeAnim] = useState(new Animated.Value(0))  // Initial value for opacity: 0
+
+  React.useEffect(() => {
+    Animated.timing(
+      fadeAnim,
+      {
+        toValue: 1,
+        duration: 1000,
+      }
+    ).start();
+  }, [])
+
+  return (
+    <Animated.View                 // Special animatable View
+      style={{
+        ...props.style,
+        opacity: fadeAnim,         // Bind opacity to animated value
+      }}
+    >
+      {props.children}
+    </Animated.View>
+  );
+}
+
 
 function Kits(){
     return (
-        <View style={{flex:1, justifyContent:'center', backgroundColor: "#FFFEF3"}}>
+        <SafeAreaView HomeKitStyles={styles.Cont}>
+        <FadeInView>
+        {/* Top Bar */}
+        <View style={styles.TopBar}>
                 <Text style={styles.Title}>Kits</Text>
+        </View>
 
-                <View style={{flexWrap:'wrap', flex:1, width: '100%', flexDirection:"row", justifyContent:"center", alignItems: "center"}}>
-                    <TouchableOpacity style={{alignItems:"center"}}
-                        onPress={()=> Actions.HomeKit()}>
+        {/* Content */}
+                <View style={styles.ContentCont}>
+                    <View style={styles.WrapCont}>
+                    <TouchableOpacity
+                    onPress={()=>Actions.HomeKit()}>
+                        <View style={styles.KitCont}>
                         <Image
-                        style={styles.home}
+                        style={styles.Icon}
                         source={require('../imgs/imgsPng/home.png')}
                         />
                         <Text style={styles.KitsTxt1}>Home</Text>
+                        </View>
                     </TouchableOpacity>
 
-                    <TouchableOpacity style={{alignItems:"center"}}
-                         onPress={()=> Actions.WorkKit()}>
+                    <TouchableOpacity
+                    onPress={()=>Actions.WorkKit()}>
+                        <View style={styles.KitCont}>
                         <Image
-                        style={styles.work}
+                        style={styles.Icon}
                         source={require('../imgs/imgsPng/work.png')}
                         />
-                        <Text style={styles.txtWor}>Work</Text>
+                        <Text style={styles.KitsTxt1}>Work</Text>
+                        </View>
                     </TouchableOpacity>
 
-                    <TouchableOpacity style={{alignItems:"center"}}
-                        onPress={()=> Actions.GrabNGoKit()}>
+                    <TouchableOpacity
+                    onPress={()=>Actions.GrabNGoKit()}>
+                        <View style={styles.KitCont}>
                         <Image
-                        style={styles.grabngo}
+                        style={styles.Icon}
                         source={require('../imgs/imgsPng/grabngo.png')}
                         />
                         <Text style={styles.KitsTxt1}>Grab N' Go</Text>
+                        </View>
                     </TouchableOpacity>
 
-                    <TouchableOpacity style={{alignItems:"center"}}
-                         onPress={()=> Actions.VehicleKit()}>
+                    <TouchableOpacity
+                    onPress={()=>Actions.VehicleKit()}>
+                        <View style={styles.KitCont}>
                         <Image
-                        style={styles.car}
+                        style={styles.Icon}
                         source={require('../imgs/imgsPng/car.png')}
                         />
-                        <Text style={styles.txtVeh}>Vehicle</Text>
+                        <Text style={styles.KitsTxt1}>Vehicle</Text>
+                        </View>
                     </TouchableOpacity>
                     </View>
-
-        </View>
+                    </View>
+                    </FadeInView>
+        </SafeAreaView>
     )
 }
 

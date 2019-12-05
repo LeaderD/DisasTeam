@@ -1,88 +1,85 @@
 import {StyleSheet} from 'react-native';
 
 var styles= StyleSheet.create({
-
+   Cont:{
+       flex:1
+   },
     Help:{
-        justifyContent:"center",
-       alignItems: "center",
-        top: "-7%",
-        height:"13%",
-        backgroundColor: "#FFFEF3"
-
+        height:70,
+        backgroundColor: "#F27C7B",
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "center",
+        borderBottomLeftRadius:8,
+        borderBottomRightRadius:8,
     },
 
     backBtn:{
+        width:30,
+        height: 30,
+        resizeMode: "contain",
+    },
 
-        width:"35%",
-        height:"55%",
-        left:-55,
-        top:25
+    backCont:{
+        // backgroundColor: "red",
+        marginLeft: 20,
+        marginTop: 3,
+        flex: 1
+    },
+
+    titleCont:{
+        flex: 6,
+        alignItems: "center"
     },
 
     Title:{
-        color: "#F04B53",
+        color: "#FFF",
         fontSize:30,
-        textAlign:"center",
-        paddingBottom:"10%"
+        marginLeft: -70
     },
-
+    aboutCont:{
+        top: 10
+    },
     Faq:{
         color: "#F58287",
-        fontSize:40,
-        left:25,
-        top: '-5%'
+        fontSize:30,
+      
+    },
+    ContentContainer:{
+        maxWidth: "80%",
+        justifyContent:"center",
+        // backgroundColor: "purple"
     },
 
     Htu:{
         color: "#F58287",
-        fontSize:30,
-        paddingTop:"20%"
+        fontSize:28,
+        textAlign: "left"
     },
 
     bodyTxt:{
-        fontSize:13.5,
-        lineHeight:15,
-        left: "-170%",
-        top: "10%",
-        width: "80%"
+        fontSize:18,
+        lineHeight:24,
+        marginLeft: 20,
+        marginBottom: 30,
+        marginTop: 5
     },
 
-    htuTxt1:{
-        right:-100,
-        top:-255,
-        fontSize:13.5,
+    htuTxt:{
+        fontSize:18,
+        flexShrink:1
     },
 
-    htuTxt2:{
-        right:-100,
-        top:-170,
-        fontSize:13.5,
-    },
-
-    htuTxt3:{
-        right:-100,
-        top:-100,
-        fontSize:13.5,
-    },
-
-    htuTxt4:{
-        right:-100,
-        top:-95,
-        fontSize:13.5,
-    },
-
-    img2:{
+    icon:{
         width:100,
         height:100
     },
-    img3:{
-        width:100,
-        height:100
-    },
-    img4:{
-        width:100,
-        height:100
+    ColourGuideCont:{
+        flexDirection: "row",
+        justifyContent:"center",
+        alignItems:"center"
     }
+
 
 })
 
