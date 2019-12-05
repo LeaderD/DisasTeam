@@ -40,17 +40,15 @@ function ItemPopUp(props){
     return(
     <View
         style={PUStyles.wrapper}
-        // onPress={()=>{
-        //     props.setShowItem(false)
-        // }}
-        >
+        onPress={()=>{
+            props.setShowItem(false)
+        }}
+            
+    >
         <View style={PUStyles.container}>
             <Image
              style={PUStyles.ItemImg}
              source={props.ItemPic}/>
-        <TouchableOpacity style={PUStyles.TTCont}>
-            <Image style={PUStyles.toolTip}source={require('../imgs/imgsPng/helpwhite.png')} />
-            </TouchableOpacity>     
         <View style={PUStyles.inputView}>
             <Text style={PUStyles.ExpText}>Name</Text>
             
@@ -59,6 +57,16 @@ function ItemPopUp(props){
               style={PUStyles.ExpText}>
             {props.curItem.item_name}
             </Text>
+            
+           {/* <TextInput
+              style={PUStyles.inputs}
+              value={exptext}
+              placeholder="Expiry Date"
+              keyboardType="numeric"
+              onChangeText={(t)=>{
+                    setExpText(t)
+                }}>
+            </TextInput> */}
             <View style={PUStyles.ExpCont}>
                 
             <Text style={PUStyles.ExpText}>Exp Date</Text>
@@ -99,8 +107,9 @@ function ItemPopUp(props){
             
         <TouchableOpacity style={PUStyles.CancelBut}
         onPress={()=>{
-        props.setShowItem(false)}
-        }>
+            props.setShowItem(false)}
+        }
+        >
             <Text style={PUStyles.CancelButText}> CANCEL </Text>
         </TouchableOpacity>
             {Update}

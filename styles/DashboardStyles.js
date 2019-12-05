@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
       right: 20
     },
     helpButtonText: {
-        color: '#F04B53',
+        color: '#FFF',
         fontSize: 30
     },
     ExpItemsTitle: {

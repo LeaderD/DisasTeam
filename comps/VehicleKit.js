@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import {View, Text, Button, TouchableOpacity, Image, ScrollView, Dimensions,  AsyncStorage} from 'react-native';
-import HomeKitStyles from '../styles/HomeKitStyles';
+import styles from '../styles/HomeKitStyles';
 import ItemStyles from '../styles/ItemStyles';
+import NavBar from './NavBar';
 import ItemPopUp from './ItemPopUp';
 import ax from '../ax';
 import {Actions} from 'react-native-router-flux';
@@ -80,16 +81,25 @@ function Vehicle(){
     
     return (
        <View>
-            <View style={HomeKitStyles.Top}>
-                <TouchableOpacity style={HomeKitStyles.backBtn}>
+            <View style={styles.Top}>
+
+                <View style={styles.BackNav}>
+                    
+                <TouchableOpacity style={styles.backBtn}
+                onPress={()=>Actions.pop("Kits")}>                   
                     <Image
-                    style={HomeKitStyles.backBtn}
-                    source={require('../imgs/imgsPng/backbutton.png')}
+                    style={styles.backBtn}
+                    source={require('../imgs/imgsPng/backbuttonwhite.png')}
                     />
+                    {/* <Text> Home </Text> */}
                 </TouchableOpacity>
+                </View>
+
+                <View style={styles.TitleNav}>
                 <Text style={styles.Title}>Vehicle</Text>
+                </View>
                 <TouchableOpacity>
-                    <Image style={HomeKitStyles.helpBut} source={require('../imgs/imgsPng/helpwhite.png')} />
+                    <Image style={styles.helpBut} source={require('../imgs/imgsPng/helpwhite.png')} />
                 </TouchableOpacity>
             </View>
 

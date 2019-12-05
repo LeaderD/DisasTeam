@@ -1,11 +1,10 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import {
     View,
     Text,
     TouchableOpacity,
     FlatList,
-    Image,
-    Animated
+    Image
 } from 'react-native';
 
 // icons
@@ -17,31 +16,6 @@ import seeMoreIcon from '../imgs/imgsPng/seemore.png';
 import styles from '../styles/ProfileStyles';
 
 // mock data
-
-const FadeInView = (props) => {
-  const [fadeAnim] = useState(new Animated.Value(0))  // Initial value for opacity: 0
-
-  React.useEffect(() => {
-    Animated.timing(
-      fadeAnim,
-      {
-        toValue: 1,
-        duration: 1000,
-      }
-    ).start();
-  }, [])
-
-  return (
-    <Animated.View                 // Special animatable View
-      style={{
-        ...props.style,
-        opacity: fadeAnim,         // Bind opacity to animated value
-      }}
-    >
-      {props.children}
-    </Animated.View>
-  );
-}
 
 const familyMemberItems = [
     {
@@ -71,14 +45,9 @@ class Profile extends React.Component {
 
     render() {
         return (
-          <FadeInView>
             <View style={styles.profilePage}>
-                <View style={styles.top}>
                 <Text style={styles.AppTitle}>Profile</Text>
-                <TouchableOpacity style={styles.logout}>
-                <Image source={{uri: '/Users/a01055581/Desktop/logout.png'}} style={styles.logout} />
-                </TouchableOpacity>
-                  <Image source={profileIcon} style={styles.profileAvatar} />
+                <Image source={profileIcon} style={styles.profileAvatar} />
                 <Text style={styles.userName}>Rebecca</Text>
                 <View style={styles.editButtonWrapper}>
                     <TouchableOpacity style={styles.editButton}>
@@ -96,7 +65,6 @@ class Profile extends React.Component {
                     <Text>Add Family Member</Text>
                 </TouchableOpacity>
             </View>
-            </FadeInView>
         )
     }
 }

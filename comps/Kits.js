@@ -1,10 +1,10 @@
 /* eslint-disable prettier/prettier */
 import React, {useState, useEffect} from 'react';
 import {SafeAreaView, View, Text, TouchableOpacity, Image, Animated} from 'react-native';
-import styles from '../styles/KitsStyle';
+import KitStyles from '../styles/KitsStyle';
 import NavBar from './NavBar';
 import {Actions} from 'react-native-router-flux';
-import HomeKitStyles from '../styles/HomeKitStyles';
+import styles from '../styles/HomeKitStyles';
 
 const FadeInView = (props) => {
   const [fadeAnim] = useState(new Animated.Value(0))  // Initial value for opacity: 0
@@ -34,57 +34,57 @@ const FadeInView = (props) => {
 
 function Kits(){
     return (
-        <SafeAreaView HomeKitStyles={styles.Cont}>
+        <SafeAreaView styles={KitStyles.Cont}>
         <FadeInView>
         {/* Top Bar */}
-        <View style={styles.TopBar}>
-                <Text style={styles.Title}>Kits</Text>
+        <View style={KitStyles.TopBar}>
+                <Text style={KitStyles.Title}>Kits</Text>
         </View>
 
         {/* Content */}
-                <View style={styles.ContentCont}>
-                    <View style={styles.WrapCont}>
+                <View style={KitStyles.ContentCont}>
+                    <View style={KitStyles.WrapCont}>
                     <TouchableOpacity
                     onPress={()=>Actions.HomeKit()}>
-                        <View style={styles.KitCont}>
+                        <View style={KitStyles.KitCont}>
                         <Image
-                        style={styles.Icon}
+                        style={KitStyles.Icon}
                         source={require('../imgs/imgsPng/home.png')}
                         />
-                        <Text style={styles.KitsTxt1}>Home</Text>
+                        <Text style={KitStyles.KitsTxt1}>Home</Text>
                         </View>
                     </TouchableOpacity>
 
                     <TouchableOpacity
                     onPress={()=>Actions.WorkKit()}>
-                        <View style={styles.KitCont}>
+                        <View style={KitStyles.KitCont}>
                         <Image
-                        style={styles.Icon}
+                        style={KitStyles.Icon}
                         source={require('../imgs/imgsPng/work.png')}
                         />
-                        <Text style={styles.KitsTxt1}>Work</Text>
+                        <Text style={KitStyles.KitsTxt1}>Work</Text>
                         </View>
                     </TouchableOpacity>
 
                     <TouchableOpacity
                     onPress={()=>Actions.GrabNGoKit()}>
-                        <View style={styles.KitCont}>
+                        <View style={KitStyles.KitCont}>
                         <Image
-                        style={styles.Icon}
+                        style={KitStyles.Icon}
                         source={require('../imgs/imgsPng/grabngo.png')}
                         />
-                        <Text style={styles.KitsTxt1}>Grab N' Go</Text>
+                        <Text style={KitStyles.KitsTxt1}>Grab N' Go</Text>
                         </View>
                     </TouchableOpacity>
 
                     <TouchableOpacity
                     onPress={()=>Actions.VehicleKit()}>
-                        <View style={styles.KitCont}>
+                        <View style={KitStyles.KitCont}>
                         <Image
-                        style={styles.Icon}
+                        style={KitStyles.Icon}
                         source={require('../imgs/imgsPng/car.png')}
                         />
-                        <Text style={styles.KitsTxt1}>Vehicle</Text>
+                        <Text style={KitStyles.KitsTxt1}>Vehicle</Text>
                         </View>
                     </TouchableOpacity>
                     </View>

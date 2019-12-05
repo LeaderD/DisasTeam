@@ -4,19 +4,6 @@ import styles from '../styles/LoginStyles';
 import {Actions} from 'react-native-router-flux';
 import ax from '../ax';
 
-const FadeInView = (props) => {
-  const [fadeAnim] = useState(new Animated.Value(0))  // Initial value for opacity: 0
-
-  React.useEffect(() => {
-    Animated.timing(
-      fadeAnim,
-      {
-        toValue: 1,
-        duration: 1000,
-      }
-    ).start();
-  }, [])
-}
 
 function Register(){
 
@@ -36,16 +23,7 @@ function Register(){
 
 
     return (
-      {/* <Animated.View                 // Special animatable View
-      style={{
-        ...props.style,
-        opacity: fadeAnim,         // Bind opacity to animated value
-      }}
-    >
-      {props.children}
-    </Animated.View>
-    */}
-      <FadeInView>
+
         <View style={styles.LoginPage}>
             <Image
             style={styles.RegisterLogo}
@@ -75,7 +53,6 @@ function Register(){
             </TouchableOpacity>
 
         </View>
-        </FadeInView>
     )
 }
 

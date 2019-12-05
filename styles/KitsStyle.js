@@ -1,7 +1,7 @@
 /* eslint-disable prettier/prettier */
 import {StyleSheet} from 'react-native';
 
-var styles = StyleSheet.create ({
+var KitStyles = StyleSheet.create ({
 
   Cont: {
     flex: 1,
@@ -119,4 +119,4 @@ var styles = StyleSheet.create ({
   }
 })
 
-export default styles;
+export default KitStyles;

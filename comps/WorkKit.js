@@ -1,8 +1,8 @@
-
 import React, {useState, useEffect} from 'react';
-import {View, Text, Button, TouchableOpacity, Image, ScrollView, Dimensions, AsyncStorage, SafeAreaView} from 'react-native';
-import HomeKitStyles from '../styles/HomeKitStyles';
+import {View, Text, Button, TouchableOpacity, Image, ScrollView, Dimensions, AsyncStorage} from 'react-native';
+import styles from '../styles/HomeKitStyles';
 import ItemStyles from '../styles/ItemStyles';
+import NavBar from './NavBar';
 import ItemPopUp from './ItemPopUp';
 import ax from '../ax';
 import {Actions} from 'react-native-router-flux';
@@ -28,6 +28,9 @@ var imgs = {
     idcopy,
     money,
 }
+
+
+
 
 function WorkKit(){
 
@@ -67,23 +70,26 @@ function WorkKit(){
     },[]);
 
     return (
-        <SafeAreaView>
         <View>
-            <View style={HomeKitStyles.Top}>
-                <View style={HomeKitStyles.BackNav}>
-                <TouchableOpacity style={HomeKitStyles.backBtn}
-                onPress={()=>Actions.pop("Kits")}>
+            <View style={styles.Top}>
+
+                <View style={styles.BackNav}>
+                    
+                <TouchableOpacity style={styles.backBtn}
+                onPress={()=>Actions.pop("Kits")}>                   
                     <Image
-                    style={HomeKitStyles.backBtn}
+                    style={styles.backBtn}
                     source={require('../imgs/imgsPng/backbuttonwhite.png')}
                     />
+                    {/* <Text> Home </Text> */}
                 </TouchableOpacity>
                 </View>
-                <View style={HomeKitStyles.TitleNav}>
-                <Text style={HomeKitStyles.Title}>Work</Text>
+
+                <View style={styles.TitleNav}>
+                <Text style={styles.Title}>Work</Text>
                 </View>
                 <TouchableOpacity>
-                    <Image style={HomeKitStyles.helpBut} source={require('../imgs/imgsPng/helpwhite.png')} />
+                    <Image style={styles.helpBut} source={require('../imgs/imgsPng/helpwhite.png')} />
                 </TouchableOpacity>
             </View>
 
@@ -141,7 +147,8 @@ function WorkKit(){
             {ItemPU}
 
         </View>
-        </SafeAreaView>
-    )}
+
+    )
+}
 
 export default WorkKit;

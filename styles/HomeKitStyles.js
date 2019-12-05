@@ -1,7 +1,7 @@
 /* eslint-disable prettier/prettier */
 import {StyleSheet} from 'react-native';
 
-var HomeKitStyles = StyleSheet.create ({
+var styles = StyleSheet.create ({
     Cont: {
     flex: 1,
     },
@@ -80,4 +80,4 @@ var HomeKitStyles = StyleSheet.create ({
 
 })
 
-export default HomeKitStyles;
+export default styles;
