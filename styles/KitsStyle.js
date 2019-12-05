@@ -8,28 +8,25 @@ var KitStyles = StyleSheet.create ({
     justifyContent: 'center',
   },
   TopBar: {
-    backgroundColor: "#F27C7B",
+    backgroundColor: "#F16467",
     alignItems: "center",
     justifyContent:"center",
-    height: 90,
-    marginTop: "-10%"
+    height: 70
   },
   TitleTop: {
     fontSize: 30
   },
     Title:{
         color: "#FFF",
-        fontSize: 40,
+        fontSize: 35,
 
     },
 
     KitCont: {
-      // backgroundColor: "lightyellow",
       height: 150,
       alignItems: "center",
       marginBottom: 40,
       top: "5%",
-      // backgroundColor: "pink"
     },
 
     WrapCont: {

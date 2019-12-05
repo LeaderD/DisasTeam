@@ -2,8 +2,9 @@
 import {StyleSheet} from 'react-native';
 
 var styles = StyleSheet.create ({
+    
     Cont: {
-    flex: 1,
+        flex: 1,
     },
 
     ContentCont: {
@@ -11,22 +12,17 @@ var styles = StyleSheet.create ({
         flexDirection:"row",
         justifyContent:"center",
         alignItems:"center",
-
     },
-
-    // Nav Bar
+    
     Top:{
         alignItems: "center",
         height: 70,
         flexDirection: 'row',
-        backgroundColor:"#F27C7B",
+        backgroundColor:"#F16467",
     },
-
-
-    // Back Arrow Container
+    
     BackNav: {
         flex: 1,
-        // backgroundColor: "pink",
         marginLeft: 20,
         marginTop: 3
     },
@@ -42,14 +38,13 @@ var styles = StyleSheet.create ({
     TitleNav: {
         flex: 6,
         alignItems: "center",
-        // backgroundColor: "purple",
     },
 
     Title:{
         alignItems: "center",
         color: "white",
         // backgroundColor: "lightyellow",
-        fontSize: 30,
+        fontSize: 35,
         justifyContent: "center",
         marginLeft: -30
     },

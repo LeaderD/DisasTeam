@@ -115,7 +115,7 @@ function HomeKit(){
             </View>
 
             <ScrollView>
-                <View style={{flex: 1, flexWrap:"wrap", flexDirection:"row", justifyContent:"center", alignItems:"center", height: 1300}}>
+                <View style={{flex: 1, flexWrap:"wrap", flexDirection:"row", justifyContent:"center", alignItems:"center", height: 1050}}>
                   {items.map((o,i)=>{
                     
                     var currentMonth = new Date().getMonth() +1

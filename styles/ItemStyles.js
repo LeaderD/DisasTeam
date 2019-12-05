@@ -21,7 +21,7 @@ var ItemStyles = StyleSheet.create ({
         position: "relative",
         borderRadius: 100/1,
         borderWidth: 8,
-        borderColor: "green",
+        borderColor: "#59EA9B",
         marginLeft: 10,
         marginRight: 10
     },
@@ -41,7 +41,7 @@ var ItemStyles = StyleSheet.create ({
         position: "relative",
         borderRadius: 100/1,
         borderWidth: 8,
-        borderColor: "red",
+        borderColor: "#FF6B6B",
         marginLeft: 10,
         marginRight: 10
     },

@@ -14,15 +14,15 @@ var styles = StyleSheet.create ({
         margin: 0
     },
     AppTitle:{
-        color: "#F04B53",
+        color: "#F16467",
         fontSize: 30,
     },
     LoginButton:{
-        backgroundColor: "#F04B53",
+        backgroundColor: "#F16467",
         borderRadius:5,
         width:"50%",
         padding: 10,
-        shadowColor: "#000",
+        shadowColor: "#000", 
         shadowOffset: {
         width: 0,
         height: 5,
@@ -64,7 +64,7 @@ var styles = StyleSheet.create ({
         top: "5%"
         },
     RegisterButtonText:{
-        color:"#F04B53",
+        color:"#F16467",
         fontSize: 20,
         textAlign:"center"
     },
@@ -109,7 +109,7 @@ var styles = StyleSheet.create ({
         top: "10%"
     },
     RegisterSignInText:{
-        color:"#F04B53",
+        color:"#F16467",
         fontSize: 18,
         textAlign:"center"
     }

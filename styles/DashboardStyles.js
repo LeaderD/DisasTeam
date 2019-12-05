@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
         alignItems: "center",
         top:0,
         height: 70,
-        backgroundColor: "#F27C7B"
+        backgroundColor: "#F16467"
     },
     AppTitle:{
         position: "absolute",
@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         alignItems: "center",
         justifyContent: "space-around",
-        backgroundColor: "#F27C7B"
+        backgroundColor: "#F16467"
     },
     TitleCont:{
         justifyContent: "center",
@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
     ExpItemsTitle: {
         position: "relative",
         alignItems: "center",
-        color: "#F04B53",
+        color: "#F16467",
         fontSize: 18,
         paddingTop: 30,
         paddingBottom: 10,

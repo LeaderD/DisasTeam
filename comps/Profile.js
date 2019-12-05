@@ -1,10 +1,5 @@
 import React from 'react';
-import {
-    View,
-    Text,
-    TouchableOpacity,
-    FlatList,
-    Image
+import {View, Text, TouchableOpacity, FlatList, Image
 } from 'react-native';
 
 // icons
@@ -13,60 +8,32 @@ import editIcon from '../imgs/imgsPng/editnoborder.png';
 import seeMoreIcon from '../imgs/imgsPng/seemore.png';
 
 // styles
-import styles from '../styles/ProfileStyles';
+import ProfileStyles from '../styles/ProfileStyles';
+import styles from '../styles/HomeKitStyles';
+import KitStyles from '../styles/KitsStyle';
 
 // mock data
 
-const familyMemberItems = [
-    {
-        id: 1,
-        name: 'Lauren'
-    },
-    {
-        id: 2,
-        name: 'Richard'
-    },
-    {
-        id: 3,
-        name: 'Christopher'
-    }
-];
+function Profile(){
+    
+    return(
+    
+    <View>
+        <View style={KitStyles.TopBar}>
+                <Text style={KitStyles.Title}>Profile</Text>
+        </View>
 
-
-class Profile extends React.Component {
-    renderFamilyMember = ({item}) => {
-        return (
-            <TouchableOpacity style={styles.familyMember}>
-                <Image source={profileIcon} style={styles.familyMemberAvatar} />
-                <Text style={styles.familyMemberName}>{item.name}</Text>
-            </TouchableOpacity>
-        )
-    };
-
-    render() {
-        return (
-            <View style={styles.profilePage}>
-                <Text style={styles.AppTitle}>Profile</Text>
-                <Image source={profileIcon} style={styles.profileAvatar} />
-                <Text style={styles.userName}>Rebecca</Text>
-                <View style={styles.editButtonWrapper}>
-                    <TouchableOpacity style={styles.editButton}>
-                        <Image source={editIcon} style={styles.editButtonIcon} />
-                    </TouchableOpacity>
-                </View>
-                <FlatList
-                    style={styles.familyMembersList}
-                    data={familyMemberItems}
-                    keyExtractor={item => `${item.id}`}
-                    renderItem={this.renderFamilyMember}
-                />
-                <TouchableOpacity style={styles.addFamilyMemberButton}>
-                    <Image source={seeMoreIcon} style={styles.addFamilyMemberButtonIcon} />
-                    <Text>Add Family Member</Text>
-                </TouchableOpacity>
+ 
+     
+            <View style={ProfileStyles.profilePage}>
+            
+                <Image source={profileIcon} style={ProfileStyles.profileAvatar} />
+                <Text style={ProfileStyles.userName}>Rebecca</Text>
+               
             </View>
-        )
-    }
+            
+    </View>
+    )
 }
 
 export default Profile;

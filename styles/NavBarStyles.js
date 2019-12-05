@@ -6,7 +6,7 @@ var NBStyles = {
         width: "100%",
         justifyContent: "space-around",
         flexDirection:"row",
-        backgroundColor:"#F27C7B",
+        backgroundColor:"#F16467",
         borderTopLeftRadius: 8,
         borderTopRightRadius: 8,
         shadowColor: "#000",

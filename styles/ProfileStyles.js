@@ -1,6 +1,6 @@
 import {StyleSheet} from 'react-native';
 
-const styles = StyleSheet.create({
+const ProfileStyles = StyleSheet.create({
     profilePage: {
         justifyContent: 'flex-start',
         alignItems: 'center',
@@ -71,4 +71,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default styles;
+export default ProfileStyles;
