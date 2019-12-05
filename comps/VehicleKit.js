@@ -111,11 +111,14 @@ function Vehicle(){
                         
                     var BorderPatrol = null;  
                         
+                    
                     if(currentYear < expYear){
                         BorderPatrol = ItemStyles.GreenBorder
-                    } else if(currentYear >= expYear && currentMonth >= expMonth){
+                    } else if(currentYear === expYear && (expMonth - currentMonth === 1 || expMonth - currentMonth === -11)){
+                        BorderPatrol = ItemStyles.YellowBorder
+                    }else if(currentYear >= expYear && currentMonth >= expMonth){
                         BorderPatrol = ItemStyles.RedBorder
-                    }
+                    } 
                         
                     if(!expMonth || !expYear){
                         BorderPatrol = ItemStyles.GreyBorder

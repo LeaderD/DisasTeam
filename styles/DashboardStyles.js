@@ -60,6 +60,26 @@ const styles = StyleSheet.create({
         alignItems: "center",
         top: 20,
         marginLeft: 20
+    },
+    ExpDateTxt:{
+        position:"relative",
+        fontSize: 18,
+        color:'#F04B53',
+        top: 30,
+        marginLeft: 20
+    },
+    MonthTxt:{
+        position:"relative",
+        fontSize: 18,
+        top: 30,
+        paddingLeft: 30
+        
+    },
+    YearTxt:{
+        position:"relative",
+        fontSize: 18,
+        top: 30,
+        paddingLeft: 10
     }
 });
 

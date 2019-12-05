@@ -28,6 +28,8 @@ var money = [require('../imgs/imgsBWpng/BWmoney_1.png'), require('../imgs/imgsPn
 var idcopy = [require('../imgs/imgsBWpng/BWid_1.png'), require('../imgs/imgsPng/id.png')];
 var shovel = [require('../imgs/imgsBWpng/BWshovel_1.png'), require('../imgs/imgsPng/shovel.png')];
 var matches = [require('../imgs/imgsBWpng/BWmatches_1.png'), require('../imgs/imgsPng/matches.png')];
+var blankets = [require('../imgs/imgsBWpng/BWblanket_1.png'),  require('../imgs/imgsPng/blanket.png')];
+
 
 var imgs = {
     tomatoes,
@@ -50,10 +52,12 @@ var imgs = {
     money,
     idcopy,
     shovel,
-    matches
+    matches,
+    blankets
     
 }
 
+const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 function Dashboard() {
     
     const [items, setItems] = useState([]);
@@ -140,17 +144,17 @@ function Dashboard() {
                       <View style={{flexDirection:"row"}}>
                           <Image
                           style={styles.Items}
-                          source={imgs[o.img][1] || null}
+                          source={(imgs[o.img]) ? imgs[o.img][1] : null}
                           />
                           
                         <View style={{flexDirection:"column"}}>
                           <Text style={styles.ItemTxt}>{o.item_name || ""}</Text>
                             
                         <View style={{flexDirection:"row"}}>
-                          <Text style={styles.ItemTxt}>Exp Date:</Text>
-                          <Text style={styles.ItemTxt}>{o.exp_month || ""}
+                          <Text style={styles.ExpDateTxt}>Exp Date:</Text>
+                          <Text style={styles.MonthTxt}>{months[parseInt(o.exp_month)-1] || ""}
                           </Text>
-                          <Text style={styles.ItemTxt}>{o.exp_year || ""}
+                          <Text style={styles.YearTxt}>{o.exp_year || ""}
                           </Text>
                         </View>
                         </View>
@@ -168,16 +172,16 @@ function Dashboard() {
                       <View style={{flexDirection:"row"}}>
                           <Image
                           style={styles.Items}
-                          source={imgs[o.img][1] || null}
+                          source={(imgs[o.img]) ? imgs[o.img][1] : null}
                           />
                         <View style={{flexDirection:"column"}}>
                           <Text style={styles.ItemTxt}>{o.item_name || ""}</Text>
                             
                         <View style={{flexDirection:"row"}}>
-                          <Text style={styles.ItemTxt}>Exp Date:</Text>
-                          <Text style={styles.ItemTxt}>{o.exp_month || ""}
+                          <Text style={styles.ExpDateTxt}>Exp Date:</Text>
+                          <Text style={styles.MonthTxt}>{months[parseInt(o.exp_month)-1] || ""}
                           </Text>
-                          <Text style={styles.ItemTxt}>{o.exp_year || ""}
+                          <Text style={styles.YearTxt}>{o.exp_year || ""}
                           </Text>
                         </View>
                         </View>
@@ -195,17 +199,19 @@ function Dashboard() {
                       <View style={{flexDirection:"row"}}>
                           <Image
                           style={styles.Items}
-                          source={imgs[o.img][1] || null}
+                          source={(imgs[o.img]) ? imgs[o.img][1] : null}
                           />
                           <View style={{flexDirection:"column"}}>
                           <Text style={styles.ItemTxt}>{o.item_name || ""}</Text>
                             
                         <View style={{flexDirection:"row"}}>
-                          <Text style={styles.ItemTxt}>Exp Date:</Text>
-                          <Text style={styles.ItemTxt}>{o.exp_month || ""}
+                          <Text style={styles.ExpDateTxt}>Exp Date:</Text>
+            
+                          <Text style={styles.MonthTxt}>{months[parseInt(o.exp_month)-1] || ""}
                           </Text>
-                          <Text style={styles.ItemTxt}>{o.exp_year || ""}
+                          <Text style={styles.YearTxt}>{o.exp_year || ""}
                           </Text>
+                      
                         </View>
                         </View>
                       </View>
@@ -214,7 +220,7 @@ function Dashboard() {
                 }
                 </View>
                
-               <View style={{flex: 1, flexWrap:"wrap", flexDirection:"column"}}>
+               <View style={{flex: 1, flexWrap:"wrap", flexDirection:"column", paddingBottom: 20}}>
                 
                 <Text style={styles.ExpItemsTitle}>Exp Vehicle Kit Items</Text>
                   {vehicle_items.map((o,i)=>{
@@ -222,16 +228,17 @@ function Dashboard() {
                       <View style={{flexDirection:"row"}}>
                           <Image
                           style={styles.Items}
-                          source={imgs[o.img][1] || null}
+                          source={(imgs[o.img]) ? imgs[o.img][1] : null}
                           />
-                          <View style={{flexDirection:"column"}}>
+                        <View style={{flexDirection:"column"}}>
                           <Text style={styles.ItemTxt}>{o.item_name || ""}</Text>
                             
                         <View style={{flexDirection:"row"}}>
-                          <Text style={styles.ItemTxt}>Expiery Date:</Text>
-                          <Text style={styles.ItemTxt}>{o.exp_month || ""}
+                          <Text style={styles.ExpDateTxt}>Exp Date:</Text>
+                          
+                          <Text style={styles.MonthTxt}>{months[parseInt(o.exp_month)-1] || ""}
                           </Text>
-                          <Text style={styles.ItemTxt}>{o.exp_year || ""}
+                          <Text style={styles.YearTxt}>{o.exp_year || ""}
                           </Text>
                         </View>
                         </View>
@@ -242,6 +249,7 @@ function Dashboard() {
                   })
                 }
                 </View>
+               
                
             </ScrollView>
             

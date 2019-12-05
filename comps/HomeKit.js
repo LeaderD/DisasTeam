@@ -28,7 +28,6 @@ var money = [require('../imgs/imgsBWpng/BWmoney_1.png'), require('../imgs/imgsPn
 var idcopy = [require('../imgs/imgsBWpng/BWid_1.png'), require('../imgs/imgsPng/id.png')];
 var shovel = [require('../imgs/imgsBWpng/BWshovel_1.png'), require('../imgs/imgsPng/shovel.png')];
 var matches = [require('../imgs/imgsBWpng/BWmatches_1.png'), require('../imgs/imgsPng/matches.png')];
-
 var imgs = {
     tomatoes,
     crackers,
@@ -50,7 +49,7 @@ var imgs = {
     money,
     idcopy,
     shovel,
-    matches
+    matches,
     
 }
 
@@ -123,20 +122,19 @@ function HomeKit(){
                          
                         
                     var BorderPatrol = null;  
-                        
+                    
                     if(currentYear < expYear){
                         BorderPatrol = ItemStyles.GreenBorder
-                    } else if(currentYear >= expYear && currentMonth >= expMonth){
+                    } else if(currentYear === expYear && (expMonth - currentMonth === 1 || expMonth - currentMonth === -11)){
+                        BorderPatrol = ItemStyles.YellowBorder
+                    }else if(currentYear >= expYear && currentMonth >= expMonth){
                         BorderPatrol = ItemStyles.RedBorder
-                    }
+                    } 
                         
                     if(!expMonth || !expYear){
                         BorderPatrol = ItemStyles.GreyBorder
                     }
-                    
-                        //console.log(currentYear);
                        
-                        
                     return (
                       <TouchableOpacity key={i} 
                           style={ItemStyles.ItemPopUp}
