@@ -57,6 +57,7 @@ var imgs = {
 }
 
 const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+
 function Dashboard() {
     
     const [items, setItems] = useState([]);
@@ -99,7 +100,25 @@ function Dashboard() {
          if(!expMonth || !expYear){
              return false
          }
+        //return o.exp_month === null
     })
+    
+    if (exp_items.length === 0) {
+        return (
+            <View style ={{flexWrap:'wrap', flex:1, width:'100%', flexDirection:"row", justifyContent:"center", alignItems:"center"}}>
+                <View style={styles.dashboardPage}>
+                    <View style={styles.Top}>
+                        <Text style={styles.AppTitle}>Dashboard</Text>
+
+                    <TouchableOpacity style={styles.helpButton} onPress={Actions.Profile}>
+                        <Text style={styles.helpButtonText}>?</Text>
+                    </TouchableOpacity>
+                    </View>
+                    <Text>Nothing</Text>
+                </View>
+            </View>
+        )
+    }
     
         var home_items = exp_items.filter((o,i)=>{
             return o.type === 'h'
@@ -136,32 +155,35 @@ function Dashboard() {
            
            
            <ScrollView>
+               {
+                (home_items.length>0) ?
                 <View style={{flex: 1, flexWrap:"wrap", flexDirection:"column"}}>
-            <Text style={styles.ExpItemsTitle}>Expired Home Kit Items</Text>
-                  {home_items.map((o,i)=>{
-                    return (
-                      <View style={{flexDirection:"row"}}>
-                          <Image
-                          style={styles.Items}
-                          source={(imgs[o.img]) ? imgs[o.img][1] : null}
-                          />
-                          
-                        <View style={{flexDirection:"column"}}>
-                          <Text style={styles.ItemTxt}>{o.item_name || ""}</Text>
-                            
-                        <View style={{flexDirection:"row"}}>
-                          <Text style={styles.ExpDateTxt}>Exp Date:</Text>
-                          <Text style={styles.MonthTxt}>{months[parseInt(o.exp_month)-1] || ""}
-                          </Text>
-                          <Text style={styles.YearTxt}>{o.exp_year || ""}
-                          </Text>
-                        </View>
-                        </View>
-                      </View>
-                    )
-                  })
+                    <Text style={styles.ExpItemsTitle}>Expired Home Kit Items</Text>
+                          {home_items.map((o,i)=>{
+                            return (
+                              <View style={{flexDirection:"row"}}>
+                                  <Image
+                                  style={styles.Items}
+                                  source={(imgs[o.img]) ? imgs[o.img][1] : null}
+                                  />
+
+                                <View style={{flexDirection:"column"}}>
+                                  <Text style={styles.ItemTxt}>{o.item_name || ""}</Text>
+
+                                <View style={{flexDirection:"row"}}>
+                                  <Text style={styles.ExpDateTxt}>Exp Date:</Text>
+                                  <Text style={styles.MonthTxt}>{months[parseInt(o.exp_month)-1] || ""}
+                                  </Text>
+                                  <Text style={styles.YearTxt}>{o.exp_year || ""}
+                                  </Text>
+                                </View>
+                                </View>
+                              </View>
+                            )
+                          })
+                        }
+                </View> : null
                 }
-                </View>
                
                 <View style={{flex: 1, flexWrap:"wrap", flexDirection:"column"}}>
                 

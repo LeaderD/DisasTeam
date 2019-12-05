@@ -134,9 +134,11 @@ function HomeKit(){
                         
                     var BorderPatrol = null;  
                     
-                    if(currentYear < expYear){
+                    //console.log((currentYear === expYear && expMonth - currentMonth === 1), (expYear - currentYear === 1 && expMonth - currentMonth === -11))
+                    if(currentYear < expYear && expMonth - currentMonth !== -11){
                         BorderPatrol = ItemStyles.GreenBorder
-                    } else if(currentYear === expYear && (expMonth - currentMonth === 1 || expMonth - currentMonth === -11)){
+                    } else if((currentYear === expYear && expMonth - currentMonth === 1) || (expYear - currentYear === 1 && expMonth - currentMonth === -11)){
+                        //console.log("yellow border", o.name);
                         BorderPatrol = ItemStyles.YellowBorder
                     }else if(currentYear >= expYear && currentMonth >= expMonth){
                         BorderPatrol = ItemStyles.RedBorder
