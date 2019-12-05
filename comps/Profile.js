@@ -1,12 +1,7 @@
-import React, {useState, useEffect} from 'react';
-import {
-    View,
-    Text,
-    TouchableOpacity,
-    FlatList,
-    Image,
-    Animated
+import React from 'react';
+import {View, Text, TouchableOpacity, FlatList, Image
 } from 'react-native';
+import {Actions} from 'react-native-router-flux';
 
 // icons
 import profileIcon from '../imgs/imgsPng/profile.png';
@@ -14,91 +9,39 @@ import editIcon from '../imgs/imgsPng/editnoborder.png';
 import seeMoreIcon from '../imgs/imgsPng/seemore.png';
 
 // styles
-import styles from '../styles/ProfileStyles';
+import ProfileStyles from '../styles/ProfileStyles';
+import styles from '../styles/HomeKitStyles';
+import KitStyles from '../styles/KitsStyle';
+import SignOutStyles from '../styles/SignOutStyles';
 
 // mock data
 
-const FadeInView = (props) => {
-  const [fadeAnim] = useState(new Animated.Value(0))  // Initial value for opacity: 0
+function Profile(){
+    
+    return(
+    
+    <View>
+        <View style={KitStyles.TopBar}>
+                <Text style={KitStyles.Title}>Profile</Text>
+        </View>
 
-  React.useEffect(() => {
-    Animated.timing(
-      fadeAnim,
-      {
-        toValue: 1,
-        duration: 1000,
-      }
-    ).start();
-  }, [])
-
-  return (
-    <Animated.View                 // Special animatable View
-      style={{
-        ...props.style,
-        opacity: fadeAnim,         // Bind opacity to animated value
-      }}
-    >
-      {props.children}
-    </Animated.View>
-  );
-}
-
-const familyMemberItems = [
-    {
-        id: 1,
-        name: 'Lauren'
-    },
-    {
-        id: 2,
-        name: 'Richard'
-    },
-    {
-        id: 3,
-        name: 'Christopher'
-    }
-];
-
-
-class Profile extends React.Component {
-    renderFamilyMember = ({item}) => {
-        return (
-            <TouchableOpacity style={styles.familyMember}>
-                <Image source={profileIcon} style={styles.familyMemberAvatar} />
-                <Text style={styles.familyMemberName}>{item.name}</Text>
-            </TouchableOpacity>
-        )
-    };
-
-    render() {
-        return (
-          <FadeInView>
-            <View style={styles.profilePage}>
-                <View style={styles.top}>
-                <Text style={styles.AppTitle}>Profile</Text>
-                <TouchableOpacity style={styles.logout}>
-                <Image source={{uri: '/Users/a01055581/Desktop/logout.png'}} style={styles.logout} />
-                </TouchableOpacity>
-                  <Image source={profileIcon} style={styles.profileAvatar} />
-                <Text style={styles.userName}>Rebecca</Text>
-                <View style={styles.editButtonWrapper}>
-                    <TouchableOpacity style={styles.editButton}>
-                        <Image source={editIcon} style={styles.editButtonIcon} />
-                    </TouchableOpacity>
-                </View>
-                <FlatList
-                    style={styles.familyMembersList}
-                    data={familyMemberItems}
-                    keyExtractor={item => `${item.id}`}
-                    renderItem={this.renderFamilyMember}
-                />
-                <TouchableOpacity style={styles.addFamilyMemberButton}>
-                    <Image source={seeMoreIcon} style={styles.addFamilyMemberButtonIcon} />
-                    <Text>Add Family Member</Text>
+ 
+     
+            <View style={ProfileStyles.profilePage}>
+            
+                <Image source={profileIcon} style={ProfileStyles.profileAvatar} />
+                <Text style={ProfileStyles.userName}>Rebecca</Text>
+               
+                <TouchableOpacity
+            onPress={()=> Actions.Login()}
+                    style={SignOutStyles.LoginButton}>
+                <Text style={SignOutStyles.LoginButtonText}>Log Out</Text>
                 </TouchableOpacity>
             </View>
-            </FadeInView>
-        )
-    }
+            
+            
+    </View>
+    )
 }
 
 export default Profile;

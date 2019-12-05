@@ -1,6 +1,6 @@
 import {StyleSheet} from 'react-native';
 
-var styles = StyleSheet.create ({
+var SignOutStyles = StyleSheet.create ({
     LoginPage:{
         justifyContent:"center",
         alignItems:"center",
@@ -116,4 +116,4 @@ var styles = StyleSheet.create ({
 })
 
 
-export default styles;
+export default SignOutStyles;

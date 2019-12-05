@@ -1,8 +1,8 @@
-/* eslint-disable prettier/prettier */
 import React, {useState, useEffect} from 'react';
-import {View, Text, Button, TouchableOpacity, Image, ScrollView, Dimensions, AsyncStorage, SafeAreaView} from 'react-native';
-import HomeKitStyles from '../styles/HomeKitStyles';
+import {View, Text, Button, TouchableOpacity, Image, ScrollView, Dimensions, AsyncStorage} from 'react-native';
+import styles from '../styles/HomeKitStyles';
 import ItemStyles from '../styles/ItemStyles';
+import NavBar from './NavBar';
 import ItemPopUp from './ItemPopUp';
 import ax from '../ax';
 import {Actions} from 'react-native-router-flux';
@@ -69,34 +69,6 @@ function HomeKit(){
 
     var ItemPU = null;
 
-    async function getItems(){
-        //async storage to get user id
-        const useritemsID = '';
-        try {
-            useritemsID = await AsyncStorage.getItem('userID');
-        } catch (error) {
-            console.log(error.message);
-        };
-        return useritemsID;
-        //call to select all items where userID=this user id you passed over
-        var itemData=async()=>{
-            let response = await fetch('http://142.232.168.247/emUrgency/item_update.php',{
-                method:'POST',
-                header:{
-                    'Accept': 'application/json',
-                    'Content-Type':'application/json'
-                },
-                body:JSON.encode({
-                    userID: useritemsID
-                })
-            }) 
-        let data = await response.json();
-        if (data == "Got Data"){
-            json.encode(useritemsID);
-        }
-    }
-}
-
     if (showItem === true){
     ItemPU = (
         <ItemPopUp
@@ -119,35 +91,31 @@ function HomeKit(){
     },[]);
 
     return (
-        <SafeAreaView style={HomeKitStyles.Cont}>
+        <View>
+            <View style={styles.Top}>
 
-            {/* Nav Bar */}
-            <View style={HomeKitStyles.Top}>
-
-                <View style={HomeKitStyles.BackNav}>
+                <View style={styles.BackNav}>
                     
-                <TouchableOpacity style={HomeKitStyles.backBtn}
+                <TouchableOpacity style={styles.backBtn}
                 onPress={()=>Actions.pop("Kits")}>                   
                     <Image
-                    style={HomeKitStyles.backBtn}
+                    style={styles.backBtn}
                     source={require('../imgs/imgsPng/backbuttonwhite.png')}
                     />
                     {/* <Text> Home </Text> */}
                 </TouchableOpacity>
                 </View>
 
-                <View style={HomeKitStyles.TitleNav}>
-                <Text style={HomeKitStyles.Title}>Home</Text>
+                <View style={styles.TitleNav}>
+                <Text style={styles.Title}>Home</Text>
                 </View>
                 <TouchableOpacity>
-                    <Image style={HomeKitStyles.helpBut} source={require('../imgs/imgsPng/helpwhite.png')} />
+                    <Image style={styles.helpBut} source={require('../imgs/imgsPng/helpwhite.png')} />
                 </TouchableOpacity>
             </View>
 
-            {/* Content */}
             <ScrollView>
-                <View style={HomeKitStyles.ContentCont}>
-                    
+                <View style={{flex: 1, flexWrap:"wrap", flexDirection:"row", justifyContent:"center", alignItems:"center", height: 1050}}>
                   {items.map((o,i)=>{
                     
                     var currentMonth = new Date().getMonth() +1
@@ -166,9 +134,11 @@ function HomeKit(){
                         
                     var BorderPatrol = null;  
                     
-                    if(currentYear < expYear){
+                    //console.log((currentYear === expYear && expMonth - currentMonth === 1), (expYear - currentYear === 1 && expMonth - currentMonth === -11))
+                    if(currentYear < expYear && expMonth - currentMonth !== -11){
                         BorderPatrol = ItemStyles.GreenBorder
-                    } else if(currentYear === expYear && (expMonth - currentMonth === 1 || expMonth - currentMonth === -11)){
+                    } else if((currentYear === expYear && expMonth - currentMonth === 1) || (expYear - currentYear === 1 && expMonth - currentMonth === -11)){
+                        //console.log("yellow border", o.name);
                         BorderPatrol = ItemStyles.YellowBorder
                     }else if(currentYear >= expYear && currentMonth >= expMonth){
                         BorderPatrol = ItemStyles.RedBorder
@@ -191,16 +161,21 @@ function HomeKit(){
                           style={BorderPatrol}
                           source={newImage || null}
                           />
-                          <Text style={HomeKitStyles.ItemTxt}>{o.item_name || ""}</Text>
+                          <Text style={styles.ItemTxt}>{o.item_name || ""}</Text>
                       </TouchableOpacity>
                     )
                   })
                 }
+
+
+
                 </View>
             </ScrollView>
+
             {ItemPU}
 
-    </SafeAreaView>
+        </View>
+
     )
 }
 
