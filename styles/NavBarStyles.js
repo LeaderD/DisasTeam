@@ -2,11 +2,22 @@ import {StyleSheet} from 'react-native';
 
 var NBStyles = {
     container:{
-        backgroundColor:"#F04B53",
         height: 70,
         width: "100%",
         justifyContent: "space-around",
-        flexDirection:"row"
+        flexDirection:"row",
+        backgroundColor:"#F27C7B",
+        borderTopLeftRadius: 8,
+        borderTopRightRadius: 8,
+        shadowColor: "#000",
+        shadowOffset: {
+	         width: 0,
+	          height: -2,
+          },
+          shadowOpacity: 0.30,
+          shadowRadius: 3.84,
+
+          elevation: 5,
     },
     navElements:{
         width: "33%",

@@ -11,10 +11,11 @@ var styles = StyleSheet.create ({
     backgroundColor: "#F27C7B",
     alignItems: "center",
     justifyContent:"center",
-    height: 70
+    height: 90,
+    marginTop: "-10%"
   },
   TitleTop: {
-    fontSize: 40
+    fontSize: 30
   },
     Title:{
         color: "#FFF",
@@ -32,27 +33,38 @@ var styles = StyleSheet.create ({
     },
 
     WrapCont: {
-      flexWrap:'wrap', 
-      flexDirection:"row", 
+      flexWrap:'wrap',
+      flexDirection:"row",
       // backgroundColor: "white",
       width: "75%",
       top: "10%",
       justifyContent: "space-around",
-      alignItems: "center"
+      alignItems: "center",
+      shadowColor: "#000",
+      shadowOffset: {
+         width: -10,
+          height: 5,
+        },
+        shadowOpacity: 0.15,
+        shadowRadius: 3.84,
+
+        elevation: 3,
     },
-    
+
     ContentCont: {
       // height: "100%",
-      marginTop: 20,
-      width:'100%', 
-      flexDirection:"row", 
+      width:'100%',
+      flexDirection:"row",
       // backgroundColor: "pink",
-      justifyContent:"center"
+      justifyContent:"center",
+      backgroundColor: "#FFFEF3",
+      height: "100%"
     },
 
     Icon:{
         height: 120,
-        width: 120
+        width: 120,
+
     },
 
     work:{

@@ -11,12 +11,22 @@ var PUStyles = StyleSheet.create ({
     container:{
         height: 230,
         width: 350,
-        backgroundColor: "#F04B53",
+        paddingTop: "2%",
+        backgroundColor: "#F27C7B",
         flexDirection:"row",
         borderRadius: 6,
         zIndex:10,
-        padding: '2%',
-        alignItems: "center"
+		alignItems: "center",
+        padding: '2%'
+        shadowColor: "#000",
+        shadowOffset: {
+	         width: 0,
+	          height: 0,
+          },
+          shadowOpacity: 0.35,
+          shadowRadius: 8,
+
+          elevation: 5,
     },
     ItemImg:{
         resizeMode: "contain",

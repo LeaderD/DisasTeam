@@ -1,19 +1,46 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import {
     View,
     Text,
     TouchableOpacity,
     Image,
     SafeAreaView,
-    ScrollView
+    ScrollView,
+    Animated
 } from 'react-native';
 import styles from '../styles/HelpStyles';
 import {Actions} from 'react-native-router-flux';
+
+const FadeInView = (props) => {
+  const [fadeAnim] = useState(new Animated.Value(0))  // Initial value for opacity: 0
+
+  React.useEffect(() => {
+    Animated.timing(
+      fadeAnim,
+      {
+        toValue: 1,
+        duration: 1000,
+      }
+    ).start();
+  }, [])
+
+  return (
+    <Animated.View                 // Special animatable View
+      style={{
+        ...props.style,
+        opacity: fadeAnim,         // Bind opacity to animated value
+      }}
+    >
+      {props.children}
+    </Animated.View>
+  );
+}
 
 function Help() {
     return (
 
         <SafeAreaView style={styles.Cont}>
+        <FadeInView>
         <View>
             <View style={styles.Help}>
                 <View style={styles.backCont}>
@@ -45,17 +72,18 @@ function Help() {
             <Image style={styles.icon} source={require('../imgs/imgsPng/example1.png')} />
             <Text style={styles.htuTxt}>Expired, replace this item immediately.</Text>
         </View>
-        <View style={styles.ColourGuideCont}> 
+        <View style={styles.ColourGuideCont}>
             <Image style={styles.icon} source={require('../imgs/imgsPng/example2.png')} />
             <Text style={styles.htuTxt}>Expiring in 1-2 month. Replace soon. </Text>
         </View>
-        <View style={styles.ColourGuideCont}> 
+        <View style={styles.ColourGuideCont}>
             <Image style={styles.icon} source={require('../imgs/imgsPng/example3.png')} />
             <Text style={styles.htuTxt}>Won't be expiring in the next 2 months.</Text>
         </View>            */}
             </View>
             </View>
             </ScrollView>
+            </FadeInView>
         </SafeAreaView>
     )
 };

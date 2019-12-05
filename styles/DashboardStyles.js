@@ -3,8 +3,10 @@ import {StyleSheet} from 'react-native';
 const styles = StyleSheet.create({
     dashboardPage: {
         flex: 1,
-        backgroundColor: '#FFFEF3'
+        backgroundColor: '#FFFEF3',
+        height: "100%"
     },
+
     titleBar:{
         height: 70,
         flexDirection: "row",
@@ -15,6 +17,12 @@ const styles = StyleSheet.create({
     TitleCont:{
         justifyContent: "center",
     },
+
+    /*Gradient: {
+      flex: 1,
+      height: "100%"
+    },*/
+
     AppTitle:{
         color: '#FFF',
         fontSize: 30,
@@ -29,13 +37,34 @@ const styles = StyleSheet.create({
         height: 30,
         width: 30,
         resizeMode: "contain"
+        borderWidth: 2,
+        borderColor: '#F04B53',
+        borderRadius: 15,
+        top: 50,
+        right: 20,
+        alignItems: 'center',
+        justifyContent: 'center',
+        shadowColor: "#6e090e",
+        shadowOffset: {
+           width: 0,
+            height: 2,
+         },
+          shadowOpacity: 0.15,
+          shadowRadius: 3,
+
+          elevation: 2,
+    },
+    helpButtonText: {
+        color: '#F04B53',
+        fontSize: 24
     },
     expiringItems: {
         alignSelf: 'flex-start',
         marginBottom: '10%',
         marginLeft: '7%',
         paddingTop: '9%',
-        fontSize: 17,
+        fontSize: 22,
+        color:"#7B7B7B"
         //paddingTop: '100%',
     },
     expiringList: {
@@ -63,7 +92,11 @@ const styles = StyleSheet.create({
         borderColor: '#FDF050'
     },
     expiringItemText: {
-        marginBottom: 8
+        marginBottom: 8,
+
+    },
+    updatedText: {
+      color:"#8B8B8A",
     }
 });
 
