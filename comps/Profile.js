@@ -73,6 +73,7 @@ class Profile extends React.Component {
         return (
           <FadeInView>
             <View style={styles.profilePage}>
+                <View style={styles.top}>
                 <Text style={styles.AppTitle}>Profile</Text>
                 <TouchableOpacity style={styles.logout}>
                 <Image source={{uri: '/Users/a01055581/Desktop/logout.png'}} style={styles.logout} />

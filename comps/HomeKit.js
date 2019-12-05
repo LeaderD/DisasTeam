@@ -257,7 +257,7 @@ function HomeKit(){
                 onPress={()=>Actions.pop("Kits")}>                   
                     <Image
                     style={HomeKitStyles.backBtn}
-                    source={require('../imgs/imgsPng/backbutton.png')}
+                    source={require('../imgs/imgsPng/backbuttonwhite.png')}
                     />
                     {/* <Text> Home </Text> */}
                 </TouchableOpacity>
@@ -266,6 +266,9 @@ function HomeKit(){
                 <View style={HomeKitStyles.TitleNav}>
                 <Text style={HomeKitStyles.Title}>Home</Text>
                 </View>
+                <TouchableOpacity>
+                    <Image style={HomeKitStyles.helpBut} source={require('../imgs/imgsPng/helpwhite.png')} />
+                </TouchableOpacity>
             </View>
 
             {/* Content */}

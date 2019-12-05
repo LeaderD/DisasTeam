@@ -2,17 +2,21 @@ import {StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
     profilePage: {
-        justifyContent: 'flex-start',
+        justifyContent: 'center',
         alignItems: 'center',
-        top: 0,
-        paddingTop: 50,
-        paddingLeft: 20,
-        paddingRight: 20,
         height: '100%',
         backgroundColor: '#FFFEF3'
     },
+    top: {
+        alignItems: "center",
+        justifyContent: "center",
+        height: 70,
+        width: "100%",
+        flexDirection: 'row',
+        backgroundColor:"#F27C7B",
+    },
     AppTitle:{
-        color: '#F04B53',
+        color: '#FFF',
         fontSize: 30
     },
     logout:{
@@ -42,9 +46,10 @@ const styles = StyleSheet.create({
       width: 50
     },
     familyMembersList: {
-        alignSelf: 'flex-start',
+        alignSelf: 'center',
         marginBottom: 20,
-        fontSize: 17
+        fontSize: 17,
+        width: "80%"
     },
     expiringList: {
         width: '100%'

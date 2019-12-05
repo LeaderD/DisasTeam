@@ -9,14 +9,14 @@ var PUStyles = StyleSheet.create ({
         // backgroundColor: "purple"
     },
     container:{
-        height: 200,
+        height: 230,
         width: 350,
         paddingTop: "2%",
         backgroundColor: "#F27C7B",
         flexDirection:"row",
         borderRadius: 6,
         zIndex:10,
-
+		alignItems: "center",
         padding: '2%'
         shadowColor: "#000",
         shadowOffset: {
@@ -38,19 +38,16 @@ var PUStyles = StyleSheet.create ({
     inputView:{
         flexDirection: "column",
         // backgroundColor: "brown",
-        width: "60%",
-        alignContent: "space-between",
-        marginLeft: 10,
+        width: "60%"
     },
     inputs:{
         backgroundColor: "transparent",
-        width: "55%",
         fontSize: 17,
         borderColor: "transparent",
         borderWidth: 1,
         borderBottomColor: "white",
         color: "#FFF",
-        padding: 1,
+        padding: 0,
         width: "90%"
     },
     ButView:{
@@ -63,31 +60,29 @@ var PUStyles = StyleSheet.create ({
         backgroundColor: "white",
         borderRadius: 3,
         width: 77,
-        height: "60%",
+        height: 40,
         justifyContent:"center",
         alignItems:"center",
-        margin: "1%",
+        // margin: "1%",
     },
     UpdateButText:{
         color:"#F04B53",
         fontSize: 16,
-        fontWeight: "600",
+        fontWeight: "600"
     },
     CancelBut:{
         backgroundColor:"rgba(255,255,255,0.2)",
         borderRadius: 3,
         width: 77,
-        height: "60%",
+        height: 40,
         justifyContent:"center",
         alignItems:"center",
-        margin: "1%",
+        // margin: "1%",
     },
     CancelButText:{
         color: "white",
         fontSize: 16,
-        fontWeight: "600",
-        justifyContent: "center",
-        alignItems:"center"
+        fontWeight: "600"
     },
     PickerView:{
         flexDirection: "row",
@@ -106,14 +101,34 @@ var PUStyles = StyleSheet.create ({
         width: "55%",
         height: "100%"
     },
+    ExpCont: {
+        top: 5
+    },
     ExpText:{
         color: 'white',
         fontSize: 18,
-        top: 5
+        width: "75%"
     },
-    ExpCont:{
-        // backgroundColor: "slateblue",
-        top: 5
+    ExpTitles:{
+        flexDirection: "row",
+        // backgroundColor:"pink"
+    },
+    toolTip:{
+        resizeMode: "contain",
+        width: 30,
+        height: 30,
+    },
+    toolTipCont:{
+        width: "25%",
+        // backgroundColor: "aliceblue",
+        alignItems: "center",
+        justifyContent: "center"
+    },
+    TTCont:{
+        // backgroundColor: "blue",
+        position: "absolute",
+        top: 10,
+        right: 10
     }
 
 });

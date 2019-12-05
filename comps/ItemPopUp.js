@@ -39,6 +39,9 @@ function ItemPopUp(props){
             <Image
              style={PUStyles.ItemImg}
              source={props.ItemPic}/>
+        <TouchableOpacity style={PUStyles.TTCont}>
+            <Image style={PUStyles.toolTip}source={require('../imgs/imgsPng/helpwhite.png')} />
+            </TouchableOpacity>     
         <View style={PUStyles.inputView}>
             <Text style={PUStyles.ExpText}>Name</Text> 
             <TextInput
@@ -46,7 +49,12 @@ function ItemPopUp(props){
               placeholder="Enter Name">
             </TextInput>
         <View style={PUStyles.ExpCont}>
-            <Text style={PUStyles.ExpText}>Exp Date</Text>
+            <View style={PUStyles.ExpTitles}>
+            <Text style={PUStyles.ExpText}>Expiry/Maintenance Date</Text>
+            {/* <TouchableOpacity style={PUStyles.toolTipCont}>
+            <Image style={PUStyles.toolTip}source={require('../imgs/imgsPng/helpwhite.png')} />
+            </TouchableOpacity> */}
+        </View>
         <View style={PUStyles.PickerView}>
             <Picker 
             // selectedValue={this.state.language}

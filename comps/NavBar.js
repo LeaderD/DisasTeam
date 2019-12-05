@@ -6,7 +6,7 @@ import {Actions} from 'react-native-router-flux';
 function NavBar(){
     return (
         <SafeAreaView>
-        <View style={{justifyContent:"flex-end"}}>
+        <View>
             <View style={NBStyles.container}>
             <View style={NBStyles.navElements}> 
             <TouchableOpacity style={NBStyles.touchOp}

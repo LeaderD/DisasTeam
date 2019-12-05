@@ -10,7 +10,7 @@ import HomeKitPage from './pages/HomeKitPage'
 // import WorkKit from './comps/WorkKit'
 import HomeKit from './comps/HomeKit'
 import WorkKit from './comps/WorkKit'
-// import GrabNGoKit from './comps/GrabNGoKit';
+import GrabNGoKit from './comps/GrabNGoKit';
 import VehicleKit from './comps/VehicleKit'
 // import Welcome from './comps/Welcome'
 // import WhiteButton from './comps/WhiteButton'
@@ -26,8 +26,10 @@ import Help from './comps/Help';
 import Route from './route'
 import Tutorial from './comps/Tutorial';
 import Dashboard from './comps/Dashboard';
-
-
+import ColorGuide from './comps/ColorGuide';
+import ToolTip from './comps/ToolTip';
+import Kits from './comps/Kits';
+import Profile from './comps/Profile';
 
 function App(){
   return (
@@ -35,18 +37,21 @@ function App(){
       {/* <Login/> */}
       {/* <Register /> */}
       {/* <NavBar /> */}
-      {/* <HomeKitPage /> */}
       {/* <HomeKit /> */}
       {/* <WorkKit /> */}
-      {/* <GrabNGoKit /> */}
-      {/* <VehicleKit /> */}
+      <GrabNGoKit />
       {/* <ItemPopUp/> */}
       {/* <LoginPage/> */}
       {/* <RegistrationPage /> */}
       {/* <Help /> */}
       {/* <Route/> */}
       {/* <Tutorial /> */}
-      <Dashboard/>
+      {/* <Dashboard/> */}
+      {/* <ColorGuide/> */}
+      {/* <ToolTip/> */}
+      {/* <Kits/> */}
+      {/* <Profile /> */}
+      {/* <VehicleKit /> */}
     </View>
   )
 }

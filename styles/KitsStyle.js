@@ -8,7 +8,7 @@ var styles = StyleSheet.create ({
     justifyContent: 'center',
   },
   TopBar: {
-    backgroundColor: "#FFFEF3",
+    backgroundColor: "#F27C7B",
     alignItems: "center",
     justifyContent:"center",
     height: 90,
@@ -18,7 +18,7 @@ var styles = StyleSheet.create ({
     fontSize: 30
   },
     Title:{
-        color: "#F04B53",
+        color: "#FFF",
         fontSize: 40,
 
     },
@@ -110,8 +110,13 @@ var styles = StyleSheet.create ({
        color:"#8B8B8A",
          marginRight: '10%',
          paddingTop: '2%'
-     }
-
+     },
+     helpBut:{
+      resizeMode: "contain",
+      height: 35,
+      width: 35,
+      right: 20
+  }
 })
 
 export default styles;
