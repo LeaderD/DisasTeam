@@ -21,7 +21,7 @@ function Help() {
                 onPress={()=>Actions.pop("Dashboard")}>
                     <Image
                         style={styles.backBtn}
-                        source={require('../imgs/imgsPng/backbutton.png')}
+                        source={require('../imgs/imgsPng/backbuttonwhite.png')}
                     />
                 </TouchableOpacity>
                 </View>

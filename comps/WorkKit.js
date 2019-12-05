@@ -64,13 +64,16 @@ function WorkKit(){
                 onPress={()=>Actions.pop("Kits")}>
                     <Image
                     style={HomeKitStyles.backBtn}
-                    source={require('../imgs/imgsPng/backbutton.png')}
+                    source={require('../imgs/imgsPng/backbuttonwhite.png')}
                     />
                 </TouchableOpacity>
                 </View>
                 <View style={HomeKitStyles.TitleNav}>
                 <Text style={HomeKitStyles.Title}>Work</Text>
                 </View>
+                <TouchableOpacity>
+                    <Image style={HomeKitStyles.helpBut} source={require('../imgs/imgsPng/helpwhite.png')} />
+                </TouchableOpacity>
             </View>
 
             <View>

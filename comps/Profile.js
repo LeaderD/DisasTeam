@@ -46,7 +46,9 @@ class Profile extends React.Component {
     render() {
         return (
             <View style={styles.profilePage}>
+                <View style={styles.top}>
                 <Text style={styles.AppTitle}>Profile</Text>
+                </View>
                 <Image source={profileIcon} style={styles.profileAvatar} />
                 <Text style={styles.userName}>Rebecca</Text>
                 <View style={styles.editButtonWrapper}>

@@ -10,13 +10,13 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         alignItems: "center",
         justifyContent: "space-around",
-        backgroundColor: "#FFFEF3"
+        backgroundColor: "#F27C7B"
     },
     TitleCont:{
         justifyContent: "center",
     },
     AppTitle:{
-        color: '#F04B53',
+        color: '#FFF',
         fontSize: 30,
         left: 70
     },

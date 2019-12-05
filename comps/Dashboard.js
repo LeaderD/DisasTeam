@@ -67,7 +67,7 @@ class Dashboard extends React.Component {
                 onPress={()=> Actions.Help()}>
                     <Image
                     style={styles.helpButton}
-                    source={require ('../imgs/imgsPng/info.png')}/>
+                    source={require ('../imgs/imgsPng/infowhite.png')}/>
                 </TouchableOpacity>
                 </View>
                 </View>

@@ -18,7 +18,7 @@ var HomeKitStyles = StyleSheet.create ({
         alignItems: "center",
         height: 70,
         flexDirection: 'row',
-        backgroundColor:"#FFFEF3",
+        backgroundColor:"#F27C7B",
     },
 
 
@@ -33,8 +33,8 @@ var HomeKitStyles = StyleSheet.create ({
         justifyContent:"center",
         alignItems: "center",
         resizeMode: "contain",
-        width: 50,
-        height: 50
+        width: 30,
+        height: 30
     },
 
     // Home Title Container
@@ -46,11 +46,11 @@ var HomeKitStyles = StyleSheet.create ({
 
     Title:{
         alignItems: "center",
-        color: "#F04B53",
+        color: "white",
         // backgroundColor: "lightyellow",
         fontSize: 30,
         justifyContent: "center",
-        marginLeft: -75
+        marginLeft: -30
     },
 
     Items:{
@@ -67,6 +67,13 @@ var HomeKitStyles = StyleSheet.create ({
         fontSize: 12,
         top: 10,
         textAlign:"center"
+    },
+    helpBut:{
+        resizeMode: "contain",
+        height: 35,
+        width: 35,
+        // backgroundColor: "red",
+        right: 25
     }
 
 

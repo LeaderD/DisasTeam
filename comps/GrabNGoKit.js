@@ -63,13 +63,16 @@ function GrabNGoKit(){
                 onPress={()=>Actions.pop("Kits")}>
                     <Image
                     style={HomeKitStyles.backBtn}
-                    source={require('../imgs/imgsPng/backbutton.png')}
+                    source={require('../imgs/imgsPng/backbuttonwhite.png')}
                     />
                 </TouchableOpacity>
                 </View>
                 <View style={HomeKitStyles.TitleNav}>
                 <Text style={HomeKitStyles.Title}>Grab N' Go</Text>
             </View>
+            <TouchableOpacity>
+                    <Image style={HomeKitStyles.helpBut} source={require('../imgs/imgsPng/helpwhite.png')} />
+                </TouchableOpacity>
             </View>
 
                 <View style={{flexDirection:"row", justifyContent:"center", top: 20}}>

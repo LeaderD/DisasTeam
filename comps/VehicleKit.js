@@ -85,6 +85,9 @@ function Vehicle(){
                     />
                 </TouchableOpacity>
                 <Text style={styles.Title}>Vehicle</Text>
+                <TouchableOpacity>
+                    <Image style={HomeKitStyles.helpBut} source={require('../imgs/imgsPng/helpwhite.png')} />
+                </TouchableOpacity>
             </View>
 
             <ScrollView>
