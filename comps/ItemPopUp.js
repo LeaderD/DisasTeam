@@ -1,26 +1,35 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {View, TextInput, Image, TouchableOpacity, Text, Picker} from 'react-native';
 import PUStyles from '../styles/ItemPopUpStyles';
+import ax from '../ax';
 
 function ItemPopUp(props){
+    
+    const [exptextmonth, setExpTextMonth] = useState(props.curItem.exp_month);
+    const [exptextyear, setExpTextYear] = useState(props.curItem.exp_year);
+    
+    const updateItems = async()=>{
+        
+        var data = await ax("items_update", {id:props.curItem.id, exp_month:exptextmonth || '01', exp_year:exptextyear || '2019'});
+        //console.log(data);
+        props.getItems();
+        //console.log(img);
+    }
+    
+    useEffect(()=>{
+        //getItems();
+        
+        
+    },[]);
 
 
-
-    const [name, setName] = useState('');
-    const [dateAdded, setAddDate] = useState('');
-    const [expDate, setExpDate] = useState('');
-
-
+    console.log(props.curItem);
     var Update = (
         <TouchableOpacity style={PUStyles.UpdateBut}
         onPress={()=>{
-            console.log(props.curItem);
             props.setShowItem(false);
-            props.items[props.curIndex].state = 1;
-            props.setItems(props.items.map((o)=>{
-                return o;
-            }))
-            //props.SetItemPic(props.curItem[1]);
+            updateItems();
+            
         }}
         >
              <Text
@@ -43,37 +52,39 @@ function ItemPopUp(props){
             <Image style={PUStyles.toolTip}source={require('../imgs/imgsPng/helpwhite.png')} />
             </TouchableOpacity>     
         <View style={PUStyles.inputView}>
-            <Text style={PUStyles.ExpText}>Name</Text> 
-            <TextInput
-              style={PUStyles.inputs}
-              placeholder="Enter Name">
-            </TextInput>
-        <View style={PUStyles.ExpCont}>
-            <View style={PUStyles.ExpTitles}>
-            <Text style={PUStyles.ExpText}>Expiry/Maintenance Date</Text>
-            {/* <TouchableOpacity style={PUStyles.toolTipCont}>
-            <Image style={PUStyles.toolTip}source={require('../imgs/imgsPng/helpwhite.png')} />
-            </TouchableOpacity> */}
-        </View>
-        <View style={PUStyles.PickerView}>
+            <Text style={PUStyles.ExpText}>Name</Text>
+            
+        <View style={PUStyles.inputView}>
+            <Text
+              style={PUStyles.ExpText}>
+            {props.curItem.item_name}
+            </Text>
+            <View style={PUStyles.ExpCont}>
+                
+            <Text style={PUStyles.ExpText}>Exp Date</Text>
+                
+            <View style={PUStyles.PickerView}>
             <Picker 
-            // selectedValue={this.state.language}
-            // onValueChange={(itemValue, itemIndex) => this.setState({language:itemValue})}
-            style={PUStyles.monthPicker}>
-                <Picker.Item label="01" value="01"/>
-                <Picker.Item label="02" value="02"/>
-                <Picker.Item label="03" value="03"/>
-                <Picker.Item label="04" value="04"/>
-                <Picker.Item label="05" value="05"/>
-                <Picker.Item label="06" value="06"/>
-                <Picker.Item label="07" value="07"/>
-                <Picker.Item label="08" value="08"/>
-                <Picker.Item label="09" value="09"/>
-                <Picker.Item label="10" value="10"/>
-                <Picker.Item label="11" value="11"/>
-                <Picker.Item label="12" value="12"/>
+            style={PUStyles.monthPicker}
+            selectedValue={exptextmonth}
+            onValueChange={(t)=>{setExpTextMonth(t)}}>
+                <Picker.Item label="Jan" value="01"/>
+                <Picker.Item label="Feb" value="02"/>
+                <Picker.Item label="Mar" value="03"/>
+                <Picker.Item label="Apr" value="04"/>
+                <Picker.Item label="May" value="05"/>
+                <Picker.Item label="Jun" value="06"/>
+                <Picker.Item label="Jul" value="07"/>
+                <Picker.Item label="Aug" value="08"/>
+                <Picker.Item label="Sep" value="09"/>
+                <Picker.Item label="Oct" value="10"/>
+                <Picker.Item label="Nov" value="11"/>
+                <Picker.Item label="Dec" value="12"/>
             </Picker>
-            <Picker style={PUStyles.yearPicker}>
+            <Picker 
+            style={PUStyles.yearPicker}
+            selectedValue={exptextyear}
+            onValueChange={(t)=>{setExpTextYear(t)}}>
                 <Picker.Item label="2019" value="2019"/>
                 <Picker.Item label="2020" value="2020"/>
                 <Picker.Item label="2021" value="2021"/>
@@ -82,23 +93,19 @@ function ItemPopUp(props){
                 <Picker.Item label="2024" value="2024"/>
                 <Picker.Item label="2025" value="2025"/>
             </Picker>
-        </View>
-        </View>
-            {/* <TextInput
-              style={PUStyles.inputs}
-              placeholder="Expiry Date"
-              keyboardType="numeric">
-            </TextInput> */}
+            </View>
+            </View>
         <View style={PUStyles.ButView}>
+            
         <TouchableOpacity style={PUStyles.CancelBut}
-        // onPress={()=>{
-        //     props.setShowItem(false)}
-        // }
-        >
+        onPress={()=>{
+        props.setShowItem(false)}
+        }>
             <Text style={PUStyles.CancelButText}> CANCEL </Text>
         </TouchableOpacity>
             {Update}
 
+    </View>
     </View>
     </View>
     </View>

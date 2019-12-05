@@ -4,6 +4,7 @@ import {View, Text, Button, TouchableOpacity, Image, ScrollView, Dimensions, Asy
 import HomeKitStyles from '../styles/HomeKitStyles';
 import ItemStyles from '../styles/ItemStyles';
 import ItemPopUp from './ItemPopUp';
+import ax from '../ax';
 import {Actions} from 'react-native-router-flux';
 
 var tomatoes = [require('../imgs/imgsBWpng/BWcannedfood_1.png'), require('../imgs/imgsPng/cannedfood.png')];
@@ -27,181 +28,44 @@ var money = [require('../imgs/imgsBWpng/BWmoney_1.png'), require('../imgs/imgsPn
 var idcopy = [require('../imgs/imgsBWpng/BWid_1.png'), require('../imgs/imgsPng/id.png')];
 var shovel = [require('../imgs/imgsBWpng/BWshovel_1.png'), require('../imgs/imgsPng/shovel.png')];
 var matches = [require('../imgs/imgsBWpng/BWmatches_1.png'), require('../imgs/imgsPng/matches.png')];
-
-var arr = [
-{
-    state:0,
-    key: 1,
-    arr: tomatoes,
-    name: "Canned Tomatoes",
-    start_date: "2019-11-03",
-    days_expired: 60
-},
-{
-    state:0,
-    key: 2,
-    arr: crackers,
-    name: "Crackers",
-    start_date: "2019-11-03",
-    days_expired: 60
-},
-{
-    state:0,
-    key: 3,
-    arr: granola,
-    name: "Granola Bar",
-    start_date: "2019-11-03",
-    days_expired: 60
-},
-{
-    state:0,
-    key: 4,
-    arr: cookwater,
-    name: "Cooking Water",
-    start_date: "2019-11-03",
-    days_expired: 60
-},
-{
-    state:0,
-    key: 5,
-    arr: firstaid,
-    name: "Medical Kit",
-    start_date: "2019-11-03",
-    days_expired: 60
-},
-{
-    state:0,
-    key: 6,
-    arr: flashlight,
-    name: "Flashlight",
-    start_date: "2019-11-03",
-    days_expired: 60
-},
-{
-    state:0,
-    key: 7,
-    arr: canopener,
-    name: "Can Opener",
-    start_date: "2019-11-03",
-    days_expired: 60
-},
-{
-    state:0,
-    key: 8,
-    arr: whistle,
-    name: "Whistle",
-    start_date: "2019-11-03",
-    days_expired: 60
-},
-{
-    state:0,
-    key: 9,
-    arr: radio,
-    name: "Radio",
-    start_date: "2019-11-03",
-    days_expired: 60
-},
-{
-    state:0,
-    key: 10,
-    arr: flare,
-    name: "Flare",
-    start_date: "2019-11-03",
-    days_expired: 60
-},
-{
-    state:0,
-    key: 1,
-    arr: documents,
-    name: "Documents",
-    start_date: "2019-11-03",
-    days_expired: 60
-},
-{
-    state:0,
-    arr: drinkwater,
-    name: "Drinking Water",
-    start_date: "2019-11-03",
-    days_expired: 60
-},
-{
-    state:0,
-    arr: sparekeys,
-    name: "Spare Keys",
-    start_date: "2019-11-03",
-    days_expired: 60
-},
-{
-    state:0,
-    key: 1,
-    arr: candles,
-    name: "Candles",
-    start_date: "2019-11-03",
-    days_expired: 60
-},
-{
-    state:0,
-    key: 1,
-    arr: clothes,
-    name: "Clothes",
-    start_date: "2019-11-03",
-    days_expired: 60
-},
-{
-    state:0,
-    key: 1,
-    arr: snowbrush,
-    name: "Snow Brush",
-    start_date: "2019-11-03",
-    days_expired: 60
-},
-{
-    state:0,
-    key: 1,
-    arr: medication,
-    name: "Medication",
-    start_date: "2019-11-03",
-    days_expired: 60
-},
-{
-    state:0,
-    key: 1,
-    arr: money,
-    name: "Money",
-    start_date: "2019-11-03",
-    days_expired: 60
-},
-{
-    state:0,
-    key: 1,
-    arr: idcopy,
-    name: "ID",
-    start_date: "2019-11-03",
-    days_expired: 60
-},
-{
-    state:0,
-    arr: shovel,
-    name: "Shovel",
-    start_date: "2019-11-03",
-    days_expired: 60
-},
-{
-    state:0,
-    key: 1,
-    arr: matches,
-    name: "Matches",
-    start_date: "2019-11-03",
-    days_expired: 60
-},
-] 
+var imgs = {
+    tomatoes,
+    crackers,
+    granola,
+    cookwater,
+    firstaid,
+    flashlight,
+    canopener,
+    whistle,
+    radio,
+    flare,
+    documents,
+    drinkwater,
+    sparekeys,
+    candles,
+    clothes,
+    snowbrush,
+    medication,
+    money,
+    idcopy,
+    shovel,
+    matches,
+    
+}
 
 function HomeKit(){
 
     const [showItem, setShowItem] = useState(false);
     const [ItemPic, setItemPic] = useState('');
-    const [curIndex, setCurIndex] = useState(0);
-    const [items, setItems] = useState(arr);
+    const [curItem, setCurItem] = useState({});
+    const [items, setItems] = useState([]);
+    
+     const getItems = async()=>{
+        var users_id = await AsyncStorage.getItem('users_id');
+        var data = await ax("items_read", {users_id:users_id, type:'h'});
+
+        setItems(data);
+    }
 
     var ItemPU = null;
 
@@ -240,10 +104,19 @@ function HomeKit(){
         setItemPic={setItemPic}
         ItemPic={ItemPic}
         setItems={setItems}
-        curIndex={curIndex}
+        curItem={curItem}
         items={items}
+        getItems={getItems}
         />
     )}
+    
+   
+    
+    useEffect(()=>{
+        getItems();
+        
+        
+    },[]);
 
     return (
         <SafeAreaView style={HomeKitStyles.Cont}>
@@ -276,36 +149,55 @@ function HomeKit(){
                 <View style={HomeKitStyles.ContentCont}>
                     
                   {items.map((o,i)=>{
-
-                    var timenow = new Date();
-                    var timestart = new Date(o.start_date);
-
-                    var secondsnow = Date.parse(timenow);
-                    var secondsstart = Date.parse(timestart);
-
-                    var passedtime = secondsnow - secondsstart; //miliseconds /1000/60/60/24
-
-                    var style = ItemStyles.FirstState;
+                    
+                    var currentMonth = new Date().getMonth() +1
+                    var currentYear = new Date().getFullYear()
+                    
+                    var expMonth = parseInt(o.exp_month);
+                    var expYear = parseInt(o.exp_year);
+                    var newImage = null; 
+                        
+                    if(o.exp_month && o.exp_year){
+                        newImage = imgs[o.img][1]
+                    }else{
+                        newImage = imgs[o.img][0]
+                    }
+                         
+                        
+                    var BorderPatrol = null;  
+                    
+                    if(currentYear < expYear){
+                        BorderPatrol = ItemStyles.GreenBorder
+                    } else if(currentYear === expYear && (expMonth - currentMonth === 1 || expMonth - currentMonth === -11)){
+                        BorderPatrol = ItemStyles.YellowBorder
+                    }else if(currentYear >= expYear && currentMonth >= expMonth){
+                        BorderPatrol = ItemStyles.RedBorder
+                    } 
+                        
+                    if(!expMonth || !expYear){
+                        BorderPatrol = ItemStyles.GreyBorder
+                    }
+                       
                     return (
-                      <TouchableOpacity style={ItemStyles.ItemPopUp}
+                      <TouchableOpacity key={i} 
+                          style={ItemStyles.ItemPopUp}
                       onPress = {() => {
                           setShowItem(true);
-                          setItemPic(o.arr[o.state]);
-                          setCurIndex(i);
+                          setCurItem(o);
+                          setItemPic(newImage);
+                        
                       }}>
                           <Image
-                          style={ItemStyles.CannedTomatoes}
-                          source={o.arr[o.state]}
+                          style={BorderPatrol}
+                          source={newImage || null}
                           />
-                          <Text style={HomeKitStyles.ItemTxt}>{o.name || ""}</Text>
+                          <Text style={HomeKitStyles.ItemTxt}>{o.item_name || ""}</Text>
                       </TouchableOpacity>
                     )
                   })
                 }
                 </View>
             </ScrollView>
-
-            {/* Henry added this */}
             {ItemPU}
 
     </SafeAreaView>

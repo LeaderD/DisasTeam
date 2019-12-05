@@ -5,31 +5,25 @@ import {
   Text,
 } from 'react-native';
 
-// import Login from './comps/Login';
-import HomeKitPage from './pages/HomeKitPage'
-// import WorkKit from './comps/WorkKit'
+
+import Login from './comps/Login';
 import HomeKit from './comps/HomeKit'
 import WorkKit from './comps/WorkKit'
 import GrabNGoKit from './comps/GrabNGoKit';
-import VehicleKit from './comps/VehicleKit'
+import VehicleKit from './comps/VehicleKit';
+import Kits from './comps/VehicleKit';
 // import Welcome from './comps/Welcome'
 // import WhiteButton from './comps/WhiteButton'
 // import RedButton from './comps/RedButton'
 // import SingleLineInput from './comps/SingleLineInput'
-// import Register from './comps/Register';
-import NavBar from './comps/NavBar';
-import ItemPopUp from './comps/ItemPopUp';
+import Register from './comps/Register';
+// import NavBar from './comps/NavBar';
+// import ItemPopUp from './comps/ItemPopUp';
 // import LoginPage from './pages/LoginPage';
-// import RegistrationPage from './pages/RegistrationPage';
-import Help from './comps/Help';
+import RegistrationPage from './pages/RegistrationPage';
+// import Help from './comps/Help';
 // import Welcome from './comps/Welcome';
 import Route from './route'
-import Tutorial from './comps/Tutorial';
-import Dashboard from './comps/Dashboard';
-import ColorGuide from './comps/ColorGuide';
-import ToolTip from './comps/ToolTip';
-import Kits from './comps/Kits';
-import Profile from './comps/Profile';
 
 function App(){
   return (
@@ -39,12 +33,11 @@ function App(){
       {/* <NavBar /> */}
       {/* <HomeKit /> */}
       {/* <WorkKit /> */}
-      <GrabNGoKit />
+      {/*<GrabNGoKit />*/}
       {/* <ItemPopUp/> */}
       {/* <LoginPage/> */}
-      {/* <RegistrationPage /> */}
+      {/*<Register />*/}
       {/* <Help /> */}
-      {/* <Route/> */}
       {/* <Tutorial /> */}
       {/* <Dashboard/> */}
       {/* <ColorGuide/> */}
@@ -52,6 +45,7 @@ function App(){
       {/* <Kits/> */}
       {/* <Profile /> */}
       {/* <VehicleKit /> */}
+          <Route/>
     </View>
   )
 }

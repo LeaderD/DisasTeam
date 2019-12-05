@@ -9,7 +9,7 @@ var PUStyles = StyleSheet.create ({
         // backgroundColor: "purple"
     },
     container:{
-        height: 230,
+        height: 200,
         width: 350,
         paddingTop: "2%",
         backgroundColor: "#F27C7B",
@@ -17,7 +17,8 @@ var PUStyles = StyleSheet.create ({
         borderRadius: 6,
         zIndex:10,
 		alignItems: "center",
-        padding: '2%'
+        padding: '2%',
+      {/*
         shadowColor: "#000",
         shadowOffset: {
 	         width: 0,
@@ -27,6 +28,7 @@ var PUStyles = StyleSheet.create ({
           shadowRadius: 8,
 
           elevation: 5,
+*/}
     },
     ItemImg:{
         resizeMode: "contain",
@@ -50,6 +52,18 @@ var PUStyles = StyleSheet.create ({
         padding: 0,
         width: "90%"
     },
+    itemName:{
+        backgroundColor: "transparent",
+        width: "55%",
+        fontSize: 18,
+        borderColor: "transparent",
+        borderWidth: 1,
+        borderBottomColor: "white",
+        color: "#FFF",
+        alignItems:"flex-end",
+        padding: "2%",
+        top: 10
+    },
     ButView:{
         flexDirection: "row",
         justifyContent:"space-evenly",
@@ -60,10 +74,10 @@ var PUStyles = StyleSheet.create ({
         backgroundColor: "white",
         borderRadius: 3,
         width: 77,
-        height: 40,
+        height: 45,
         justifyContent:"center",
         alignItems:"center",
-        // margin: "1%",
+        margin: "1%",
     },
     UpdateButText:{
         color:"#F04B53",
@@ -74,22 +88,25 @@ var PUStyles = StyleSheet.create ({
         backgroundColor:"rgba(255,255,255,0.2)",
         borderRadius: 3,
         width: 77,
-        height: 40,
+        height: 45,
         justifyContent:"center",
         alignItems:"center",
-        // margin: "1%",
+        margin: "1%",
     },
     CancelButText:{
         color: "white",
         fontSize: 16,
-        fontWeight: "600"
+        fontWeight: "600",
+        justifyContent: "center",
+        alignItems:"center"
     },
     PickerView:{
         flexDirection: "row",
         // backgroundColor: "pink",
         height: 45,
+        width: "75%"
     },
-    monthPicker:{
+     monthPicker:{
         color: "rgba(0,0,0,0.5)",
         // backgroundColor: "maroon",
         width: "45%",
@@ -107,7 +124,8 @@ var PUStyles = StyleSheet.create ({
     ExpText:{
         color: 'white',
         fontSize: 18,
-        width: "75%"
+        width: "75%",
+        top: 5
     },
     ExpTitles:{
         flexDirection: "row",
