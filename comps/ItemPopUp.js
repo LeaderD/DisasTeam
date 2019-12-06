@@ -49,12 +49,11 @@ function ItemPopUp(props){
             <Image
              style={PUStyles.ItemImg}
              source={props.ItemPic}/>
-        <View style={PUStyles.inputView}>
-            <Text style={PUStyles.ExpText}>Name</Text>
+       
             
         <View style={PUStyles.inputView}>
             <Text
-              style={PUStyles.ExpText}>
+              style={PUStyles.ItemNameText}>
             {props.curItem.item_name}
             </Text>
             
@@ -69,7 +68,8 @@ function ItemPopUp(props){
             </TextInput> */}
             <View style={PUStyles.ExpCont}>
                 
-            <Text style={PUStyles.ExpText}>Exp Date</Text>
+            <Text style={PUStyles.ExpText}>Expiry/</Text>
+            <Text style={PUStyles.ExpText}>Maintenance Date</Text>
                 
             <View style={PUStyles.PickerView}>
             <Picker 
@@ -114,7 +114,6 @@ function ItemPopUp(props){
         </TouchableOpacity>
             {Update}
 
-    </View>
     </View>
     </View>
     </View>

@@ -9,7 +9,7 @@ var PUStyles = StyleSheet.create ({
         alignItems:'center'
     },
     container:{
-        height: 200,
+        height: 210,
         width: 350,
         backgroundColor: "#F04B53",
         flexDirection:"row",
@@ -21,7 +21,9 @@ var PUStyles = StyleSheet.create ({
         resizeMode: "contain",
         height: "100%",
         alignItems:"flex-start",
-        width: "40%"
+        width: "35%",
+        marginRight: 15,
+        marginLeft: 5
     },
     inputView:{
         width: "100%",
@@ -97,7 +99,7 @@ var PUStyles = StyleSheet.create ({
      monthPicker:{
         color: "rgba(0,0,0,0.5)",
         // backgroundColor: "maroon",
-        width: "45%",
+        width: "40%",
         height: "100%"
     },
     yearPicker:{
@@ -114,7 +116,12 @@ var PUStyles = StyleSheet.create ({
     ExpCont:{
         // backgroundColor: "slateblue",
         top: 5
-    }
+    },
+    ItemNameText:{
+        color: 'white',
+        fontSize: 30,
+        top: 5
+    },
 
 });
 
