@@ -1,35 +1,32 @@
 /* eslint-disable prettier/prettier */
 import {StyleSheet} from 'react-native';
 
-var styles = StyleSheet.create ({
+var KitStyles = StyleSheet.create ({
 
   Cont: {
     flex: 1,
     justifyContent: 'center',
   },
   TopBar: {
-    backgroundColor: "#FFFEF3",
+    backgroundColor: "#F16467",
     alignItems: "center",
     justifyContent:"center",
-    height: 90,
-    marginTop: "-10%"
+    height: 70
   },
   TitleTop: {
     fontSize: 30
   },
     Title:{
-        color: "#F04B53",
-        fontSize: 40,
+        color: "#FFF",
+        fontSize: 35,
 
     },
 
     KitCont: {
-      // backgroundColor: "lightyellow",
       height: 150,
       alignItems: "center",
       marginBottom: 40,
       top: "5%",
-      // backgroundColor: "pink"
     },
 
     WrapCont: {
@@ -110,8 +107,13 @@ var styles = StyleSheet.create ({
        color:"#8B8B8A",
          marginRight: '10%',
          paddingTop: '2%'
-     }
-
+     },
+     helpBut:{
+      resizeMode: "contain",
+      height: 35,
+      width: 35,
+      right: 20
+  }
 })
 
-export default styles;
+export default KitStyles;

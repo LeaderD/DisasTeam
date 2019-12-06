@@ -5,7 +5,7 @@ var ItemStyles = StyleSheet.create ({
     ItemPopUp:{
         marginTop: 30
     },
-    FirstSate:{
+    GreyBorder:{
         height: 90,
         width: 90,
         position: "relative",
@@ -15,23 +15,33 @@ var ItemStyles = StyleSheet.create ({
         marginLeft: 10,
         marginRight: 10
     },
-    SecondSate:{
+    GreenBorder:{
         height: 90,
         width: 90,
         position: "relative",
         borderRadius: 100/1,
         borderWidth: 8,
-        borderColor: "lightgrey",
+        borderColor: "green",
         marginLeft: 10,
         marginRight: 10
     },
-    ThirdSate:{
+     YellowBorder:{
         height: 90,
         width: 90,
         position: "relative",
         borderRadius: 100/1,
         borderWidth: 8,
-        borderColor: "lightgrey",
+        borderColor: "yellow",
+        marginLeft: 10,
+        marginRight: 10
+    },
+    RedBorder:{
+        height: 90,
+        width: 90,
+        position: "relative",
+        borderRadius: 100/1,
+        borderWidth: 8,
+        borderColor: "red",
         marginLeft: 10,
         marginRight: 10
     },

@@ -1,6 +1,6 @@
 import {StyleSheet} from 'react-native';
 
-const styles = StyleSheet.create({
+const ProfileStyles = StyleSheet.create({
     profilePage: {
         justifyContent: 'flex-start',
         alignItems: 'center',
@@ -61,16 +61,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         borderRadius: 5,
-        paddingHorizontal: 10,
-        shadowColor: "#000",
-        shadowOffset: {
-	         width: 0,
-	          height: 2,
-          },
-          shadowOpacity: 0.30,
-          shadowRadius: 3.84,
-
-          elevation: 4,
+        paddingHorizontal: 10
     },
     addFamilyMemberButtonIcon: {
         height: 40,
@@ -80,4 +71,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default styles;
+export default ProfileStyles;

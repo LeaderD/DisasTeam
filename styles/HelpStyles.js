@@ -6,7 +6,7 @@ var styles= StyleSheet.create({
    },
     Help:{
         height:70,
-        backgroundColor: "#FFFEF3",
+        backgroundColor: "#F27C7B",
         flexDirection: "row",
         alignItems: "center",
         justifyContent: "center",
@@ -15,8 +15,8 @@ var styles= StyleSheet.create({
     },
 
     backBtn:{
-        width:50,
-        height: 50,
+        width:30,
+        height: 30,
         resizeMode: "contain",
     },
 
@@ -33,7 +33,7 @@ var styles= StyleSheet.create({
     },
 
     Title:{
-        color: "#F04B53",
+        color: "#FFF",
         fontSize:30,
         marginLeft: -70
     },
@@ -42,7 +42,8 @@ var styles= StyleSheet.create({
     },
     Faq:{
         color: "#F58287",
-        fontSize:28,
+        fontSize:30,
+      
     },
     ContentContainer:{
         maxWidth: "80%",

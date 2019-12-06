@@ -1,9 +1,10 @@
 /* eslint-disable prettier/prettier */
 import {StyleSheet} from 'react-native';
 
-var HomeKitStyles = StyleSheet.create ({
+var styles = StyleSheet.create ({
+    
     Cont: {
-    flex: 1,
+        flex: 1,
     },
 
     ContentCont: {
@@ -11,24 +12,17 @@ var HomeKitStyles = StyleSheet.create ({
         flexDirection:"row",
         justifyContent:"center",
         alignItems:"center",
-
     },
-
-    // Nav Bar
+    
     Top:{
         alignItems: "center",
         height: 70,
         flexDirection: 'row',
-        backgroundColor:"#FFFEF3",
-        borderBottomLeftRadius:8,
-        borderBottomRightRadius:8,
+        backgroundColor:"#F16467",
     },
-
-
-    // Back Arrow Container
+    
     BackNav: {
         flex: 1,
-        // backgroundColor: "pink",
         marginLeft: 20,
         marginTop: 3
     },
@@ -36,24 +30,23 @@ var HomeKitStyles = StyleSheet.create ({
         justifyContent:"center",
         alignItems: "center",
         resizeMode: "contain",
-        width: 50,
-        height: 50
+        width: 30,
+        height: 30
     },
 
     // Home Title Container
     TitleNav: {
         flex: 6,
         alignItems: "center",
-        // backgroundColor: "purple",
     },
 
     Title:{
         alignItems: "center",
-        color: "#F04B53",
+        color: "white",
         // backgroundColor: "lightyellow",
-        fontSize: 30,
+        fontSize: 35,
         justifyContent: "center",
-        marginLeft: -75
+        marginLeft: -30
     },
 
     Items:{
@@ -70,9 +63,16 @@ var HomeKitStyles = StyleSheet.create ({
         fontSize: 12,
         top: 10,
         textAlign:"center"
+    },
+    helpBut:{
+        resizeMode: "contain",
+        height: 35,
+        width: 35,
+        // backgroundColor: "red",
+        right: 25
     }
 
 
 })
 
-export default HomeKitStyles;
+export default styles;

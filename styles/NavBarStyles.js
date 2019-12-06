@@ -2,11 +2,11 @@ import {StyleSheet} from 'react-native';
 
 var NBStyles = {
     container:{
-        backgroundColor:"#F27C7B",
-        height: 90,
+        height: 70,
         width: "100%",
-        // justifyContent: "space-around",
+        justifyContent: "space-around",
         flexDirection:"row",
+        backgroundColor:"#F16467",
         borderTopLeftRadius: 8,
         borderTopRightRadius: 8,
         shadowColor: "#000",
@@ -18,13 +18,18 @@ var NBStyles = {
           shadowRadius: 3.84,
 
           elevation: 5,
-        },
+    },
+    navElements:{
+        width: "33%",
+        // backgroundColor:"blue",
+        alignItems: "center"
+    },
     navImg:{
-        width: 70,
-        height: 50
+        width: 60,
+        height: 40
        },
     touchOp:{
-        width: "30%",
+        width: "100%",
         height: "100%",
         flex: 1,
         justifyContent: "center",

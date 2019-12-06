@@ -6,8 +6,9 @@ import {Actions} from 'react-native-router-flux';
 function NavBar(){
     return (
         <SafeAreaView>
-        <View style={{justifyContent:"flex-end"}}>
+        <View>
             <View style={NBStyles.container}>
+            <View style={NBStyles.navElements}> 
             <TouchableOpacity style={NBStyles.touchOp}
                 onPress={()=>Actions.Kits()}>
                 <Image
@@ -16,6 +17,8 @@ function NavBar(){
                 />
                  <Text style={NBStyles.navCap}>Kits</Text>
             </TouchableOpacity>
+            </View>
+            <View style={NBStyles.navElements}>
             <TouchableOpacity style={NBStyles.touchOp}
                 onPress={()=>Actions.Dashboard()}>
                 <Image
@@ -23,6 +26,8 @@ function NavBar(){
                 source={require('../imgs/imgsPng/dashBoard.png')} />
                 <Text style={NBStyles.navCap}>Dashboard</Text>
             </TouchableOpacity>
+            </View>
+            <View style={NBStyles.navElements}>
             <TouchableOpacity style={NBStyles.touchOp}
             onPress={()=>Actions.Profile()}>
                 <Image
@@ -31,6 +36,7 @@ function NavBar(){
                 />
                 <Text style={NBStyles.navCap}>Profile</Text>
             </TouchableOpacity>
+            </View>
             </View>
         </View>
         </SafeAreaView>
