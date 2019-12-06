@@ -157,7 +157,7 @@ function Dashboard() {
            <ScrollView>
                {
                 (home_items.length>0) ?
-                <View style={{flex: 1, flexWrap:"wrap", flexDirection:"column"}}>
+                <View style={{flex: 1, flexWrap:"wrap", flexDirection:"column", paddingBottom: 20}}>
                     <Text style={styles.ExpItemsTitle}>Expired Home Kit Items</Text>
                           {home_items.map((o,i)=>{
                             return (
@@ -184,8 +184,9 @@ function Dashboard() {
                         }
                 </View> : null
                 }
-               
-                <View style={{flex: 1, flexWrap:"wrap", flexDirection:"column"}}>
+               {
+                (work_items.length>0) ?
+                <View style={{flex: 1, flexWrap:"wrap", flexDirection:"column", paddingBottom: 20}}>
                 
                 <Text style={styles.ExpItemsTitle}>Exp Work Kit Items</Text>
                   {work_items.map((o,i)=>{
@@ -210,9 +211,11 @@ function Dashboard() {
                     )
                   })
                 }
-                </View>
-               
-               <View style={{flex: 1, flexWrap:"wrap", flexDirection:"column"}}>
+                </View> : null
+               }
+               {
+                (grabngo_items.length>0) ?
+               <View style={{flex: 1, flexWrap:"wrap", flexDirection:"column", paddingBottom: 20}}>
                 
                 <Text style={styles.ExpItemsTitle}>Exp Grab N' Go Kit Items</Text>
                   {grabngo_items.map((o,i)=>{
@@ -239,10 +242,14 @@ function Dashboard() {
                     )
                   })
                 }
-                </View>
+                </View> : null
+               }
                
+               {
+                (vehicle_items.length>0) ?
+
                <View style={{flex: 1, flexWrap:"wrap", flexDirection:"column", paddingBottom: 20}}>
-                
+                 
                 <Text style={styles.ExpItemsTitle}>Exp Vehicle Kit Items</Text>
                   {vehicle_items.map((o,i)=>{
                     return (
@@ -269,7 +276,8 @@ function Dashboard() {
                     )
                   })
                 }
-                </View>
+                </View> : null
+                }
                
                
             </ScrollView>
