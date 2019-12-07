@@ -104,7 +104,7 @@ function Vehicle(){
             </View>
 
             <ScrollView>
-                <View style={{flex: 1, flexWrap:"wrap", flexDirection:"row", justifyContent:"center", alignItems:"center", height: 1300}}>
+                <View style={{flex: 1, flexWrap:"wrap", flexDirection:"row", justifyContent:"center", alignItems:"center", height: 777}}>
                   {items.map((o,i)=>{
                     
                     var currentMonth = new Date().getMonth() +1
@@ -123,10 +123,9 @@ function Vehicle(){
                         
                     var BorderPatrol = null;  
                         
-                    
-                    if(currentYear < expYear){
+                    if(currentYear < expYear && expMonth - currentMonth !== -11){
                         BorderPatrol = ItemStyles.GreenBorder
-                    } else if(currentYear === expYear && (expMonth - currentMonth === 1 || expMonth - currentMonth === -11)){
+                    } else if((currentYear === expYear && expMonth - currentMonth === 1) || (expYear - currentYear === 1 && expMonth - currentMonth === -11)){
                         BorderPatrol = ItemStyles.YellowBorder
                     }else if(currentYear >= expYear && currentMonth >= expMonth){
                         BorderPatrol = ItemStyles.RedBorder
@@ -135,7 +134,6 @@ function Vehicle(){
                     if(!expMonth || !expYear){
                         BorderPatrol = ItemStyles.GreyBorder
                     }
-
                         
                     return (
                       <TouchableOpacity style={ItemStyles.ItemPopUp}

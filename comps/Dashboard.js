@@ -62,6 +62,7 @@ function Dashboard() {
     
     const [items, setItems] = useState([]);
     
+    
     const getItems = async()=>{
         var users_id = await AsyncStorage.getItem('users_id');
         var data = await ax("items_read", {users_id:users_id});
@@ -114,7 +115,7 @@ function Dashboard() {
                         <Text style={styles.helpButtonText}>?</Text>
                     </TouchableOpacity>
                     </View>
-                    <Text>Nothing</Text>
+                <Text style={styles.Message}>All items are updated!</Text>
                 </View>
             </View>
         )

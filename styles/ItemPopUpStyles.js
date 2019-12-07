@@ -119,8 +119,8 @@ var PUStyles = StyleSheet.create ({
     },
     ItemNameText:{
         color: 'white',
-        fontSize: 30,
-        top: 5
+        fontSize: 23,
+        top: 6
     },
 
 });

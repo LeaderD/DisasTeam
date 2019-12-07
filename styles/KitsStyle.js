@@ -37,15 +37,7 @@ var KitStyles = StyleSheet.create ({
       top: "10%",
       justifyContent: "space-around",
       alignItems: "center",
-      shadowColor: "#000",
-      shadowOffset: {
-         width: -10,
-          height: 5,
-        },
-        shadowOpacity: 0.15,
-        shadowRadius: 3.84,
-
-        elevation: 3,
+        
     },
 
     ContentCont: {
