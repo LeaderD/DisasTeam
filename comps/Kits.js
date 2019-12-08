@@ -4,7 +4,7 @@ import {SafeAreaView, View, Text, TouchableOpacity, Image, Animated} from 'react
 import KitStyles from '../styles/KitsStyle';
 import NavBar from './NavBar';
 import {Actions} from 'react-native-router-flux';
-
+  
 const FadeInView = (props) => {
   const [fadeAnim] = useState(new Animated.Value(0))  // Initial value for opacity: 0
 
@@ -18,7 +18,7 @@ const FadeInView = (props) => {
     ).start();
   }, [])
   
-  
+    
 
   return (
     <Animated.View                 // Special animatable View
