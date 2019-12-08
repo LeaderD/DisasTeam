@@ -10,7 +10,7 @@ import {Actions} from 'react-native-router-flux';
 var tomatoes = [require('../imgs/imgsBWpng/BWcannedfood_1.png'), require('../imgs/imgsPng/cannedfood.png')];
 var crackers = [require('../imgs/imgsBWpng/BWcrackers_1.png'), require('../imgs/imgsPng/crackers.png')];
 var granola = [require('../imgs/imgsBWpng/BWgranola_1.png'), require('../imgs/imgsPng/granola.png')];
-var cookwater = [require('../imgs/imgsBWpng/BWcookingwater_1.png'), require('../imgs/imgsPng/cookingwater.png')];
+var cookwater = [require('../imgs/imgsBWpng/BWcookingwater_1.png'), require('../imgs/imgsPng/cookingwater.png')]; 
 var firstaid = [require('../imgs/imgsBWpng/BWmedicalkit_1.png'), require('../imgs/imgsPng/medicalkit.png')];
 var flashlight = [require('../imgs/imgsBWpng/BWflashlight_1.png'), require('../imgs/imgsPng/flashlight.png')];
 var canopener = [require('../imgs/imgsBWpng/BWcanopener_1.png'), require('../imgs/imgsPng/canopener.png')];
@@ -134,11 +134,9 @@ function HomeKit(){
                         
                     var BorderPatrol = null;  
                     
-                    //console.log((currentYear === expYear && expMonth - currentMonth === 1), (expYear - currentYear === 1 && expMonth - currentMonth === -11))
                     if(currentYear < expYear && expMonth - currentMonth !== -11){
                         BorderPatrol = ItemStyles.GreenBorder
                     } else if((currentYear === expYear && expMonth - currentMonth === 1) || (expYear - currentYear === 1 && expMonth - currentMonth === -11)){
-                        //console.log("yellow border", o.name);
                         BorderPatrol = ItemStyles.YellowBorder
                     }else if(currentYear >= expYear && currentMonth >= expMonth){
                         BorderPatrol = ItemStyles.RedBorder

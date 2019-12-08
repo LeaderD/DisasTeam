@@ -26,6 +26,7 @@ import RegistrationPage from './pages/RegistrationPage';
 import Route from './route'
 
 function App(){
+    console.disableYellowBox = true;
   return (
     <View style={{flex:1}}>
       {/* <Login/> */}

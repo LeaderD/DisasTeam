@@ -99,6 +99,14 @@ const styles = StyleSheet.create({
         fontSize: 18,
         top: 30,
         paddingLeft: 10
+    },
+    Message:{
+        position: "relative",
+        textAlign: "center",
+        justifyContent: "center",
+        color: "#F16467",
+        fontSize: 30,
+        top: 100
     }
 });
 

@@ -6,14 +6,12 @@ var styles = StyleSheet.create ({
     Cont: {
         flex: 1,
     },
-
     ContentCont: {
         flexWrap:"wrap",
         flexDirection:"row",
         justifyContent:"center",
         alignItems:"center",
     },
-    
     Top:{
         alignItems: "center",
         height: 70,
@@ -33,8 +31,6 @@ var styles = StyleSheet.create ({
         width: 30,
         height: 30
     },
-
-    // Home Title Container
     TitleNav: {
         flex: 6,
         alignItems: "center",
@@ -43,12 +39,10 @@ var styles = StyleSheet.create ({
     Title:{
         alignItems: "center",
         color: "white",
-        // backgroundColor: "lightyellow",
         fontSize: 35,
         justifyContent: "center",
         marginLeft: -30
     },
-
     Items:{
         height: 90,
         width: 90,

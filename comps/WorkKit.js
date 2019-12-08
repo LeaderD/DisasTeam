@@ -15,7 +15,7 @@ var drinkwater = [require('../imgs/imgsBWpng/BWwater_1.png'), require('../imgs/i
 var whistle = [require('../imgs/imgsBWpng/BWwhistle_1.png'), require('../imgs/imgsPng/whistle.png')];
 var flashlight = [require('../imgs/imgsBWpng/BWflashlight_1.png'), require('../imgs/imgsPng/flashlight.png')];
 var idcopy = [require('../imgs/imgsBWpng/BWid_1.png'), require('../imgs/imgsPng/id.png')];
-var money = [require('../imgs/imgsBWpng/BWmoney_1.png'), require('../imgs/imgsPng/money.png')];
+var money = [require('../imgs/imgsBWpng/BWmoney_1.png'), require('../imgs/imgsPng/money.png')]; 
 
 var imgs = {
     clothes,
@@ -94,7 +94,7 @@ function WorkKit(){
             </View>
 
             <ScrollView>
-                <View style={{flex: 1, flexWrap:"wrap", flexDirection:"row", justifyContent:"center", alignItems:"center", height: 1300}}>
+                <View style={{flex: 1, flexWrap:"wrap", flexDirection:"row", justifyContent:"center", alignItems:"center", height: 600}}>
                   {items.map((o,i)=>{
                 
                     var currentMonth = new Date().getMonth() +1
@@ -113,9 +113,9 @@ function WorkKit(){
                         
                     var BorderPatrol = null;  
                         
-                    if(currentYear < expYear){
+                    if(currentYear < expYear && expMonth - currentMonth !== -11){
                         BorderPatrol = ItemStyles.GreenBorder
-                    } else if(currentYear === expYear && (expMonth - currentMonth === 1 || expMonth - currentMonth === -11)){
+                    } else if((currentYear === expYear && expMonth - currentMonth === 1) || (expYear - currentYear === 1 && expMonth - currentMonth === -11)){
                         BorderPatrol = ItemStyles.YellowBorder
                     }else if(currentYear >= expYear && currentMonth >= expMonth){
                         BorderPatrol = ItemStyles.RedBorder

@@ -23,7 +23,8 @@ var ItemStyles = StyleSheet.create ({
         borderWidth: 8,
         borderColor: "green",
         marginLeft: 10,
-        marginRight: 10
+        marginRight: 10,
+        
     },
      YellowBorder:{
         height: 90,
