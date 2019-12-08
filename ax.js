@@ -2,7 +2,7 @@ import axios from 'axios';
 
 
 const url = "http://142.232.134.222:3001/post";
-
+  
 export default async function(key, d){
     var obj = {
         key:key,

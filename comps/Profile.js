@@ -44,7 +44,7 @@ function Profile(){
         </View>
 
  
-     
+       
             <View style={ProfileStyles.profilePage}>
             
                 <Image source={profileIcon} style={ProfileStyles.profileAvatar} />
