@@ -3,6 +3,7 @@ import {View, Text, Image, TouchableOpacity, SafeAreaView} from 'react-native';
 import NBStyles from '../styles/NavBarStyles';
 import {Actions} from 'react-native-router-flux';
 
+
 function NavBar(){
     return (
         <SafeAreaView>

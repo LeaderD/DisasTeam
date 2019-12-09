@@ -62,10 +62,8 @@ function WorkKit(){
             />
         )}
         
-    
     useEffect(()=>{
         getItems();
-        
         
     },[]);
 
@@ -81,7 +79,6 @@ function WorkKit(){
                     style={styles.backBtn}
                     source={require('../imgs/imgsPng/backbuttonwhite.png')}
                     />
-                    {/* <Text> Home </Text> */}
                 </TouchableOpacity>
                 </View>
 

@@ -1,12 +1,12 @@
 import {StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
+    
     dashboardPage: {
         flex: 1,
         backgroundColor: '#FFFEF3',
         height: "100%"
     },
-
     Top:{
         justifyContent:"center",
         alignItems: "center",
@@ -33,8 +33,6 @@ const styles = StyleSheet.create({
     },
     infoCont:{
         justifyContent: "center",
-        // backgroundColor: "lightyellow",
-        // flex: 1
     },
     helpButton: {
         position: 'absolute',                         

@@ -1,6 +1,7 @@
 import {StyleSheet} from 'react-native';
 
 var styles = StyleSheet.create ({
+    
     InfoPage:{
         alignItems:"center",
         height:"100%",
@@ -67,8 +68,6 @@ var styles = StyleSheet.create ({
         borderColor: "grey",
         backgroundColor: "transparent"
     }
-})
+});
 
-export default styles;
-
-    
+export default styles;   

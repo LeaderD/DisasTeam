@@ -37,12 +37,10 @@ function Kits(){
     return (
         <SafeAreaView styles={KitStyles.Cont}>
         <FadeInView>
-        {/* Top Bar */}
         <View style={KitStyles.TopBar}>
                 <Text style={KitStyles.Title}>Kits</Text>
         </View>
 
-        {/* Content */}
                 <View style={KitStyles.ContentCont}>
                     <View style={KitStyles.WrapCont}>
                     <TouchableOpacity
@@ -89,8 +87,8 @@ function Kits(){
                         </View>
                     </TouchableOpacity>
                     </View>
-                    </View>
-                    </FadeInView>
+                </View>
+        </FadeInView>
         </SafeAreaView>
     )
 }

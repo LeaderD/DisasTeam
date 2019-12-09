@@ -42,7 +42,6 @@ function GrabNGoKit(){
         setItems(data);
     }
         
-    
         var ItemPU = null;
 
         if (showItem === true){
@@ -58,10 +57,8 @@ function GrabNGoKit(){
             />
         )}
 
-    
     useEffect(()=>{
         getItems();
-        
         
     },[]);
 
@@ -77,7 +74,6 @@ function GrabNGoKit(){
                     style={styles.backBtn}
                     source={require('../imgs/imgsPng/backbuttonwhite.png')}
                     />
-                    {/* <Text> Home </Text> */}
                 </TouchableOpacity>
                 </View>
 
@@ -147,7 +143,5 @@ function GrabNGoKit(){
 
     )
 }
-
-            
 
     export default GrabNGoKit;

@@ -24,6 +24,6 @@ var TutStyles = StyleSheet.create({
         color: "#F04B53",
         backgroundColor:"#FFFFFF"
     }
-})
+});
 
 export default TutStyles;

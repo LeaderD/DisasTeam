@@ -24,7 +24,6 @@ var ItemStyles = StyleSheet.create ({
         borderColor: "green",
         marginLeft: 10,
         marginRight: 10,
-        
     },
      YellowBorder:{
         height: 90,
@@ -55,7 +54,7 @@ var ItemStyles = StyleSheet.create ({
         borderColor: "lightgrey",
         marginLeft: 10,
         marginRight: 10
-    },
-})
+    }
+});
 
 export default ItemStyles;

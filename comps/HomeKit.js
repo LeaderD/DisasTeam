@@ -28,6 +28,7 @@ var money = [require('../imgs/imgsBWpng/BWmoney_1.png'), require('../imgs/imgsPn
 var idcopy = [require('../imgs/imgsBWpng/BWid_1.png'), require('../imgs/imgsPng/id.png')];
 var shovel = [require('../imgs/imgsBWpng/BWshovel_1.png'), require('../imgs/imgsPng/shovel.png')];
 var matches = [require('../imgs/imgsBWpng/BWmatches_1.png'), require('../imgs/imgsPng/matches.png')];
+
 var imgs = {
     tomatoes,
     crackers,
@@ -82,8 +83,6 @@ function HomeKit(){
         />
     )}
     
-   
-    
     useEffect(()=>{
         getItems();
         
@@ -102,7 +101,6 @@ function HomeKit(){
                     style={styles.backBtn}
                     source={require('../imgs/imgsPng/backbuttonwhite.png')}
                     />
-                    {/* <Text> Home </Text> */}
                 </TouchableOpacity>
                 </View>
 
@@ -164,8 +162,6 @@ function HomeKit(){
                     )
                   })
                 }
-
-
 
                 </View>
             </ScrollView>
