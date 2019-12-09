@@ -72,11 +72,9 @@ function Vehicle(){
         />
     )}
 
-    
     useEffect(()=>{
         getItems();
-        
-        
+          
     },[]);
     
     return (
@@ -91,7 +89,6 @@ function Vehicle(){
                     style={styles.backBtn}
                     source={require('../imgs/imgsPng/backbuttonwhite.png')}
                     />
-                    {/* <Text> Home </Text> */}
                 </TouchableOpacity>
                 </View>
 
@@ -157,8 +154,6 @@ function Vehicle(){
             {ItemPU}
 
         </View>
-
-   
 
     )
 }

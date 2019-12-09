@@ -4,7 +4,6 @@ import styles from '../styles/LoginStyles';
 import {Actions} from 'react-native-router-flux';
 import ax from '../ax';
 
-
 function Register(){
 
     const [name, setName] = useState('');
@@ -16,11 +15,10 @@ function Register(){
         var data = await ax("users_create", {name:name, email:email, password:password});
         console.log(data);
         var users_id = JSON.stringify(data[0].id);
-        //store it in AsyncStorage
+        
         await AsyncStorage.setItem("users_id", users_id);
         Actions.Kits();
     }
-
 
     return (
 
