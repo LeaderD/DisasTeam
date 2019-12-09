@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import {StyleSheet} from 'react-native';
 
 var styles = StyleSheet.create ({
@@ -18,7 +17,6 @@ var styles = StyleSheet.create ({
         flexDirection: 'row',
         backgroundColor:"#F16467",
     },
-    
     BackNav: {
         flex: 1,
         marginLeft: 20,
@@ -35,7 +33,6 @@ var styles = StyleSheet.create ({
         flex: 6,
         alignItems: "center",
     },
-
     Title:{
         alignItems: "center",
         color: "white",
@@ -62,11 +59,8 @@ var styles = StyleSheet.create ({
         resizeMode: "contain",
         height: 35,
         width: 35,
-        // backgroundColor: "red",
         right: 25
     }
-
-
-})
+});
 
 export default styles;

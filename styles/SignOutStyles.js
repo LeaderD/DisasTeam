@@ -1,6 +1,7 @@
 import {StyleSheet} from 'react-native';
 
 var SignOutStyles = StyleSheet.create ({
+    
     LoginPage:{
         justifyContent:"center",
         alignItems:"center",
@@ -96,8 +97,8 @@ var SignOutStyles = StyleSheet.create ({
         padding: 10,
         shadowColor: "#000",
         shadowOffset: {
-        width: 0,
-        height: 5,
+            width: 0,
+            height: 5,
             },
         shadowOpacity: 0.36,
         shadowRadius: 6.68,
@@ -113,7 +114,6 @@ var SignOutStyles = StyleSheet.create ({
         fontSize: 18,
         textAlign:"center"
     }
-})
-
+});
 
 export default SignOutStyles;

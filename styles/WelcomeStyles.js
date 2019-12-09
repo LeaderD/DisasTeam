@@ -55,6 +55,6 @@ var styles = StyleSheet.create ({
         fontSize: 18,
         textAlign: "center",
     }
-})
+});
 
 export default styles;

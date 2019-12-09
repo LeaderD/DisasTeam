@@ -1,6 +1,7 @@
 import {StyleSheet} from 'react-native';
 
 var PUStyles = StyleSheet.create ({
+    
     wrapper:{
         position:'absolute',
         width:"100%",
@@ -58,7 +59,6 @@ var PUStyles = StyleSheet.create ({
         flexDirection: "row",
         justifyContent:"space-evenly",
         alignItems: "center",
-        // backgroundColor: "aliceblue"
     },
     UpdateBut:{
         backgroundColor: "white",
@@ -92,19 +92,16 @@ var PUStyles = StyleSheet.create ({
     },
     PickerView:{
         flexDirection: "row",
-        // backgroundColor: "pink",
         height: 45,
         width: "75%"
     },
      monthPicker:{
         color: "rgba(0,0,0,0.5)",
-        // backgroundColor: "maroon",
         width: "40%",
         height: "100%"
     },
     yearPicker:{
         color: "rgba(0,0,0,0.5)",
-        // backgroundColor: "thistle",
         width: "40%",
         height: "100%"
     },
@@ -114,15 +111,13 @@ var PUStyles = StyleSheet.create ({
         top: 5
     },
     ExpCont:{
-        // backgroundColor: "slateblue",
         top: 5
     },
     ItemNameText:{
         color: 'white',
         fontSize: 23,
         top: 6
-    },
-
+    }
 });
 
 export default PUStyles;

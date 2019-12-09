@@ -1,6 +1,7 @@
 import {StyleSheet} from 'react-native';
 
-var NBStyles = {
+var NBStyles = StyleSheet.create ({
+    
     container:{
         height: 70,
         width: "100%",
@@ -11,17 +12,15 @@ var NBStyles = {
         borderTopRightRadius: 8,
         shadowColor: "#000",
         shadowOffset: {
-	         width: 0,
-	          height: -2,
-          },
-          shadowOpacity: 0.30,
-          shadowRadius: 3.84,
-
-          elevation: 5,
+	           width: 0,
+	           height: -2,
+               },
+        shadowOpacity: 0.30,
+        shadowRadius: 3.84,
+        elevation: 5,
     },
     navElements:{
         width: "33%",
-        // backgroundColor:"blue",
         alignItems: "center"
     },
     navImg:{
@@ -39,6 +38,6 @@ var NBStyles = {
         color:"white",
         fontSize: 16,
     }
-}
+});
 
 export default NBStyles;
